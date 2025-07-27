@@ -22,6 +22,12 @@ Page({
     firstRender: true,
   },
 
+  goToSearch() {
+    wx.navigateTo({
+      url: '/pages/search/search',
+    });
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
