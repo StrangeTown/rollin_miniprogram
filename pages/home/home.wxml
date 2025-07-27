@@ -1,0 +1,9 @@
+<!--pages/home.wxml-->
+<navigation-bar title="Weixin" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<view class="container">
+  <view class="input-title">输入口语句子</view>
+  <view class="fake-input">
+    <span class="fake-input-placeholder">我很高兴认识你。</span>
+    <span class="phrase-text {{phraseAnimClass}}">{{currentPhrase}}</span>
+  </view>
+</view>
