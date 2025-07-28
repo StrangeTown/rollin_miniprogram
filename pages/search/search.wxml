@@ -2,5 +2,9 @@
 <navigation-bar title="搜索" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="search-container">
   <input class="search-input" placeholder="请输入要搜索的内容" focus="{{true}}" bindconfirm="onConfirm" />
-  <view class="search-result">{{translatedResult}}</view>
+  <view class="recent-results">
+    <block wx:for="{{recentResults}}" wx:key="index">
+      <view class="recent-result-item{{index === 0 ? ' current' : ''}}">{{item}}</view>
+    </block>
+  </view>
 </view>
