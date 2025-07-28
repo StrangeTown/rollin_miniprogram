@@ -1,1 +1,22 @@
 /* pages/search/search.wxss */
+
+.search-input {
+  width: 100%;
+  max-width: 360px;
+  margin: 24px auto 12px auto;
+  padding: 14px 18px;
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  background: #f7f8fa;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+  height: 102px;
+  resize: none;
+  line-height: 24px;
+}
+.search-input:focus {
+  border-color: #888;
+}
