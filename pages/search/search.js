@@ -5,7 +5,13 @@ Page({
    * Page initial data
    */
   data: {
+    translatedResult: ''
+  },
 
+  onConfirm(e) {
+    const value = e.detail.value;
+    const translatedResult = `Translate result for value ${value}`;
+    this.setData({ translatedResult });
   },
 
   /**
