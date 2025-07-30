@@ -1,0 +1,9 @@
+<!--pages/sentences/sentences.wxml-->
+<navigation-bar title="Sentences" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="all-results">
+  <text style="font-weight:bold;display:block;margin-bottom:8px;">All Results:</text>
+  <block wx:for="{{allResults}}" wx:key="index">
+    <view class="all-result-item">{{item}}</view>
+  </block>
+</view>
+<button class="practice-btn" bindtap="goToPractice">Go to Practice</button>

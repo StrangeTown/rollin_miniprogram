@@ -39,6 +39,37 @@
   white-space: nowrap;
 }
 
+.home-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 12px;
+  margin-bottom: 8px;
+}
+
+.home-link {
+  /* ...existing code... */
+  margin-right: 24px;
+}
+.home-link:last-child {
+  margin-right: 0;
+}
+
+.home-link {
+  color: #1aad19;
+  font-size: 15px;
+  padding: 6px 18px;
+  border-radius: 16px;
+  background: #f7f8fa;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.home-link:active {
+  background: #e6f7ea;
+  color: #179b16;
+}
+
 /* Animate only the text inside fake-input */
 .phrase-text {
   display: inline-block;

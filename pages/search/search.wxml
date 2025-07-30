@@ -6,5 +6,6 @@
     <block wx:for="{{recentResults}}" wx:key="index">
       <view class="recent-result-item{{index === 0 ? ' current' : ''}}">{{item}}</view>
     </block>
+    <button class="more-btn" bindtap="goToSentences">More</button>
   </view>
 </view>

@@ -3,7 +3,9 @@
     "pages/home/home",
     "pages/index/index",
     "pages/logs/logs",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/sentences/sentences",
+    "pages/practice/practice"
   ],
   "window": {
     "navigationBarTextStyle": "black",

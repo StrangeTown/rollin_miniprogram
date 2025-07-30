@@ -28,6 +28,18 @@ Page({
     });
   },
 
+  goToSentences() {
+    wx.navigateTo({
+      url: '/pages/sentences/sentences',
+    });
+  },
+
+  goToPractice() {
+    wx.navigateTo({
+      url: '/pages/practice/practice',
+    });
+  },
+
   /**
    * Lifecycle function--Called when page load
    */

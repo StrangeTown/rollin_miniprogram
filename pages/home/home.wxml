@@ -6,4 +6,8 @@
     <span class="fake-input-placeholder">我很高兴认识你。</span>
     <span class="phrase-text {{phraseAnimClass}}">{{currentPhrase}}</span>
   </view>
+  <view class="home-links">
+    <text class="home-link" bindtap="goToSentences">句库</text>
+    <text class="home-link" bindtap="goToPractice">练习</text>
+  </view>
 </view>

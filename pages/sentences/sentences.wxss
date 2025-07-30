@@ -1,0 +1,44 @@
+/* pages/sentences/sentences.wxss */
+
+.all-results {
+  margin: 24px auto 0 auto;
+  max-width: 360px;
+  padding: 12px 18px;
+  background: #f7f8fa;
+  border-radius: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+}
+.all-result-item {
+  margin: 12px 0;
+  padding: 16px 18px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  color: #222;
+  font-size: 15px;
+  text-align: left;
+  min-height: 24px;
+}
+
+.practice-btn {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  width: calc(100vw - 32px);
+  max-width: 360px;
+  margin: 0 auto;
+  background: #fff;
+  color: #222;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  padding: 16px 0;
+  box-shadow: 0 6px 24px 0 rgba(0,0,0,0.18), 0 1.5px 6px 0 rgba(0,0,0,0.10);
+  z-index: 100;
+  font-weight: 500;
+  transition: box-shadow 0.2s;
+}
+.practice-btn:active {
+  box-shadow: 0 3px 12px rgba(0,0,0,0.18);
+}

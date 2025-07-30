@@ -40,11 +40,22 @@ Page({
   },
 
   storeRecentResult(result) {
-    let recentResults = wx.getStorageSync('recentResults') || [];
-    recentResults.unshift(result);
-    recentResults = recentResults.slice(0, 5);
-    wx.setStorageSync('recentResults', recentResults);
+    let results = wx.getStorageSync('results') || [];
+    results.unshift(result);
+    wx.setStorageSync('results', results);
+    this.updateRecentResults();
+  },
+
+  updateRecentResults() {
+    const allResults = wx.getStorageSync('results') || [];
+    const recentResults = allResults.slice(0, 3);
     this.setData({ recentResults });
+  },
+
+  goToSentences() {
+    wx.navigateTo({
+      url: '/pages/sentences/sentences',
+    });
   },
 
   /**
@@ -66,8 +77,7 @@ Page({
    */
   onShow() {
     // Load recent results from storage when page is shown
-    const recentResults = wx.getStorageSync('recentResults') || [];
-    this.setData({ recentResults });
+    this.updateRecentResults();
   },
 
   /**
