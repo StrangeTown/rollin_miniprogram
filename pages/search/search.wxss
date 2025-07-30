@@ -1,3 +1,6 @@
+page, body {
+  background: #f7f8fa;
+}
 /* pages/search/search.wxss */
 
 .search-input {
@@ -7,7 +10,7 @@
   padding: 14px 18px;
   border: 1px solid #ccc;
   border-radius: 18px;
-  background: #f7f8fa;
+  background: #fff;
   font-size: 16px;
   color: #333;
   box-sizing: border-box;
@@ -22,12 +25,11 @@
 }
 
 .recent-results {
-  margin: 16px auto 0 auto;
+  margin: 24px auto 0 auto;
   max-width: 360px;
   padding: 12px 18px;
   background: #f7f8fa;
   border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 .recent-result-item {
   margin: 12px 0;

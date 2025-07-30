@@ -1,5 +1,5 @@
 <!--pages/home.wxml-->
-<navigation-bar title="" back="{{false}}" color="black" background="#FFF"></navigation-bar>
+<navigation-bar title="" back="{{false}}" color="black" background="#f7f8fa"></navigation-bar>
 <view class="container">
   <view class="input-title">输入口语句子</view>
   <view class="fake-input" bindtap="goToSearch">

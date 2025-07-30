@@ -1,3 +1,6 @@
+page, body {
+  background: #f7f8fa;
+}
 /* pages/sentences/sentences.wxss */
 
 .all-results {
@@ -6,7 +9,6 @@
   padding: 12px 18px;
   background: #f7f8fa;
   border-radius: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
 }
 .all-result-item {
   margin: 12px 0;
