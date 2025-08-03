@@ -81,6 +81,15 @@ body {
 }
 
 /* Text styles matching search page */
+.search-history-title {
+	font-size: 36rpx;
+	font-weight: 600;
+	color: white;
+	text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+	margin-bottom: 16rpx;
+	display: block;
+}
+
 .history-time {
 	font-size: 22rpx;
 	color: #999;

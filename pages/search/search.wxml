@@ -1,5 +1,5 @@
 <!--pages/search/search.wxml-->
-<navigation-bar title="搜索" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<navigation-bar title="" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="search-container">
   <view class="input-result-card">
     <input class="search-input" placeholder="请输入要搜索的内容" focus="{{true}}" bindconfirm="onConfirm" value="{{searchValue}}" />

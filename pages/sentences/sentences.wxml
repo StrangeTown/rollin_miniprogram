@@ -1,7 +1,7 @@
 <!--pages/sentences/sentences.wxml-->
-<navigation-bar title="Sentences" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<navigation-bar title="" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="all-results-container" style="height: calc(100vh - 140px);">
-  <text style="font-weight:bold;display:block;margin-bottom:8px;">All Results:</text>
+  <text class="search-history-title">Search History</text>
   <scroll-view show-scrollbar="{{false}}" class="all-results" scroll-y="true" style="height: calc(100vh - 120px);">
     <block wx:for="{{allResults}}" wx:key="index">
       <view class="all-result-item">

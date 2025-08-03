@@ -49,16 +49,16 @@ Page({
 		this.updateRecentResults();
 	},
 
-  updateRecentResults() {
-	const { formatTime } = require("../../utils/format.js");
-	const allResults = wx.getStorageSync("results") || [];
-	const recentResults = allResults.slice(0, 3).map((item) => ({
-	  input: item.input,
-	  result: item.result,
-	  createdAt: formatTime(item.createdAt),
-	}));
-	this.setData({ recentResults });
-  },
+	updateRecentResults() {
+		const { formatTime } = require("../../utils/format.js");
+		const allResults = wx.getStorageSync("results") || [];
+		const recentResults = allResults.slice(0, 3).map((item) => ({
+			input: item.input,
+			result: item.result,
+			createdAt: formatTime(item.createdAt),
+		}));
+		this.setData({ recentResults });
+	},
 
 	goToSentences() {
 		wx.navigateTo({
@@ -89,7 +89,11 @@ Page({
 
 	syncResults(callback) {
 		let results = wx.getStorageSync("results") || [];
-		if (!results || results.length === 0) {
+		const needFetch =
+			!results ||
+			results.length === 0 ||
+			results.some((item) => typeof item !== "object" || item === null);
+		if (needFetch) {
 			const { getHistoryList } = require("../../utils/api.js");
 			getHistoryList({
 				pageSize: 10,
