@@ -1,9 +1,12 @@
 <!--pages/sentences/sentences.wxml-->
 <navigation-bar title="Sentences" back="{{true}}" color="black" background="#FFF"></navigation-bar>
-<view class="all-results">
+<view class="all-results-container" style="height: calc(100vh - 140px);">
   <text style="font-weight:bold;display:block;margin-bottom:8px;">All Results:</text>
-  <block wx:for="{{allResults}}" wx:key="index">
-    <view class="all-result-item">{{item.english}}</view>
-  </block>
+  <scroll-view show-scrollbar="{{false}}" class="all-results" scroll-y="true" style="height: calc(100vh - 120px);">
+    <block wx:for="{{allResults}}" wx:key="index">
+      <view class="all-result-item">{{item.english}}</view>
+    </block>
+    <view style="height: 60px;"></view>
+  </scroll-view>
 </view>
 <button class="practice-btn" bindtap="goToPractice">Go to Practice</button>

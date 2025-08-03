@@ -5,6 +5,7 @@ Page({
 	 */
 	data: {
 		allResults: [],
+		windowHeight: 0,
 	},
 
 	goToPractice() {
@@ -16,7 +17,10 @@ Page({
 	/**
 	 * Lifecycle function--Called when page load
 	 */
-	onLoad(options) {},
+	onLoad(options) {
+		const systemInfo = wx.getSystemInfoSync();
+		this.setData({ windowHeight: systemInfo.windowHeight });
+	},
 
 	/**
 	 * Lifecycle function--Called when page is initially rendered
