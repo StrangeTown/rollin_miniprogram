@@ -3,52 +3,101 @@
 	flex-direction: column;
 	flex: 1;
 	box-sizing: border-box;
+	padding: 32rpx;
+	max-width: 750rpx;
+	margin: 0 auto;
+	width: 100%;
 }
 page,
 body {
-	background: #f7f8fa;
+	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 /* pages/sentences/sentences.wxss */
 
 .all-results {
 	width: 100%;
 	box-sizing: border-box;
-	padding: 12px 18px;
-	background: #f7f8fa;
-	border-radius: 10px;
+	padding: 40rpx;
+	background: rgba(255, 255, 255, 0.95);
+	backdrop-filter: blur(20px);
+	border-radius: 24rpx;
+	box-shadow: 0 16rpx 40rpx rgba(0, 0, 0, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	/* Hide scrollbar for WeChat Mini Program */
+	-webkit-scrollbar-width: none;
+	scrollbar-width: none;
+}
+
+/* Hide scrollbar for all-results scroll-view (WeChat Mini Program specific) */
+.all-results::-webkit-scrollbar {
+	display: none;
 }
 
 .all-result-item {
-	margin: 12px 0;
-	padding: 16px 18px;
-	background: #fff;
-	border-radius: 12px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-	color: #222;
-	font-size: 15px;
-	text-align: left;
-	min-height: 24px;
+	margin-bottom: 24rpx;
+	padding: 32rpx;
+	background: rgba(255, 255, 255, 0.6);
+	border-radius: 16rpx;
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+.all-result-item:hover {
+	transform: translateY(-2rpx);
+	box-shadow: 0 8rpx 25rpx rgba(0, 0, 0, 0.1);
+}
+
+.all-result-item:last-child {
+	margin-bottom: 0;
 }
 
 .practice-btn {
 	position: fixed;
 	left: 0;
 	right: 0;
-	bottom: 20px;
-	width: calc(100vw - 32px);
-	max-width: 360px;
+	bottom: 60rpx;
+	width: calc(100vw - 64rpx);
+	max-width: 680rpx;
 	margin: 0 auto;
-	background: #fff;
-	color: #222;
-	font-size: 16px;
-	border-radius: 12px;
-	border: none;
-	padding: 16px 0;
-	box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.18), 0 1.5px 6px 0 rgba(0, 0, 0, 0.1);
-	z-index: 100;
+	background: linear-gradient(135deg, #667eea, #764ba2);
+	color: white;
+	font-size: 32rpx;
 	font-weight: 500;
-	transition: box-shadow 0.2s;
+	border-radius: 16rpx;
+	border: none;
+	padding: 24rpx 0;
+	box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.3);
+	z-index: 100;
+	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .practice-btn:active {
-	box-shadow: 0 3px 12px rgba(0, 0, 0, 0.18);
+	transform: translateY(2rpx);
+	box-shadow: 0 4rpx 12rpx rgba(102, 126, 234, 0.3);
+}
+
+/* Text styles matching search page */
+.history-time {
+	font-size: 22rpx;
+	color: #999;
+	margin-bottom: 12rpx;
+}
+
+.history-result {
+	font-size: 30rpx;
+	color: #333;
+	line-height: 1.6;
+	font-weight: 500;
+	margin-bottom: 12rpx;
+}
+
+.history-input {
+	font-size: 24rpx;
+	color: #888;
+	opacity: 0.8;
+	font-style: italic;
 }
