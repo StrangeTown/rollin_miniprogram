@@ -42,7 +42,3 @@ page, body {
   text-align: left;
   min-height: 24px;
 }
-
-.recent-result-item.current {
-  background: #eaf4ff;
-}
