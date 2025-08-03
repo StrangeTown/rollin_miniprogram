@@ -6,7 +6,8 @@ Page({
    */
   data: {
     translatedResult: '',
-    recentResults: []
+    recentResults: [],
+    searchValue: ''
   },
 
   onConfirm(e) {
@@ -23,7 +24,10 @@ Page({
         console.log('Translation response:', res);
         if (res.data && res.data.code === 0) {
           const translatedResult = res.data.data;
-          this.setData({ translatedResult });
+          this.setData({
+            translatedResult,
+            searchValue: ''
+          });
           this.storeRecentResult({
             input: value,
             result: translatedResult,
