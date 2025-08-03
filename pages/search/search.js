@@ -32,11 +32,33 @@ Page({
   },
 
   onConfirm(e) {
-    const results = this.data.translatedResults;
-    const idx = Math.floor(Math.random() * results.length);
-    const translatedResult = results[idx];
-    this.setData({ translatedResult });
-    this.storeRecentResult(translatedResult);
+    const value = e.detail.value;
+    if (!value) return;
+    const token = wx.getStorageSync('token');
+    wx.request({
+      url: 'https://www.itwork.club/rollin_test/search',
+      method: 'POST',
+      data: {
+        content: value
+      },
+      header: {
+        Authorization: token && token.accessToken ? 'Bearer ' + token.accessToken : ''
+      },
+      success: res => {
+        console.log('Translation response:', res);
+        if (res.data && res.data.code === 0) {
+          const translatedResult = res.data.data;
+          this.setData({ translatedResult });
+          this.storeRecentResult(translatedResult);
+        } else {
+          console.error('Translation failed:', res.data.msg);
+          wx.showToast({ title: '翻译失败', icon: 'none' });
+        }
+      },
+      fail: err => {
+        wx.showToast({ title: '网络错误', icon: 'none' });
+      }
+    });
   },
 
   storeRecentResult(result) {
