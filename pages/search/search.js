@@ -49,26 +49,16 @@ Page({
 		this.updateRecentResults();
 	},
 
-	updateRecentResults() {
-		const allResults = wx.getStorageSync("results") || [];
-		const recentResults = allResults.slice(0, 3).map((item) => ({
-			input: item.input,
-			result: item.result,
-			createdAt: this.formatTime(item.createdAt),
-		}));
-		this.setData({ recentResults });
-	},
-
-	formatTime(dateStr) {
-		if (!dateStr) return "";
-		const date = new Date(dateStr.replace("+08:00", ""));
-		const y = date.getFullYear();
-		const m = (date.getMonth() + 1).toString().padStart(2, "0");
-		const d = date.getDate().toString().padStart(2, "0");
-		const h = date.getHours().toString().padStart(2, "0");
-		const min = date.getMinutes().toString().padStart(2, "0");
-		return `${m}-${d} ${h}:${min}`;
-	},
+  updateRecentResults() {
+	const { formatTime } = require("../../utils/format.js");
+	const allResults = wx.getStorageSync("results") || [];
+	const recentResults = allResults.slice(0, 3).map((item) => ({
+	  input: item.input,
+	  result: item.result,
+	  createdAt: formatTime(item.createdAt),
+	}));
+	this.setData({ recentResults });
+  },
 
 	goToSentences() {
 		wx.navigateTo({
@@ -114,7 +104,7 @@ Page({
 						// Convert server list to local storage format
 						const serverResults = res.data.data.list.map((item) => ({
 							input: item.content,
-							result: item.english,
+							result: item.target,
 							createdAt: item.createdAt,
 						}));
 						wx.setStorageSync("results", serverResults);

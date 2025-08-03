@@ -4,7 +4,11 @@
   <text style="font-weight:bold;display:block;margin-bottom:8px;">All Results:</text>
   <scroll-view show-scrollbar="{{false}}" class="all-results" scroll-y="true" style="height: calc(100vh - 120px);">
     <block wx:for="{{allResults}}" wx:key="index">
-      <view class="all-result-item">{{item.english}}</view>
+      <view class="all-result-item">
+        <view class="history-time">{{item.createdAt}}</view>
+        <view class="history-result">{{item.target}}</view>
+        <view class="history-input">{{item.content}}</view>
+      </view>
     </block>
     <view style="height: 60px;"></view>
   </scroll-view>

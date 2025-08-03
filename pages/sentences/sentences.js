@@ -32,23 +32,28 @@ Page({
 	 */
 	onShow() {
 		// Load list data from server when page is shown
-		const { getHistoryList } = require("../../utils/api.js");
-		getHistoryList({
-			pageSize: 10,
-			pageNum: 1,
-			success: (res) => {
-				if (
-					res.data &&
-					res.data.code === 0 &&
-					res.data.data &&
-					Array.isArray(res.data.data.list)
-				) {
-					this.setData({ allResults: res.data.data.list });
-				} else {
-					wx.showToast({ title: "获取历史失败", icon: "none" });
-				}
-			},
-		});
+	const { getHistoryList } = require("../../utils/api.js");
+	const { formatTime } = require("../../utils/format.js");
+	getHistoryList({
+	  pageSize: 10,
+	  pageNum: 1,
+	  success: (res) => {
+		if (
+		  res.data &&
+		  res.data.code === 0 &&
+		  res.data.data &&
+		  Array.isArray(res.data.data.list)
+		) {
+		  const formattedList = res.data.data.list.map(item => ({
+			...item,
+			createdAt: formatTime(item.createdAt)
+		  }));
+		  this.setData({ allResults: formattedList });
+		} else {
+		  wx.showToast({ title: "获取历史失败", icon: "none" });
+		}
+	  },
+	});
 	},
 
 	/**
