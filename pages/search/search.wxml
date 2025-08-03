@@ -4,7 +4,10 @@
   <input class="search-input" placeholder="请输入要搜索的内容" focus="{{true}}" bindconfirm="onConfirm" />
   <view class="recent-results">
     <block wx:for="{{recentResults}}" wx:key="index">
-      <view class="recent-result-item{{index === 0 ? ' current' : ''}}">{{item}}</view>
+      <view class="recent-result-item{{index === 0 ? ' current' : ''}}">
+        <view style="font-size:13px;color:#888;">{{item.input}}</view>
+        <view style="font-size:15px;color:#222;margin-top:2px;">{{item.result}}</view>
+      </view>
     </block>
     <button class="more-btn" bindtap="goToSentences">More</button>
   </view>

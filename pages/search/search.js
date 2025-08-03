@@ -6,28 +6,6 @@ Page({
    */
   data: {
     translatedResult: '',
-    translatedResults: [
-      'Hello, how are you?',
-      'Nice to meet you.',
-      'What time is it?',
-      'Where are you going?',
-      'Can you help me?',
-      'I don\'t understand.',
-      'Please say it again.',
-      'How much is this?',
-      'I\'m hungry.',
-      'I\'m tired.',
-      'Let\'s go together.',
-      'I\'m sorry.',
-      'Thank you very much.',
-      'See you tomorrow.',
-      'Good luck!',
-      'Have a nice day!',
-      'What\'s your name?',
-      'Where do you live?',
-      'I like this.',
-      'Can I ask you a question?'
-    ],
     recentResults: []
   },
 
@@ -46,7 +24,11 @@ Page({
         if (res.data && res.data.code === 0) {
           const translatedResult = res.data.data;
           this.setData({ translatedResult });
-          this.storeRecentResult(translatedResult);
+          this.storeRecentResult({
+            input: value,
+            result: translatedResult,
+            createdAt: new Date().toISOString().replace('Z', '+08:00')
+          });
         } else {
           console.error('Translation failed:', res.data.msg);
           wx.showToast({ title: '翻译失败', icon: 'none' });
@@ -55,9 +37,9 @@ Page({
     });
   },
 
-  storeRecentResult(result) {
+  storeRecentResult(obj) {
     let results = wx.getStorageSync('results') || [];
-    results.unshift(result);
+    results.unshift(obj);
     wx.setStorageSync('results', results);
     this.updateRecentResults();
   },
@@ -91,9 +73,45 @@ Page({
   /**
    * Lifecycle function--Called when page show
    */
+
   onShow() {
-    // Load recent results from storage when page is shown
-    this.updateRecentResults();
+    // Sync results from server if needed, then update recent results
+    this.syncResults(() => {
+      this.updateRecentResults();
+    });
+  },
+
+  syncResults(callback) {
+    let results = wx.getStorageSync('results') || [];
+    if (!results || results.length === 0) {
+      const { getHistoryList } = require('../../utils/api.js');
+      getHistoryList({
+        pageSize: 10,
+        pageNum: 1,
+        success: (res) => {
+          if (
+            res.data &&
+            res.data.code === 0 &&
+            res.data.data &&
+            Array.isArray(res.data.data.list)
+          ) {
+            // Convert server list to local storage format
+            const serverResults = res.data.data.list.map(item => ({
+              input: item.content,
+              result: item.english,
+              createdAt: item.createdAt
+            }));
+            wx.setStorageSync('results', serverResults);
+          }
+          if (typeof callback === 'function') callback();
+        },
+        fail: () => {
+          if (typeof callback === 'function') callback();
+        }
+      });
+    } else {
+      if (typeof callback === 'function') callback();
+    }
   },
 
   /**

@@ -28,10 +28,10 @@ Page({
 	 */
 	onShow() {
 		// Load list data from server when page is shown
-		const { request } = require("../../utils/request.js");
-		request({
-			url: "/user/history/list?pageSize=10&pageNum=1",
-			method: "GET",
+		const { getHistoryList } = require("../../utils/api.js");
+		getHistoryList({
+			pageSize: 10,
+			pageNum: 1,
 			success: (res) => {
 				if (
 					res.data &&
