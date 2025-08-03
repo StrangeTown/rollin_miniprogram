@@ -10,19 +10,17 @@ App({
     const token = wx.getStorageSync('token');
     const now = Math.floor(Date.now() / 1000);
     if (!token || !token.expireIn || token.expireIn < now) {
+      const { request } = require('./utils/request.js');
       wx.login({
         success: res => {
           if (res.code) {
             console.log('jscode:', res.code);
-            // GET login request
-            wx.request({
-              url: `https://www.itwork.club/rollin_test/user/login/${res.code}`,
+            request({
+              url: `/user/login/${res.code}`,
               method: 'GET',
               success: response => {
                 if (response.data && response.data.code === 0) {
-                  // Store token info
                   wx.setStorageSync('token', response.data.data.token);
-                  // Store userInfo
                   wx.setStorageSync('userInfo', response.data.data.userInfo);
                   console.log('Login success:', response.data.data);
                 } else {

@@ -34,15 +34,12 @@ Page({
   onConfirm(e) {
     const value = e.detail.value;
     if (!value) return;
-    const token = wx.getStorageSync('token');
-    wx.request({
-      url: 'https://www.itwork.club/rollin_test/search',
+    const { request } = require('../../utils/request.js');
+    request({
+      url: '/search',
       method: 'POST',
       data: {
         content: value
-      },
-      header: {
-        Authorization: token && token.accessToken ? 'Bearer ' + token.accessToken : ''
       },
       success: res => {
         console.log('Translation response:', res);
@@ -54,9 +51,6 @@ Page({
           console.error('Translation failed:', res.data.msg);
           wx.showToast({ title: '翻译失败', icon: 'none' });
         }
-      },
-      fail: err => {
-        wx.showToast({ title: '网络错误', icon: 'none' });
       }
     });
   },
