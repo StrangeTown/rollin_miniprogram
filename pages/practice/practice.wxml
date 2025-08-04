@@ -1,3 +1,18 @@
 <!--pages/practice/practice.wxml-->
 <navigation-bar title="Practice" back="{{true}}" color="black" background="#FFF"></navigation-bar>
-<text>pages/practice/practice.wxml</text>
+<view class="practice-container">
+  <block wx:if="{{practiceList.length > 0}}">
+    <view class="practice-item">
+      <view class="practice-time">{{practiceList[0].createdAt}}</view>
+      <view class="practice-result">{{practiceList[0].target}}</view>
+      <view class="practice-input">{{practiceList[0].content}}</view>
+    </view>
+    <view class="practice-btn-group">
+      <button class="practice-btn" bindtap="onNotRemember">还没记住</button>
+      <button class="practice-btn remember" bindtap="onRemember">记住了</button>
+    </view>
+  </block>
+  <block wx:else>
+    <view class="practice-empty">暂无练习数据</view>
+  </block>
+</view>
