@@ -39,22 +39,59 @@ Page({
 		}
 	},
 
+	updateFamiliarity(onSuccess) {
+		const rememberedItems = this.data.rememberedItems.map((item) => ({
+			id: item.id,
+			isFamiliar: true,
+		}));
+		const forgotItems = this.data.forgotItems.map((item) => ({
+			id: item.id,
+			isFamiliar: false,
+		}));
+		const items = [...rememberedItems, ...forgotItems];
+		console.log("更新熟悉度:", items);
+		if (items.length > 0) {
+			const { request } = require("../../utils/request.js");
+			request({
+				url: "/user/history",
+				method: "PUT",
+				data: items,
+				success: (res) => {
+					console.log("熟悉度更新成功", res);
+					if (typeof onSuccess === "function") onSuccess();
+				},
+				fail: () => {
+					wx.showToast({ title: "熟悉度更新失败", icon: "none" });
+				},
+			});
+		} else {
+			if (typeof onSuccess === "function") onSuccess();
+		}
+	},
+
 	checkLeftData() {
 		console.log("剩余练习数量:", this.data.practiceList.length);
 		const leftCount = this.data.practiceList.length;
 		if (leftCount <= 2) {
-			const rememberedIds = this.data.rememberedItems.map((item) => item.id);
-			const forgotIds = this.data.forgotItems.map((item) => item.id);
-			const excludeIds = [...rememberedIds, ...forgotIds];
-			this.getPracticeBatch(excludeIds);
+			// Update familiarity based on remembered and forgotten items, then fetch new data on success
+			this.updateFamiliarity(() => {
+				this.fetchNewData();
+			});
 		}
+	},
+
+	fetchNewData() {
+		const rememberedIds = this.data.rememberedItems.map((item) => item.id);
+		const forgotIds = this.data.forgotItems.map((item) => item.id);
+		const excludeIds = [...rememberedIds, ...forgotIds];
+		this.requestPracticeBatch(excludeIds);
 	},
 
 	/**
 	 * Lifecycle function--Called when page load
 	 */
 	onLoad(options) {
-		this.getPracticeBatch();
+		this.fetchNewData();
 	},
 
 	updateList(newList) {
@@ -73,7 +110,7 @@ Page({
 		});
 	},
 
-	getPracticeBatch(excludeIds = []) {
+	requestPracticeBatch(excludeIds = []) {
 		const { request } = require("../../utils/request.js");
 		let url = "/user/history/rand/history?limit=5";
 		if (excludeIds && excludeIds.length > 0) {
@@ -85,6 +122,7 @@ Page({
 			method: "GET",
 			success: (res) => {
 				if (res.data && res.data.code === 0 && Array.isArray(res.data.data)) {
+          console.log("获取练习数据:", res.data.data);
 					this.updateList(res.data.data);
 				} else {
 					wx.showToast({ title: "获取练习数据失败", icon: "none" });
