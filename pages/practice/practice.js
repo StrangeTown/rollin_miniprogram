@@ -7,6 +7,10 @@ Page({
 		practiceList: [],
 		rememberedItems: [],
 		forgotItems: [],
+		showTarget: false,
+	},
+	onToggleTarget() {
+		this.setData({ showTarget: !this.data.showTarget });
 	},
 
 	onNotRemember() {
@@ -18,7 +22,7 @@ Page({
 					practiceList: this.data.practiceList.slice(1),
 				},
 				() => {
-					this.checkLeftData();
+					this.handlePracticeAction();
 				}
 			);
 		}
@@ -33,10 +37,18 @@ Page({
 					practiceList: this.data.practiceList.slice(1),
 				},
 				() => {
-					this.checkLeftData();
+					this.handlePracticeAction();
 				}
 			);
 		}
+	},
+
+	handlePracticeAction() {
+    // After user action, hide target and check if more data is needed
+		this.setData({ showTarget: false });
+
+    // Check if we need to fetch more practice data
+		this.checkLeftData();
 	},
 
 	updateFamiliarity(onSuccess) {
@@ -122,7 +134,7 @@ Page({
 			method: "GET",
 			success: (res) => {
 				if (res.data && res.data.code === 0 && Array.isArray(res.data.data)) {
-          console.log("获取练习数据:", res.data.data);
+					console.log("获取练习数据:", res.data.data);
 					this.updateList(res.data.data);
 				} else {
 					wx.showToast({ title: "获取练习数据失败", icon: "none" });
