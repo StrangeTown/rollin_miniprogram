@@ -1,19 +1,30 @@
+page, body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+/* pages/practice/practice.wxss */
 .practice-container {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 40rpx;
-  margin: 48rpx auto;
-  max-width: 680rpx;
+  padding: 32rpx;
+  max-width: 750rpx;
+  margin: 0 auto;
 }
 
 .practice-item {
-  margin-bottom: 24rpx;
-  padding: 32rpx;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 16rpx;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: 0 8rpx 25rpx rgba(0, 0, 0, 0.08);
-  position: relative;
-  overflow: hidden;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 32rpx;
+  box-shadow: 0 16rpx 40rpx rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.practice-item:hover {
+  transform: translateY(-2rpx);
+  box-shadow: 0 20rpx 45rpx rgba(0, 0, 0, 0.15);
 }
 
 .practice-time {
@@ -21,6 +32,7 @@
   color: #999;
   margin-bottom: 12rpx;
 }
+
 .practice-result {
   font-size: 30rpx;
   color: #333;
@@ -28,16 +40,56 @@
   font-weight: 500;
   margin-bottom: 12rpx;
 }
+
 .practice-input {
   font-size: 24rpx;
   color: #888;
   opacity: 0.8;
   font-style: italic;
 }
-.practice-empty {
-  text-align: center;
-  color: #aaa;
-  font-size: 28rpx;
-  padding: 40rpx 0;
+
+.practice-btn-group {
+  display: flex;
+  gap: 16rpx;
+  margin-top: 24rpx;
 }
-/* pages/practice/practice.wxss */
+
+.practice-btn {
+  flex: 1;
+  padding: 24rpx;
+  border: none;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.8);
+  color: #666;
+  box-shadow: 0 8rpx 20rpx rgba(0, 0, 0, 0.1);
+}
+
+.practice-btn.remember {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.3);
+}
+
+.practice-btn:active {
+  transform: translateY(2rpx);
+  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
+}
+
+.practice-btn.remember:active {
+  box-shadow: 0 4rpx 12rpx rgba(102, 126, 234, 0.3);
+}
+
+.practice-empty {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 24rpx;
+  padding: 60rpx 40rpx;
+  text-align: center;
+  color: #999;
+  font-size: 28rpx;
+  box-shadow: 0 16rpx 40rpx rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
