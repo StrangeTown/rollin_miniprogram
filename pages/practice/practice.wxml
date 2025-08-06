@@ -1,12 +1,12 @@
 <!--pages/practice/practice.wxml-->
-<navigation-bar title="Practice" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<navigation-bar title="" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="practice-container">
   <block wx:if="{{practiceList.length > 0}}">
     <view class="practice-item" bindtap="onToggleTarget">
       <view class="practice-time">{{practiceList[0].createdAt}}</view>
-      <view class="practice-result" wx:if="{{showTarget}}">{{practiceList[0].target}}</view>
-      <view class="practice-result" wx:else>点击显示答案</view>
       <view class="practice-input">{{practiceList[0].content}}</view>
+      <view class="practice-result" wx:if="{{showTarget}}">{{practiceList[0].target}}</view>
+      <view class="practice-tip" wx:else>点击显示答案</view>
     </view>
     <view class="practice-btn-group">
       <button class="practice-btn" bindtap="onNotRemember">还没记住</button>

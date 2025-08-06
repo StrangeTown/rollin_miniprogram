@@ -107,6 +107,7 @@ Page({
 	},
 
 	updateList(newList) {
+		const { formatTime } = require("../../utils/format.js");
 		// Insert forgotItems into newList at random positions
 		let mergedList = [...newList];
 		const forgotItems = [...this.data.forgotItems];
@@ -115,8 +116,13 @@ Page({
 			const pos = Math.floor(Math.random() * (mergedList.length + 1));
 			mergedList.splice(pos, 0, item);
 		}
+		// Format createdAt time for all items
+		const formattedMergedList = mergedList.map(item => ({
+			...item,
+			createdAt: formatTime(item.createdAt)
+		}));
 		this.setData({
-			practiceList: [...this.data.practiceList, ...mergedList],
+			practiceList: [...this.data.practiceList, ...formattedMergedList],
 			rememberedItems: [],
 			forgotItems: [],
 		});
