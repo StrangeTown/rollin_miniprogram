@@ -3,11 +3,19 @@
 <view class="all-results-container" style="height: calc(100vh - 140px);">
   <text class="search-history-title">Search History</text>
   <scroll-view show-scrollbar="{{false}}" class="all-results" scroll-y="true" style="height: calc(100vh - 120px);">
-    <block wx:for="{{allResults}}" wx:key="index">
-      <view class="all-result-item">
-        <view class="history-time">{{item.createdAt}}</view>
-        <view class="history-result">{{item.target}}</view>
-        <view class="history-input">{{item.content}}</view>
+    <block wx:if="{{allResults.length > 0}}">
+      <block wx:for="{{allResults}}" wx:key="index">
+        <view class="all-result-item">
+          <view class="history-time">{{item.createdAt}}</view>
+          <view class="history-result">{{item.target}}</view>
+          <view class="history-input">{{item.content}}</view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="empty-state">
+        <view class="empty-text">暂无搜索历史</view>
+        <view class="empty-tip">开始使用搜索功能来积累你的学习历史吧</view>
       </view>
     </block>
     <view style="height: 60px;"></view>
