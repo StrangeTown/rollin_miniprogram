@@ -2,7 +2,7 @@
 <navigation-bar title="" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="practice-container">
   <block wx:if="{{practiceList.length > 0}}">
-    <view class="practice-item" bindtap="onToggleTarget">
+    <view class="practice-item {{animationClass}}" bindtap="onToggleTarget">
       <view class="practice-time">{{practiceList[0].createdAt}}</view>
       <view class="practice-input">{{practiceList[0].content}}</view>
       <view class="practice-result" wx:if="{{showTarget}}">{{practiceList[0].target}}</view>

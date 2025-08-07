@@ -8,6 +8,7 @@ Page({
 		rememberedItems: [],
 		forgotItems: [],
 		showTarget: false,
+		animationClass: "",
 	},
 	onToggleTarget() {
 		this.setData({ showTarget: !this.data.showTarget });
@@ -16,38 +17,57 @@ Page({
 	onNotRemember() {
 		const first = this.data.practiceList[0];
 		if (first) {
-			this.setData(
-				{
+			this.animateCardChange(() => {
+				this.setData({
 					forgotItems: [...this.data.forgotItems, first],
 					practiceList: this.data.practiceList.slice(1),
-				},
-				() => {
-					this.handlePracticeAction();
-				}
-			);
+				});
+			});
 		}
 	},
 
 	onRemember() {
 		const first = this.data.practiceList[0];
 		if (first) {
-			this.setData(
-				{
+			this.animateCardChange(() => {
+				this.setData({
 					rememberedItems: [...this.data.rememberedItems, first],
 					practiceList: this.data.practiceList.slice(1),
-				},
-				() => {
-					this.handlePracticeAction();
-				}
-			);
+				});
+			});
 		}
 	},
 
+	animateCardChange(callback) {
+		// Start updating animation
+		this.setData({ animationClass: "updating" });
+		
+		setTimeout(() => {
+			// Execute the data change
+			if (typeof callback === 'function') {
+				callback();
+			}
+			// Reset target visibility for new item and show updated animation
+			this.setData({ 
+				showTarget: false,
+				animationClass: "updated" 
+			});
+			
+			// Execute post-action logic
+			this.checkLeftData();
+			
+			// Clear animation class after animation completes
+			setTimeout(() => {
+				this.setData({ animationClass: "" });
+			}, 400);
+		}, 200);
+	},
+
 	handlePracticeAction() {
-    // After user action, hide target and check if more data is needed
+		// After user action, hide target
 		this.setData({ showTarget: false });
 
-    // Check if we need to fetch more practice data
+		// Check if we need to fetch more practice data
 		this.checkLeftData();
 	},
 
