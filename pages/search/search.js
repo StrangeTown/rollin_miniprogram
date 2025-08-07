@@ -8,11 +8,15 @@ Page({
 		translatedSource: "",
 		recentResults: [],
 		searchValue: "",
+		isLoading: false,
 	},
 
 	onConfirm(e) {
 		const value = e.detail.value;
 		if (!value) return;
+		
+		this.setData({ isLoading: true });
+		
 		const { request } = require("../../utils/request.js");
 		request({
 			url: "/search",
@@ -28,6 +32,7 @@ Page({
 						translatedResult,
 						translatedSource: value,
 						searchValue: "",
+						isLoading: false,
 					});
 					this.storeRecentResult({
 						input: value,
@@ -37,8 +42,13 @@ Page({
 				} else {
 					console.error("Translation failed:", res.data.msg);
 					wx.showToast({ title: "翻译失败", icon: "none" });
+					this.setData({ isLoading: false });
 				}
 			},
+			fail: () => {
+				wx.showToast({ title: "网络错误", icon: "none" });
+				this.setData({ isLoading: false });
+			}
 		});
 	},
 

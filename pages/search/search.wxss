@@ -41,12 +41,48 @@ page, body {
   background: rgba(255, 255, 255, 1);
 }
 
+.search-input[disabled] {
+  background: rgba(255, 255, 255, 0.5);
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
 .translated-result {
   margin-top: 32rpx;
   padding: 32rpx;
   background: linear-gradient(135deg, #667eea, #764ba2);
   border-radius: 16rpx;
   color: white;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20rpx 0;
+}
+
+.loading-spinner {
+  width: 40rpx;
+  height: 40rpx;
+  border: 4rpx solid rgba(255, 255, 255, 0.3);
+  border-top: 4rpx solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 16rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: 0.8;
 }
 
 .recent-results {
