@@ -2,7 +2,7 @@
 <navigation-bar title="" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="all-results-container" style="height: calc(100vh - 140px);">
   <text class="search-history-title">Search History</text>
-  <scroll-view show-scrollbar="{{false}}" class="all-results" scroll-y="true" style="height: calc(100vh - 120px);">
+  <scroll-view show-scrollbar="{{false}}" class="all-results" scroll-y="true" style="height: calc(100vh - 120px);" bindscrolltolower="onScrollToLower">
     <block wx:if="{{allResults.length > 0}}">
       <block wx:for="{{allResults}}" wx:key="index">
         <view class="all-result-item">
@@ -11,6 +11,15 @@
           <view class="history-input">{{item.content}}</view>
         </view>
       </block>
+      <view class="load-more-container">
+        <view class="loading-more" wx:if="{{isLoading}}">
+          <view class="loading-spinner-small"></view>
+          <text class="loading-text-small">加载中...</text>
+        </view>
+        <view class="no-more" wx:elif="{{!hasMore}}">
+          <text class="no-more-text">没有更多数据了</text>
+        </view>
+      </view>
     </block>
     <block wx:else>
       <view class="empty-state">

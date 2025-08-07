@@ -6,6 +6,10 @@ Page({
 	data: {
 		allResults: [],
 		windowHeight: 0,
+		pageNum: 1,
+		pageSize: 10,
+		hasMore: true,
+		isLoading: false,
 	},
 
 	goToPractice() {
@@ -27,36 +31,52 @@ Page({
 	 */
 	onReady() {},
 
-	/**
-	 * Lifecycle function--Called when page show
-	 */
-	onShow() {
-		// Load list data from server when page is shown
+	loadHistoryList(pageNum = 1) {
+		if (this.data.isLoading || !this.data.hasMore) return;
+		
+		this.setData({ isLoading: true });
+		
 		const { getHistoryList } = require("../../utils/api.js");
 		const { formatTime } = require("../../utils/format.js");
 		getHistoryList({
-			pageSize: 10,
-			pageNum: 1,
+			pageSize: this.data.pageSize,
+			pageNum,
 			success: (res) => {
+				let list = [];
+				let hasMore = true;
+				
 				if (
 					res.data &&
 					res.data.code === 0 &&
 					res.data.data &&
 					Array.isArray(res.data.data.list)
 				) {
-					const formattedList = res.data.data.list.map((item) => ({
+					list = res.data.data.list.map((item) => ({
 						...item,
 						createdAt: formatTime(item.createdAt),
 					}));
-					this.setData({ allResults: formattedList });
-				} else {
-					this.setData({ allResults: [] });
+					hasMore = res.data.data.list.length === this.data.pageSize;
 				}
+				
+				this.setData({
+					allResults: pageNum === 1 ? list : [...this.data.allResults, ...list],
+					pageNum,
+					hasMore,
+					isLoading: false,
+				});
 			},
 			fail: () => {
-				this.setData({ allResults: [] });
+				this.setData({ isLoading: false });
 			}
 		});
+	},
+
+	/**
+	 * Lifecycle function--Called when page show
+	 */
+	onShow() {
+		// Load first page data when page is shown
+		this.loadHistoryList(1);
 	},
 
 	/**
@@ -75,12 +95,21 @@ Page({
 	onPullDownRefresh() {},
 
 	/**
-	 * Called when page reach bottom
-	 */
-	onReachBottom() {},
-
-	/**
 	 * Called when user click on the top right corner to share
 	 */
 	onShareAppMessage() {},
+
+	/**
+	 * Called when scroll to bottom of scroll-view
+	 */
+	onScrollToLower() {
+		if (this.data.hasMore && !this.data.isLoading) {
+			this.loadHistoryList(this.data.pageNum + 1);
+		}
+	},
+
+	/**
+	 * Called when page reach bottom (not used with scroll-view)
+	 */
+	onReachBottom() {},
 });
