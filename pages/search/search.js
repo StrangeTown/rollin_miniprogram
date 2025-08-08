@@ -34,11 +34,7 @@ Page({
 						searchValue: "",
 						isLoading: false,
 					});
-					this.storeRecentResult({
-						input: value,
-						result: translatedResult,
-						createdAt: new Date().toISOString().replace("Z", "+08:00"),
-					});
+					this.updateRecentResults();
 				} else {
 					console.error("Translation failed:", res.data.msg);
 					wx.showToast({ title: "翻译失败", icon: "none" });
@@ -52,22 +48,33 @@ Page({
 		});
 	},
 
-	storeRecentResult(obj) {
-		let results = wx.getStorageSync("results") || [];
-		results.unshift(obj);
-		wx.setStorageSync("results", results);
-		this.updateRecentResults();
-	},
-
 	updateRecentResults() {
+		const { getHistoryList } = require("../../utils/api.js");
 		const { formatTime } = require("../../utils/format.js");
-		const allResults = wx.getStorageSync("results") || [];
-		const recentResults = allResults.slice(0, 3).map((item) => ({
-			input: item.input,
-			result: item.result,
-			createdAt: formatTime(item.createdAt),
-		}));
-		this.setData({ recentResults });
+		getHistoryList({
+			pageSize: 3,
+			pageNum: 1,
+			success: (res) => {
+				if (
+					res.data &&
+					res.data.code === 0 &&
+					res.data.data &&
+					Array.isArray(res.data.data.list)
+				) {
+					const recentResults = res.data.data.list.map((item) => ({
+						input: item.content,
+						result: item.target,
+						createdAt: formatTime(item.createdAt),
+					}));
+					this.setData({ recentResults });
+				} else {
+					this.setData({ recentResults: [] });
+				}
+			},
+			fail: () => {
+				this.setData({ recentResults: [] });
+			}
+		});
 	},
 
 	goToSentences() {
@@ -91,47 +98,8 @@ Page({
 	 */
 
 	onShow() {
-		// Sync results from server if needed, then update recent results
-		this.syncResults(() => {
-			this.updateRecentResults();
-		});
-	},
-
-	syncResults(callback) {
-		let results = wx.getStorageSync("results") || [];
-		const needFetch =
-			!results ||
-			results.length === 0 ||
-			results.some((item) => typeof item !== "object" || item === null);
-		if (needFetch) {
-			const { getHistoryList } = require("../../utils/api.js");
-			getHistoryList({
-				pageSize: 10,
-				pageNum: 1,
-				success: (res) => {
-					if (
-						res.data &&
-						res.data.code === 0 &&
-						res.data.data &&
-						Array.isArray(res.data.data.list)
-					) {
-						// Convert server list to local storage format
-						const serverResults = res.data.data.list.map((item) => ({
-							input: item.content,
-							result: item.target,
-							createdAt: item.createdAt,
-						}));
-						wx.setStorageSync("results", serverResults);
-					}
-					if (typeof callback === "function") callback();
-				},
-				fail: () => {
-					if (typeof callback === "function") callback();
-				},
-			});
-		} else {
-			if (typeof callback === "function") callback();
-		}
+		// Load recent results from server when page is shown
+		this.updateRecentResults();
 	},
 
 	/**
