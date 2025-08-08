@@ -10,7 +10,7 @@
 }
 page,
 body {
-	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -21,11 +21,11 @@ body {
 	width: 100%;
 	box-sizing: border-box;
 	padding: 40rpx;
-	background: rgba(255, 255, 255, 0.95);
-	backdrop-filter: blur(20px);
+	background: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
 	border-radius: 24rpx;
-	box-shadow: 0 16rpx 40rpx rgba(0, 0, 0, 0.1);
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.5);
 	/* Hide scrollbar for WeChat Mini Program */
 	-webkit-scrollbar-width: none;
 	scrollbar-width: none;
@@ -37,23 +37,25 @@ body {
 }
 
 .all-result-item {
-	margin-bottom: 24rpx;
+	margin-bottom: 0;
 	padding: 32rpx;
-	background: rgba(255, 255, 255, 0.6);
-	border-radius: 16rpx;
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	background: transparent;
+	border-radius: 0;
+	border: none;
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 	position: relative;
 	overflow: hidden;
+	border-bottom: 1px solid #e2e8f0;
 }
 
 .all-result-item:hover {
-	transform: translateY(-2rpx);
-	box-shadow: 0 8rpx 25rpx rgba(0, 0, 0, 0.1);
+	background: rgba(59, 130, 246, 0.02);
+	transform: none;
+	box-shadow: none;
 }
 
 .all-result-item:last-child {
-	margin-bottom: 0;
+	border-bottom: none;
 }
 
 .practice-btn {
@@ -64,41 +66,41 @@ body {
 	width: calc(100vw - 64rpx);
 	max-width: 680rpx;
 	margin: 0 auto;
-	background: linear-gradient(135deg, #667eea, #764ba2);
+	background: linear-gradient(135deg, #3b82f6, #1d4ed8);
 	color: white;
 	font-size: 32rpx;
 	font-weight: 500;
 	border-radius: 16rpx;
 	border: none;
 	padding: 24rpx 0;
-	box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.3);
+	box-shadow: 0 4rpx 16rpx rgba(59, 130, 246, 0.25);
 	z-index: 100;
 	transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .practice-btn:active {
 	transform: translateY(2rpx);
-	box-shadow: 0 4rpx 12rpx rgba(102, 126, 234, 0.3);
+	box-shadow: 0 2rpx 8rpx rgba(59, 130, 246, 0.25);
 }
 
 /* Text styles matching search page */
 .search-history-title {
 	font-size: 36rpx;
 	font-weight: 600;
-	color: white;
-	text-shadow: 0 2rpx 4rpx rgba(0, 0, 0, 0.1);
+	color: #1e293b;
+	text-shadow: none;
 	margin-bottom: 16rpx;
 	display: block;
 }
 
 .history-time {
 	font-size: 22rpx;
-	color: #999;
+	color: #64748b;
 	margin-bottom: 12rpx;
 }
 
 .history-result {
 	font-size: 30rpx;
-	color: #333;
+	color: #0f172a;
 	line-height: 1.6;
 	font-weight: 500;
 	margin-bottom: 12rpx;
@@ -106,7 +108,7 @@ body {
 
 .history-input {
 	font-size: 24rpx;
-	color: #888;
+	color: #64748b;
 	opacity: 0.8;
 	font-style: italic;
 }
@@ -122,14 +124,14 @@ body {
 
 .empty-text {
 	font-size: 32rpx;
-	color: #999;
+	color: #64748b;
 	margin-bottom: 16rpx;
 	font-weight: 500;
 }
 
 .empty-tip {
 	font-size: 24rpx;
-	color: #ccc;
+	color: #94a3b8;
 	line-height: 1.5;
 	opacity: 0.8;
 }
@@ -150,20 +152,20 @@ body {
 .loading-spinner-small {
 	width: 24rpx;
 	height: 24rpx;
-	border: 2rpx solid rgba(102, 126, 234, 0.3);
-	border-top: 2rpx solid #667eea;
+	border: 2rpx solid rgba(59, 130, 246, 0.2);
+	border-top: 2rpx solid #3b82f6;
 	border-radius: 50%;
 	animation: spin 1s linear infinite;
 }
 
 .loading-text-small {
 	font-size: 24rpx;
-	color: #999;
+	color: #64748b;
 }
 
 .no-more-text {
 	font-size: 24rpx;
-	color: #ccc;
+	color: #94a3b8;
 	opacity: 0.7;
 }
 

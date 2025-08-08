@@ -1,7 +1,6 @@
 <!--pages/sentences/sentences.wxml-->
-<navigation-bar title="" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<navigation-bar title="搜索历史" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="all-results-container" style="height: calc(100vh - 140px);">
-  <text class="search-history-title">Search History</text>
   <scroll-view show-scrollbar="{{false}}" class="all-results" scroll-y="true" style="height: calc(100vh - 120px);" bindscrolltolower="onScrollToLower">
     <block wx:if="{{allResults.length > 0}}">
       <block wx:for="{{allResults}}" wx:key="index">
