@@ -40,6 +40,14 @@ Page({
     });
   },
 
+  goToListening() {
+    wx.showToast({
+      title: '功能开发中…',
+      icon: 'none',
+      duration: 1500
+    });
+  },
+
   /**
    * Lifecycle function--Called when page load
    */

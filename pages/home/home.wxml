@@ -7,7 +7,17 @@
     <span class="phrase-text {{phraseAnimClass}}">{{currentPhrase}}</span>
   </view>
   <view class="home-links">
-    <text class="home-link" bindtap="goToSentences">句库</text>
-    <text class="home-link" bindtap="goToPractice">练习</text>
+    <view class="home-link" bindtap="goToSentences">
+      <image class="home-link-icon" src="../../assets/images/history_filled_icon.svg"></image>
+      <text class="home-link-text">搜索历史</text>
+    </view>
+    <view class="home-link" bindtap="goToPractice">
+      <image class="home-link-icon" src="../../assets/images/flash_on_filled_icon.svg"></image>
+      <text class="home-link-text">练习</text>
+    </view>
+    <view class="home-link" bindtap="goToListening">
+      <image class="home-link-icon" src="../../assets/images/speaker_1_filled_icon.svg"></image>
+      <text class="home-link-text">听句子</text>
+    </view>
   </view>
 </view>
