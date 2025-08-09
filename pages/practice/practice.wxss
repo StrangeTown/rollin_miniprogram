@@ -1,5 +1,5 @@
 page, body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   min-height: 100vh;
 }
 
@@ -11,8 +11,8 @@ page, body {
 }
 
 .practice-item {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   border-radius: 24rpx;
   padding: 80rpx 40rpx 40rpx;
   margin-bottom: 40rpx;
@@ -23,8 +23,8 @@ page, body {
   justify-content: flex-start;
   align-items: center;
   text-align: center;
-  box-shadow: 0 20rpx 60rpx rgba(0, 0, 0, 0.15);
-  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   position: relative;
@@ -39,8 +39,8 @@ page, body {
 
 .practice-item.updated {
   transform: scale(1.05);
-  box-shadow: 0 25rpx 80rpx rgba(102, 126, 234, 0.3);
-  border-color: rgba(102, 126, 234, 0.6);
+  box-shadow: 0 8rpx 25rpx rgba(59, 130, 246, 0.15);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 .practice-item::before {
@@ -60,13 +60,13 @@ page, body {
 
 .practice-item:hover {
   transform: translateY(-8rpx) rotateX(5deg);
-  box-shadow: 0 30rpx 80rpx rgba(0, 0, 0, 0.2);
-  border-color: rgba(102, 126, 234, 0.4);
+  box-shadow: 0 12rpx 30rpx rgba(0, 0, 0, 0.08);
+  border-color: rgba(59, 130, 246, 0.2);
 }
 
 .practice-time {
   font-size: 20rpx;
-  color: #bbb;
+  color: #64748b;
   margin-bottom: 20rpx;
   position: absolute;
   top: 20rpx;
@@ -75,7 +75,7 @@ page, body {
 
 .practice-input {
   font-size: 36rpx;
-  color: #333;
+  color: #0f172a;
   opacity: 1;
   font-weight: 500;
   width: 100%;
@@ -96,7 +96,7 @@ page, body {
 
 .practice-result {
   font-size: 32rpx;
-  color: #333;
+  color: #0f172a;
   line-height: 1.4;
   font-weight: 600;
   margin-bottom: 0;
@@ -120,11 +120,11 @@ page, body {
 
 .practice-tip {
   font-size: 22rpx;
-  color: #999;
+  color: #64748b;
   line-height: 1.3;
   font-weight: 400;
   margin-bottom: 0;
-  opacity: 0.7;
+  opacity: 0.8;
   width: 100%;
   max-width: 100%;
   word-wrap: break-word;
@@ -150,9 +150,10 @@ page, body {
   font-size: 28rpx;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background: rgba(255, 255, 255, 0.8);
-  color: #666;
-  box-shadow: 0 8rpx 20rpx rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  color: #64748b;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
 }
 
 .practice-btn:last-child {
@@ -160,28 +161,29 @@ page, body {
 }
 
 .practice-btn.remember {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   color: white;
-  box-shadow: 0 8rpx 20rpx rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4rpx 16rpx rgba(59, 130, 246, 0.25);
+  border: none;
 }
 
 .practice-btn:active {
   transform: translateY(2rpx);
-  box-shadow: 0 4rpx 12rpx rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rpx 4rpx rgba(0, 0, 0, 0.1);
 }
 
 .practice-btn.remember:active {
-  box-shadow: 0 4rpx 12rpx rgba(102, 126, 234, 0.3);
+  box-shadow: 0 2rpx 8rpx rgba(59, 130, 246, 0.25);
 }
 
 .practice-empty {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
   border-radius: 24rpx;
   padding: 60rpx 40rpx;
   text-align: center;
-  color: #999;
+  color: #64748b;
   font-size: 28rpx;
-  box-shadow: 0 16rpx 40rpx rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }

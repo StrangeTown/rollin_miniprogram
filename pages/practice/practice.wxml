@@ -1,5 +1,5 @@
 <!--pages/practice/practice.wxml-->
-<navigation-bar title="" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<navigation-bar title="练习" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="practice-container">
   <block wx:if="{{practiceList.length > 0}}">
     <view class="practice-item {{animationClass}}" bindtap="onToggleTarget">

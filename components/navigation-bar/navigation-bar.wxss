@@ -60,7 +60,8 @@
 }
 
 .weui-navigation-bar__center {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 500;
   text-align: center;
   position: relative;
   display: flex;
