@@ -1,7 +1,10 @@
 <!--pages/home.wxml-->
 <navigation-bar title="" back="{{false}}" color="black" background="#f7f8fa"></navigation-bar>
 <view class="container">
-  <view class="input-title">请输入口语</view>
+  <view class="input-title">
+    <image class="input-title-icon" src="../../assets/images/rollin_mini_title.svg"></image>
+  </view>
+
   <view class="fake-input" bindtap="goToSearch">
     <span class="fake-input-placeholder">我很高兴认识你。</span>
     <span class="phrase-text {{phraseAnimClass}}">{{currentPhrase}}</span>
