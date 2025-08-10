@@ -37,7 +37,7 @@ Page({
 					this.updateRecentResults();
 				} else {
 					console.error("Translation failed:", res.data.msg);
-					wx.showToast({ title: "翻译失败", icon: "none" });
+					wx.showToast({ title: "目前翻译人数太多，请稍后重试", icon: "none" });
 					this.setData({ isLoading: false });
 				}
 			},
