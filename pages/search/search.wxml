@@ -2,7 +2,7 @@
 <navigation-bar title="搜索" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="search-container">
   <view class="input-result-card">
-    <input class="search-input" placeholder="请输入要翻译的内容" focus="{{true}}" bindconfirm="onConfirm" value="{{searchValue}}" disabled="{{isLoading}}" />
+    <input class="search-input" placeholder="请输入要翻译的内容" focus="{{true}}" bindconfirm="onConfirm" confirm-type="search" value="{{searchValue}}" disabled="{{isLoading}}" />
     <view class="translated-result" wx:if="{{isLoading}}">
       <view class="loading-container">
         <view class="loading-spinner"></view>
