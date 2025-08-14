@@ -1,3 +1,5 @@
+const { mockItems } = require("../../utils/mock.js");
+
 // pages/practice/practice.js
 Page({
 	/**
@@ -161,7 +163,11 @@ Page({
 			success: (res) => {
 				if (res.data && res.data.code === 0 && Array.isArray(res.data.data)) {
 					console.log("获取练习数据:", res.data.data);
-					this.updateList(res.data.data);
+					let respList = res.data.data || [];
+					if (respList.length === 0) {
+						respList = mockItems.slice()
+					}
+					this.updateList(respList);
 				} else {
 					wx.showToast({ title: "获取练习数据失败", icon: "none" });
 				}

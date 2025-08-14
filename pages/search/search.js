@@ -1,3 +1,5 @@
+const { pendPresetItems } = require("../../utils/mock.js");
+
 // pages/search/search.js
 Page({
 	/**
@@ -14,9 +16,9 @@ Page({
 	onConfirm(e) {
 		const value = e.detail.value;
 		if (!value) return;
-		
+
 		this.setData({ isLoading: true });
-		
+
 		const { request } = require("../../utils/request.js");
 		request({
 			url: "/search",
@@ -44,16 +46,17 @@ Page({
 			fail: () => {
 				wx.showToast({ title: "网络错误", icon: "none" });
 				this.setData({ isLoading: false });
-			}
+			},
 		});
 	},
 
 	updateRecentResults() {
+		const pageNum = 1;
 		const { getHistoryList } = require("../../utils/api.js");
 		const { formatTime } = require("../../utils/format.js");
 		getHistoryList({
 			pageSize: 3,
-			pageNum: 1,
+			pageNum,
 			success: (res) => {
 				if (
 					res.data &&
@@ -61,9 +64,12 @@ Page({
 					res.data.data &&
 					Array.isArray(res.data.data.list)
 				) {
-					const recentResults = res.data.data.list.map((item) => ({
-						input: item.content,
-						result: item.target,
+					let respList = res.data.data.list || [];
+					if (pageNum === 1) {
+						respList = pendPresetItems(respList).slice(0, 3);
+					}
+					const recentResults = respList.map((item) => ({
+						...item,
 						createdAt: formatTime(item.createdAt),
 					}));
 					this.setData({ recentResults });
@@ -73,7 +79,7 @@ Page({
 			},
 			fail: () => {
 				this.setData({ recentResults: [] });
-			}
+			},
 		});
 	},
 

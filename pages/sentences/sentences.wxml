@@ -5,7 +5,10 @@
     <block wx:if="{{allResults.length > 0}}">
       <block wx:for="{{allResults}}" wx:key="index">
         <view class="all-result-item">
-          <view class="history-time">{{item.createdAt}}</view>
+          <view class="item-header">
+            <view class="history-time">{{item.createdAt}}</view>
+            <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
+          </view>
           <view class="history-result">{{item.target}}</view>
           <view class="history-input">{{item.content}}</view>
         </view>

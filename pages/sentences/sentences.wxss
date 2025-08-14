@@ -92,10 +92,26 @@ body {
 	display: block;
 }
 
+.item-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12rpx;
+}
+
 .history-time {
 	font-size: 22rpx;
 	color: #64748b;
-	margin-bottom: 12rpx;
+}
+
+.preset-label {
+	font-size: 20rpx;
+	color: #3b82f6;
+	background: rgba(59, 130, 246, 0.1);
+	padding: 4rpx 12rpx;
+	border-radius: 12rpx;
+	border: 1px solid rgba(59, 130, 246, 0.2);
+	font-weight: 500;
 }
 
 .history-result {

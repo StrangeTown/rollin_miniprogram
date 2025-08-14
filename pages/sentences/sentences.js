@@ -1,3 +1,5 @@
+const { pendPresetItems } = require("../../utils/mock.js");
+
 // pages/sentences/sentences.js
 Page({
 	/**
@@ -51,13 +53,17 @@ Page({
 					res.data.data &&
 					Array.isArray(res.data.data.list)
 				) {
-					list = res.data.data.list.map((item) => ({
+					let respList = res.data.data.list || [];
+					if (pageNum === 1) {
+						respList = pendPresetItems(respList);
+					}
+					list = respList.map((item) => ({
 						...item,
 						createdAt: formatTime(item.createdAt),
 					}));
 					hasMore = res.data.data.list.length === this.data.pageSize;
 				}
-				
+
 				this.setData({
 					allResults: pageNum === 1 ? list : [...this.data.allResults, ...list],
 					pageNum,

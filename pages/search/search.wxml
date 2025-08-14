@@ -19,9 +19,12 @@
       <block wx:for="{{recentResults}}" wx:key="index">
         <block wx:if="{{index > 0}}">
           <view class="recent-result-item">
-            <view class="history-time">{{item.createdAt}}</view>
-            <view class="history-result">{{item.result}}</view>
-            <view class="history-input">{{item.input}}</view>
+            <view class="item-header">
+              <view class="history-time">{{item.createdAt}}</view>
+              <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
+            </view>
+            <view class="history-result">{{item.content}}</view>
+            <view class="history-input">{{item.target}}</view>
           </view>
         </block>
       </block>
@@ -29,9 +32,12 @@
     <block wx:else>
       <block wx:for="{{recentResults}}" wx:key="index">
         <view class="recent-result-item">
-          <view class="history-time">{{item.createdAt}}</view>
-          <view class="history-result">{{item.result}}</view>
-          <view class="history-input">{{item.input}}</view>
+          <view class="item-header">
+            <view class="history-time">{{item.createdAt}}</view>
+            <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
+          </view>
+          <view class="history-result">{{item.content}}</view>
+          <view class="history-input">{{item.target}}</view>
         </view>
       </block>
     </block>

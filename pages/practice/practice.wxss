@@ -64,13 +64,29 @@ page, body {
   border-color: rgba(59, 130, 246, 0.2);
 }
 
+.item-header {
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+  right: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .practice-time {
   font-size: 20rpx;
   color: #64748b;
-  margin-bottom: 20rpx;
-  position: absolute;
-  top: 20rpx;
-  right: 20rpx;
+}
+
+.preset-label {
+  font-size: 18rpx;
+  color: #3b82f6;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 4rpx 10rpx;
+  border-radius: 10rpx;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  font-weight: 500;
 }
 
 .practice-input {
