@@ -19,6 +19,8 @@ Page({
 	onNotRemember() {
 		const first = this.data.practiceList[0];
 		if (first) {
+			// short haptic feedback
+			wx.vibrateShort();
 			this.animateCardChange(() => {
 				this.setData({
 					forgotItems: [...this.data.forgotItems, first],
@@ -31,6 +33,8 @@ Page({
 	onRemember() {
 		const first = this.data.practiceList[0];
 		if (first) {
+			// short haptic feedback
+			wx.vibrateShort();
 			this.animateCardChange(() => {
 				this.setData({
 					rememberedItems: [...this.data.rememberedItems, first],
