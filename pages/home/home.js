@@ -20,6 +20,7 @@ Page({
     currentPhrase: '',
     phraseAnimClass: '',
     firstRender: true,
+    showShareModal: false,
   },
 
   goToSearch() {
@@ -46,6 +47,22 @@ Page({
       icon: 'none',
       duration: 1500
     });
+  },
+
+  goToShare() {
+    this.setData({
+      showShareModal: true
+    });
+  },
+
+  closeShareModal() {
+    this.setData({
+      showShareModal: false
+    });
+  },
+
+  stopPropagation() {
+    // Prevent modal from closing when clicking on modal content
   },
 
   /**
@@ -154,6 +171,18 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage() {
+    return {
+      title: '把你想说的中文，变成地道美式口语',
+      path: '/pages/home/home'
+    }
+  },
 
+  /**
+   * Called when user shares to WeChat Moments (Timeline)
+   */
+  onShareTimeline() {
+    return {
+      title: '把你想说的中文，变成地道美式口语'
+    }
   }
 })

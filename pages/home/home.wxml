@@ -22,9 +22,31 @@
       <image class="home-link-icon" src="../../assets/images/speaker_1_filled_icon.svg"></image>
       <text class="home-link-text">听句子</text>
     </view>
+    <view class="home-link" bindtap="goToShare">
+      <image class="home-link-icon" src="../../assets/images/share_filled_icon.svg"></image>
+      <text class="home-link-text">分享</text>
+    </view>
   </view>
   
   <view class="slogan">
     <text class="slogan-text">把你想说的中文，变成地道美式口语</text>
+  </view>
+
+  <!-- Share Modal -->
+  <view class="share-modal {{showShareModal ? 'show' : ''}}" bindtap="closeShareModal">
+    <view class="share-modal-content" catchtap="stopPropagation">
+      <view class="share-modal-title">分享小程序</view>
+      <view class="share-buttons">
+        <button class="share-btn-item" open-type="share">
+          <image class="share-btn-icon" src="../../assets/images/share_filled_icon.svg"></image>
+          <text class="share-btn-text">发送给好友</text>
+        </button>
+        <view class="share-btn-item moments-tip">
+          <image class="share-btn-icon" src="../../assets/images/share_filled_icon.svg"></image>
+          <text class="share-btn-text">右上角「···」分享朋友圈</text>
+        </view>
+      </view>
+      <button class="cancel-btn" bindtap="closeShareModal">取消</button>
+    </view>
   </view>
 </view>
