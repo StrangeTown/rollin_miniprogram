@@ -50,6 +50,28 @@ Page({
 		});
 	},
 
+	onCopyResult() {
+		if (this.data.translatedResult) {
+			wx.setClipboardData({
+				data: this.data.translatedResult,
+				success: () => {
+					wx.showToast({
+						title: '已复制到剪贴板',
+						icon: 'success',
+						duration: 1500
+					});
+				},
+				fail: () => {
+					wx.showToast({
+						title: '复制失败',
+						icon: 'none',
+						duration: 1500
+					});
+				}
+			});
+		}
+	},
+
 	updateRecentResults() {
 		const pageNum = 1;
 		const { getHistoryList } = require("../../utils/api.js");

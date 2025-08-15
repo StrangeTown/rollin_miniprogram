@@ -12,6 +12,11 @@
     <view class="translated-result" wx:elif="{{translatedResult}}">
       <view class="source-text">{{translatedSource}}</view>
       <view class="result-text">{{translatedResult}}</view>
+      <view class="copy-btn-container">
+        <view class="copy-btn" bindtap="onCopyResult">
+          <image class="copy-icon" src="../../assets/images/copy_filled_icon.svg"></image>
+        </view>
+      </view>
     </view>
   </view>
   <view class="recent-results">
@@ -23,8 +28,8 @@
               <view class="history-time">{{item.createdAt}}</view>
               <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
             </view>
-            <view class="history-result">{{item.content}}</view>
-            <view class="history-input">{{item.target}}</view>
+            <view class="history-result">{{item.target}}</view>
+            <view class="history-input">{{item.content}}</view>
           </view>
         </block>
       </block>
@@ -36,8 +41,8 @@
             <view class="history-time">{{item.createdAt}}</view>
             <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
           </view>
-          <view class="history-result">{{item.content}}</view>
-          <view class="history-input">{{item.target}}</view>
+          <view class="history-result">{{item.target}}</view>
+          <view class="history-input">{{item.content}}</view>
         </view>
       </block>
     </block>
