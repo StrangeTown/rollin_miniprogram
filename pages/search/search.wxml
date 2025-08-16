@@ -46,6 +46,6 @@
         </view>
       </block>
     </block>
-    <button class="more-btn" bindtap="goToSentences">More</button>
+    <button class="more-btn" bindtap="goToSentences">更多搜索历史</button>
   </view>
 </view>

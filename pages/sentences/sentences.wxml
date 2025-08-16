@@ -32,4 +32,4 @@
     <view style="height: 60px;"></view>
   </scroll-view>
 </view>
-<button class="practice-btn" bindtap="goToPractice">Go to Practice</button>
+<button class="practice-btn" bindtap="goToPractice">去练习</button>

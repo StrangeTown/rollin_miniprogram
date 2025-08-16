@@ -68,7 +68,7 @@ body {
 	margin: 0 auto;
 	background: linear-gradient(135deg, #3b82f6, #1d4ed8);
 	color: white;
-	font-size: 32rpx;
+	font-size: 28rpx;
 	font-weight: 500;
 	border-radius: 16rpx;
 	border: none;

@@ -124,7 +124,7 @@ page, body {
   color: white;
   border: none;
   border-radius: 16rpx;
-  font-size: 32rpx;
+  font-size: 28rpx;
   font-weight: 500;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4rpx 16rpx rgba(59, 130, 246, 0.25);
