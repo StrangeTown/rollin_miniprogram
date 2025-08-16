@@ -35,16 +35,18 @@
   <!-- Share Modal -->
   <view class="share-modal {{showShareModal ? 'show' : ''}}" bindtap="closeShareModal">
     <view class="share-modal-content" catchtap="stopPropagation">
-      <view class="share-modal-title">分享小程序</view>
+      <view class="share-modal-title">分享「口语翻翻」</view>
       <view class="share-buttons">
         <button class="share-btn-item" open-type="share">
-          <image class="share-btn-icon" src="../../assets/images/share_filled_icon.svg"></image>
-          <text class="share-btn-text">发送给好友</text>
+          <image class="share-btn-icon" src="../../assets/images/wechat_share.svg"></image>
+          <view class="share-btn-text">发送小程序</view>
+          <view class="share-btn-text">给好友</view>
         </button>
-        <view class="share-btn-item moments-tip">
-          <image class="share-btn-icon" src="../../assets/images/share_filled_icon.svg"></image>
-          <text class="share-btn-text">右上角「···」分享朋友圈</text>
-        </view>
+        <button class="share-btn-item moments-tip" bindtap="showMomentsToast">
+          <image class="share-btn-icon" src="../../assets/images/wechat_moments.svg"></image>
+          <view class="share-btn-text">右上角「···」</view>
+          <view class="share-btn-text">分享朋友圈</view>
+        </button>
       </view>
       <button class="cancel-btn" bindtap="closeShareModal">取消</button>
     </view>

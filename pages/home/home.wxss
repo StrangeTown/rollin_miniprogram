@@ -212,14 +212,15 @@ page, body {
 
 .share-modal-title {
   text-align: center;
-  font-size: 32rpx;
+  font-size: 28rpx;
   font-weight: 600;
-  color: #0f172a;
+  color: #475569;
   margin-bottom: 32rpx;
 }
 
 .share-buttons {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   margin-bottom: 32rpx;
 }
@@ -228,12 +229,13 @@ page, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   background: transparent;
-  border: none;
   padding: 24rpx;
   border-radius: 16rpx;
   transition: all 0.3s ease;
   margin: 0;
+  width: 214rpx !important;
 }
 
 .share-btn-item:active {
@@ -252,22 +254,21 @@ page, body {
 }
 
 .share-btn-text {
+  width: 100%;
   font-size: 24rpx;
-  color: #0f172a;
+  color: #64748b;
   font-weight: 500;
-}
+  white-space: normal;
+  text-align: center;
+  line-height: 1.3;
+  word-break: break-word;
 
-.moments-tip {
-  opacity: 0.6;
-  cursor: default;
-}
-
-.moments-tip:active {
-  background: transparent;
+  white-space: normal !important;   /* 强制允许换行 */
+  word-break: break-word !important; 
 }
 
 .cancel-btn {
-  width: 100%;
+  width: 100% !important;
   padding: 24rpx;
   background: #f8fafc;
   border: none;

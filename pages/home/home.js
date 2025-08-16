@@ -65,6 +65,14 @@ Page({
     // Prevent modal from closing when clicking on modal content
   },
 
+  showMomentsToast() {
+    wx.showToast({
+      title: '请点击页面右上角「···」菜单分享到朋友圈',
+      icon: 'none',
+      duration: 3000
+    });
+  },
+
   /**
    * Lifecycle function--Called when page load
    */
