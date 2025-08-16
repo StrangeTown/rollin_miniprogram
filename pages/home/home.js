@@ -1,4 +1,6 @@
 // pages/home.js
+const share = require('../../utils/share.js');
+
 Page({
 
   /**
@@ -84,6 +86,13 @@ Page({
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
+    // Check if this user came from a referral share
+    if (options.refererId) {
+      console.log('Referrer User ID:', options.refererId);
+      // TODO: Send referral tracking request when API is ready
+      // api.trackReferral(options.refererId);
+    }
+    
     this.setRandomPhrase();
     this.phraseInterval = setInterval(() => {
       this.animatePhraseChange();
@@ -186,10 +195,12 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage() {
+    const shareUrl = share.getSharePath('pages/home/home');
+    
     return {
       title: '把你想说的中文，变成地道美式口语',
-      path: '/pages/home/home'
-    }
+      path: shareUrl
+    };
   },
 
   /**

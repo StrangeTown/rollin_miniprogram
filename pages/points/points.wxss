@@ -58,6 +58,16 @@ page, body {
   backdrop-filter: blur(10px);
   border-radius: 24rpx;
   padding: 40rpx;
+  margin-bottom: 32rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.share-points-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 24rpx;
+  padding: 40rpx;
   box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
@@ -66,7 +76,18 @@ page, body {
   margin-bottom: 32rpx;
 }
 
+.share-header {
+  margin-bottom: 32rpx;
+}
+
 .earn-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 12rpx;
+}
+
+.share-title {
   font-size: 32rpx;
   font-weight: 600;
   color: #0f172a;
@@ -79,10 +100,16 @@ page, body {
   line-height: 1.5;
 }
 
+.share-subtitle {
+  font-size: 26rpx;
+  color: #64748b;
+  line-height: 1.5;
+}
+
 .watch-ad-btn {
   width: 100% !important;
   background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-  border: none;
+  border: none; 
   border-radius: 16rpx;
   padding: 32rpx 40rpx;
   color: white;
@@ -92,9 +119,27 @@ page, body {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.share-btn {
+  width: 100% !important;
+  background: linear-gradient(135deg, #10b981, #059669);
+  border: none; 
+  border-radius: 16rpx;
+  padding: 32rpx 40rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: 600;
+  box-shadow: 0 4rpx 16rpx rgba(16, 185, 129, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .watch-ad-btn:active {
   transform: translateY(-2rpx);
   box-shadow: 0 6rpx 20rpx rgba(59, 130, 246, 0.4);
+}
+
+.share-btn:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 6rpx 20rpx rgba(16, 185, 129, 0.4);
 }
 
 .btn-content {

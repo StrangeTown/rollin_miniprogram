@@ -22,4 +22,17 @@
       </view>
     </button>
   </view>
+
+  <view class="share-points-card">
+    <view class="share-header">
+      <view class="share-title">邀请好友获取翻点</view>
+      <view class="share-subtitle">分享给朋友，好友打开后你可获得额外翻点</view>
+    </view>
+    <button class="share-btn" open-type="share">
+      <view class="btn-content">
+        <view class="btn-icon">👥</view>
+        <view class="btn-text">分享给朋友</view>
+      </view>
+    </button>
+  </view>
 </view>

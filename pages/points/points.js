@@ -1,4 +1,7 @@
 // pages/points/points.js
+const storage = require('../../utils/storage.js');
+const share = require('../../utils/share.js');
+
 Page({
 
   /**
@@ -61,6 +64,12 @@ Page({
    * Called when user click on the top right corner to share
    */
   onShareAppMessage() {
-
+    const shareUrl = share.getSharePath('pages/home/home');
+    
+    return {
+      title: '快来使用口语翻翻，把中文变成地道美式口语！',
+      path: shareUrl,
+      imageUrl: '' // 可以设置分享图片
+    };
   }
 })
