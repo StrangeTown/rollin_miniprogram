@@ -1,5 +1,9 @@
 <!--pages/home.wxml-->
-<navigation-bar title="" back="{{false}}" color="black" background="#f7f8fa"></navigation-bar>
+<navigation-bar title="" back="{{false}}" color="black" background="#f7f8fa">
+  <view slot="left" class="nav-points" bindtap="goToPoints">
+    <text class="points-text">🔹 {{userPoints || 23}}</text>
+  </view>
+</navigation-bar>
 <view class="container">
   <view class="input-title">
     <image class="input-title-icon" src="../../assets/images/rollin_mini_title.svg"></image>

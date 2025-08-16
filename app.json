@@ -5,7 +5,8 @@
     "pages/logs/logs",
     "pages/search/search",
     "pages/sentences/sentences",
-    "pages/practice/practice"
+    "pages/practice/practice",
+    "pages/points/points"
   ],
   "window": {
     "navigationBarTextStyle": "black",

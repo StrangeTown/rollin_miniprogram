@@ -1,0 +1,25 @@
+<!--pages/points/points.wxml-->
+<navigation-bar title="翻点" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+<view class="points-container">
+  <view class="points-card">
+    <view class="points-header">
+      <view class="points-icon">🔹</view>
+      <view class="points-title">当前翻点</view>
+    </view>
+    <view class="points-display">{{userPoints}}</view>
+    <view class="points-subtitle">每次搜索消耗1个翻点</view>
+  </view>
+  
+  <view class="earn-points-card">
+    <view class="earn-header">
+      <view class="earn-title">获取更多翻点</view>
+      <view class="earn-subtitle">通过观看广告可以获得额外翻点</view>
+    </view>
+    <button class="watch-ad-btn" bindtap="watchAd">
+      <view class="btn-content">
+        <view class="btn-icon">📺</view>
+        <view class="btn-text">观看广告获取翻点</view>
+      </view>
+    </button>
+  </view>
+</view>

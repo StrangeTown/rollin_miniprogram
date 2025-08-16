@@ -1,0 +1,113 @@
+page, body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  min-height: 100vh;
+}
+
+/* pages/points/points.wxss */
+.points-container {
+  padding: 32rpx;
+  max-width: 750rpx;
+  margin: 0 auto;
+}
+
+.points-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 24rpx;
+  padding: 40rpx;
+  margin-bottom: 32rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  text-align: center;
+}
+
+.points-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24rpx;
+}
+
+.points-icon {
+  font-size: 48rpx;
+  margin-right: 16rpx;
+}
+
+.points-title {
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.points-display {
+  font-size: 96rpx;
+  font-weight: 700;
+  color: #3b82f6;
+  margin: 32rpx 0;
+  text-shadow: 0 2rpx 4rpx rgba(59, 130, 246, 0.1);
+}
+
+.points-subtitle {
+  font-size: 28rpx;
+  color: #64748b;
+  opacity: 0.8;
+}
+
+.earn-points-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 24rpx;
+  padding: 40rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.earn-header {
+  margin-bottom: 32rpx;
+}
+
+.earn-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 12rpx;
+}
+
+.earn-subtitle {
+  font-size: 26rpx;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.watch-ad-btn {
+  width: 100% !important;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  border: none;
+  border-radius: 16rpx;
+  padding: 32rpx 40rpx;
+  color: white;
+  font-size: 32rpx;
+  font-weight: 600;
+  box-shadow: 0 4rpx 16rpx rgba(59, 130, 246, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.watch-ad-btn:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 6rpx 20rpx rgba(59, 130, 246, 0.4);
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon {
+  font-size: 36rpx;
+  margin-right: 12rpx;
+}
+
+.btn-text {
+  font-size: 28rpx;
+}

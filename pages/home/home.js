@@ -5,6 +5,7 @@ Page({
    * Page initial data
    */
   data: {
+    userPoints: 23,
     suggestedPhrases: [
       "你吃了吗？",
       "今天天气真好。",
@@ -38,6 +39,12 @@ Page({
   goToPractice() {
     wx.navigateTo({
       url: '/pages/practice/practice',
+    });
+  },
+
+  goToPoints() {
+    wx.navigateTo({
+      url: '/pages/points/points',
     });
   },
 
