@@ -13,7 +13,7 @@
   <view class="earn-points-card">
     <view class="earn-header">
       <view class="earn-title">获取更多翻点</view>
-      <view class="earn-subtitle">通过观看广告可以获得额外翻点</view>
+      <view class="earn-subtitle">观看完整广告后，可获得翻点奖励</view>
     </view>
     <button class="watch-ad-btn" bindtap="watchAd">
       <view class="btn-content">
@@ -26,12 +26,12 @@
   <view class="share-points-card">
     <view class="share-header">
       <view class="share-title">邀请好友获取翻点</view>
-      <view class="share-subtitle">分享给朋友，好友打开后你可获得额外翻点</view>
+      <view class="share-subtitle">好友通过你的邀请进入小程序后，你将获得翻点奖励</view>
     </view>
     <button class="share-btn" open-type="share">
       <view class="btn-content">
         <view class="btn-icon">👥</view>
-        <view class="btn-text">分享给朋友</view>
+        <view class="btn-text">邀请好友</view>
       </view>
     </button>
   </view>

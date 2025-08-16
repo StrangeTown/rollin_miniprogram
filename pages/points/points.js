@@ -61,6 +61,17 @@ Page({
   },
 
   /**
+   * Watch ad to earn points
+   */
+  watchAd() {
+    wx.showToast({
+      title: '该功能还在开发中...',
+      icon: 'none',
+      duration: 2000
+    });
+  },
+
+  /**
    * Called when user click on the top right corner to share
    */
   onShareAppMessage() {
