@@ -11,6 +11,7 @@ Page({
 		recentResults: [],
 		searchValue: "",
 		isLoading: false,
+		points: 0
 	},
 
 	onConfirm(e) {
@@ -105,9 +106,28 @@ Page({
 		});
 	},
 
+	syncUserPoints() {
+		try {
+			const app = getApp();
+			if (app && app.globalData) {
+				const points = app.globalData.userPoints;
+				// set the page-level points from global data
+				this.setData({ points: points });
+			}
+		} catch (err) {
+			console.error('Error syncing userPoints from search page:', err);
+		}
+	},
+
 	goToSentences() {
 		wx.navigateTo({
 			url: "/pages/sentences/sentences",
+		});
+	},
+
+	goToPoints() {
+		wx.navigateTo({
+			url: "/pages/points/points",
 		});
 	},
 
@@ -128,6 +148,9 @@ Page({
 	onShow() {
 		// Load recent results from server when page is shown
 		this.updateRecentResults();
+
+		// Sync user points with global state
+		this.syncUserPoints();
 	},
 
 	/**

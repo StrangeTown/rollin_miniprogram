@@ -7,7 +7,7 @@ Page({
    * Page initial data
    */
   data: {
-    userPoints: 23,
+    userPoints: '',
     suggestedPhrases: [
       "你吃了吗？",
       "今天天气真好。",
@@ -92,7 +92,20 @@ Page({
       // TODO: Send referral tracking request when API is ready
       // api.trackReferral(options.refererId);
     }
-    
+    // Fetch latest user points from global app and update page data
+    try {
+      const app = getApp();
+      if (app && typeof app.fetchUserPoints === 'function') {
+        app.fetchUserPoints().then((points) => {
+          if (points !== null && typeof points !== 'undefined') {
+            this.setData({ userPoints: points });
+          }
+        });
+      }
+    } catch (err) {
+      console.error('Error calling fetchUserPoints:', err);
+    }
+
     this.setRandomPhrase();
     this.phraseInterval = setInterval(() => {
       this.animatePhraseChange();

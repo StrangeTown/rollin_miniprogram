@@ -1,4 +1,4 @@
-const IS_PROD = true;
+const IS_PROD = false;
 
 const BASE_URL = IS_PROD
 	? "https://www.itwork.club/rollin"

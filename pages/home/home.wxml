@@ -1,8 +1,8 @@
 <!--pages/home.wxml-->
 <navigation-bar title="" back="{{false}}" color="black" background="#f7f8fa">
   <view slot="left" class="nav-points" bindtap="goToPoints">
-    <text class="points-icon">🔹</text>
-    <text class="points-text">{{userPoints || 23}}</text>
+  <text class="points-icon">🔹</text>
+  <text class="points-text">{{userPoints !== undefined && userPoints !== null ? userPoints : ''}}</text>
   </view>
 </navigation-bar>
 <view class="container">

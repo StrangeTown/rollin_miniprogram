@@ -40,7 +40,48 @@ App({
       console.log('Token is valid, skip login request.');
     }
   },
+  
+  /**
+   * Fetch user's points from backend and store in globalData.userPoints
+   * Uses the existing request util at ./utils/request.js
+   */
+  /**
+   * Fetch user's points from backend and return a Promise that resolves to the points number.
+   * Other pages can call: getApp().fetchUserPoints().then(points => { ... })
+   * Resolves to null if the server returns a non-success code.
+   * @returns {Promise<number|null>}
+   */
+  fetchUserPoints() {
+    return new Promise((resolve) => {
+      const { request } = require('./utils/request.js');
+      request({
+        url: '/user/points',
+        method: 'GET',
+        success: (res) => {
+          try {
+            if (res && res.data && res.data.code === 0) {
+              const points = res.data.data;
+              this.globalData.userPoints = points;
+              console.log('Fetched userPoints:', points);
+              resolve(points);
+            } else {
+              console.warn('Failed to fetch user points:', res && res.data);
+              resolve(null);
+            }
+          } catch (err) {
+            console.error('Error processing fetchUserPoints response:', err);
+            resolve(null);
+          }
+        },
+        fail: (err) => {
+          console.error('fetchUserPoints request failed:', err);
+          resolve(null);
+        }
+      });
+    });
+  },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    userPoints: 0
   }
 })
