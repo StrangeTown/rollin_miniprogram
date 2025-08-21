@@ -89,6 +89,11 @@ Page({
     // Check if this user came from a referral share
     if (options.refererId) {
       console.log('Referrer User ID:', options.refererId);
+      wx.showToast({
+        title: '(FROM ' + options.refererId + ')',
+        icon: 'none',
+        duration: 2000
+      });
       // TODO: Send referral tracking request when API is ready
       // api.trackReferral(options.refererId);
     }

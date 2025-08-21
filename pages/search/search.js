@@ -38,6 +38,22 @@ Page({
 						isLoading: false,
 					});
 					this.updateRecentResults();
+				} else if (res.data && res.data.code === 10015) {
+					// Insufficient points error
+					this.setData({ isLoading: false });
+					wx.showModal({
+						title: '翻点不足',
+						content: '你当前的翻点不足，暂时无法继续搜索',
+						showCancel: true,
+						cancelText: '取消',
+						confirmText: '获取更多',
+						success: (modalRes) => {
+							if (modalRes.confirm) {
+								// User clicked "获取更多翻点" button
+								this.goToPoints();
+							}
+						}
+					});
 				} else {
 					console.error("Translation failed:", res.data.msg);
 					wx.showToast({ title: "目前翻译人数太多，请稍后重试", icon: "none" });
