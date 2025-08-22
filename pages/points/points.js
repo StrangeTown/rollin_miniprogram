@@ -8,14 +8,19 @@ Page({
    * Page initial data
    */
   data: {
-    userPoints: ''
+    userPoints: '',
+    pointsRules: [],
+    showRulesModal: false
   },
 
   /**
    * Lifecycle function--Called when page load
    */
   onLoad(options) {
-
+    // Load points rules from server
+    if (typeof this.fetchPoitnsRules === 'function') {
+      this.fetchPoitnsRules();
+    }
   },
 
   /**
@@ -88,6 +93,42 @@ Page({
   goToPointsRecords() {
     wx.navigateTo({
       url: '/pages/points-records/points-records'
+    });
+  },
+
+  /**
+   * Show point rules - display custom modal with rules from page data
+   */
+  showPointRules() {
+    this.setData({ showRulesModal: true });
+  },
+
+  /**
+   * Close the rules modal
+   */
+  closeRulesModal() {
+    this.setData({ showRulesModal: false });
+  },
+
+  /**
+   * Fetch points rules from admin config API
+   */
+  fetchPoitnsRules() {
+    const { request } = require('../../utils/request.js');
+    request({
+      url: '/admin/configs/app/obtain_points_rule',
+      method: 'GET',
+      success: (res) => {
+        if (res && res.data && res.data.code === 0 && res.data.data) {
+          const values = res.data.data.values || [];
+          this.setData({ pointsRules: values });
+        } else {
+          console.warn('Failed to load points rules:', res && res.data && res.data.msg);
+        }
+      },
+      fail: (err) => {
+        console.error('Request for points rules failed:', err);
+      }
     });
   },
 

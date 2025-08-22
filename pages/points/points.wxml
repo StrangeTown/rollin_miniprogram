@@ -7,7 +7,12 @@
       <view class="points-title">当前翻点</view>
     </view>
     <view class="points-display">{{userPoints}}</view>
-    <view class="points-subtitle">每次搜索消耗1个翻点</view>
+    <view class="points-subtitle">
+      <view class="subtitle-content" bindtap="showPointRules">
+        <image src="/assets/images/info_filled_icon.svg" class="subtitle-icon" />
+        <text class="subtitle-text">翻点消耗规则</text>
+      </view>
+    </view>
   </view>
   
   <view class="earn-points-card">
@@ -39,5 +44,27 @@
   <view class="points-records-link" bindtap="goToPointsRecords">
     <text class="records-link-text">翻点明细</text>
     <text class="records-link-arrow">→</text>
+  </view>
+</view>
+
+<!-- Custom Rules Modal -->
+<view wx:if="{{showRulesModal}}" class="modal-overlay" bindtap="closeRulesModal">
+  <view class="modal-container" catchtap>
+    <view class="modal-header">
+      <text class="modal-title">翻点消耗规则</text>
+    </view>
+    <view class="modal-content">
+      <view wx:if="{{pointsRules && pointsRules.length > 0}}">
+        <view wx:for="{{pointsRules}}" wx:key="index" class="rule-item">
+          <text class="rule-text">{{item}}</text>
+        </view>
+      </view>
+      <view wx:else class="no-rules">
+        <text class="no-rules-text">暂无翻点规则</text>
+      </view>
+    </view>
+    <view class="modal-footer">
+      <button class="modal-close-btn" bindtap="closeRulesModal">确定</button>
+    </view>
   </view>
 </view>

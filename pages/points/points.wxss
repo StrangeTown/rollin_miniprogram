@@ -48,9 +48,42 @@ page, body {
 }
 
 .points-subtitle {
-  font-size: 28rpx;
-  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8rpx 12rpx;
+}
+
+.points-subtitle:active {
+  transform: scale(0.98);
+}
+
+.subtitle-content {
+  display: flex;
+  align-items: center;
+  border-bottom: 2rpx solid #9ca3af;
+  padding-bottom: 2rpx;
   opacity: 0.8;
+}
+
+.subtitle-content:active {
+  border-bottom-color: #6b7280;
+  opacity: 1;
+}
+
+.subtitle-icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 8rpx;
+  opacity: 0.6;
+}
+
+.subtitle-text {
+  font-size: 24rpx;
+  color: #6b7280;
+  font-weight: 500;
 }
 
 .earn-points-card {
@@ -186,4 +219,87 @@ page, body {
   font-size: 28rpx;
   color: #64748b;
   opacity: 0.7;
+}
+
+/* Custom Modal Styles */
+.modal-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-container {
+  width: 600rpx;
+  max-width: 90%;
+  max-height: 80%;
+  background: white;
+  border-radius: 20rpx;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8rpx 32rpx rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  padding: 32rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.modal-content {
+  flex: 1;
+  padding: 24rpx 32rpx;
+  max-height: 400rpx;
+}
+
+.rule-item {
+  margin-bottom: 20rpx;
+  line-height: 1.6;
+}
+
+.rule-text {
+  font-size: 28rpx;
+  color: #374151;
+  display: block;
+}
+
+.no-rules {
+  text-align: center;
+  padding: 40rpx 0;
+}
+
+.no-rules-text {
+  font-size: 28rpx;
+  color: #9ca3af;
+}
+
+.modal-footer {
+  padding: 24rpx 32rpx;
+  border-top: 1rpx solid #f0f0f0;
+  display: flex;
+  justify-content: center;
+}
+
+.modal-close-btn {
+  width: 200rpx;
+  height: 72rpx;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+  color: white;
+  border: none;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  font-weight: 500;
 }
