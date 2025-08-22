@@ -133,7 +133,7 @@ Page({
 	},
 
 	updateList(newList) {
-		const { formatTime } = require("../../utils/format.js");
+		const { formatRelativeTime } = require("../../utils/format.js");
 		// Insert forgotItems into newList at random positions
 		let mergedList = [...newList];
 		const forgotItems = [...this.data.forgotItems];
@@ -145,7 +145,7 @@ Page({
 		// Format createdAt time for all items
 		const formattedMergedList = mergedList.map(item => ({
 			...item,
-			createdAt: formatTime(item.createdAt)
+			createdAt: formatRelativeTime(item.createdAt)
 		}));
 		this.setData({
 			practiceList: [...this.data.practiceList, ...formattedMergedList],
