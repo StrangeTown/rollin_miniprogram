@@ -100,8 +100,7 @@ Page({
 				if (
 					res.data &&
 					res.data.code === 0 &&
-					res.data.data &&
-					Array.isArray(res.data.data.list)
+					res.data.data
 				) {
 					let respList = res.data.data.list || [];
 					if (pageNum === 1) {

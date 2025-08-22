@@ -7,7 +7,10 @@
         <view class="all-result-item">
           <view class="item-header">
             <view class="history-time">{{item.createdAt}}</view>
-            <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
+            <view class="header-right">
+              <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
+              <image class="more-icon" src="../../assets/images/more_horizontal_filled_icon.svg" bindtap="onMoreClick" data-index="{{index}}"></image>
+            </view>
           </view>
           <view class="history-result">{{item.target}}</view>
           <view class="history-input">{{item.content}}</view>
@@ -32,4 +35,19 @@
     <view style="height: 60px;"></view>
   </scroll-view>
 </view>
+
+<!-- Action Modal -->
+<view class="action-modal {{showActionModal ? 'show' : ''}}" bindtap="closeActionModal">
+  <view class="action-modal-content" catchtap="stopPropagation">
+    <view class="action-item" bindtap="copyItem">
+      <image class="action-icon" src="../../assets/images/copy_filled_icon_dark.svg"></image>
+      <text class="action-text">复制</text>
+    </view>
+    <view class="action-item" bindtap="deleteItem">
+      <image class="action-icon" src="../../assets/images/delete_filled_icon.svg"></image>
+      <text class="action-text">删除</text>
+    </view>
+  </view>
+</view>
+
 <button class="practice-btn" bindtap="goToPractice">去练习</button>

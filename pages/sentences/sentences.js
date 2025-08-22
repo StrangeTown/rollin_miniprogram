@@ -12,12 +12,113 @@ Page({
 		pageSize: 10,
 		hasMore: true,
 		isLoading: false,
+		showActionModal: false,
+		selectedItem: null,
 	},
 
 	goToPractice() {
 		wx.navigateTo({
 			url: "/pages/practice/practice",
 		});
+	},
+
+	onMoreClick(e) {
+		console.log('More icon clicked');
+		// Get the item data from the event
+		const dataset = e.currentTarget.dataset;
+		const index = dataset.index;
+		const selectedItem = this.data.allResults[index];
+		
+		this.setData({
+			showActionModal: true,
+			selectedItem: selectedItem
+		});
+	},
+
+	closeActionModal() {
+		this.setData({
+			showActionModal: false,
+			selectedItem: null
+		});
+	},
+
+	stopPropagation() {
+		// Prevent modal from closing when clicking on modal content
+	},
+
+	copyItem() {
+		if (this.data.selectedItem) {
+			const content = this.data.selectedItem.target || this.data.selectedItem.content;
+			wx.setClipboardData({
+				data: content,
+				success: () => {
+					wx.showToast({
+						title: '已复制到剪贴板',
+						icon: 'success',
+						duration: 1500
+					});
+					this.closeActionModal();
+				},
+				fail: () => {
+					wx.showToast({
+						title: '复制失败',
+						icon: 'none',
+						duration: 1500
+					});
+				}
+			});
+		}
+	},
+
+	deleteItem() {
+		if (this.data.selectedItem) {
+			wx.showModal({
+				title: '确认删除',
+				content: '确定要删除这条记录吗？',
+				success: (res) => {
+					if (res.confirm) {
+						const { request } = require("../../utils/request.js");
+						const itemId = this.data.selectedItem.id;
+						
+						request({
+							url: `/user/history/${itemId}`,
+							method: 'DELETE',
+							success: (response) => {
+								console.log('Delete response:', response);
+								if (response.data && response.data.code === 0) {
+									// Remove item from allResults array
+									const updatedResults = this.data.allResults.filter(item => item.id !== itemId);
+									this.setData({
+										allResults: updatedResults
+									});
+									
+									wx.showToast({
+										title: '删除成功',
+										icon: 'success',
+										duration: 1500
+									});
+								} else {
+									wx.showToast({
+										title: '删除失败',
+										icon: 'none',
+										duration: 1500
+									});
+								}
+							},
+							fail: (err) => {
+								console.error('Delete request failed:', err);
+								wx.showToast({
+									title: '删除失败',
+									icon: 'none',
+									duration: 1500
+								});
+							}
+						});
+					}
+					this.closeActionModal();
+				}
+			});
+		}
 	},
 
 	/**
@@ -50,18 +151,17 @@ Page({
 				if (
 					res.data &&
 					res.data.code === 0 &&
-					res.data.data &&
-					Array.isArray(res.data.data.list)
+					res.data.data
 				) {
 					let respList = res.data.data.list || [];
 					if (pageNum === 1) {
-						respList = pendPresetItems(respList);
+						list = pendPresetItems(respList);
 					}
-					list = respList.map((item) => ({
+					list = list.map((item) => ({
 						...item,
 						createdAt: formatTime(item.createdAt),
 					}));
-					hasMore = res.data.data.list.length === this.data.pageSize;
+					hasMore = respList.length === this.data.pageSize;
 				}
 
 				this.setData({

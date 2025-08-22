@@ -146,9 +146,11 @@ function getMockItems () {
 }
 
 function pendPresetItems (items = []) {
+  console.log('Pend preset items called with:', items);
   // Ensure we work with an array copy
   if (!Array.isArray(items)) items = []
   const result = items.slice()
+  console.log('Pend preset items result:', result);
   if (result.length >= 4) return result
   // If original items are less than 4, append all mock items
   return result.concat(mockItems.slice())
