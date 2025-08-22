@@ -89,13 +89,13 @@ Page({
     // Check if this user came from a referral share
     if (options.refererId) {
       console.log('Referrer User ID:', options.refererId);
-      wx.showToast({
-        title: '(FROM ' + options.refererId + ')',
-        icon: 'none',
-        duration: 2000
-      });
-      // TODO: Send referral tracking request when API is ready
-      // api.trackReferral(options.refererId);
+      // wx.showToast({
+      //   title: '(FROM ' + options.refererId + ')',
+      //   icon: 'none',
+      //   duration: 2000
+      // });
+      // Send referral tracking request
+      this.trackReferral(options.refererId);
     }
     // Fetch latest user points from global app and update page data
     try {
@@ -115,6 +115,30 @@ Page({
     this.phraseInterval = setInterval(() => {
       this.animatePhraseChange();
     }, 3000);
+  },
+
+  /**
+   * Track referral when user comes from a share link
+   */
+  trackReferral(refererId) {
+    const { request } = require('../../utils/request.js');
+    request({
+      url: '/user/delta',
+      method: 'POST',
+      data: {
+        channel: 'user_share',
+        shareId: parseInt(refererId) || 1
+      },
+      success: (res) => {
+        console.log('Referral tracking success:', res);
+        if (res.data && res.data.code === 0) {
+          console.log('Referral points awarded successfully');
+        }
+      },
+      fail: (err) => {
+        console.error('Referral tracking failed:', err);
+      }
+    });
   },
 
   setRandomPhrase(newPhrase) {
