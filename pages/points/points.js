@@ -8,7 +8,7 @@ Page({
    * Page initial data
    */
   data: {
-    userPoints: 23
+    userPoints: ''
   },
 
   /**
@@ -29,7 +29,20 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
+    // Initialize userPoints from global data when the page is shown
+    const app = getApp();
+    const gp = app && app.globalData ? app.globalData.userPoints : null;
 
+    if (gp !== null && gp !== undefined) {
+      this.setData({ userPoints: gp });
+    } else if (app && typeof app.fetchUserPoints === 'function') {
+      // Fallback: fetch from server and update local data
+      app.fetchUserPoints().then(points => {
+        if (points !== null && points !== undefined) {
+          this.setData({ userPoints: points });
+        }
+      });
+    }
   },
 
   /**

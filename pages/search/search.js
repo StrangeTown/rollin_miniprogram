@@ -38,6 +38,10 @@ Page({
 						isLoading: false,
 					});
 					this.updateRecentResults();
+					// Refresh user's points after a successful search
+					if (typeof this.fetchPoints === 'function') {
+						this.fetchPoints();
+					}
 				} else if (res.data && res.data.code === 10015) {
 					// Insufficient points error
 					this.setData({ isLoading: false });
@@ -131,6 +135,20 @@ Page({
 			}
 		} catch (err) {
 			console.error('Error syncing userPoints from search page:', err);
+		}
+	},
+
+	/**
+	 * Fetch latest user points from global fetchUserPoints and update page
+	 */
+	fetchPoints() {
+		const app = getApp();
+		if (app && typeof app.fetchUserPoints === 'function') {
+			app.fetchUserPoints().then((points) => {
+				if (points !== null && points !== undefined) {
+					this.setData({ points });
+				}
+			});
 		}
 	},
 

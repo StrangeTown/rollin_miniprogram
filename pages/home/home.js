@@ -176,7 +176,15 @@ Page({
    * Lifecycle function--Called when page show
    */
   onShow() {
-
+    try {
+      const app = getApp();
+      if (app && app.globalData) {
+        const points = app.globalData.userPoints;
+        this.setData({ userPoints: points });
+      }
+    } catch (err) {
+      console.error('Error syncing userPoints in home page onShow:', err);
+    }
   },
 
   /**
