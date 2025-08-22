@@ -21,6 +21,8 @@
     bounces="{{true}}"
     show-scrollbar="{{false}}"
     enable-back-to-top="{{true}}"
+    bindscrolltolower="onScrollToLower"
+    lower-threshold="100"
   >
     <view class="records-list">
       <view 
@@ -45,9 +47,14 @@
       </view>
     </view>
     
-    <!-- Loading more indicator -->
-    <view wx:if="{{isLoading && recordsList.length > 0}}" class="loading-more">
-      <text class="loading-more-text">加载中...</text>
+    <!-- Loading more / No more data indicator -->
+    <view class="load-more-container">
+      <view wx:if="{{isLoading && recordsList.length > 0}}" class="loading-more">
+        <text class="loading-more-text">加载中...</text>
+      </view>
+      <view wx:elif="{{!hasMore && recordsList.length > 0}}" class="no-more">
+        <text class="no-more-text">没有更多数据了</text>
+      </view>
     </view>
   </scroll-view>
 </view>

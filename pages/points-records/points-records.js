@@ -12,6 +12,7 @@ Page({
     pageNum: 1,
     pageSize: 10,
     isLoading: false,
+    hasMore: true,
   },
 
   /**
@@ -31,8 +32,11 @@ Page({
   /**
    * Load points records from API
    */
-  loadPointsRecords() {
+  loadPointsRecords(isLoadMore = false) {
     if (this.data.isLoading) return;
+    
+    // If it's load more but no more data, return
+    if (isLoadMore && !this.data.hasMore) return;
     
     this.setData({ isLoading: true });
     
@@ -52,11 +56,16 @@ Page({
             formattedTime: formatTime(item.createdAt)
           }));
           
+          // Calculate if there are more pages
+          const currentTotal = (this.data.recordsList.length + processedList.length);
+          const hasMore = currentTotal < (total || 0);
+          
           this.setData({
-            recordsList: processedList,
+            recordsList: isLoadMore ? [...this.data.recordsList, ...processedList] : processedList,
             total: total || 0,
             pageNum: pageNum || 1,
             pageSize: pageSize || 10,
+            hasMore: hasMore,
             isLoading: false,
           });
         } else {
@@ -79,6 +88,26 @@ Page({
         this.setData({ isLoading: false });
       },
     });
+  },
+
+  /**
+   * Load more records
+   */
+  loadMore() {
+    if (!this.data.hasMore || this.data.isLoading) return;
+    
+    this.setData({
+      pageNum: this.data.pageNum + 1
+    }, () => {
+      this.loadPointsRecords(true);
+    });
+  },
+
+  /**
+   * Handle scroll to lower
+   */
+  onScrollToLower() {
+    this.loadMore();
   },
 
   /**

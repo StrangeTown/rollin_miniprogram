@@ -106,7 +106,11 @@
   line-height: 1.4;
 }
 
-/* Loading more */
+/* Load more container */
+.load-more-container {
+  margin-top: 20rpx;
+}
+
 .loading-more {
   display: flex;
   justify-content: center;
@@ -117,4 +121,17 @@
 .loading-more-text {
   color: #999;
   font-size: 26rpx;
+}
+
+/* No more data */
+.no-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx 0;
+}
+
+.no-more-text {
+  color: #ccc;
+  font-size: 24rpx;
 }
