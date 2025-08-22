@@ -6,7 +6,16 @@
       <view class="points-icon">🔹</view>
       <view class="points-title">当前翻点</view>
     </view>
-    <view class="points-display">{{userPoints}}</view>
+    <view class="points-display">
+      <view class="points-content">
+        <text class="points-number">{{userPoints}}</text>
+        <image 
+          src="/assets/images/arrow_counterclockwise_filled_icon.svg" 
+          class="refresh-icon" 
+          bindtap="onRefreshPoints"
+        />
+      </view>
+    </view>
     <view class="points-subtitle">
       <view class="subtitle-content" bindtap="showPointRules">
         <image src="/assets/images/info_filled_icon.svg" class="subtitle-icon" />

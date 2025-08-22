@@ -111,6 +111,37 @@ Page({
   },
 
   /**
+   * Handle refresh points button click
+   */
+  onRefreshPoints() {
+    console.log('User clicked refresh points icon');
+    
+    const app = getApp();
+    if (app && typeof app.fetchUserPoints === 'function') {
+      app.fetchUserPoints().then(points => {
+        if (points !== null && points !== undefined) {
+          this.setData({ userPoints: points });
+          console.log('Points refreshed:', points);
+          wx.showToast({
+            title: '刷新成功',
+            icon: 'success',
+            duration: 1500
+          });
+        }
+      }).catch(err => {
+        console.error('Failed to refresh points:', err);
+        wx.showToast({
+          title: '刷新失败',
+          icon: 'none',
+          duration: 1500
+        });
+      });
+    } else {
+      console.warn('fetchUserPoints method not available');
+    }
+  },
+
+  /**
    * Fetch points rules from admin config API
    */
   fetchPoitnsRules() {
