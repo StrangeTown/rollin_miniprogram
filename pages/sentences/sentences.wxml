@@ -9,7 +9,7 @@
             <view class="history-time">{{item.createdAt}}</view>
             <view class="header-right">
               <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
-              <image class="more-icon" src="../../assets/images/more_horizontal_filled_icon.svg" bindtap="onMoreClick" data-index="{{index}}"></image>
+              <image wx:if="{{!item.__preset_item}}" class="more-icon" src="../../assets/images/more_horizontal_filled_icon.svg" bindtap="onMoreClick" data-index="{{index}}"></image>
             </view>
           </view>
           <view class="history-result">{{item.target}}</view>

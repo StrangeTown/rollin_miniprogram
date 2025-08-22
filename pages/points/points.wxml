@@ -35,4 +35,9 @@
       </view>
     </button>
   </view>
+
+  <view class="points-records-link" bindtap="goToPointsRecords">
+    <text class="records-link-text">翻点明细</text>
+    <text class="records-link-arrow">→</text>
+  </view>
 </view>

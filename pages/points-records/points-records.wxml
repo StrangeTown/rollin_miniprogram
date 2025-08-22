@@ -1,0 +1,53 @@
+<!--pages/points-records/points-records.wxml-->
+<navigation-bar title="翻点明细" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+
+<view class="container">
+  <!-- Loading state -->
+  <view wx:if="{{isLoading && recordsList.length === 0}}" class="loading-container">
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- Empty state -->
+  <view wx:elif="{{!isLoading && recordsList.length === 0}}" class="empty-container">
+    <text class="empty-text">暂无翻点记录</text>
+  </view>
+
+  <!-- Records list -->
+  <scroll-view 
+    wx:else
+    class="records-scroll-view" 
+    scroll-y="{{true}}"
+    enhanced="{{true}}"
+    bounces="{{true}}"
+    show-scrollbar="{{false}}"
+    enable-back-to-top="{{true}}"
+  >
+    <view class="records-list">
+      <view 
+        wx:for="{{recordsList}}" 
+        wx:key="id" 
+        class="record-item"
+      >
+        <view class="record-content">
+          <view class="record-left">
+            <text class="record-type">{{item.channelName}}</text>
+            <text class="record-time">{{item.formattedTime}}</text>
+          </view>
+          <view class="record-right">
+            <text class="record-amount {{item.delta > 0 ? 'positive' : 'negative'}}">
+              {{item.delta > 0 ? '+' : ''}}{{item.delta}}
+            </text>
+          </view>
+        </view>
+        <view wx:if="{{item.remark}}" class="record-remark">
+          <text class="remark-text">{{item.remark}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- Loading more indicator -->
+    <view wx:if="{{isLoading && recordsList.length > 0}}" class="loading-more">
+      <text class="loading-more-text">加载中...</text>
+    </view>
+  </scroll-view>
+</view>

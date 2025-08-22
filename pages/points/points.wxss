@@ -156,3 +156,34 @@ page, body {
 .btn-text {
   font-size: 28rpx;
 }
+
+.points-records-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32rpx 40rpx;
+  margin-top: 32rpx;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 24rpx;
+  box-shadow: 0 4rpx 20rpx rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.points-records-link:active {
+  transform: translateY(-2rpx);
+  box-shadow: 0 6rpx 25rpx rgba(0, 0, 0, 0.08);
+}
+
+.records-link-text {
+  font-size: 30rpx;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+.records-link-arrow {
+  font-size: 28rpx;
+  color: #64748b;
+  opacity: 0.7;
+}

@@ -71,6 +71,13 @@ Page({
     });
   },
 
+  // Navigate to points records page
+  goToPointsRecords() {
+    wx.navigateTo({
+      url: '/pages/points-records/points-records'
+    });
+  },
+
   /**
    * Called when user click on the top right corner to share
    */

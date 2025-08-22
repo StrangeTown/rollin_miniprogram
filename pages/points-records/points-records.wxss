@@ -1,0 +1,120 @@
+/* pages/points-records/points-records.wxss */
+
+.container {
+  padding: 0 32rpx;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+/* Loading state */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+}
+
+.loading-text {
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* Empty state */
+.empty-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400rpx;
+}
+
+.empty-text {
+  color: #999;
+  font-size: 28rpx;
+}
+
+/* Scroll view */
+.records-scroll-view {
+  height: calc(100vh - 88rpx); /* Adjust based on navigation bar height */
+  padding: 20rpx 0;
+}
+
+.records-list {
+  padding-bottom: 40rpx;
+}
+
+/* Record item */
+.record-item {
+  background-color: white;
+  border-radius: 16rpx;
+  padding: 32rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.06);
+}
+
+.record-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.record-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.record-type {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 12rpx;
+}
+
+.record-time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.record-right {
+  display: flex;
+  align-items: center;
+}
+
+.record-amount {
+  font-size: 36rpx;
+  font-weight: 600;
+}
+
+.record-amount.positive {
+  color: #52c41a;
+}
+
+.record-amount.negative {
+  color: #ff4d4f;
+}
+
+/* Record remark */
+.record-remark {
+  margin-top: 20rpx;
+  padding-top: 20rpx;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.remark-text {
+  font-size: 26rpx;
+  color: #666;
+  line-height: 1.4;
+}
+
+/* Loading more */
+.loading-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40rpx 0;
+}
+
+.loading-more-text {
+  color: #999;
+  font-size: 26rpx;
+}
