@@ -11,7 +11,7 @@
         <text class="points-number">{{userPoints}}</text>
         <image 
           src="/assets/images/arrow_counterclockwise_filled_icon.svg" 
-          class="refresh-icon" 
+          class="refresh-icon {{isRefreshSpinning ? 'spinning' : ''}}" 
           bindtap="onRefreshPoints"
         />
       </view>

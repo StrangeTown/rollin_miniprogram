@@ -10,7 +10,8 @@ Page({
   data: {
     userPoints: '',
     pointsRules: [],
-    showRulesModal: false
+    showRulesModal: false,
+    isRefreshSpinning: false
   },
 
   /**
@@ -116,17 +117,25 @@ Page({
   onRefreshPoints() {
     console.log('User clicked refresh points icon');
     
+    // Add haptic feedback
+    wx.vibrateShort({
+      type: 'light'
+    });
+    
     const app = getApp();
     if (app && typeof app.fetchUserPoints === 'function') {
       app.fetchUserPoints().then(points => {
         if (points !== null && points !== undefined) {
           this.setData({ userPoints: points });
           console.log('Points refreshed:', points);
-          wx.showToast({
-            title: '刷新成功',
-            icon: 'success',
-            duration: 1500
-          });
+          
+          // Start spinning animation using CSS class
+          this.setData({ isRefreshSpinning: true });
+          
+          // Stop spinning after animation completes
+          setTimeout(() => {
+            this.setData({ isRefreshSpinning: false });
+          }, 600);
         }
       }).catch(err => {
         console.error('Failed to refresh points:', err);
