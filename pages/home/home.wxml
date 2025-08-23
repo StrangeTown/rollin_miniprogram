@@ -24,7 +24,7 @@
       <text class="home-link-text">练习</text>
     </view>
     <view class="home-link" bindtap="goToListening">
-      <image class="home-link-icon" src="../../assets/images/speaker_1_filled_icon.svg"></image>
+      <image class="home-link-icon" src="../../assets/images/headphones_sound_wave_icon.svg"></image>
       <text class="home-link-text">听句子</text>
     </view>
     <view class="home-link" bindtap="goToShare">
