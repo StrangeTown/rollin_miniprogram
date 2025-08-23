@@ -9,6 +9,7 @@ Page({
 	 */
 	data: {
 		allResults: [],
+		groupedResults: [], // New: grouped by date
 		windowHeight: 0,
 		pageNum: 1,
 		pageSize: 10,
@@ -28,8 +29,9 @@ Page({
 		console.log('More icon clicked');
 		// Get the item data from the event
 		const dataset = e.currentTarget.dataset;
-		const index = dataset.index;
-		const selectedItem = this.data.allResults[index];
+		const groupIndex = dataset.groupIndex;
+		const itemIndex = dataset.itemIndex;
+		const selectedItem = this.data.groupedResults[groupIndex].items[itemIndex];
 		
 		this.setData({
 			showActionModal: true,
@@ -46,6 +48,34 @@ Page({
 
 	stopPropagation() {
 		// Prevent modal from closing when clicking on modal content
+	},
+
+	/**
+	 * Group results by date
+	 */
+	groupResultsByDate(results) {
+		const grouped = {};
+		const currentYear = new Date().getFullYear();
+		
+		results.forEach(item => {
+			// Extract date from createdAt (assuming format like "08-23 14:30")
+			const dateMatch = item.createdAt ? item.createdAt.match(/(\d{2}-\d{2})/) : null;
+			const dateKey = dateMatch ? `${currentYear}-${dateMatch[1]}` : 'Unknown';
+			
+			if (!grouped[dateKey]) {
+				grouped[dateKey] = {
+					date: dateKey,
+					items: []
+				};
+			}
+			grouped[dateKey].items.push(item);
+		});
+		
+		// Convert to array and sort by date (newest first)
+		return Object.values(grouped).sort((a, b) => {
+			// Sort by date string (YYYY-MM-DD format)
+			return b.date.localeCompare(a.date);
+		});
 	},
 
 	copyItem() {
@@ -92,6 +122,10 @@ Page({
 									const updatedResults = this.data.allResults.filter(item => item.id !== itemId);
 									this.setData({
 										allResults: updatedResults
+									}, () => {
+										// Update grouped results after deletion
+										const grouped = this.groupResultsByDate(this.data.allResults);
+										this.setData({ groupedResults: grouped });
 									});
 									
 									wx.showToast({
@@ -142,7 +176,7 @@ Page({
 		this.setData({ isLoading: true });
 		
 		const { getHistoryList } = require("../../utils/api.js");
-		const { formatTime } = require("../../utils/format.js");
+		const { formatTime, formatTimeHourMin } = require("../../utils/format.js");
 		getHistoryList({
 			pageSize: this.data.pageSize,
 			pageNum,
@@ -162,6 +196,7 @@ Page({
 					list = list.map((item) => ({
 						...item,
 						createdAt: formatTime(item.createdAt),
+						hourMin: formatTimeHourMin(item.createdAt)
 					}));
 					hasMore = respList.length === this.data.pageSize;
 				}
@@ -171,6 +206,10 @@ Page({
 					pageNum,
 					hasMore,
 					isLoading: false,
+				}, () => {
+					// Group results by date after setting data
+					const grouped = this.groupResultsByDate(this.data.allResults);
+					this.setData({ groupedResults: grouped });
 				});
 			},
 			fail: () => {

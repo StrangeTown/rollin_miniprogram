@@ -38,7 +38,16 @@ function formatRelativeTime(dateStr) {
   }
 }
 
+function formatTimeHourMin(dateStr) {
+  if (!dateStr) return "";
+  const date = new Date(dateStr.replace("+08:00", ""));
+  const h = date.getHours().toString().padStart(2, "0");
+  const min = date.getMinutes().toString().padStart(2, "0");
+  return `${h}:${min}`;
+}
+
 module.exports = {
   formatTime,
-  formatRelativeTime
+  formatRelativeTime,
+  formatTimeHourMin
 };

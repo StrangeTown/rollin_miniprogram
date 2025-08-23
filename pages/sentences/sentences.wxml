@@ -2,18 +2,26 @@
 <navigation-bar title="搜索历史" back="{{true}}" color="black" background="#FFF"></navigation-bar>
 <view class="all-results-container" style="height: calc(100vh - 140px);">
   <scroll-view show-scrollbar="{{false}}" class="all-results" scroll-y="true" style="height: calc(100vh - 120px);" bindscrolltolower="onScrollToLower">
-    <block wx:if="{{allResults.length > 0}}">
-      <block wx:for="{{allResults}}" wx:key="index">
-        <view class="all-result-item">
-          <view class="item-header">
-            <view class="history-time">{{item.createdAt}}</view>
-            <view class="header-right">
-              <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
-              <image wx:if="{{!item.__preset_item}}" class="more-icon" src="../../assets/images/more_horizontal_filled_icon.svg" bindtap="onMoreClick" data-index="{{index}}"></image>
-            </view>
+    <block wx:if="{{groupedResults.length > 0}}">
+      <block wx:for="{{groupedResults}}" wx:key="date" wx:for-item="group">
+        <view class="date-group">
+          <view class="date-header">
+            <text class="date-text">{{group.date}}</text>
+            <text class="count-text">{{group.items.length}}条记录</text>
           </view>
-          <view class="history-result">{{item.target}}</view>
-          <view class="history-input">{{item.content}}</view>
+          <block wx:for="{{group.items}}" wx:key="id" wx:for-item="item" wx:for-index="itemIndex">
+            <view class="all-result-item">
+              <view class="item-header">
+                <view class="history-time">{{item.hourMin}}</view>
+                <view class="header-right">
+                  <view wx:if="{{item.__preset_item}}" class="preset-label">示例</view>
+                  <image wx:if="{{!item.__preset_item}}" class="more-icon" src="../../assets/images/more_horizontal_filled_icon.svg" bindtap="onMoreClick" data-group-index="{{index}}" data-item-index="{{itemIndex}}"></image>
+                </view>
+              </view>
+              <view class="history-result">{{item.target}}</view>
+              <view class="history-input">{{item.content}}</view>
+            </view>
+          </block>
         </view>
       </block>
       <view class="load-more-container">

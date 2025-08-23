@@ -36,6 +36,35 @@ body {
 	display: none;
 }
 
+/* Date group styles */
+.date-group {
+	margin-bottom: 40rpx;
+}
+
+.date-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10rpx 18rpx;
+	margin-bottom: 16rpx;
+	background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+	border-radius: 16rpx;
+	border-left: 4rpx solid #3b82f6;
+}
+
+.date-text {
+	font-size: 32rpx;
+	font-weight: 600;
+	color: #1e293b;
+}
+
+.count-text {
+	font-size: 24rpx;
+	color: #64748b;
+	padding: 8rpx 16rpx;
+	border-radius: 12rpx;
+}
+
 .all-result-item {
 	margin-bottom: 0;
 	padding: 32rpx;
