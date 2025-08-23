@@ -39,6 +39,7 @@
             <text class="record-amount {{item.delta > 0 ? 'positive' : 'negative'}}">
               {{item.delta > 0 ? '+' : ''}}{{item.delta}}
             </text>
+            <text class="record-remain">余额: {{item.remain}}</text>
           </view>
         </view>
         <view wx:if="{{item.remark}}" class="record-remark">

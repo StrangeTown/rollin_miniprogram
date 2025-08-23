@@ -62,8 +62,8 @@ page, body {
 
 .refresh-icon {
   position: absolute;
-  right: -32rpx;
-  bottom: 8rpx;
+  right: -36rpx;
+  bottom: 16rpx;
   width: 28rpx;
   height: 28rpx;
   opacity: 0.6;
