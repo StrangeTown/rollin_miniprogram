@@ -21,6 +21,17 @@ function getSharePath(targetPage = 'pages/home/home') {
   }
 }
 
+/**
+ * Get random share image path
+ * @returns {string} Random share image path from share_1.png to share_5.png
+ */
+function getShareImagePath() {
+  // Generate random number between 1 and 5
+  const randomNum = Math.floor(Math.random() * 5) + 1;
+  return `/assets/images/share/share_${randomNum}.png`;
+}
+
 module.exports = {
-  getSharePath
+  getSharePath,
+  getShareImagePath
 };

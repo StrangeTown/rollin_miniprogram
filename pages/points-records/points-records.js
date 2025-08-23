@@ -1,7 +1,10 @@
 // pages/points-records/points-records.js
 const { formatTime } = require("../../utils/format.js");
+const share = require('../../utils/share.js');
+const shareBehavior = require('../../behaviors/share.js');
 
 Page({
+  behaviors: [shareBehavior],
 
   /**
    * Page initial data
@@ -156,13 +159,6 @@ Page({
    * Called when page reach bottom
    */
   onReachBottom() {
-
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage() {
 
   }
 })

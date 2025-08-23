@@ -1,7 +1,9 @@
 // pages/home.js
 const share = require('../../utils/share.js');
+const shareBehavior = require('../../behaviors/share.js');
 
 Page({
+  behaviors: [shareBehavior],
 
   /**
    * Page initial data
@@ -239,26 +241,5 @@ Page({
    */
   onReachBottom() {
 
-  },
-
-  /**
-   * Called when user click on the top right corner to share
-   */
-  onShareAppMessage() {
-    const shareUrl = share.getSharePath('pages/home/home');
-    
-    return {
-      title: '把你想说的中文，变成地道美式口语',
-      path: shareUrl
-    };
-  },
-
-  /**
-   * Called when user shares to WeChat Moments (Timeline)
-   */
-  onShareTimeline() {
-    return {
-      title: '把你想说的中文，变成地道美式口语'
-    }
   }
 })

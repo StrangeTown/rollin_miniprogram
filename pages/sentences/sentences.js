@@ -1,7 +1,9 @@
 const { pendPresetItems } = require("../../utils/mock.js");
+const shareBehavior = require('../../behaviors/share.js');
 
 // pages/sentences/sentences.js
 Page({
+	behaviors: [shareBehavior],
 	/**
 	 * Page initial data
 	 */
@@ -199,11 +201,6 @@ Page({
 	 * Page event handler function--Called when user drop down
 	 */
 	onPullDownRefresh() {},
-
-	/**
-	 * Called when user click on the top right corner to share
-	 */
-	onShareAppMessage() {},
 
 	/**
 	 * Called when scroll to bottom of scroll-view

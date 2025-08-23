@@ -1,7 +1,9 @@
 const { mockItems } = require("../../utils/mock.js");
+const shareBehavior = require('../../behaviors/share.js');
 
 // pages/practice/practice.js
 Page({
+	behaviors: [shareBehavior],
 	/**
 	 * Page initial data
 	 */
@@ -212,8 +214,4 @@ Page({
 	 */
 	onReachBottom() {},
 
-	/**
-	 * Called when user click on the top right corner to share
-	 */
-	onShareAppMessage() {},
 });
