@@ -114,8 +114,21 @@ Page({
       this.trackReferral(options.refererId);
     }
 
-    // Fetch latest user points from global app and update page data
-    this.fetchAndUpdateUserPoints();
+    // Check app.loginPromise and fetch user points after login
+    const app = getApp();
+    if (app.loginPromise) {
+      app.loginPromise.then(loginSuccess => {
+        if (loginSuccess) {
+          console.log('Login completed, fetching user points');
+          this.fetchAndUpdateUserPoints();
+        } else {
+          console.log('Login failed, unable to fetch user points');
+        }
+      });
+    } else {
+      // Fallback: if no loginPromise, try to fetch points anyway
+      this.fetchAndUpdateUserPoints();
+    }
 
     this.setRandomPhrase();
     this.phraseInterval = setInterval(() => {
