@@ -85,21 +85,9 @@ Page({
   },
 
   /**
-   * Lifecycle function--Called when page load
+   * Fetch and update user points from global app
    */
-  onLoad(options) {
-    // Check if this user came from a referral share
-    if (options.refererId) {
-      console.log('Referrer User ID:', options.refererId);
-      // wx.showToast({
-      //   title: '(FROM ' + options.refererId + ')',
-      //   icon: 'none',
-      //   duration: 2000
-      // });
-      // Send referral tracking request
-      this.trackReferral(options.refererId);
-    }
-    // Fetch latest user points from global app and update page data
+  fetchAndUpdateUserPoints() {
     try {
       const app = getApp();
       if (app && typeof app.fetchUserPoints === 'function') {
@@ -112,6 +100,22 @@ Page({
     } catch (err) {
       console.error('Error calling fetchUserPoints:', err);
     }
+  },
+
+  /**
+   * Lifecycle function--Called when page load
+   */
+  onLoad(options) {
+    // Check if this user came from a referral share
+    if (options.refererId) {
+      console.log('Referrer User ID:', options.refererId);
+
+      // Send referral tracking request
+      this.trackReferral(options.refererId);
+    }
+
+    // Fetch latest user points from global app and update page data
+    this.fetchAndUpdateUserPoints();
 
     this.setRandomPhrase();
     this.phraseInterval = setInterval(() => {
