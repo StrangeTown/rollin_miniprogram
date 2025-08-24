@@ -33,8 +33,15 @@
     </view>
   </view>
   
-  <view class="slogan">
-    <text class="slogan-text">把你想说的中文，变成地道美式口语</text>
+  <view class="slogan-container">
+    <view class="slogan">
+      <image class="slogan-icon" src="../../assets/images/app_icon_transparent.svg"></image>
+    </view>
+    <view class="slogan-buttons">
+      <button class="slogan-btn" open-type="contact">联系我们</button>
+      <view class="slogan-divider"></view>
+      <button class="slogan-btn" bindtap="showUsageRules">翻点规则</button>
+    </view>
   </view>
 
   <!-- Share Modal -->

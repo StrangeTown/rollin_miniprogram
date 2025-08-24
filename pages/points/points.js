@@ -24,6 +24,14 @@ Page({
     if (typeof this.fetchPoitnsRules === 'function') {
       this.fetchPoitnsRules();
     }
+
+    // Check if we should show rules modal immediately
+    if (options.showRules === 'true') {
+      // Use setTimeout to ensure the page is ready before showing modal
+      setTimeout(() => {
+        this.showPointRules();
+      }, 100);
+    }
   },
 
   /**

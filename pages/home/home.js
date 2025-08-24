@@ -258,5 +258,14 @@ Page({
    */
   onReachBottom() {
 
+  },
+
+  /**
+   * Show usage rules for points system
+   */
+  showUsageRules() {
+    wx.navigateTo({
+      url: '/pages/points/points?showRules=true'
+    });
   }
 })

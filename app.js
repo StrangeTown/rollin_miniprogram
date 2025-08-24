@@ -103,6 +103,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    userPoints: 0
+    userPoints: ''
   }
 })
