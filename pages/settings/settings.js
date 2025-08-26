@@ -1,5 +1,6 @@
 // pages/settings/settings.js
 const storage = require('../../utils/storage.js');
+const request = require('../../utils/request.js');
 
 Page({
 
@@ -8,7 +9,9 @@ Page({
    */
   data: {
     targetLanguage: null,
-    flagEmoji: '🇺🇸' // Default flag
+    flagEmoji: '🇺🇸', // Default flag
+    // available languages fetched from server
+    languages: []
   },
 
   /**
@@ -58,9 +61,9 @@ Page({
   },
 
   /**
-   * Lifecycle function--Called when page load
+   * Load and set target language from storage
    */
-  onLoad(options) {
+  loadTargetLanguage() {
     try {
       const target = storage.getTargetLanguage();
       if (target) {
@@ -81,7 +84,43 @@ Page({
         flagEmoji: '🇺🇸' // Default flag
       });
     }
+  },
 
+  /**
+  * Fetch language configuration from server and set to page data.languages
+   * endpoint: /admin/configs/app/language
+   * expected response: { code: 0, msg: "成功", data: { keys: "language", values: [ { code, language }, ... ] } }
+   */
+  fetchLanguageConfig() {
+    const that = this;
+    try {
+      request.request({
+        url: '/admin/configs/app/language',
+        method: 'GET',
+        success(res) {
+          if (res && res.data && res.data.code === 0 && res.data.data && Array.isArray(res.data.data.values)) {
+            that.setData({ languages: res.data.data.values });
+          } else {
+            console.warn('fetchLanguageConfig: unexpected response', res && res.data);
+          }
+        },
+        fail(err) {
+          console.error('fetchLanguageConfig failed', err);
+        }
+      });
+    } catch (err) {
+      console.error('fetchLanguageConfig exception', err);
+    }
+  },
+
+  /**
+   * Lifecycle function--Called when page load
+   */
+  onLoad(options) {
+    this.loadTargetLanguage();
+
+    // load available languages from server
+    this.fetchLanguageConfig();
   },
 
   /**
