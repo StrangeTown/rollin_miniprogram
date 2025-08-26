@@ -1,0 +1,12 @@
+<!-- components/bottom-modal/bottom-modal.wxml -->
+<view class="modal-overlay {{show ? 'show' : ''}}" bindtap="onClose">
+  <view class="modal-content" catchtap="stopPropagation">
+    <view class="modal-title" wx:if="{{title}}">{{title}}</view>
+    
+    <!-- Slot for custom content -->
+    <slot></slot>
+    
+    <!-- Cancel button if showCancel is true -->
+    <button wx:if="{{showCancel}}" class="modal-cancel-btn" bindtap="onClose">{{cancelText || '取消'}}</button>
+  </view>
+</view>

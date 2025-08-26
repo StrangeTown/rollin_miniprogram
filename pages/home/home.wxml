@@ -56,23 +56,26 @@
     </view>
   </view>
 
-  <!-- Share Modal -->
-  <view class="share-modal {{showShareModal ? 'show' : ''}}" bindtap="closeShareModal">
-    <view class="share-modal-content" catchtap="stopPropagation">
-      <view class="share-modal-title">分享「口语翻翻」</view>
-      <view class="share-buttons">
-        <button class="share-btn-item" open-type="share">
-          <image class="share-btn-icon" src="../../assets/images/wechat_share.svg"></image>
-          <view class="share-btn-text">发送小程序</view>
-          <view class="share-btn-text">给好友</view>
-        </button>
-        <button class="share-btn-item moments-tip" bindtap="showMomentsToast">
-          <image class="share-btn-icon" src="../../assets/images/wechat_moments.svg"></image>
-          <view class="share-btn-text">右上角「···」</view>
-          <view class="share-btn-text">分享朋友圈</view>
-        </button>
-      </view>
-      <button class="cancel-btn" bindtap="closeShareModal">取消</button>
+  <!-- Share Modal using bottom-modal component -->
+  <bottom-modal 
+    show="{{showShareModal}}" 
+    title="分享「口语翻翻」"
+    showCancel="{{true}}"
+    cancelText="取消"
+    bind:close="closeShareModal">
+    
+    <view class="share-buttons">
+      <button class="share-btn-item" open-type="share">
+        <image class="share-btn-icon" src="../../assets/images/wechat_share.svg"></image>
+        <view class="share-btn-text">发送小程序</view>
+        <view class="share-btn-text">给好友</view>
+      </button>
+      <button class="share-btn-item moments-tip" bindtap="showMomentsToast">
+        <image class="share-btn-icon" src="../../assets/images/wechat_moments.svg"></image>
+        <view class="share-btn-text">右上角「···」</view>
+        <view class="share-btn-text">分享朋友圈</view>
+      </button>
     </view>
-  </view>
+    
+  </bottom-modal>
 </view>

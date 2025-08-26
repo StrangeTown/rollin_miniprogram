@@ -263,55 +263,12 @@ page, body {
   opacity: 0.3;
 }
 
-/* Share Modal Styles */
-.share-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  z-index: 1000;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.share-modal.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.share-modal-content {
-  background: white;
-  border-radius: 24rpx 24rpx 0 0;
-  padding: 40rpx 32rpx;
-  width: 100%;
-  max-width: 750rpx;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-}
-
-.share-modal.show .share-modal-content {
-  transform: translateY(0);
-}
-
-.share-modal-title {
-  text-align: center;
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #475569;
-  margin-bottom: 32rpx;
-}
-
+/* Share Button Styles (used within bottom-modal) */
 .share-buttons {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-bottom: 32rpx;
+  margin-bottom: 16rpx;
 }
 
 .share-btn-item {
@@ -354,24 +311,4 @@ page, body {
 
   white-space: normal !important;   /* 强制允许换行 */
   word-break: break-word !important; 
-}
-
-.cancel-btn {
-  width: 100% !important;
-  padding: 24rpx;
-  background: #f8fafc;
-  border: none;
-  border-radius: 16rpx;
-  font-size: 28rpx;
-  color: #64748b;
-  font-weight: 500;
-  margin: 0;
-}
-
-.cancel-btn::after {
-  border: none;
-}
-
-.cancel-btn:active {
-  background: #e2e8f0;
 }
