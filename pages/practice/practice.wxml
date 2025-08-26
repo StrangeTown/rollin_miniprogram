@@ -8,7 +8,12 @@
         <view wx:if="{{practiceList[0].__preset_item}}" class="preset-label">示例</view>
       </view>
       <view class="practice-input">{{practiceList[0].content}}</view>
-      <view class="practice-result" wx:if="{{showTarget}}">{{practiceList[0].target}}</view>
+      <view class="practice-result" wx:if="{{showTarget}}">
+        <view class="target-text">{{practiceList[0].target}}</view>
+        <view class="speaker-container" catchtap="onSpeakerClick">
+          <image class="speaker-icon" src="../../assets/images/speaker_1_filled_icon.svg"></image>
+        </view>
+      </view>
       <view class="practice-tip" wx:else>点击显示答案</view>
     </view>
     <view class="practice-btn-group">

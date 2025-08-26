@@ -129,9 +129,36 @@ page, body {
   padding: 0 20rpx;
   min-height: 60rpx;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   transition: all 0.3s ease;
+}
+
+.target-text {
+  width: 100%;
+  margin-bottom: 24rpx;
+}
+
+.speaker-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8rpx;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.speaker-container:active {
+  background: rgba(59, 130, 246, 0.1);
+  transform: scale(0.95);
+}
+
+.speaker-icon {
+  width: 32rpx;
+  height: 32rpx;
+  opacity: 0.4;
 }
 
 .practice-tip {

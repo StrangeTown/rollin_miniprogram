@@ -18,6 +18,15 @@ Page({
 		this.setData({ showTarget: !this.data.showTarget });
 	},
 
+	onSpeakerClick() {
+		// toast
+		wx.showToast({
+			title: '发音功能开发中…',
+			icon: 'none',
+			duration: 1500
+		});
+	},
+
 	onNotRemember() {
 		const first = this.data.practiceList[0];
 		if (first) {
