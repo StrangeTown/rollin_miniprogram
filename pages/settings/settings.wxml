@@ -5,7 +5,7 @@
   <view class="settings-list">
     <view class="settings-item" bindtap="goToSearchLanguage">
       <view class="settings-item-left">
-        <text class="settings-item-title">搜索语言</text>
+        <text class="settings-item-title">目标语言</text>
       </view>
       <view class="settings-item-right">
         <text class="flag-emoji">{{flagEmoji}}</text>
@@ -19,7 +19,9 @@
       <view class="settings-item-right">
       </view>
     </view>
+  </view>
 
+  <view class="settings-list">
     <button class="settings-item settings-button" open-type="contact" plain="true">
       <view class="settings-item-left">
         <text class="settings-item-title">联系我们</text>
@@ -31,7 +33,7 @@
 </view>
 
 <!-- bottom-modal for language selection -->
-<bottom-modal show="{{showLanguageModal}}" title="选择搜索语言" bindclose="onLanguageModalClose" showCancel="true">
+<bottom-modal show="{{showLanguageModal}}" title="选择目标语言" bindclose="onLanguageModalClose" showCancel="true">
   <view class="language-list">
     <block wx:for="{{languages}}" wx:key="code">
       <view class="language-item" data-code="{{item.code}}" bindtap="onSelectLanguage">

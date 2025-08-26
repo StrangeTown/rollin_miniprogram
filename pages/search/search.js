@@ -179,7 +179,6 @@ Page({
 	 * Lifecycle function--Called when page load
 	 */
 	onLoad(options) {
-		this.setLanguageFlag();
 	},
 
 	/**
@@ -226,6 +225,9 @@ Page({
 
 		// Sync user points with global state
 		this.syncUserPoints();
+
+		// Update language flag based on current target language
+		this.setLanguageFlag();
 	},
 
 	/**
