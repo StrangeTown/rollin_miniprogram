@@ -34,7 +34,32 @@ function getTargetLanguage() {
   }
 }
 
+/**
+ * Persist userInfo object to storage. Only the known fields will be written.
+ * Allowed fields: id, isVip, lang, nickname, openId, registerTime, targetLang
+ * @param {Object} info
+ * @returns {boolean} true on success, false on failure
+ */
+function setUserInfo(info) {
+  if (!info || typeof info !== 'object') return false;
+  try {
+    const existing = wx.getStorageSync('userInfo') || {};
+    const allowed = ['id', 'isVip', 'lang', 'nickname', 'openId', 'registerTime', 'targetLang'];
+    allowed.forEach((key) => {
+      if (Object.prototype.hasOwnProperty.call(info, key)) {
+        existing[key] = info[key];
+      }
+    });
+    wx.setStorageSync('userInfo', existing);
+    return true;
+  } catch (err) {
+    console.error('Error setting userInfo in storage:', err);
+    return false;
+  }
+}
+
 module.exports = {
   getUserId,
-  getTargetLanguage
+  getTargetLanguage,
+  setUserInfo
 };

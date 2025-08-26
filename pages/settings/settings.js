@@ -11,7 +11,9 @@ Page({
     targetLanguage: null,
     flagEmoji: '🇺🇸', // Default flag
     // available languages fetched from server
-    languages: []
+  languages: [],
+  // control for language selection modal
+  showLanguageModal: false
   },
 
   /**
@@ -44,11 +46,39 @@ Page({
    * Navigate to search language settings
    */
   goToSearchLanguage() {
-    wx.showToast({
-      title: '语言设置功能开发中…',
-      icon: 'none',
-      duration: 1500
-    });
+    // Open the language selection modal
+    this.setData({ showLanguageModal: true });
+  },
+
+  /**
+   * Called when a language item is selected inside the modal
+   * data-code attribute contains the language code
+   */
+  onSelectLanguage(e) {
+    const code = e.currentTarget.dataset.code;
+    if (code) {
+      // set selected language as target
+      this.setData({ targetLanguage: code });
+      // update flag emoji
+      const flagEmoji = this.getFlagEmoji(code);
+      this.setData({ flagEmoji });
+      // close modal
+      this.setData({ showLanguageModal: false });
+      // persist selection via storage util
+      try {
+        const ok = storage.setUserInfo({ targetLang: code });
+        if (!ok) console.warn('storage.setUserInfo returned false when setting targetLang');
+      } catch (err) {
+        console.warn('Failed to persist selected language via storage.setUserInfo', err);
+      }
+    }
+  },
+
+  /**
+   * Modal close handler
+   */
+  onLanguageModalClose() {
+    this.setData({ showLanguageModal: false });
   },
 
   /**
@@ -99,7 +129,38 @@ Page({
         method: 'GET',
         success(res) {
           if (res && res.data && res.data.code === 0 && res.data.data && Array.isArray(res.data.data.values)) {
-            that.setData({ languages: res.data.data.values });
+            // Filter out 'zh-CN' from the language list and enhance with flag and label
+            const filteredLanguages = res.data.data.values
+              .filter(lang => lang.code !== 'zh-CN')
+              .map(lang => {
+                // Add flag emoji using existing getFlagEmoji method
+                const flag = that.getFlagEmoji(lang.code);
+                
+                // Add localized language labels
+                const labelMap = {
+                  'en-US': '美式英语',
+                  'en': '英语',
+                  'ja': '日本語',
+                  'ja-JP': '日本語',
+                  'ko': '한국어',
+                  'ko-KR': '한국어',
+                  'es': 'Español',
+                  'es-ES': 'Español',
+                  'fr': 'Français',
+                  'fr-FR': 'Français',
+                  'de': 'Deutsch',
+                  'de-DE': 'Deutsch'
+                };
+                
+                const label = labelMap[lang.code] || lang.language;
+                
+                return {
+                  ...lang,
+                  flag,
+                  label
+                };
+              });
+            that.setData({ languages: filteredLanguages });
           } else {
             console.warn('fetchLanguageConfig: unexpected response', res && res.data);
           }

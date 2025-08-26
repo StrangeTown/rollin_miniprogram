@@ -69,3 +69,46 @@
   font-size: 32rpx;
   margin-right: 8rpx;
 }
+
+/* Language selection modal styles */
+.language-list {
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24rpx 32rpx;
+  border-bottom: 1rpx solid #f1f5f9;
+  background: white;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.language-item:last-child {
+  border-bottom: none;
+}
+
+.language-item:active {
+  background: #f0f9ff;
+}
+
+.language-item:hover {
+  background: #f8fafc;
+}
+
+.language-name {
+  font-size: 30rpx;
+  color: #1e293b;
+  font-weight: 400;
+  flex: 1;
+}
+
+.language-code {
+  font-size: 24rpx;
+  color: #64748b;
+  font-weight: 300;
+  opacity: 0.8;
+}

@@ -29,3 +29,15 @@
     </view>
   </view>
 </view>
+
+<!-- bottom-modal for language selection -->
+<bottom-modal show="{{showLanguageModal}}" title="选择搜索语言" bindclose="onLanguageModalClose" showCancel="true">
+  <view class="language-list">
+    <block wx:for="{{languages}}" wx:key="code">
+      <view class="language-item" data-code="{{item.code}}" bindtap="onSelectLanguage">
+        <text class="language-name">{{item.label}}</text>
+        <text class="language-code">{{item.flag}}</text>
+      </view>
+    </block>
+  </view>
+</bottom-modal>
