@@ -11,10 +11,12 @@ Page({
   data: {
     targetLanguage: null,
     flagEmoji: '🇺🇸', // Default flag
+
     // available languages fetched from server
-  languages: [],
-  // control for language selection modal
-  showLanguageModal: false
+    languages: [],
+
+    // control for language selection modal
+    showLanguageModal: false
   },
 
   /**

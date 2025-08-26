@@ -4,7 +4,10 @@
   <view class="input-result-card">
     <input class="search-input" placeholder="请输入要翻译的内容" focus="{{true}}" bindconfirm="onConfirm" confirm-type="search" value="{{searchValue}}" disabled="{{isLoading}}" />
 
-    <view wx:if="{{!isLoading && (points !== undefined) && (points < 7)}}" class="points-tip">还剩余 <text class="points-link" bindtap="goToPoints">{{points}} 次搜索</text></view>
+    <view wx:if="{{!isLoading && (points !== undefined)}}" class="points-container">
+      <text class="points-tip" bindtap="goToPoints">还剩余 {{points}} 次搜索</text>
+      <text class="language-flag" bindtap="goToSettings">目标语言 {{languageFlag}}</text>
+    </view>
 
     <view class="translated-result" wx:if="{{isLoading}}">
       <view class="loading-container">

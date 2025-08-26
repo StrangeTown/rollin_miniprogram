@@ -1,5 +1,6 @@
 const { pendPresetItems } = require("../../utils/mock.js");
 const shareBehavior = require('../../behaviors/share.js');
+const storage = require('../../utils/storage.js');
 
 // pages/search/search.js
 Page({
@@ -13,7 +14,9 @@ Page({
 		recentResults: [],
 		searchValue: "",
 		isLoading: false,
-		points: 0
+		points: 0,
+		// current language flag emoji
+		languageFlag: '🇺🇸'
 	},
 
 	onConfirm(e) {
@@ -166,10 +169,47 @@ Page({
 		});
 	},
 
+	goToSettings() {
+		wx.navigateTo({
+			url: "/pages/settings/settings",
+		});
+	},
+
 	/**
 	 * Lifecycle function--Called when page load
 	 */
-	onLoad(options) {},
+	onLoad(options) {
+		this.setLanguageFlag();
+	},
+
+	/**
+	 * Set page data `languageFlag` based on stored target language
+	 */
+	setLanguageFlag() {
+		try {
+			const target = storage.getTargetLanguage();
+			const languageFlagMap = {
+				'en': '🇺🇸',
+				'en-US': '🇺🇸',
+				'zh': '🇨🇳',
+				'zh-CN': '🇨🇳',
+				'ja': '🇯🇵',
+				'ja-JP': '🇯🇵',
+				'ko': '🇰🇷',
+				'ko-KR': '🇰🇷',
+				'es': '🇪🇸',
+				'es-ES': '🇪🇸',
+				'fr': '🇫🇷',
+				'fr-FR': '🇫🇷',
+				'de': '🇩🇪',
+				'de-DE': '🇩🇪'
+			};
+			const flag = target && languageFlagMap[target] ? languageFlagMap[target] : '🇺🇸';
+			this.setData({ languageFlag: flag });
+		} catch (err) {
+			console.error('Failed to set language flag:', err);
+		}
+	},
 
 	/**
 	 * Lifecycle function--Called when page is initially rendered

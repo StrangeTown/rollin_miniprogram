@@ -48,26 +48,37 @@ page, body {
   opacity: 0.7;
 }
 
-.points-tip {
+.points-container {
   margin-top: 16rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.points-tip {
   font-size: 24rpx;
   color: #94a3b8;
   line-height: 1.4;
   white-space: nowrap;
-  text-align: center;
   display: flex;
   flex-direction: row;
-  opacity: 0.5;
-}
-
-.points-link {
-  color: #3b82f6;
   text-decoration: underline;
-  cursor: pointer;
 }
 
-.points-link:active {
-  opacity: 0.7;
+.language-flag {
+  font-size: 24rpx;
+  color: #94a3b8;
+  line-height: 1.4;
+  white-space: nowrap;
+  text-decoration: underline;
+}
+
+.divider {
+  font-size: 24rpx;
+  color: #94a3b8;
+  margin: 0 8rpx;
 }
 
 .highlight {
