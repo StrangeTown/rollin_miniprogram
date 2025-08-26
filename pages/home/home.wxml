@@ -15,21 +15,33 @@
     <span class="phrase-text {{phraseAnimClass}}">{{currentPhrase}}</span>
   </view>
   <view class="home-links">
-    <view class="home-link" bindtap="goToSentences">
-      <image class="home-link-icon" src="../../assets/images/history_filled_icon.svg"></image>
-      <text class="home-link-text">搜索历史</text>
+    <view class="home-links-row">
+      <view class="home-link" bindtap="goToSentences">
+        <image class="home-link-icon" src="../../assets/images/history_filled_icon.svg"></image>
+        <text class="home-link-text">搜索历史</text>
+      </view>
+      <view class="home-link" bindtap="goToPractice">
+        <image class="home-link-icon" src="../../assets/images/flash_on_filled_icon.svg"></image>
+        <text class="home-link-text">练习</text>
+      </view>
+      <view class="home-link" bindtap="goToListening">
+        <image class="home-link-icon" src="../../assets/images/headphones_sound_wave_icon.svg"></image>
+        <text class="home-link-text">听句子</text>
+      </view>
     </view>
-    <view class="home-link" bindtap="goToPractice">
-      <image class="home-link-icon" src="../../assets/images/flash_on_filled_icon.svg"></image>
-      <text class="home-link-text">练习</text>
-    </view>
-    <view class="home-link" bindtap="goToListening">
-      <image class="home-link-icon" src="../../assets/images/headphones_sound_wave_icon.svg"></image>
-      <text class="home-link-text">听句子</text>
-    </view>
-    <view class="home-link" bindtap="goToShare">
-      <image class="home-link-icon" src="../../assets/images/share_filled_icon.svg"></image>
-      <text class="home-link-text">分享</text>
+    <view class="home-links-row">
+      <view class="home-link" bindtap="goToSettings">
+        <image class="home-link-icon" src="../../assets/images/settings_filled_icon.svg"></image>
+        <text class="home-link-text">设置</text>
+      </view>
+      <view class="home-link" bindtap="goToSettings">
+        <image class="home-link-icon" src="../../assets/images/puzzle_piece_filled_icon.svg"></image>
+        <text class="home-link-text">场景口语</text>
+      </view>
+      <view class="home-link" bindtap="goToShare">
+        <image class="home-link-icon" src="../../assets/images/share_filled_icon.svg"></image>
+        <text class="home-link-text">分享</text>
+      </view>
     </view>
   </view>
   

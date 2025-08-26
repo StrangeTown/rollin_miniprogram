@@ -85,13 +85,16 @@ page, body {
 }
 
 .home-links {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   margin-top: 48rpx;
   margin-bottom: 16rpx;
   width: 100%;
   max-width: 680rpx;
+}
+
+.home-links-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16rpx;
 }
 
 .home-link {
@@ -102,16 +105,15 @@ page, body {
   color: #0f172a;
   font-size: 22rpx;
   font-weight: 500;
-  padding: 24rpx 12rpx;
+  padding: 42rpx 12rpx;
   border-radius: 16rpx;
   background: white;
   border: 1px solid #e2e8f0;
   box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  flex: 1;
-  min-width: 0;
   text-align: center;
+  width: calc(33.333% - 44rpx);
   margin-right: 16rpx;
 }
 

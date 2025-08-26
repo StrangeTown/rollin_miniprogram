@@ -60,6 +60,14 @@ Page({
     });
   },
 
+  goToSettings() {
+    wx.showToast({
+      title: '设置功能开发中…',
+      icon: 'none',
+      duration: 1500
+    });
+  },
+
   goToShare() {
     this.setData({
       showShareModal: true
