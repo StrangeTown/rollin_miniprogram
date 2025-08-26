@@ -1,0 +1,31 @@
+<!--pages/settings/settings.wxml-->
+<navigation-bar title="设置" back="{{true}}" color="black" background="#FFF"></navigation-bar>
+
+<view class="container">
+  <view class="settings-list">
+    <view class="settings-item" bindtap="goToSearchLanguage">
+      <view class="settings-item-left">
+        <text class="settings-item-title">搜索语言</text>
+      </view>
+      <view class="settings-item-right">
+        <text class="flag-emoji">🇺🇸</text>
+      </view>
+    </view>
+    
+    <button class="settings-item settings-button" open-type="contact" plain="true">
+      <view class="settings-item-left">
+        <text class="settings-item-title">联系我们</text>
+      </view>
+      <view class="settings-item-right">
+      </view>
+    </button>
+    
+    <view class="settings-item" bindtap="goToPoints">
+      <view class="settings-item-left">
+        <text class="settings-item-title">翻点</text>
+      </view>
+      <view class="settings-item-right">
+      </view>
+    </view>
+  </view>
+</view>
