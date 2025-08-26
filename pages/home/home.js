@@ -68,6 +68,14 @@ Page({
     });
   },
 
+  goToScenarios() {
+    wx.showToast({
+      title: '场景练习功能开发中…',
+      icon: 'none',
+      duration: 1500
+    });
+  },
+
   goToShare() {
     this.setData({
       showShareModal: true

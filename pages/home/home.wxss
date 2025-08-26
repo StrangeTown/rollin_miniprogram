@@ -93,8 +93,8 @@ page, body {
 
 .home-links-row {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 16rpx;
+  justify-content: center;
+  margin-bottom: 24rpx;
 }
 
 .home-link {
@@ -105,7 +105,7 @@ page, body {
   color: #0f172a;
   font-size: 22rpx;
   font-weight: 500;
-  padding: 42rpx 12rpx;
+  padding: 32rpx 12rpx;
   border-radius: 16rpx;
   background: white;
   border: 1px solid #e2e8f0;
@@ -113,8 +113,8 @@ page, body {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
-  width: calc(33.333% - 44rpx);
-  margin-right: 16rpx;
+  width: calc(33.333% - 64rpx);
+  margin-right: 24rpx;
 }
 
 .home-link:last-child {

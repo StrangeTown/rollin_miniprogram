@@ -30,13 +30,13 @@
       </view>
     </view>
     <view class="home-links-row">
+      <view class="home-link" bindtap="goToScenarios">
+        <image class="home-link-icon" src="../../assets/images/puzzle_piece_filled_icon.svg"></image>
+        <text class="home-link-text">场景口语</text>
+      </view>
       <view class="home-link" bindtap="goToSettings">
         <image class="home-link-icon" src="../../assets/images/settings_filled_icon.svg"></image>
         <text class="home-link-text">设置</text>
-      </view>
-      <view class="home-link" bindtap="goToSettings">
-        <image class="home-link-icon" src="../../assets/images/puzzle_piece_filled_icon.svg"></image>
-        <text class="home-link-text">场景口语</text>
       </view>
       <view class="home-link" bindtap="goToShare">
         <image class="home-link-icon" src="../../assets/images/share_filled_icon.svg"></image>
