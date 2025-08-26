@@ -8,7 +8,7 @@
         <text class="settings-item-title">搜索语言</text>
       </view>
       <view class="settings-item-right">
-        <text class="flag-emoji">🇺🇸</text>
+        <text class="flag-emoji">{{flagEmoji}}</text>
       </view>
     </view>
     

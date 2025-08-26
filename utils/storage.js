@@ -17,6 +17,24 @@ function getUserId() {
   }
 }
 
+/**
+ * Get target language from stored userInfo
+ * @returns {string|null} target language code (e.g. 'en') or null if not set
+ */
+function getTargetLanguage() {
+  try {
+    const userInfo = wx.getStorageSync('userInfo');
+    if (userInfo && userInfo.targetLang) {
+      return userInfo.targetLang;
+    }
+    return null;
+  } catch (error) {
+    console.error('Error getting target language from storage:', error);
+    return null;
+  }
+}
+
 module.exports = {
-  getUserId
+  getUserId,
+  getTargetLanguage
 };
