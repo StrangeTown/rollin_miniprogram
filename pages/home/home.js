@@ -54,7 +54,7 @@ Page({
 
   goToListening() {
     wx.showToast({
-      title: '功能开发中…',
+      title: '听句子功能开发中…',
       icon: 'none',
       duration: 1500
     });
@@ -68,7 +68,7 @@ Page({
 
   goToScenarios() {
     wx.showToast({
-      title: '场景练习功能开发中…',
+      title: '场景功能开发中…',
       icon: 'none',
       duration: 1500
     });

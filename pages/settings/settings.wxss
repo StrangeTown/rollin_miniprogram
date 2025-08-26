@@ -54,7 +54,7 @@
 }
 
 .settings-item-title {
-  font-size: 32rpx;
+  font-size: 28rpx;
   color: #1e293b;
   font-weight: 400;
 }

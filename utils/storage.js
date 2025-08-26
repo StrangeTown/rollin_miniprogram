@@ -58,8 +58,51 @@ function setUserInfo(info) {
   }
 }
 
+/**
+ * Persist token object to storage under the 'token' key.
+ * Expected shape: { accessToken: string, expireIn: number }
+ * @param {Object} token
+ * @returns {boolean} true on success, false on failure
+ */
+function setToken(token) {
+  if (!token || typeof token !== 'object') return false;
+  try {
+    wx.setStorageSync('token', token);
+    return true;
+  } catch (err) {
+    console.error('Error setting token in storage:', err);
+    return false;
+  }
+}
+
+/**
+ * Set both userInfo and token together.
+ * Accepts partial objects and uses existing helpers to persist them.
+ * @param {Object|null} userInfo
+ * @param {Object|null} token
+ * @returns {boolean} true if at least one of the operations succeeded
+ */
+function setUserInfoAndToken(userInfo, token) {
+  let okUser = false;
+  let okToken = false;
+  try {
+    if (userInfo && typeof userInfo === 'object') {
+      okUser = setUserInfo(userInfo);
+    }
+    if (token && typeof token === 'object') {
+      okToken = setToken(token);
+    }
+    return okUser || okToken;
+  } catch (err) {
+    console.error('Error setting userInfo and token:', err);
+    return false;
+  }
+}
+
 module.exports = {
   getUserId,
   getTargetLanguage,
-  setUserInfo
+  setUserInfo,
+  setToken,
+  setUserInfoAndToken
 };

@@ -37,9 +37,9 @@
       <view class="language-item" data-code="{{item.code}}" bindtap="onSelectLanguage">
         <view class="language-item-left">
           <view class="language-indicator {{item.code === targetLanguage ? 'active' : ''}}"></view>
-          <text class="language-name">{{item.label}}</text>
+          <text class="language-name">{{item.language}}</text>
         </view>
-        <text class="language-code">{{item.flag}}</text>
+        <text class="language-code">{{item.icon}}</text>
       </view>
     </block>
   </view>

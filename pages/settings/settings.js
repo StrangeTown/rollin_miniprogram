@@ -1,6 +1,7 @@
 // pages/settings/settings.js
 const storage = require('../../utils/storage.js');
 const request = require('../../utils/request.js');
+const api = require('../../utils/api.js');
 
 Page({
 
@@ -93,6 +94,31 @@ Page({
         success(res) {
           if (res && res.data && res.data.code === 0) {
             console.log('setUserLanguageOnServer success', targetLang);
+            // refresh token after changing language on server
+            api.refreshToken()
+              .then((r) => {
+                console.log('refreshToken response', r);
+                try {
+                  const data = r && r.data && r.data.data ? r.data.data : null;
+                  if (data) {
+                    const token = data.token || null;
+                    const userInfo = data.userInfo || null;
+                    console.log('refreshed token:', token);
+                    console.log('refreshed userInfo:', userInfo);
+                    try {
+                      const ok = storage.setUserInfoAndToken(userInfo, token);
+                      console.log('persisted refreshed credentials:', ok);
+                    } catch (ex2) {
+                      console.warn('Failed to persist refreshed credentials', ex2);
+                    }
+                  }
+                } catch (ex) {
+                  console.warn('Failed to parse refreshToken response', ex);
+                }
+              })
+              .catch((err) => {
+                console.warn('refreshToken failed', err);
+              });
           } else {
             console.warn('setUserLanguageOnServer unexpected response', res && res.data);
           }
@@ -164,34 +190,6 @@ Page({
             // Filter out 'zh-CN' from the language list and enhance with flag and label
             const filteredLanguages = res.data.data.values
               .filter(lang => lang.code !== 'zh-CN')
-              .map(lang => {
-                // Add flag emoji using existing getFlagEmoji method
-                const flag = that.getFlagEmoji(lang.code);
-                
-                // Add localized language labels
-                const labelMap = {
-                  'en-US': '美式英语',
-                  'en': '英语',
-                  'ja': '日本語',
-                  'ja-JP': '日本語',
-                  'ko': '한국어',
-                  'ko-KR': '한국어',
-                  'es': 'Español',
-                  'es-ES': 'Español',
-                  'fr': 'Français',
-                  'fr-FR': 'Français',
-                  'de': 'Deutsch',
-                  'de-DE': 'Deutsch'
-                };
-                
-                const label = labelMap[lang.code] || lang.language;
-                
-                return {
-                  ...lang,
-                  flag,
-                  label
-                };
-              });
             that.setData({ languages: filteredLanguages });
           } else {
             console.warn('fetchLanguageConfig: unexpected response', res && res.data);

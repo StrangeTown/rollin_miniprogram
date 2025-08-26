@@ -30,8 +30,14 @@ App({
                 method: 'GET',
                 success: response => {
                   if (response.data && response.data.code === 0) {
-                    wx.setStorageSync('token', response.data.data.token);
-                    wx.setStorageSync('userInfo', response.data.data.userInfo);
+                    try {
+                      const storage = require('./utils/storage.js');
+                      const token = response.data.data.token || null;
+                      const userInfo = response.data.data.userInfo || null;
+                      storage.setUserInfoAndToken(userInfo, token);
+                    } catch (err) {
+                      console.warn('Failed to persist login data via storage helper', err);
+                    }
                     console.log('Login success:', response.data.data);
                     
                     resolve(true);
