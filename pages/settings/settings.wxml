@@ -12,14 +12,6 @@
       </view>
     </view>
     
-    <button class="settings-item settings-button" open-type="contact" plain="true">
-      <view class="settings-item-left">
-        <text class="settings-item-title">联系我们</text>
-      </view>
-      <view class="settings-item-right">
-      </view>
-    </button>
-    
     <view class="settings-item" bindtap="goToPoints">
       <view class="settings-item-left">
         <text class="settings-item-title">翻点</text>
@@ -27,6 +19,14 @@
       <view class="settings-item-right">
       </view>
     </view>
+
+    <button class="settings-item settings-button" open-type="contact" plain="true">
+      <view class="settings-item-left">
+        <text class="settings-item-title">联系我们</text>
+      </view>
+      <view class="settings-item-right">
+      </view>
+    </button>
   </view>
 </view>
 
@@ -35,7 +35,10 @@
   <view class="language-list">
     <block wx:for="{{languages}}" wx:key="code">
       <view class="language-item" data-code="{{item.code}}" bindtap="onSelectLanguage">
-        <text class="language-name">{{item.label}}</text>
+        <view class="language-item-left">
+          <view class="language-indicator {{item.code === targetLanguage ? 'active' : ''}}"></view>
+          <text class="language-name">{{item.label}}</text>
+        </view>
         <text class="language-code">{{item.flag}}</text>
       </view>
     </block>

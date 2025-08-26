@@ -99,6 +99,25 @@
   background: #f8fafc;
 }
 
+.language-item-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.language-indicator {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: transparent;
+  flex-shrink: 0;
+  margin-right: 16rpx;
+}
+
+.language-indicator.active {
+  background: #3b82f6;
+}
+
 .language-name {
   font-size: 30rpx;
   color: #1e293b;

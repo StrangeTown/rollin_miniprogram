@@ -71,6 +71,38 @@ Page({
       } catch (err) {
         console.warn('Failed to persist selected language via storage.setUserInfo', err);
       }
+      // update server with selected language
+      try {
+        this.setUserLanguageOnServer(code);
+      } catch (err) {
+        console.warn('Failed to call setUserLanguageOnServer', err);
+      }
+    }
+  },
+
+  /**
+   * Send selected language to server
+   * PUT /user/set/lang { targetLang }
+   */
+  setUserLanguageOnServer(targetLang) {
+    try {
+      request.request({
+        url: '/user/set/lang',
+        method: 'PUT',
+        data: { targetLang, lang: "zh-CN" },
+        success(res) {
+          if (res && res.data && res.data.code === 0) {
+            console.log('setUserLanguageOnServer success', targetLang);
+          } else {
+            console.warn('setUserLanguageOnServer unexpected response', res && res.data);
+          }
+        },
+        fail(err) {
+          console.error('setUserLanguageOnServer failed', err);
+        }
+      });
+    } catch (err) {
+      console.error('setUserLanguageOnServer exception', err);
     }
   },
 
