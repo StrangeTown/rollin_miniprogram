@@ -25,14 +25,14 @@
         <text class="home-link-text">练习</text>
       </view>
       <view class="home-link" bindtap="goToListening">
-        <image class="home-link-icon" src="../../assets/images/headphones_sound_wave_icon.svg"></image>
-        <text class="home-link-text">听句子</text>
+        <image class="home-link-icon disabled" src="../../assets/images/headphones_sound_wave_icon.svg"></image>
+        <text class="home-link-text disabled">听句子</text>
       </view>
     </view>
     <view class="home-links-row">
       <view class="home-link" bindtap="goToScenarios">
-        <image class="home-link-icon" src="../../assets/images/puzzle_piece_filled_icon.svg"></image>
-        <text class="home-link-text">场景口语</text>
+        <image class="home-link-icon disabled" src="../../assets/images/puzzle_piece_filled_icon.svg"></image>
+        <text class="home-link-text disabled">场景口语</text>
       </view>
       <view class="home-link" bindtap="goToSettings">
         <image class="home-link-icon" src="../../assets/images/settings_filled_icon.svg"></image>

@@ -190,6 +190,16 @@ page, body {
   transform: scale(0.95);
 }
 
+/* Disabled/not ready link styles */
+.home-link-icon.disabled {
+  opacity: 0.3;
+}
+
+.home-link-text.disabled {
+  opacity: 0.4;
+  color: #94a3b8;
+}
+
 /* Subtle slogan at bottom */
 .slogan-container {
   position: fixed;
