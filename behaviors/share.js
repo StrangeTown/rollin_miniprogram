@@ -1,6 +1,9 @@
 // behaviors/share.js
 const share = require('../utils/share.js');
 
+// Shared title for all share targets
+const SHARE_TITLE = '快来使用口语翻翻，把中文变成地道美式口语！';
+
 /**
  * Share behavior for WeChat Mini Program
  * Provides common share functionality across all pages
@@ -14,7 +17,7 @@ const shareBehavior = Behavior({
       const shareUrl = share.getSharePath('pages/home/home');
       
       return {
-        title: '快来使用口语翻翻，把中文变成地道美式口语！',
+        title: SHARE_TITLE,
         path: shareUrl,
         imageUrl: share.getShareImagePath()
       };
@@ -24,9 +27,14 @@ const shareBehavior = Behavior({
      * Called when user shares to WeChat Moments (Timeline)
      */
     onShareTimeline() {
-      return {
-        title: '快来使用口语翻翻，把中文变成地道美式口语！'
+      const query = share.getShareQuery();
+      const result = {
+        title: SHARE_TITLE
       };
+      if (query) {
+        result.query = query;
+      }
+      return result;
     }
   }
 });
