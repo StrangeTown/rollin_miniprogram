@@ -1,0 +1,68 @@
+<navigation-bar title="" back="{{false}}" color="black" background="#f7f8fa">
+</navigation-bar>
+
+<view class="page">
+  <view class="hero">
+    <view class="app-title">口语翻翻</view>
+    <view class="app-subtitle">通过造句，掌握地道英语口语结构</view>
+  </view>
+
+  <view class="card-list">
+    <view class="practice-card light-card" data-count="3" bindtap="goToPractice">
+      <view class="card-content">
+        <view class="card-title">快速热身</view>
+        <view class="card-desc">适合碎片时间，轻松保持语感</view>
+      </view>
+      <view class="card-right">
+        <text class="card-num">3</text>
+        <text class="card-unit">句</text>
+      </view>
+    </view>
+    
+    <view class="practice-card medium-card" data-count="7" bindtap="goToPractice">
+      <view class="card-content">
+        <view class="card-title">日常练习</view>
+        <view class="card-desc">标准练习量，稳步提升表达能力</view>
+      </view>
+      <view class="card-right">
+        <text class="card-num">7</text>
+        <text class="card-unit">句</text>
+      </view>
+    </view>
+    
+    <view class="practice-card dark-card" data-count="12" bindtap="goToPractice">
+      <view class="card-content">
+        <view class="card-title">深度巩固</view>
+        <view class="card-desc">沉浸式造句，突破口语瓶颈</view>
+      </view>
+      <view class="card-right">
+        <text class="card-num">12</text>
+        <text class="card-unit">句</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="today-link" bindtap="showTodayHistory">
+    今日已练 {{todayCount}} 个结构 ›
+  </view>
+
+  <!-- Today's history modal -->
+  <bottom-modal
+    show="{{showHistory}}"
+    title="今日练习记录"
+    showCancel="{{true}}"
+    cancelText="关闭"
+    bind:close="closeHistory">
+    <view class="history-modal">
+      <scroll-view scroll-y style="height: 50vh"  class="history-list">
+        <view class="history-item" wx:for="{{todayItems}}" wx:key="id">
+          <view class="history-structure">{{item.structure}}</view>
+          <view class="history-example">{{item.examples[0].zh}}</view>
+        </view>
+      </scroll-view>
+      <view class="history-action">
+        <view class="history-drill-btn" bindtap="drillTodayItems">练习这些结构</view>
+      </view>
+    </view>
+  </bottom-modal>
+</view>

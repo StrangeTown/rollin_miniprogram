@@ -1,0 +1,58 @@
+<navigation-bar title="练习" back="{{true}}" color="black" background="#f7f8fa">
+</navigation-bar>
+
+<view class="page">
+  <!-- Progress Bar (instead of simple counter) -->
+  <view wx:if="{{!finished}}" class="progress-container">
+    <view class="progress-bar-bg">
+      <view class="progress-bar-fill" style="width: {{(current / totalCount) * 100}}%"></view>
+    </view>
+    <view class="counter-text">{{current}} <text class="counter-total">/ {{totalCount}}</text></view>
+  </view>
+
+  <!-- Main card area -->
+  <view wx:if="{{!finished}}" class="card-area {{cardAnim}}">
+    <!-- Structure (the pattern) in a decorative banner -->
+    <view class="structure-banner">
+      <view class="structure-quote">“</view>
+      <view class="structure-label">{{structure}}</view>
+    </view>
+
+    <!-- Content Card -->
+    <view class="card">
+      <view class="card-hint">
+        <text class="hint-icon">💡</text>
+        <text>试着用上面的结构造句：</text>
+      </view>
+      
+      <view class="content-section">
+        <view class="card-zh">{{zh}}</view>
+        
+        <!-- English answer (hidden until revealed) -->
+        <view class="card-en {{showAnswer ? 'revealed' : ''}}">
+          <view wx:if="{{showAnswer}}" class="en-text">{{en}}</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- Action buttons -->
+    <view class="btn-area">
+      <view wx:if="{{!showAnswer}}" class="reveal-btn" bindtap="revealAnswer">
+        <text>查看例句</text>
+      </view>
+      <view wx:if="{{showAnswer}}" class="next-btn" bindtap="nextQuestion">
+        <text>{{current < totalCount ? '下一句' : '完成练习'}}</text>
+        <text class="btn-icon" wx:if="{{current < totalCount}}">→</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Finished state -->
+  <view wx:if="{{finished}}" class="finished-area">
+    <view class="finished-emoji">🎉</view>
+    <view class="finished-title">练习完成！</view>
+    <view class="finished-desc">第 {{round}} 轮 · 已完成 {{totalCount}} 句造句练习</view>
+    <view class="again-btn" bindtap="replayRound">再练一遍</view>
+    <view class="back-link" bindtap="goBack">返回首页</view>
+  </view>
+</view>

@@ -1,14 +1,7 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/index/index",
-    "pages/logs/logs",
-    "pages/search/search",
-    "pages/sentences/sentences",
-    "pages/practice/practice",
-    "pages/points/points",
-    "pages/points-records/points-records",
-    "pages/settings/settings"
+    "pages/main/main",
+    "pages/drill/drill"
   ],
   "window": {
     "navigationBarTextStyle": "black",
