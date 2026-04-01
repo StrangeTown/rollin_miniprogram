@@ -29,14 +29,26 @@ Page({
   onLoad(options) {
     this._roundItems = []
     this._replayQueue = null
-    // ids mode: practice specific structures
-    if (options.ids) {
-      const idList = options.ids.split(',')
-      this._pool = structures.filter(s => idList.includes(s.id))
-      if (this._pool.length === 0) this._pool = structures
+    const mode = options.mode || 'random'
+    if (mode === 'review') {
+      const history = wx.getStorageSync(HISTORY_KEY) || []
+      const today = new Date()
+      const startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime()
+      const todayIds = []
+      history.forEach(item => {
+        if (item.ts >= startOfDay && !todayIds.includes(item.id)) {
+          todayIds.push(item.id)
+        }
+      })
+      this._pool = structures.filter(s => todayIds.includes(s.id))
+      if (this._pool.length === 0) {
+        wx.showToast({ title: '今天还没有练习记录', icon: 'none' })
+        wx.navigateBack()
+        return
+      }
       this.setData({ totalCount: this._pool.length, current: 1 })
     } else {
-      // count mode: random from all
+      // random mode
       const count = parseInt(options.count) || 3
       this._pool = structures
       this.setData({ totalCount: count, current: 1 })

@@ -36,7 +36,7 @@ Page({
   goToPractice(e) {
     const count = e.currentTarget.dataset.count
     wx.navigateTo({
-      url: '/pages/drill/drill?count=' + count
+      url: '/pages/drill/drill?mode=random&count=' + count
     })
   },
 
@@ -53,10 +53,9 @@ Page({
   },
 
   drillTodayItems() {
-    const ids = this.data.todayItems.map(s => s.id).join(',')
     this.setData({ showHistory: false })
     wx.navigateTo({
-      url: '/pages/drill/drill?ids=' + ids
+      url: '/pages/drill/drill?mode=review'
     })
   }
 })
