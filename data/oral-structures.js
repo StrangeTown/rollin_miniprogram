@@ -358,5 +358,185 @@ module.exports = [
       { en: "It doesn't make sense to buy it now.", zh: '现在买它不划算。' },
       { en: "It doesn't make sense to argue over something so small.", zh: '为这么小的事争论不值得。' }
     ]
+  },
+  {
+    id: 'a1b2c3d4-1041',
+    structure: "I'm used to...",
+    examples: [
+      { en: "I'm used to getting up early.", zh: '我已经习惯早起了。' },
+      { en: "She's used to living alone.", zh: '她已经习惯一个人生活了。' },
+      { en: "I'm not used to this kind of weather.", zh: '我不太习惯这种天气。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1042',
+    structure: "It's worth...",
+    examples: [
+      { en: "It's worth a try.", zh: '值得一试。' },
+      { en: "This book is worth reading.", zh: '这本书值得一读。' },
+      { en: "It's worth spending more time on.", zh: '这件事值得多花点时间。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1043',
+    structure: 'That would be...',
+    examples: [
+      { en: 'That would be great.', zh: '那太好了。' },
+      { en: 'That would be a huge help.', zh: '那会帮上大忙。' },
+      { en: 'That would be fine with me.', zh: '我这边没问题。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1044',
+    structure: "There's a chance...",
+    examples: [
+      { en: "There's a chance it might snow tonight.", zh: '今晚有可能会下雪。' },
+      { en: "There's a chance we'll miss the train.", zh: '我们有可能赶不上火车。' },
+      { en: "There's a good chance she'll say yes.", zh: '她很有可能会答应。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1045',
+    structure: 'I mean...',
+    examples: [
+      { en: "I mean, it's not that serious.", zh: '我的意思是，事情没那么严重。' },
+      { en: "I mean, what else can we do?", zh: '我是说，我们还能怎么办呢？' },
+      { en: "I mean, you could just ask him directly.", zh: '我的意思是，你可以直接问他。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1046',
+    structure: 'As if...',
+    examples: [
+      { en: 'As if I would do that.', zh: '好像我会那样做似的。' },
+      { en: 'He talks as if he knows everything.', zh: '他说话的样子好像什么都懂。' },
+      { en: 'She looked at me as if I were crazy.', zh: '她看着我，好像我疯了一样。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1047',
+    structure: "I'd better...",
+    examples: [
+      { en: "I'd better get going.", zh: '我最好该走了。' },
+      { en: "You'd better take an umbrella.", zh: '你最好带把伞。' },
+      { en: "We'd better not be late.", zh: '我们最好别迟到。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1048',
+    structure: "It won't be long before...",
+    examples: [
+      { en: "It won't be long before dinner is ready.", zh: '晚饭很快就好了。' },
+      { en: "It won't be long before we see results.", zh: '很快我们就会看到结果。' },
+      { en: "It won't be long before spring arrives.", zh: '春天很快就到了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1049',
+    structure: "I've been meaning to...",
+    examples: [
+      { en: "I've been meaning to call you.", zh: '我一直想给你打电话来着。' },
+      { en: "I've been meaning to clean my room.", zh: '我一直想收拾一下房间。' },
+      { en: "I've been meaning to ask you something.", zh: '我一直想问你一件事。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1050',
+    structure: 'How did it go?',
+    examples: [
+      { en: 'How did it go at the interview?', zh: '面试怎么样？' },
+      { en: 'How did it go with your exam?', zh: '你考试怎么样？' },
+      { en: 'How did it go yesterday?', zh: '你昨天那边怎么样？' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1051',
+    structure: 'What do you say...?',
+    examples: [
+      { en: 'What do you say we go for a walk?', zh: '我们去散步怎么样？' },
+      { en: 'What do you say to some coffee?', zh: '来点咖啡怎么样？' },
+      { en: 'What do you say we try again?', zh: '我们再试一次怎么样？' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1052',
+    structure: "I wouldn't say...",
+    examples: [
+      { en: "I wouldn't say it's easy.", zh: '我不会说这很容易。' },
+      { en: "I wouldn't say we're close friends.", zh: '我不会说我们是很亲近的朋友。' },
+      { en: "I wouldn't say that's a good idea.", zh: '我不觉得那是个好主意。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1053',
+    structure: "It's hard to...",
+    examples: [
+      { en: "It's hard to explain.", zh: '这很难解释。' },
+      { en: "It's hard to say what will happen.", zh: '很难说接下来会发生什么。' },
+      { en: "It's hard to believe he said that.", zh: '很难相信他会那么说。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1054',
+    structure: "I'm trying to...",
+    examples: [
+      { en: "I'm trying to save money.", zh: '我在努力存钱。' },
+      { en: "I'm trying to stay positive.", zh: '我在努力保持积极。' },
+      { en: "I'm trying to understand your point.", zh: '我在尽量理解你的意思。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1055',
+    structure: 'You can always...',
+    examples: [
+      { en: 'You can always call me if you need help.', zh: '如果你需要帮忙，随时都可以给我打电话。' },
+      { en: 'You can always try again tomorrow.', zh: '你明天总还能再试一次。' },
+      { en: 'You can always change your mind later.', zh: '你之后随时可以改主意。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1056',
+    structure: 'That makes sense.',
+    examples: [
+      { en: 'That makes sense now.', zh: '现在这就说得通了。' },
+      { en: 'Oh, that makes sense.', zh: '哦，这样就合理了。' },
+      { en: "What you said makes sense.", zh: '你说得有道理。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1057',
+    structure: 'Not really...',
+    examples: [
+      { en: 'Not really. I changed my plan.', zh: '也没有，我改计划了。' },
+      { en: "Not really, I'm just tired.", zh: '也不是，我只是累了。' },
+      { en: 'Not really my thing, to be honest.', zh: '老实说，这不是我喜欢的类型。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1058',
+    structure: "I don't blame you.",
+    examples: [
+      { en: "I don't blame you for being upset.", zh: '你生气我能理解。' },
+      { en: "I don't blame you. I'd do the same.", zh: '我不怪你，换我也会这么做。' },
+      { en: "Honestly, I don't blame her either.", zh: '说真的，我也不怪她。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1059',
+    structure: 'For some reason...',
+    examples: [
+      { en: 'For some reason, I feel nervous today.', zh: '不知道为什么，我今天有点紧张。' },
+      { en: 'For some reason, the app keeps crashing.', zh: '不知道为什么，这个应用老是崩溃。' },
+      { en: 'For some reason, he never replied.', zh: '不知道为什么，他一直没回复。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1060',
+    structure: 'That works for me.',
+    examples: [
+      { en: 'Six o\'clock? That works for me.', zh: '六点？我这边可以。' },
+      { en: 'Friday sounds good. That works for me.', zh: '周五听起来不错，我可以。' },
+      { en: 'If that\'s easier for you, that works for me.', zh: '如果那样对你更方便，我没问题。' }
+    ]
   }
 ]
