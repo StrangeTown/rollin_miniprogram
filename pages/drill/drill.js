@@ -2,6 +2,14 @@ const structures = require('../../data/oral-structures.js')
 
 const HISTORY_KEY = 'drill_history'
 
+function shuffle(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    const tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp
+  }
+  return arr
+}
+
 function recordPractice(id) {
   const history = wx.getStorageSync(HISTORY_KEY) || []
   history.push({ id: id, ts: Date.now() })
@@ -22,13 +30,14 @@ Page({
   },
 
   _lastId: null,
-  _pool: null,
+  _queue: [],
   _roundItems: [],
   _replayQueue: null,
 
   onLoad(options) {
     this._roundItems = []
     this._replayQueue = null
+    this._queue = []
     const mode = options.mode || 'random'
     if (mode === 'review') {
       const history = wx.getStorageSync(HISTORY_KEY) || []
@@ -40,19 +49,19 @@ Page({
           todayIds.push(item.id)
         }
       })
-      this._pool = structures.filter(s => todayIds.includes(s.id))
-      if (this._pool.length === 0) {
+      const todayItems = structures.filter(s => todayIds.includes(s.id))
+      if (todayItems.length === 0) {
         wx.showToast({ title: '今天还没有练习记录', icon: 'none' })
         wx.navigateBack()
         return
       }
-      this.setData({ totalCount: this._pool.length, current: 1 })
+      this._queue = shuffle(todayItems.slice())
     } else {
-      // random mode
+      // random mode: shuffle full library, take count
       const count = parseInt(options.count) || 3
-      this._pool = structures
-      this.setData({ totalCount: count, current: 1 })
+      this._queue = shuffle(structures.slice()).slice(0, count)
     }
+    this.setData({ totalCount: this._queue.length, current: 1 })
     this.pickRandom()
   },
 
@@ -71,20 +80,12 @@ Page({
       return
     }
 
-    const pool = this._pool
-    if (!pool || pool.length === 0) return
+    const structureItem = this._queue.shift()
+    if (!structureItem) return
 
-    let candidates = pool
-    if (pool.length > 1 && this._lastId) {
-      candidates = pool.filter(s => s.id !== this._lastId)
-    }
-    const structureItem = candidates[Math.floor(Math.random() * candidates.length)]
     const example = structureItem.examples[Math.floor(Math.random() * structureItem.examples.length)]
-
     this._lastId = structureItem.id
-
     this._roundItems.push(structureItem)
-
     this.setData({
       structure: structureItem.structure,
       zh: example.zh,
@@ -124,7 +125,7 @@ Page({
 
   replayRound() {
     wx.vibrateShort({ type: 'medium' })
-    this._replayQueue = [...this._roundItems]
+    this._replayQueue = shuffle([...this._roundItems])
     this._lastId = null
     this.setData({
       finished: false,
