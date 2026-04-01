@@ -178,5 +178,185 @@ module.exports = [
       { en: "It's not like we have a choice.", zh: '又不是说我们有的选。' },
       { en: "It's not like it's the end of the world.", zh: '又不是世界末日。' }
     ]
+  },
+  {
+    id: 'a1b2c3d4-1021',
+    structure: "I'm not sure if...",
+    examples: [
+      { en: "I'm not sure if I can make it tonight.", zh: '我不确定今晚能不能去。' },
+      { en: "I'm not sure if this is the right way.", zh: '我不确定这条路对不对。' },
+      { en: "I'm not sure if she knows about it.", zh: '我不确定她知不知道这件事。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1022',
+    structure: 'As long as...',
+    examples: [
+      { en: "As long as you're happy, that's enough.", zh: '只要你开心，那就够了。' },
+      { en: 'As long as we leave now, we should be on time.', zh: '只要我们现在出发，应该还来得及。' },
+      { en: 'You can stay here as long as you want.', zh: '你想待多久都可以。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1023',
+    structure: 'The thing is...',
+    examples: [
+      { en: 'The thing is, I already made other plans.', zh: '问题是，我已经有别的安排了。' },
+      { en: "The thing is, we don't have enough time.", zh: '问题是，我们时间不够。' },
+      { en: "The thing is, I'm not ready yet.", zh: '问题是，我还没准备好。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1024',
+    structure: "Why don't we...?",
+    examples: [
+      { en: "Why don't we grab some coffee first?", zh: '要不我们先去喝杯咖啡？' },
+      { en: "Why don't we ask her for help?", zh: '要不我们找她帮忙？' },
+      { en: "Why don't we take a break?", zh: '要不我们休息一下？' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1025',
+    structure: "I'm looking forward to...",
+    examples: [
+      { en: "I'm looking forward to the weekend.", zh: '我很期待周末。' },
+      { en: "I'm looking forward to meeting your family.", zh: '我很期待见你的家人。' },
+      { en: "I'm looking forward to hearing from you.", zh: '我很期待收到你的消息。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1026',
+    structure: 'To be honest...',
+    examples: [
+      { en: "To be honest, I didn't expect that.", zh: '老实说，我没想到会这样。' },
+      { en: 'To be honest, this food is amazing.', zh: '说实话，这饭菜真不错。' },
+      { en: "To be honest, I'm a little nervous.", zh: '说实话，我有点紧张。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1027',
+    structure: 'That reminds me...',
+    examples: [
+      { en: 'That reminds me, I need to call my mom.', zh: '这倒提醒我了，我得给我妈妈打个电话。' },
+      { en: 'That reminds me of our trip last year.', zh: '这让我想起我们去年的旅行。' },
+      { en: 'That reminds me, your book is still with me.', zh: '这倒提醒我了，你的书还在我这里。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1028',
+    structure: 'I have no idea...',
+    examples: [
+      { en: 'I have no idea where he went.', zh: '我完全不知道他去哪儿了。' },
+      { en: 'I have no idea what to wear tomorrow.', zh: '我完全不知道明天穿什么。' },
+      { en: 'I have no idea how this works.', zh: '我完全不知道这个是怎么运作的。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1029',
+    structure: "It's up to...",
+    examples: [
+      { en: "It's up to you.", zh: '由你决定。' },
+      { en: "It's up to the manager to decide.", zh: '要由经理来决定。' },
+      { en: "It's up to us to fix this.", zh: '得由我们来解决这件事。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1030',
+    structure: 'You know what...?',
+    examples: [
+      { en: 'You know what? I changed my mind.', zh: '你知道吗？我改主意了。' },
+      { en: 'You know what? That actually sounds fun.', zh: '你知道吗？那听起来还真挺有意思。' },
+      { en: 'You know what? Let\'s do it tomorrow.', zh: '你知道吗？我们明天再做吧。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1031',
+    structure: 'I was wondering if...',
+    examples: [
+      { en: 'I was wondering if you could help me.', zh: '我想问问你能不能帮我一下。' },
+      { en: 'I was wondering if this seat is taken.', zh: '我想问一下这个座位有没有人。' },
+      { en: 'I was wondering if we could talk later.', zh: '我想问问我们能不能晚点聊。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1032',
+    structure: 'At least...',
+    examples: [
+      { en: 'At least we tried.', zh: '至少我们试过了。' },
+      { en: 'At least the weather is nice today.', zh: '至少今天天气不错。' },
+      { en: "At least you're being honest.", zh: '至少你说的是实话。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1033',
+    structure: "It doesn't matter if...",
+    examples: [
+      { en: "It doesn't matter if we leave a little late.", zh: '我们晚一点走也没关系。' },
+      { en: "It doesn't matter if you don't agree with me.", zh: '你不同意我也没关系。' },
+      { en: "It doesn't matter if it's hard at first.", zh: '一开始难一点也没关系。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1034',
+    structure: "I'm in the mood for...",
+    examples: [
+      { en: "I'm in the mood for something spicy.", zh: '我想吃点辣的。' },
+      { en: "I'm in the mood for a movie tonight.", zh: '我今晚想看场电影。' },
+      { en: "I'm not really in the mood for talking.", zh: '我现在不太想说话。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1035',
+    structure: 'You never know...',
+    examples: [
+      { en: 'You never know, it might work.', zh: '很难说，也许会成功。' },
+      { en: 'Take an umbrella. You never know.', zh: '带把伞吧，谁知道呢。' },
+      { en: 'You should ask her. You never know.', zh: '你应该问问她，说不定呢。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1036',
+    structure: 'No matter what...',
+    examples: [
+      { en: 'No matter what happens, stay calm.', zh: '无论发生什么，都要保持冷静。' },
+      { en: "I'll support you no matter what.", zh: '无论怎样，我都会支持你。' },
+      { en: 'No matter what you choose, I respect it.', zh: '不管你怎么选，我都尊重。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1037',
+    structure: "I'd rather...",
+    examples: [
+      { en: "I'd rather stay home tonight.", zh: '我今晚宁愿待在家里。' },
+      { en: "I'd rather not talk about it right now.", zh: '我现在宁愿不谈这个。' },
+      { en: "I'd rather take the train than drive.", zh: '比起开车，我宁愿坐火车。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1038',
+    structure: 'How about...?',
+    examples: [
+      { en: 'How about meeting at six?', zh: '六点见怎么样？' },
+      { en: 'How about this one?', zh: '这个怎么样？' },
+      { en: 'How about we order takeout?', zh: '我们点外卖怎么样？' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1039',
+    structure: "I'm supposed to...",
+    examples: [
+      { en: "I'm supposed to finish this by Friday.", zh: '我应该在周五前把这个完成。' },
+      { en: "I'm supposed to meet her at the station.", zh: '我得去车站接她。' },
+      { en: "Aren't you supposed to be in class now?", zh: '你现在不是应该在上课吗？' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1040',
+    structure: "It doesn't make sense to...",
+    examples: [
+      { en: "It doesn't make sense to blame yourself.", zh: '责怪自己没有意义。' },
+      { en: "It doesn't make sense to buy it now.", zh: '现在买它不划算。' },
+      { en: "It doesn't make sense to argue over something so small.", zh: '为这么小的事争论不值得。' }
+    ]
   }
 ]
