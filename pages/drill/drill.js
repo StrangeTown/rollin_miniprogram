@@ -29,15 +29,10 @@ Page({
     round: 1
   },
 
-  _lastId: null,
-  _queue: [],
-  _roundItems: [],
-  _replayQueue: null,
+  _items: [],
+  _idx: 0,
 
   onLoad(options) {
-    this._roundItems = []
-    this._replayQueue = null
-    this._queue = []
     const mode = options.mode || 'random'
     if (mode === 'review') {
       const history = wx.getStorageSync(HISTORY_KEY) || []
@@ -55,37 +50,20 @@ Page({
         wx.navigateBack()
         return
       }
-      this._queue = shuffle(todayItems.slice())
+      this._items = shuffle(todayItems.slice())
     } else {
-      // random mode: shuffle full library, take count
       const count = parseInt(options.count) || 3
-      this._queue = shuffle(structures.slice()).slice(0, count)
+      this._items = shuffle(structures.slice()).slice(0, count)
     }
-    this.setData({ totalCount: this._queue.length, current: 1 })
-    this.pickRandom()
+    this._idx = 0
+    this.setData({ totalCount: this._items.length, current: 1 })
+    this.showItem()
   },
 
-  pickRandom() {
-    // Replay mode: use queued structure items with a fresh random example
-    if (this._replayQueue && this._replayQueue.length > 0) {
-      const structureItem = this._replayQueue.shift()
-      const example = structureItem.examples[Math.floor(Math.random() * structureItem.examples.length)]
-      this._lastId = structureItem.id
-      this.setData({
-        structure: structureItem.structure,
-        zh: example.zh,
-        en: example.en,
-        showAnswer: false
-      })
-      return
-    }
-
-    const structureItem = this._queue.shift()
+  showItem() {
+    const structureItem = this._items[this._idx]
     if (!structureItem) return
-
     const example = structureItem.examples[Math.floor(Math.random() * structureItem.examples.length)]
-    this._lastId = structureItem.id
-    this._roundItems.push(structureItem)
     this.setData({
       structure: structureItem.structure,
       zh: example.zh,
@@ -97,21 +75,21 @@ Page({
   revealAnswer() {
     wx.vibrateShort({ type: 'light' })
     this.setData({ showAnswer: true })
-    recordPractice(this._lastId)
+    recordPractice(this._items[this._idx].id)
   },
 
   nextQuestion() {
     wx.vibrateShort({ type: 'medium' })
-    const next = this.data.current + 1
-    if (next > this.data.totalCount) {
+    const next = this._idx + 1
+    if (next >= this._items.length) {
       this.setData({ finished: true })
       return
     }
-    // Animate card out, then switch
     this.setData({ cardAnim: 'card-leave' })
     setTimeout(() => {
-      this.pickRandom()
-      this.setData({ cardAnim: 'card-enter', current: next })
+      this._idx = next
+      this.showItem()
+      this.setData({ cardAnim: 'card-enter', current: next + 1 })
       setTimeout(() => {
         this.setData({ cardAnim: '' })
       }, 350)
@@ -125,14 +103,14 @@ Page({
 
   replayRound() {
     wx.vibrateShort({ type: 'medium' })
-    this._replayQueue = shuffle([...this._roundItems])
-    this._lastId = null
+    this._items = shuffle(this._items.slice())
+    this._idx = 0
     this.setData({
       finished: false,
       current: 1,
       round: this.data.round + 1,
       cardAnim: ''
     })
-    this.pickRandom()
+    this.showItem()
   }
 })
