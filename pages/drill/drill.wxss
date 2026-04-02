@@ -131,8 +131,9 @@
   letter-spacing: 0;
   z-index: 1;
   text-shadow: 0 4rpx 12rpx rgba(0,0,0,0.05);
-  word-wrap: break-word;
-  word-break: break-all;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: normal;
 }
 
 /* Card */
