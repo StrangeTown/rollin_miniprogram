@@ -1,4 +1,4 @@
-<navigation-bar title="" back="{{false}}" color="black" background="#f7f8fa">
+<navigation-bar title="" back="{{false}}" color="black" background="#FAFAFA">
 </navigation-bar>
 
 <view class="page">
@@ -13,26 +13,28 @@
         <view class="card-title">开始练习</view>
         <view class="card-desc">花 1 分钟，练 3 句常用表达</view>
       </view>
-      <view class="card-right">
-        <view class="motion-orbit orbit-one"></view>
-        <view class="motion-orbit orbit-two"></view>
-        <view class="motion-dot dot-one"></view>
-        <view class="motion-dot dot-two"></view>
-        <view class="motion-dot dot-three"></view>
+      <view class="card-action">
+        <view class="play-btn-halo"></view>
+        <view class="play-btn">
+          <view class="play-icon"></view>
+        </view>
       </view>
     </view>
   </view>
 
-  <view class="history-summary-list">
-    <view
-      class="history-summary-item"
-      wx:for="{{historySummaries}}"
-      wx:key="dateKey"
-      data-date-key="{{item.dateKey}}"
-      data-label="{{item.label}}"
-      bindtap="showHistoryForDate">
-      <view class="history-summary-label">{{item.label}}</view>
-      <view class="history-summary-count">{{item.count}}句</view>
+  <view class="history-section" wx:if="{{historySummaries.length > 0}}">
+    <view class="section-title">练习记录</view>
+    <view class="history-summary-list">
+      <view
+        class="history-summary-item"
+        wx:for="{{historySummaries}}"
+        wx:key="dateKey"
+        data-date-key="{{item.dateKey}}"
+        data-label="{{item.label}}"
+        bindtap="showHistoryForDate">
+        <view class="history-summary-count">{{item.count}}<text class="count-unit"> 句</text></view>
+        <view class="history-summary-label">{{item.label}}</view>
+      </view>
     </view>
   </view>
 

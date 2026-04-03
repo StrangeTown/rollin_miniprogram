@@ -538,5 +538,185 @@ module.exports = [
       { en: 'Friday sounds good. That works for me.', zh: '周五听起来不错，我可以。' },
       { en: 'If that\'s easier for you, that works for me.', zh: '如果那样对你更方便，我没问题。' }
     ]
+  },
+  {
+    id: 'a1b2c3d4-1061',
+    structure: 'I guess...',
+    examples: [
+      { en: 'I guess we should get started.', zh: '我想我们该开始了。' },
+      { en: 'I guess she forgot about it.', zh: '我猜她把这事忘了。' },
+      { en: 'I guess it was worth the wait.', zh: '我觉得这等待还是值得的。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1062',
+    structure: 'You might want to...',
+    examples: [
+      { en: 'You might want to check your email.', zh: '你可能得看一下邮件。' },
+      { en: 'You might want to bring a jacket.', zh: '你最好带件外套。' },
+      { en: 'You might want to think it over first.', zh: '你可能要先考虑一下。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1063',
+    structure: 'It doesn\'t hurt to...',
+    examples: [
+      { en: 'It doesn\'t hurt to ask.', zh: '问一问也无妨。' },
+      { en: 'It doesn\'t hurt to be prepared.', zh: '提前准备总没坏处。' },
+      { en: 'It doesn\'t hurt to try something new.', zh: '试试新东西也没什么不好。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1064',
+    structure: 'I can\'t stand...',
+    examples: [
+      { en: 'I can\'t stand this noise anymore.', zh: '我再也受不了这噪音了。' },
+      { en: 'She can\'t stand waiting in line.', zh: '她受不了排队。' },
+      { en: 'I can\'t stand people being rude.', zh: '我受不了别人没礼貌。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1065',
+    structure: 'What makes you...?',
+    examples: [
+      { en: 'What makes you say that?', zh: '你为什么这么说？' },
+      { en: 'What makes you think he\'s serious?', zh: '你为什么觉得他是认真的？' },
+      { en: 'What makes you want to move there?', zh: '是什么让你想搬去那儿？' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1066',
+    structure: 'If I were you...',
+    examples: [
+      { en: 'If I were you, I\'d wait a little longer.', zh: '如果我是你，我会再等等。' },
+      { en: 'If I were you, I\'d talk to her directly.', zh: '如果我是你，我会直接和她谈。' },
+      { en: 'If I were you, I wouldn\'t worry too much.', zh: '如果我是你，我不会太担心。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1067',
+    structure: 'That sounds...',
+    examples: [
+      { en: 'That sounds interesting.', zh: '那听起来挺有意思。' },
+      { en: 'That sounds like too much work.', zh: '那听起来工作量太大了。' },
+      { en: 'That sounds better than the original plan.', zh: '那听起来比原计划更好。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1068',
+    structure: 'I\'m afraid...',
+    examples: [
+      { en: 'I\'m afraid I can\'t make it tonight.', zh: '恐怕我今晚去不了了。' },
+      { en: 'I\'m afraid you got the wrong number.', zh: '恐怕你打错电话了。' },
+      { en: 'I\'m afraid we\'re out of time.', zh: '恐怕我们没时间了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1069',
+    structure: 'You seem to...',
+    examples: [
+      { en: 'You seem to know a lot about this.', zh: '你看起来很懂这个。' },
+      { en: 'She seems to be in a good mood today.', zh: '她今天看起来心情不错。' },
+      { en: 'They seem to have figured it out.', zh: '他们好像已经弄明白了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1070',
+    structure: 'I\'d love to...',
+    examples: [
+      { en: 'I\'d love to join you for dinner.', zh: '我很想和你们一起吃晚饭。' },
+      { en: 'I\'d love to visit that place someday.', zh: '我很想有一天去那个地方看看。' },
+      { en: 'I\'d love to help, but I\'m busy right now.', zh: '我很想帮忙，但我现在正忙。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1071',
+    structure: 'Do you want me to...?',
+    examples: [
+      { en: 'Do you want me to carry that for you?', zh: '要我帮你拿那个吗？' },
+      { en: 'Do you want me to call her now?', zh: '要我现在给她打电话吗？' },
+      { en: 'Do you want me to wait here?', zh: '要我在这儿等吗？' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1072',
+    structure: 'I had no idea...',
+    examples: [
+      { en: 'I had no idea you were in town.', zh: '我完全不知道你在城里。' },
+      { en: 'I had no idea it would take this long.', zh: '我完全没想到这会花这么久。' },
+      { en: 'We had no idea the road was closed.', zh: '我们完全不知道那条路封了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1073',
+    structure: 'It came out...',
+    examples: [
+      { en: 'It came out better than I expected.', zh: '结果比我预想的还要好。' },
+      { en: 'The photo came out blurry.', zh: '照片拍出来有点糊。' },
+      { en: 'Everything came out fine in the end.', zh: '最后一切结果都还不错。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1074',
+    structure: 'I\'m fine with...',
+    examples: [
+      { en: 'I\'m fine with either option.', zh: '两个选择我都可以。' },
+      { en: 'I\'m fine with meeting later.', zh: '晚点见面我没问题。' },
+      { en: 'She\'s fine with us coming early.', zh: '她不介意我们早点来。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1075',
+    structure: 'Let\'s just...',
+    examples: [
+      { en: 'Let\'s just take it one step at a time.', zh: '我们就一步一步来吧。' },
+      { en: 'Let\'s just go home.', zh: '我们干脆回家吧。' },
+      { en: 'Let\'s just see what happens.', zh: '我们就看看会发生什么吧。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1076',
+    structure: 'The sooner..., the better.',
+    examples: [
+      { en: 'The sooner we leave, the better.', zh: '我们越早出发越好。' },
+      { en: 'The sooner you tell him, the better.', zh: '你越早告诉他越好。' },
+      { en: 'The sooner this is done, the better.', zh: '这事越早做完越好。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1077',
+    structure: 'What do you mean by...?',
+    examples: [
+      { en: 'What do you mean by that?', zh: '你那是什么意思？' },
+      { en: 'What do you mean by “later”?', zh: '你说的“晚点”是指什么时候？' },
+      { en: 'What do you mean by impossible?', zh: '你说不可能是什么意思？' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1078',
+    structure: 'I don\'t feel like...',
+    examples: [
+      { en: 'I don\'t feel like cooking tonight.', zh: '我今晚不想做饭。' },
+      { en: 'She doesn\'t feel like going out.', zh: '她不想出门。' },
+      { en: 'I don\'t feel like explaining it again.', zh: '我不想再解释一遍了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1079',
+    structure: 'I\'m all set.',
+    examples: [
+      { en: 'Thanks, I\'m all set.', zh: '谢谢，我这边都准备好了。' },
+      { en: 'You can go. I\'m all set here.', zh: '你可以走了，我这边都弄好了。' },
+      { en: 'We\'re all set for tomorrow.', zh: '我们明天都准备好了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1080',
+    structure: 'That depends.',
+    examples: [
+      { en: 'That depends. What\'s your budget?', zh: '那得看情况。你的预算是多少？' },
+      { en: 'That depends on when you\'re free.', zh: '那得看你什么时候有空。' },
+      { en: 'Whether we go or not, that depends.', zh: '我们去不去，还得看情况。' }
+    ]
   }
 ]
