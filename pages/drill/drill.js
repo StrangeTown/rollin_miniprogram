@@ -1,6 +1,8 @@
 const structures = require('../../data/oral-structures.js')
-
-const HISTORY_KEY = 'drill_history'
+const {
+  getTodayPracticeIds,
+  recordPractice
+} = require('../../utils/drill-history.js')
 
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -8,12 +10,6 @@ function shuffle(arr) {
     const tmp = arr[i]; arr[i] = arr[j]; arr[j] = tmp
   }
   return arr
-}
-
-function recordPractice(id) {
-  const history = wx.getStorageSync(HISTORY_KEY) || []
-  history.push({ id: id, ts: Date.now() })
-  wx.setStorageSync(HISTORY_KEY, history)
 }
 
 Page({
@@ -35,15 +31,7 @@ Page({
   onLoad(options) {
     const mode = options.mode || 'random'
     if (mode === 'review') {
-      const history = wx.getStorageSync(HISTORY_KEY) || []
-      const today = new Date()
-      const startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime()
-      const todayIds = []
-      history.forEach(item => {
-        if (item.ts >= startOfDay && !todayIds.includes(item.id)) {
-          todayIds.push(item.id)
-        }
-      })
+      const todayIds = getTodayPracticeIds()
       const todayItems = structures.filter(s => todayIds.includes(s.id))
       if (todayItems.length === 0) {
         wx.showToast({ title: '今天还没有练习记录', icon: 'none' })

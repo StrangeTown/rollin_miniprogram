@@ -1,6 +1,5 @@
 const structures = require('../../data/oral-structures.js')
-
-const HISTORY_KEY = 'drill_history'
+const { getTodayPracticeIds } = require('../../utils/drill-history.js')
 
 Page({
   data: {
@@ -14,17 +13,7 @@ Page({
   },
 
   _loadTodayHistory() {
-    const history = wx.getStorageSync(HISTORY_KEY) || []
-    const today = new Date()
-    const startOfDay = new Date(today.getFullYear(), today.getMonth(), today.getDate()).getTime()
-
-    // Get unique structure ids practiced today
-    const todayIds = []
-    history.forEach(item => {
-      if (item.ts >= startOfDay && !todayIds.includes(item.id)) {
-        todayIds.push(item.id)
-      }
-    })
+    const todayIds = getTodayPracticeIds()
 
     const todayItems = structures.filter(s => todayIds.includes(s.id))
     this.setData({
