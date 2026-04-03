@@ -1,6 +1,7 @@
 const structures = require('../../data/oral-structures.js')
 const {
-  getTodayPracticeIds,
+  getDateKey,
+  getPracticeIdsByDate,
   recordPractice
 } = require('../../utils/drill-history.js')
 
@@ -31,14 +32,15 @@ Page({
   onLoad(options) {
     const mode = options.mode || 'random'
     if (mode === 'review') {
-      const todayIds = getTodayPracticeIds()
-      const todayItems = structures.filter(s => todayIds.includes(s.id))
-      if (todayItems.length === 0) {
-        wx.showToast({ title: '今天还没有练习记录', icon: 'none' })
+      const dateKey = options.date || getDateKey()
+      const practiceIds = getPracticeIdsByDate(dateKey)
+      const practiceItems = structures.filter(s => practiceIds.includes(s.id))
+      if (practiceItems.length === 0) {
+        wx.showToast({ title: '这一天还没有练习记录', icon: 'none' })
         wx.navigateBack()
         return
       }
-      this._items = shuffle(todayItems.slice())
+      this._items = shuffle(practiceItems.slice())
     } else {
       const count = parseInt(options.count) || 3
       this._items = shuffle(structures.slice()).slice(0, count)

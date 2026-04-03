@@ -1,24 +1,48 @@
 const structures = require('../../data/oral-structures.js')
-const { getTodayPracticeIds } = require('../../utils/drill-history.js')
+const {
+  getDateKeyByOffset,
+  getPracticeIdsByDate
+} = require('../../utils/drill-history.js')
+
+const HISTORY_DAY_OPTIONS = [
+  { label: '今天', offset: 0 },
+  { label: '昨天', offset: -1 },
+  { label: '前天', offset: -2 }
+]
 
 Page({
   data: {
     showHistory: false,
-    todayItems: [],
-    todayCount: 0
+    historySummaries: [],
+    selectedHistoryDate: '',
+    selectedHistoryLabel: '',
+    selectedHistoryItems: []
   },
 
   onShow() {
-    this._loadTodayHistory()
+    this._loadRecentHistory()
   },
 
-  _loadTodayHistory() {
-    const todayIds = getTodayPracticeIds()
+  _loadRecentHistory() {
+    const historySummaries = HISTORY_DAY_OPTIONS.map(day => {
+      const dateKey = getDateKeyByOffset(day.offset)
+      const ids = getPracticeIdsByDate(dateKey)
+      const items = structures.filter(s => ids.includes(s.id))
+      return {
+        label: day.label,
+        dateKey: dateKey,
+        count: items.length,
+        items: items
+      }
+    })
 
-    const todayItems = structures.filter(s => todayIds.includes(s.id))
+    const firstAvailable = historySummaries.find(item => item.count > 0) || historySummaries[0]
+
     this.setData({
-      todayItems: todayItems,
-      todayCount: todayItems.length
+      historySummaries: historySummaries,
+      selectedHistoryDate: firstAvailable ? firstAvailable.dateKey : '',
+      selectedHistoryLabel: firstAvailable ? firstAvailable.label : '',
+      selectedHistoryItems: firstAvailable ? firstAvailable.items : []
     })
   },
 
@@ -29,22 +53,36 @@ Page({
     })
   },
 
-  showTodayHistory() {
-    if (this.data.todayCount === 0) {
-      wx.showToast({ title: '今天还没有练习记录', icon: 'none' })
+  showHistoryForDate(e) {
+    const dateKey = e.currentTarget.dataset.dateKey
+    const label = e.currentTarget.dataset.label
+    const summary = this.data.historySummaries.find(item => item.dateKey === dateKey)
+
+    if (!summary || summary.count === 0) {
+      wx.showToast({ title: `${label}还没有练习记录`, icon: 'none' })
       return
     }
-    this.setData({ showHistory: true })
+
+    this.setData({
+      showHistory: true,
+      selectedHistoryDate: summary.dateKey,
+      selectedHistoryLabel: summary.label,
+      selectedHistoryItems: summary.items
+    })
   },
 
   closeHistory() {
     this.setData({ showHistory: false })
   },
 
-  drillTodayItems() {
+  drillSelectedItems() {
+    if (!this.data.selectedHistoryDate) {
+      return
+    }
+
     this.setData({ showHistory: false })
     wx.navigateTo({
-      url: '/pages/drill/drill?mode=review'
+      url: `/pages/drill/drill?mode=review&date=${this.data.selectedHistoryDate}`
     })
   }
 })

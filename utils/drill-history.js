@@ -7,6 +7,12 @@ function getDateKey(date = new Date()) {
   return `${year}-${month}-${day}`
 }
 
+function getDateKeyByOffset(offset) {
+  const date = new Date()
+  date.setDate(date.getDate() + offset)
+  return getDateKey(date)
+}
+
 function getHistoryMap() {
   const history = wx.getStorageSync(HISTORY_KEY)
   if (!history || typeof history !== 'object' || Array.isArray(history)) {
@@ -42,6 +48,7 @@ function recordPractice(id) {
 
 module.exports = {
   getDateKey,
+  getDateKeyByOffset,
   getHistoryMap,
   getPracticeIdsByDate,
   getTodayPracticeIds,
