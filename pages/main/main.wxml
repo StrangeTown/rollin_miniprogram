@@ -8,36 +8,17 @@
   </view>
 
   <view class="card-list">
-    <view class="practice-card light-card" data-count="3" bindtap="goToPractice">
+    <view class="practice-card" data-count="3" bindtap="goToPractice">
       <view class="card-content">
-        <view class="card-title">快速热身</view>
-        <view class="card-desc">适合碎片时间，轻松保持语感</view>
+        <view class="card-title">开始练习</view>
+        <view class="card-desc">花 1 分钟，练 3 句常用表达</view>
       </view>
       <view class="card-right">
-        <text class="card-num">3</text>
-        <text class="card-unit">句</text>
-      </view>
-    </view>
-    
-    <view class="practice-card medium-card" data-count="7" bindtap="goToPractice">
-      <view class="card-content">
-        <view class="card-title">日常练习</view>
-        <view class="card-desc">标准练习量，稳步提升表达能力</view>
-      </view>
-      <view class="card-right">
-        <text class="card-num">7</text>
-        <text class="card-unit">句</text>
-      </view>
-    </view>
-    
-    <view class="practice-card dark-card" data-count="12" bindtap="goToPractice">
-      <view class="card-content">
-        <view class="card-title">深度巩固</view>
-        <view class="card-desc">沉浸式造句，突破口语瓶颈</view>
-      </view>
-      <view class="card-right">
-        <text class="card-num">12</text>
-        <text class="card-unit">句</text>
+        <view class="motion-orbit orbit-one"></view>
+        <view class="motion-orbit orbit-two"></view>
+        <view class="motion-dot dot-one"></view>
+        <view class="motion-dot dot-two"></view>
+        <view class="motion-dot dot-three"></view>
       </view>
     </view>
   </view>
@@ -50,8 +31,8 @@
       data-date-key="{{item.dateKey}}"
       data-label="{{item.label}}"
       bindtap="showHistoryForDate">
-      <view class="history-summary-label">{{item.label}}练了 {{item.count}} 句</view>
-      <view class="history-summary-arrow">›</view>
+      <view class="history-summary-label">{{item.label}}</view>
+      <view class="history-summary-count">{{item.count}}句</view>
     </view>
   </view>
 
