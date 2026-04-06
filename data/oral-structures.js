@@ -1258,5 +1258,185 @@ module.exports = [
       { en: 'You can count on me to be there on time.', zh: '你可以放心，我会准时到。' },
       { en: 'Whatever happens, you can count on me.', zh: '不管发生什么，你都可以依靠我。' }
     ]
+  },
+  {
+    id: 'a1b2c3d4-1141',
+    structure: 'I happen to...',
+    examples: [
+      { en: 'I happen to know his sister.', zh: '我正好认识他妹妹。' },
+      { en: 'I happen to be free tomorrow—want to meet up?', zh: '我明天正好有空，要见个面吗？' },
+      { en: 'I happen to have an extra ticket.', zh: '我正好多了一张票。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1142',
+    structure: 'It\'s about time...',
+    examples: [
+      { en: 'It\'s about time you got a haircut.', zh: '你早该去剪头发了。' },
+      { en: 'It\'s about time they fixed this road.', zh: '他们早就该修这条路了。' },
+      { en: 'It\'s about time we had a proper talk.', zh: '我们早该好好谈谈了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1143',
+    structure: 'Hold on,...',
+    examples: [
+      { en: 'Hold on, I think I left my phone back there.', zh: '等等，我觉得我把手机落在那边了。' },
+      { en: 'Hold on, that\'s not what I said.', zh: '等一下，我不是那个意思。' },
+      { en: 'Hold on, let me think for a second.', zh: '稍等，让我想一想。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1144',
+    structure: 'I\'m getting tired of...',
+    examples: [
+      { en: 'I\'m getting tired of eating the same thing every day.', zh: '我越来越烦每天吃一样的东西了。' },
+      { en: 'I\'m getting tired of waiting.', zh: '我越等越烦了。' },
+      { en: 'I\'m getting tired of making excuses for him.', zh: '我越来越不想再帮他找借口了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1145',
+    structure: 'It\'s a shame that...',
+    examples: [
+      { en: 'It\'s a shame that you can\'t make it tonight.', zh: '真可惜你今晚来不了。' },
+      { en: 'It\'s a shame that the weather ruined the trip.', zh: '真遗憾天气把这次旅行毁了。' },
+      { en: 'It\'s a shame that nobody showed up.', zh: '真遗憾没人来。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1146',
+    structure: 'I\'m starting to...',
+    examples: [
+      { en: 'I\'m starting to think this was a bad idea.', zh: '我开始觉得这个主意不太好。' },
+      { en: 'I\'m starting to get hungry.', zh: '我开始有点饿了。' },
+      { en: 'I\'m starting to like this place.', zh: '我开始喜欢上这个地方了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1147',
+    structure: 'Fair enough.',
+    examples: [
+      { en: 'You need more time? Fair enough.', zh: '你需要更多时间？那也行。' },
+      { en: 'She didn\'t want to go alone. Fair enough.', zh: '她不想一个人去，也说得过去。' },
+      { en: 'Fair enough, I\'ll do it your way.', zh: '好吧，就按你的方式来。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1148',
+    structure: 'Either way,...',
+    examples: [
+      { en: 'Either way, we need to make a decision by tomorrow.', zh: '不管怎样，我们明天之前都得做个决定。' },
+      { en: 'Either way, I\'m okay with it.', zh: '不管哪种，我都行。' },
+      { en: 'Either way, it\'s going to take time.', zh: '不管怎么说，都需要时间。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1149',
+    structure: 'All I\'m saying is,...',
+    examples: [
+      { en: 'All I\'m saying is, you should\'ve told me earlier.', zh: '我就是说，你早点告诉我就好了。' },
+      { en: 'All I\'m saying is, be careful.', zh: '我只是说，小心点。' },
+      { en: 'All I\'m saying is, it\'s worth a try.', zh: '我就是觉得，值得试一试。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1150',
+    structure: 'You\'re better off...',
+    examples: [
+      { en: 'You\'re better off taking the train.', zh: '你还是坐火车比较好。' },
+      { en: 'You\'re better off not knowing.', zh: '你不知道更好。' },
+      { en: 'Honestly, you\'re better off without him.', zh: '说真的，没有他对你更好。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1151',
+    structure: 'The worst part is,...',
+    examples: [
+      { en: 'The worst part is, I saw it coming.', zh: '最糟的是，我早就预感到了。' },
+      { en: 'The worst part is nobody apologized.', zh: '最气的是，没有人道歉。' },
+      { en: 'The worst part is having to start all over again.', zh: '最难受的是又得从头开始。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1152',
+    structure: 'I keep forgetting to...',
+    examples: [
+      { en: 'I keep forgetting to reply to his message.', zh: '我老是忘记回他消息。' },
+      { en: 'I keep forgetting to charge my phone before bed.', zh: '我总是忘记睡前给手机充电。' },
+      { en: 'I keep forgetting to ask—how\'s your mom doing?', zh: '我总是忘了问——你妈最近怎么样？' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1153',
+    structure: 'What were you thinking?',
+    examples: [
+      { en: 'You said that to her? What were you thinking?', zh: '你跟她说了那个？你当时在想什么？' },
+      { en: 'What were you thinking when you quit your job?', zh: '你辞职的时候是怎么想的？' },
+      { en: 'I don\'t know what I was thinking, honestly.', zh: '说真的，我也不知道自己当时在想什么。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1154',
+    structure: 'I wish I could...',
+    examples: [
+      { en: 'I wish I could help, but I\'m swamped.', zh: '我很想帮，但我现在太忙了。' },
+      { en: 'I wish I could take a week off.', zh: '我要是能休一个星期就好了。' },
+      { en: 'I wish I could just forget about it.', zh: '我要是能直接忘掉这件事就好了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1155',
+    structure: 'What are the chances...?',
+    examples: [
+      { en: 'What are the chances we\'d run into each other here?', zh: '我们居然会在这里碰到，真是太巧了。' },
+      { en: 'What are the chances of getting a table tonight?', zh: '今晚订到位子的可能性有多大？' },
+      { en: 'What are the chances he actually reads it?', zh: '他真的会读的概率有多大？' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1156',
+    structure: 'I totally forgot about...',
+    examples: [
+      { en: 'Sorry, I totally forgot about the meeting.', zh: '对不起，我完全忘了那个会议。' },
+      { en: 'Oh no, I totally forgot about your birthday.', zh: '哦不，我完全忘了你的生日。' },
+      { en: 'I totally forgot about that—when did you tell me?', zh: '我完全忘了这件事——你什么时候跟我说的？' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1157',
+    structure: 'There\'s no way I\'d...',
+    examples: [
+      { en: 'There\'s no way I\'d agree to that.', zh: '我不可能同意那个。' },
+      { en: 'There\'s no way I\'d do it without asking first.', zh: '我不会不先问就去做的。' },
+      { en: 'There\'s no way I\'d go back to that place.', zh: '我不可能再回到那个地方了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1158',
+    structure: 'Anything but...',
+    examples: [
+      { en: 'It was anything but easy.', zh: '那可一点都不容易。' },
+      { en: 'She seemed anything but happy.', zh: '她看起来一点都不高兴。' },
+      { en: 'Anything but that—I\'ll do something else.', zh: '除了那个什么都行——我做别的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1159',
+    structure: 'Out of nowhere,...',
+    examples: [
+      { en: 'Out of nowhere, he just started crying.', zh: '他突然毫无征兆地哭了起来。' },
+      { en: 'Out of nowhere, she texted me after two years.', zh: '两年后，她突然给我发了条消息。' },
+      { en: 'Out of nowhere, it started pouring.', zh: '突然就开始下大雨了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1160',
+    structure: 'I should\'ve known...',
+    examples: [
+      { en: 'I should\'ve known it wasn\'t going to work.', zh: '我早该知道这不会成的。' },
+      { en: 'I should\'ve known he\'d be late.', zh: '我早该知道他会迟到。' },
+      { en: 'Ugh, I should\'ve known better.', zh: '唉，我当时就该有点脑子的。' },
+    ]
   }
 ]
