@@ -8,7 +8,7 @@
   </view>
 
   <view class="card-list">
-    <view class="practice-card" data-count="3" bindtap="goToPractice">
+    <view class="practice-card" data-count="3" bindtap="goToPractice" hover-class="practice-card-press" hover-start-time="0" hover-stay-time="80">
       <view class="card-content">
         <view class="card-title">开始练习</view>
         <view class="card-desc">花 1 分钟，练 3 句常用表达</view>

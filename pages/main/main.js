@@ -52,6 +52,7 @@ Page({
 
   goToPractice(e) {
     const count = e.currentTarget.dataset.count
+    wx.vibrateShort({ type: 'light' })
     wx.navigateTo({
       url: '/pages/drill/drill?mode=random&count=' + count
     })
@@ -66,6 +67,8 @@ Page({
       wx.showToast({ title: `${label}还没有练习记录`, icon: 'none' })
       return
     }
+
+    wx.vibrateShort({ type: 'light' })
 
     this.setData({
       showHistory: true,
