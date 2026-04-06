@@ -1078,5 +1078,185 @@ module.exports = [
       { en: 'Don\'t worry about the mistake. It\'s no big deal.', zh: '别担心这个错误，没什么大不了。' },
       { en: 'Missing one class is no big deal.', zh: '缺一节课没什么大不了的。' }
     ]
+  },
+  {
+    id: 'a1b2c3d4-1121',
+    structure: 'Just in case...',
+    examples: [
+      { en: 'I\'ll bring a jacket just in case.', zh: '我会带件外套，以防万一。' },
+      { en: 'Take some cash just in case the card doesn\'t work.', zh: '带点现金吧，以防刷不了卡。' },
+      { en: 'I\'ll text her again just in case she missed it.', zh: '我再给她发一遍消息，以防她没看到。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1122',
+    structure: 'The last thing I want is...',
+    examples: [
+      { en: 'The last thing I want is to make this awkward.', zh: '我最不想的就是把这件事弄得尴尬。' },
+      { en: 'The last thing I want is another delay.', zh: '我最不想看到的就是再拖延一次。' },
+      { en: 'The last thing I want is for you to worry.', zh: '我最不想让你担心。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1123',
+    structure: 'The good news is...',
+    examples: [
+      { en: 'The good news is we still have time.', zh: '好消息是我们还有时间。' },
+      { en: 'The good news is she\'s feeling better now.', zh: '好消息是她现在好多了。' },
+      { en: 'The good news is the test wasn\'t as hard as I thought.', zh: '好消息是考试没我想的那么难。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1124',
+    structure: 'I wouldn\'t count on it.',
+    examples: [
+      { en: 'Will he be on time? I wouldn\'t count on it.', zh: '他会准时吗？我可不指望。' },
+      { en: 'It might stop raining soon, but I wouldn\'t count on it.', zh: '雨也许很快会停，但我不抱这个希望。' },
+      { en: 'She said she\'d try, but I wouldn\'t count on it.', zh: '她说她会尽量，但我不会太指望。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1125',
+    structure: 'It\'s one of those days.',
+    examples: [
+      { en: 'I spilled coffee again. It\'s one of those days.', zh: '我又把咖啡洒了，今天真是诸事不顺。' },
+      { en: 'Nothing is going right today. It\'s one of those days.', zh: '今天什么都不顺，真是那种倒霉日子。' },
+      { en: 'First the bus was late, then my phone died. It\'s one of those days.', zh: '先是公交晚点，然后手机又没电了，今天就是这么不顺。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1126',
+    structure: 'Not a chance.',
+    examples: [
+      { en: 'Can I borrow your car tonight? Not a chance.', zh: '今晚能借你的车吗？想都别想。' },
+      { en: 'Do you think he\'ll apologize? Not a chance.', zh: '你觉得他会道歉吗？没门。' },
+      { en: 'I\'m working this weekend, so a day off? Not a chance.', zh: '我这周末还要上班，所以休假？不可能。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1127',
+    structure: 'I wouldn\'t be surprised if...',
+    examples: [
+      { en: 'I wouldn\'t be surprised if she cancels at the last minute.', zh: '如果她临时取消，我一点也不会意外。' },
+      { en: 'I wouldn\'t be surprised if they already know.', zh: '如果他们已经知道了，我也不会惊讶。' },
+      { en: 'I wouldn\'t be surprised if it sells out tonight.', zh: '如果今晚就卖光了，我也不意外。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1128',
+    structure: 'You know better than that.',
+    examples: [
+      { en: 'Come on, you know better than that.', zh: '拜托，这种事你心里有数。' },
+      { en: 'You know better than that, so don\'t fall for it.', zh: '你明明知道不是那样，别上当。' },
+      { en: 'He knows better than that, but he did it anyway.', zh: '他明明知道不该那样做，但还是做了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1129',
+    structure: 'I\'ve got mixed feelings about...',
+    examples: [
+      { en: 'I\'ve got mixed feelings about moving away.', zh: '对于搬走这件事，我心里挺复杂的。' },
+      { en: 'I\'ve got mixed feelings about the offer.', zh: '对这个提议，我有点犹豫。' },
+      { en: 'She\'s got mixed feelings about starting over.', zh: '她对重新开始这件事心情很复杂。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1130',
+    structure: 'That\'s not the point.',
+    examples: [
+      { en: 'That\'s not the point. We need a real solution.', zh: '重点不是这个，我们需要真正的解决办法。' },
+      { en: 'Sure, it\'s cheap, but that\'s not the point.', zh: '是，确实便宜，但重点不在这儿。' },
+      { en: 'You\'re missing it. That\'s not the point.', zh: '你没抓住重点，关键不是这个。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1131',
+    structure: 'If that makes sense.',
+    examples: [
+      { en: 'I want something simple but still special, if that makes sense.', zh: '我想要简单一点，但又得有点特别，如果你明白我的意思。' },
+      { en: 'He looks calm, but also kind of nervous, if that makes sense.', zh: '他看起来很镇定，但又有点紧张，如果你能理解的话。' },
+      { en: 'It felt familiar and strange at the same time, if that makes sense.', zh: '那感觉既熟悉又陌生，如果这么说你能懂的话。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1132',
+    structure: 'Don\'t tell me...',
+    examples: [
+      { en: 'Don\'t tell me you forgot again.', zh: '你别告诉我你又忘了。' },
+      { en: 'Don\'t tell me that\'s the last slice.', zh: '你别告诉我那是最后一块。' },
+      { en: 'Don\'t tell me we\'re at the wrong station.', zh: '你别告诉我我们下错站了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1133',
+    structure: 'I wouldn\'t worry about it.',
+    examples: [
+      { en: 'It\'s a small mistake. I wouldn\'t worry about it.', zh: '这只是个小错误，我不会太担心。' },
+      { en: 'If she\'s late once, I wouldn\'t worry about it.', zh: '她偶尔迟到一次，我觉得不用太担心。' },
+      { en: 'I wouldn\'t worry about it for now.', zh: '这事暂时不用太担心。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1134',
+    structure: 'It may look..., but...',
+    examples: [
+      { en: 'It may look easy, but it takes practice.', zh: '这看起来容易，但其实需要练习。' },
+      { en: 'It may look old, but it still works great.', zh: '它看起来旧，但还是很好用。' },
+      { en: 'It may look simple, but there\'s a lot going on.', zh: '这看起来很简单，但其实里面门道很多。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1135',
+    structure: 'Let\'s say...',
+    examples: [
+      { en: 'Let\'s say you miss the train. What then?', zh: '假设你错过了火车，那怎么办？' },
+      { en: 'Let\'s say we do go. Where would we stay?', zh: '假设我们真的去了，那我们住哪儿？' },
+      { en: 'Let\'s say he\'s right. We still need a backup plan.', zh: '就算他说得对，我们还是需要备用方案。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1136',
+    structure: 'That doesn\'t sound like...',
+    examples: [
+      { en: 'That doesn\'t sound like her at all.', zh: '这听起来一点也不像她会做的事。' },
+      { en: 'That doesn\'t sound like a good idea.', zh: '这听起来不像是个好主意。' },
+      { en: 'That doesn\'t sound like him. He\'s usually careful.', zh: '这听起来不像他会做的事，他平时很谨慎。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1137',
+    structure: 'I\'m not in a rush.',
+    examples: [
+      { en: 'Take your time. I\'m not in a rush.', zh: '你慢慢来，我不赶时间。' },
+      { en: 'We can decide later. I\'m not in a rush.', zh: '我们晚点再决定也行，我不着急。' },
+      { en: 'I\'m not in a rush to replace it yet.', zh: '我还不急着把它换掉。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1138',
+    structure: 'I\'ll see what I can do.',
+    examples: [
+      { en: 'I can\'t promise anything, but I\'ll see what I can do.', zh: '我不能保证，不过我会想想办法。' },
+      { en: 'Let me talk to him first. I\'ll see what I can do.', zh: '先让我跟他谈谈，我看看能不能办到。' },
+      { en: 'We might be full tonight, but I\'ll see what I can do.', zh: '我们今晚可能满了，但我看看能不能想办法。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1139',
+    structure: 'That\'s more like it.',
+    examples: [
+      { en: 'Nice, that\'s more like it.', zh: '对，这就像样了。' },
+      { en: 'A hot shower? That\'s more like it.', zh: '洗个热水澡？这才对嘛。' },
+      { en: 'Now you\'re talking. That\'s more like it.', zh: '这才像话。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1140',
+    structure: 'You can count on me.',
+    examples: [
+      { en: 'If you need help, you can count on me.', zh: '如果你需要帮忙，可以指望我。' },
+      { en: 'You can count on me to be there on time.', zh: '你可以放心，我会准时到。' },
+      { en: 'Whatever happens, you can count on me.', zh: '不管发生什么，你都可以依靠我。' }
+    ]
   }
 ]
