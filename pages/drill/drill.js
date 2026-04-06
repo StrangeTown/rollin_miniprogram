@@ -27,7 +27,8 @@ Page({
     finished: false,
     round: 1,
     autoLoopPractice: false,
-    showSettingsSheet: false
+    showSettingsSheet: false,
+    showAddDialog: false
   },
 
   _items: [],
@@ -143,6 +144,26 @@ Page({
 
   closeSettingsSheet() {
     this.setData({ showSettingsSheet: false })
+  },
+
+  openAddDialog() {
+    // Close sheet and open dialog
+    this.setData({ showSettingsSheet: false })
+    setTimeout(() => {
+      this.setData({ showAddDialog: true })
+    }, 200) // slight delay to let sheet start closing before dialog pops up
+  },
+
+  closeAddDialog() {
+    this.setData({ showAddDialog: false })
+  },
+
+  saveCustomSentence() {
+    wx.showToast({
+      title: '添加成功',
+      icon: 'success'
+    })
+    this.setData({ showAddDialog: false })
   },
 
   onAutoLoopChange(e) {

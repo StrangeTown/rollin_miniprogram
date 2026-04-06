@@ -67,13 +67,41 @@
     </view>
 
     <view class="sheet-body">
-      <view class="sheet-setting-item">
+      <view class="sheet-setting-item action-item" bindtap="openAddDialog">
+        <view class="sheet-setting-left">
+          <view class="sheet-setting-title">添加自定义例句</view>
+          <view class="sheet-setting-desc">结合自己的生活，为“{{structure}}”造个新句</view>
+        </view>
+        <view class="sheet-action-icon"></view>
+      </view>
+
+      <view class="sheet-setting-item mt-24">
         <view class="sheet-setting-left">
           <view class="sheet-setting-title">循环练习</view>
           <view class="sheet-setting-desc">最后一题点击下一句后自动洗牌并开始下一轮</view>
         </view>
         <switch checked="{{autoLoopPractice}}" color="#111827" bindchange="onAutoLoopChange" />
       </view>
+    </view>
+  </view>
+</view>
+
+<!-- Add Custom Sentence Dialog (Modal) -->
+<view wx:if="{{showAddDialog}}" class="dialog-mask" bindtap="closeAddDialog" catchtouchmove="noop">
+  <view class="dialog" catchtap="noop">
+    <view class="dialog-header">补充例句</view>
+    <view class="dialog-subtitle">当前句型：{{structure}}</view>
+    <view class="dialog-body">
+      <view class="input-group">
+        <textarea class="dialog-textarea" placeholder="请输入英文例句..." placeholder-class="input-placeholder" auto-height></textarea>
+      </view>
+      <view class="input-group mt-24">
+        <textarea class="dialog-textarea" placeholder="请输入中文翻译..." placeholder-class="input-placeholder" auto-height></textarea>
+      </view>
+    </view>
+    <view class="dialog-footer">
+      <view class="dialog-btn cancel-btn" bindtap="closeAddDialog">取消</view>
+      <view class="dialog-btn save-btn" bindtap="saveCustomSentence">保存</view>
     </view>
   </view>
 </view>
