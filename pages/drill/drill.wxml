@@ -65,7 +65,6 @@
   <view class="settings-sheet" catchtap="noop" catchtouchmove="noop">
     <view class="sheet-grabber"></view>
     <view class="sheet-header">
-      <view class="sheet-title">设置</view>
       <view class="sheet-close" bindtap="closeSettingsSheet">关闭</view>
     </view>
 
