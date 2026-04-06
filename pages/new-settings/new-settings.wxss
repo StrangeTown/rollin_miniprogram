@@ -28,6 +28,27 @@ page {
   transform: scale(0.98);
 }
 
+button.setting-item {
+  width: 100% !important;
+  margin-top: 24rpx;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 0 40rpx !important;
+  border: none !important;
+  background: #FFFFFF;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  line-height: inherit;
+  text-align: left;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+button.setting-item::after {
+  display: none;
+}
+
 .setting-label {
   font-size: 32rpx;
   font-weight: 500;

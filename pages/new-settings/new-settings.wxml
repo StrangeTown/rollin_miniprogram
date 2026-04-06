@@ -6,6 +6,10 @@
     <view class="setting-label">数据管理</view>
     <view class="setting-arrow"></view>
   </view>
+
+  <button class="setting-item" open-type="contact" plain="true">
+    <view class="setting-label">联系客服</view>
+  </button>
 </view>
 
 <view wx:if="{{showSheet}}" class="sheet-mask" bindtap="closeSheet" catchtouchmove="noop">
