@@ -1247,7 +1247,7 @@ module.exports = [
     examples: [
       { en: 'Nice, that\'s more like it.', zh: '对，这就像样了。' },
       { en: 'A hot shower? That\'s more like it.', zh: '洗个热水澡？这才对嘛。' },
-      { en: 'Now you\'re talking. That\'s more like it.', zh: '这才像话。' }
+      { en: 'You finally cleaned your room? That\'s more like it.', zh: '你终于打扫房间了？这还差不多。' }
     ]
   },
   {
