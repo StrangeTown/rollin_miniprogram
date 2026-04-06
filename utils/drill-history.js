@@ -46,11 +46,32 @@ function recordPractice(id) {
   return ids
 }
 
+function cleanOldHistory(keepDays = 7) {
+  const history = getHistoryMap()
+  const keys = Object.keys(history)
+  if (keys.length === 0) return
+
+  const cutoff = getDateKeyByOffset(-keepDays)
+  let changed = false
+
+  keys.forEach(k => {
+    if (k < cutoff) {
+      delete history[k]
+      changed = true
+    }
+  })
+
+  if (changed) {
+    wx.setStorageSync(HISTORY_KEY, history)
+  }
+}
+
 module.exports = {
   getDateKey,
   getDateKeyByOffset,
   getHistoryMap,
   getPracticeIdsByDate,
   getTodayPracticeIds,
-  recordPractice
+  recordPractice,
+  cleanOldHistory
 }
