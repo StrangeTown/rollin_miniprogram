@@ -2,6 +2,6 @@
   "usingComponents": {
     "navigation-bar": "/components/navigation-bar/navigation-bar"
   },
-  "navigationBarTitleText": "添加专属例句",
+  "navigationBarTitleText": "添加例句",
   "navigationStyle": "custom"
 }

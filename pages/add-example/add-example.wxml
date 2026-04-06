@@ -1,8 +1,7 @@
-<navigation-bar title="添加专属例句" back="{{true}}" color="black" background="#FAFAFA"></navigation-bar>
+<navigation-bar title="添加例句" back="{{true}}" color="black" background="#FAFAFA"></navigation-bar>
 
 <view class="page">
   <view class="header-section">
-    <view class="header-label">当前句型</view>
     <view class="structure-text">{{structure}}</view>
   </view>
 
