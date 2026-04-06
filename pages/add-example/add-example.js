@@ -1,3 +1,5 @@
+const CUSTOM_EXAMPLES_KEY = 'custom_examples'
+
 Page({
   data: {
     structure: '',
@@ -6,7 +8,12 @@ Page({
     canSave: false
   },
 
+  _structureId: '',
+
   onLoad(options) {
+    if (options.structureId) {
+      this._structureId = options.structureId
+    }
     if (options.structure) {
       this.setData({
         structure: decodeURIComponent(options.structure)
@@ -50,6 +57,26 @@ Page({
 
   onSave() {
     if (!this.data.canSave) return
+    if (!this._structureId) {
+      wx.showToast({ title: '缺少句型信息', icon: 'none' })
+      return
+    }
+
+    const { en, zh } = this.data
+    const newExample = { en: en.trim(), zh: zh.trim() }
+
+    try {
+      const all = wx.getStorageSync(CUSTOM_EXAMPLES_KEY) || {}
+      if (!Array.isArray(all[this._structureId])) {
+        all[this._structureId] = []
+      }
+      all[this._structureId].push(newExample)
+      wx.setStorageSync(CUSTOM_EXAMPLES_KEY, all)
+    } catch (err) {
+      console.warn('Failed to save custom example:', err)
+      wx.showToast({ title: '保存失败', icon: 'none' })
+      return
+    }
 
     wx.vibrateShort({ type: 'medium' })
     wx.showToast({
@@ -58,7 +85,6 @@ Page({
       duration: 1500
     })
 
-    // Simulate saving and returning
     setTimeout(() => {
       wx.navigateBack()
     }, 1500)

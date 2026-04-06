@@ -6,6 +6,7 @@ const {
 } = require('../../utils/drill-history.js')
 
 const AUTO_LOOP_KEY = 'drill_auto_loop'
+const CUSTOM_EXAMPLES_KEY = 'custom_examples'
 
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -33,9 +34,11 @@ Page({
   _items: [],
   _idx: 0,
   _shouldRecordPractice: true,
+  _customExamples: {},
 
   onLoad(options) {
     this.loadAutoLoopPracticeSetting()
+    this.loadCustomExamples()
 
     const mode = options.mode || 'random'
     this._shouldRecordPractice = mode !== 'review'
@@ -58,10 +61,17 @@ Page({
     this.showItem()
   },
 
+  onShow() {
+    this.loadCustomExamples()
+  },
+
   showItem() {
     const structureItem = this._items[this._idx]
     if (!structureItem) return
-    const example = structureItem.examples[Math.floor(Math.random() * structureItem.examples.length)]
+    const custom = this._customExamples[structureItem.id] || []
+    const allExamples = structureItem.examples.concat(custom)
+    const example = allExamples[Math.floor(Math.random() * allExamples.length)]
+    this._currentStructureId = structureItem.id
     this.setData({
       structure: structureItem.structure,
       zh: example.zh,
@@ -147,8 +157,9 @@ Page({
 
   openAddDialog() {
     this.setData({ showSettingsSheet: false })
+    const id = this._currentStructureId || ''
     wx.navigateTo({
-      url: `/pages/add-example/add-example?structure=${encodeURIComponent(this.data.structure)}`
+      url: `/pages/add-example/add-example?structureId=${id}&structure=${encodeURIComponent(this.data.structure)}`
     })
   },
 
@@ -168,6 +179,15 @@ Page({
     } catch (err) {
       console.warn('Failed to load auto-loop practice setting:', err)
       this.setData({ autoLoopPractice: false })
+    }
+  },
+
+  loadCustomExamples() {
+    try {
+      this._customExamples = wx.getStorageSync(CUSTOM_EXAMPLES_KEY) || {}
+    } catch (err) {
+      console.warn('Failed to load custom examples:', err)
+      this._customExamples = {}
     }
   }
 })
