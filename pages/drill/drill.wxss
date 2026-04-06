@@ -82,17 +82,10 @@ page {
 .counter-text {
   font-size: 24rpx;
   font-weight: 500;
-  color: #6B7280;
+  color: #9CA3AF;
   white-space: nowrap;
   display: flex;
-  align-items: baseline;
-}
-
-.counter-total {
-  font-size: 24rpx;
-  font-weight: 400;
-  color: #9CA3AF;
-  margin-left: 6rpx;
+  align-items: center;
 }
 
 /* Card area */

@@ -7,7 +7,7 @@
     <view class="progress-bar-bg">
       <view class="progress-bar-fill" style="width: {{(current / totalCount) * 100}}%"></view>
     </view>
-    <view class="counter-text">{{current}} <text class="counter-total">/ {{totalCount}}</text></view>
+    <view class="counter-text">{{current}} / {{totalCount}}</view>
   </view>
 
   <!-- Main card area -->
