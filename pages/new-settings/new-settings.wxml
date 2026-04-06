@@ -1,0 +1,5 @@
+<navigation-bar title="设置" back="{{true}}" color="black" background="#FAFAFA">
+</navigation-bar>
+
+<view class="page">
+</view>

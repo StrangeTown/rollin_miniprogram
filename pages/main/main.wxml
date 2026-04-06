@@ -38,6 +38,8 @@
     </view>
   </view>
 
+  <view class="settings-entry" bindtap="goToSettings">设置</view>
+
   <bottom-modal
     show="{{showHistory}}"
     title="{{selectedHistoryLabel}}练习记录"

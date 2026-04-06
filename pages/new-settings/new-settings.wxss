@@ -1,0 +1,10 @@
+page {
+  background-color: #FAFAFA;
+}
+
+.page {
+  min-height: 100vh;
+  background-color: #FAFAFA;
+  padding: 0 48rpx;
+  box-sizing: border-box;
+}

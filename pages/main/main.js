@@ -46,6 +46,10 @@ Page({
     })
   },
 
+  goToSettings() {
+    wx.navigateTo({ url: '/pages/new-settings/new-settings' })
+  },
+
   goToPractice(e) {
     const count = e.currentTarget.dataset.count
     wx.navigateTo({
