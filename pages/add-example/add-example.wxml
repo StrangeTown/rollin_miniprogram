@@ -1,0 +1,26 @@
+<navigation-bar title="添加专属例句" back="{{true}}" color="black" background="#FAFAFA"></navigation-bar>
+
+<view class="page">
+  <view class="header-section">
+    <view class="header-label">当前句型</view>
+    <view class="structure-text">{{structure}}</view>
+  </view>
+
+  <view class="input-card">
+    <view class="input-group">
+      <view class="input-title">英文例句</view>
+      <textarea class="custom-textarea en-text" placeholder="结合自己的生活造个新句..." placeholder-class="placeholder" auto-height bindinput="onEnInput" value="{{en}}"></textarea>
+    </view>
+
+    <view class="divider"></view>
+
+    <view class="input-group">
+      <view class="input-title">中文翻译</view>
+      <textarea class="custom-textarea zh-text" placeholder="输入这句英文的意思..." placeholder-class="placeholder" auto-height bindinput="onZhInput" value="{{zh}}"></textarea>
+    </view>
+  </view>
+
+  <view class="btn-area">
+    <view class="save-btn {{canSave ? 'active' : ''}}" bindtap="onSave">保存并继续练习</view>
+  </view>
+</view>

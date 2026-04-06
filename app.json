@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/main/main",
-    "pages/drill/drill"
+    "pages/drill/drill",
+    "pages/add-example/add-example"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -1,0 +1,118 @@
+page {
+  background-color: #FAFAFA;
+}
+
+.page {
+  min-height: 100vh;
+  background-color: #FAFAFA;
+  display: flex;
+  flex-direction: column;
+  padding: 0 48rpx 180rpx;
+  box-sizing: border-box;
+}
+
+.header-section {
+  margin-top: 40rpx;
+  margin-bottom: 60rpx;
+}
+
+.header-label {
+  font-size: 26rpx;
+  color: #6B7280;
+  margin-bottom: 24rpx;
+  background: #F3F4F6;
+  display: inline-block;
+  padding: 12rpx 24rpx;
+  border-radius: 12rpx;
+  font-weight: 500;
+}
+
+.structure-text {
+  font-size: 44rpx;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.4;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+.input-card {
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 40rpx;
+  padding: 48rpx 40rpx;
+  box-shadow: 0 40rpx 80rpx -12rpx rgba(0, 0, 0, 0.05), 0 20rpx 40rpx -12rpx rgba(0, 0, 0, 0.02);
+  box-sizing: border-box;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-title {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #4B5563;
+  margin-bottom: 24rpx;
+}
+
+.custom-textarea {
+  width: 100%;
+  min-height: 80rpx;
+  font-size: 36rpx;
+  color: #111827;
+  line-height: 1.5;
+}
+
+.en-text {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.zh-text {
+  font-weight: 600;
+  font-size: 34rpx;
+}
+
+.placeholder {
+  color: #D1D5DB;
+  font-weight: 400;
+}
+
+.divider {
+  width: 100%;
+  height: 2rpx;
+  background-color: #F3F4F6;
+  margin: 48rpx 0;
+}
+
+.btn-area {
+  margin-top: 80rpx;
+  width: 100%;
+}
+
+.save-btn {
+  width: 100%;
+  height: 104rpx;
+  border-radius: 52rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: 600;
+  background: #E5E7EB;
+  color: #9CA3AF;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: none;
+}
+
+.save-btn.active {
+  background: #111827;
+  color: #FFFFFF;
+  box-shadow: 0 16rpx 32rpx rgba(17, 24, 39, 0.15);
+}
+
+.save-btn.active:active {
+  transform: scale(0.97);
+}

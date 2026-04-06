@@ -85,23 +85,3 @@
     </view>
   </view>
 </view>
-
-<!-- Add Custom Sentence Dialog (Modal) -->
-<view wx:if="{{showAddDialog}}" class="dialog-mask" bindtap="closeAddDialog" catchtouchmove="noop">
-  <view class="dialog" catchtap="noop">
-    <view class="dialog-header">补充例句</view>
-    <view class="dialog-subtitle">当前句型：{{structure}}</view>
-    <view class="dialog-body">
-      <view class="input-group">
-        <textarea class="dialog-textarea" placeholder="请输入英文例句..." placeholder-class="input-placeholder" auto-height></textarea>
-      </view>
-      <view class="input-group mt-24">
-        <textarea class="dialog-textarea" placeholder="请输入中文翻译..." placeholder-class="input-placeholder" auto-height></textarea>
-      </view>
-    </view>
-    <view class="dialog-footer">
-      <view class="dialog-btn cancel-btn" bindtap="closeAddDialog">取消</view>
-      <view class="dialog-btn save-btn" bindtap="saveCustomSentence">保存</view>
-    </view>
-  </view>
-</view>
