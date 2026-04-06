@@ -23,6 +23,26 @@
   </view>
 
   <view class="btn-area">
-    <view class="save-btn {{canSave ? 'active' : ''}}" bindtap="onSave">保存并继续练习</view>
+    <view class="save-btn {{canSave ? 'active' : ''}}" bindtap="onSave">保存</view>
+    <view wx:if="{{customList.length > 0}}" class="list-entry" bindtap="openListSheet">已添加例句 ({{customList.length}})</view>
+  </view>
+</view>
+
+<view wx:if="{{showListSheet}}" class="list-sheet-mask" bindtap="closeListSheet" catchtouchmove="noop">
+  <view class="list-sheet" catchtap="noop" catchtouchmove="noop">
+    <view class="list-sheet-header">
+      <view class="list-sheet-title">已添加例句</view>
+      <view class="list-sheet-close" bindtap="closeListSheet">关闭</view>
+    </view>
+    <view class="list-sheet-body">
+      <view wx:for="{{customList}}" wx:key="index" class="example-card">
+        <view class="example-content">
+          <view class="example-en">{{item.en}}</view>
+          <view class="example-zh">{{item.zh}}</view>
+        </view>
+        <view class="example-delete" data-idx="{{index}}" bindtap="deleteExample">删除</view>
+      </view>
+      <view wx:if="{{customList.length > 1}}" class="delete-all" bindtap="deleteAllExamples">删除以上例句</view>
+    </view>
   </view>
 </view>
