@@ -2,7 +2,10 @@
 
 <view class="page">
   <view class="header-section">
-    <view class="structure-text">{{structure}}</view>
+    <view class="structure-row">
+      <view class="structure-text">{{structure}}</view>
+      <view class="structure-copy" bindtap="copyStructure">复制</view>
+    </view>
   </view>
 
   <view class="input-card">

@@ -70,7 +70,7 @@
       <view class="sheet-setting-item action-item" bindtap="openAddDialog">
         <view class="sheet-setting-left">
           <view class="sheet-setting-title">添加例句</view>
-          <view class="sheet-setting-desc">结合自己的生活，为“{{structure}}”造个新句</view>
+          <view class="sheet-setting-desc">结合你的生活场景，写一个例句</view>
         </view>
         <view class="sheet-action-icon"></view>
       </view>

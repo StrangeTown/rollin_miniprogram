@@ -24,6 +24,23 @@ Page({
     this.setData({ zh: val }, this.checkIfCanSave)
   },
 
+  copyStructure() {
+    const { structure } = this.data
+    if (!structure) return
+
+    wx.vibrateShort({ type: 'light' })
+    wx.setClipboardData({
+      data: structure,
+      success: () => {
+        wx.showToast({
+          title: '已复制',
+          icon: 'success',
+          duration: 1200
+        })
+      }
+    })
+  },
+
   checkIfCanSave() {
     const { en, zh } = this.data
     this.setData({
