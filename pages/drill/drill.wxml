@@ -61,7 +61,6 @@
 
 <view wx:if="{{showSettingsSheet}}" class="settings-sheet-mask" bindtap="closeSettingsSheet" catchtouchmove="noop">
   <view class="settings-sheet" catchtap="noop" catchtouchmove="noop">
-    <view class="sheet-grabber"></view>
     <view class="sheet-header">
       <view class="sheet-close" bindtap="closeSettingsSheet">关闭</view>
     </view>

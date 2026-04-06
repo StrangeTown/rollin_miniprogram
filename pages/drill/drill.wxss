@@ -386,15 +386,6 @@ page {
   }
 }
 
-.sheet-grabber {
-  width: 80rpx;
-  height: 10rpx;
-  border-radius: 6rpx;
-  background: #E5E7EB;
-  margin: 24rpx auto 12rpx;
-  flex-shrink: 0;
-}
-
 .sheet-header {
   height: 96rpx;
   padding: 0 48rpx;
