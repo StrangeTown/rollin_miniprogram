@@ -718,5 +718,185 @@ module.exports = [
       { en: 'That depends on when you\'re free.', zh: '那得看你什么时候有空。' },
       { en: 'Whether we go or not, that depends.', zh: '我们去不去，还得看情况。' }
     ]
+  },
+  {
+    id: 'a1b2c3d4-1081',
+    structure: 'It\'s on me.',
+    examples: [
+      { en: 'Don\'t worry about the bill. It\'s on me.', zh: '别担心账单，我请客。' },
+      { en: 'Lunch is on me today.', zh: '今天午饭我请。' },
+      { en: 'You helped me a lot, so this one\'s on me.', zh: '你帮了我很多，这次我请。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1082',
+    structure: 'I was about to say...',
+    examples: [
+      { en: 'I was about to say the same thing.', zh: '我正想说同样的话。' },
+      { en: 'I was about to say we should leave now.', zh: '我刚想说我们该走了。' },
+      { en: 'I was about to say that this feels familiar.', zh: '我刚想说这感觉很熟悉。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1083',
+    structure: 'I\'m not really into...',
+    examples: [
+      { en: 'I\'m not really into crowded places.', zh: '我不太喜欢人多的地方。' },
+      { en: 'He\'s not really into sports.', zh: '他不太喜欢运动。' },
+      { en: 'I\'m not really into staying up late anymore.', zh: '我现在不太喜欢熬夜了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1084',
+    structure: 'That should be fine.',
+    examples: [
+      { en: 'Meeting at seven? That should be fine.', zh: '七点见？那应该没问题。' },
+      { en: 'A small change like that should be fine.', zh: '那样的小改动应该可以。' },
+      { en: 'If we leave now, that should be fine.', zh: '如果我们现在走，应该来得及。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1085',
+    structure: 'I wouldn\'t mind...',
+    examples: [
+      { en: 'I wouldn\'t mind a cup of coffee.', zh: '我倒是不介意来杯咖啡。' },
+      { en: 'I wouldn\'t mind helping out.', zh: '我不介意帮个忙。' },
+      { en: 'She wouldn\'t mind waiting a few more minutes.', zh: '她不介意再等几分钟。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1086',
+    structure: 'It just feels...',
+    examples: [
+      { en: 'It just feels right.', zh: '这感觉就是对的。' },
+      { en: 'It just feels weird without him here.', zh: '他不在这儿总觉得怪怪的。' },
+      { en: 'It just feels too risky.', zh: '这感觉风险太大了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1087',
+    structure: 'That being said...',
+    examples: [
+      { en: 'It\'s expensive. That being said, it\'s worth it.', zh: '它是贵了点，不过还是值得的。' },
+      { en: 'I understand your point. That being said, I still disagree.', zh: '我理解你的观点，不过我还是不同意。' },
+      { en: 'The plan has risks. That being said, we should try.', zh: '这个计划有风险，不过我们还是该试试。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1088',
+    structure: 'Now that...',
+    examples: [
+      { en: 'Now that you\'re here, let\'s begin.', zh: '既然你到了，我们就开始吧。' },
+      { en: 'Now that I think about it, you were right.', zh: '现在想想，你是对的。' },
+      { en: 'Now that the rain has stopped, we can go out.', zh: '既然雨停了，我们可以出门了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1089',
+    structure: 'I could use...',
+    examples: [
+      { en: 'I could use some rest.', zh: '我真想休息一下。' },
+      { en: 'I could use your advice.', zh: '我想听听你的建议。' },
+      { en: 'We could use a little more time.', zh: '我们还需要一点时间。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1090',
+    structure: 'I\'ll pass.',
+    examples: [
+      { en: 'Thanks, but I\'ll pass.', zh: '谢谢，不过我就算了。' },
+      { en: 'I\'ll pass on dessert tonight.', zh: '今晚甜点我就不吃了。' },
+      { en: 'If it\'s okay, I\'ll pass this time.', zh: '如果可以的话，这次我就不参加了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1091',
+    structure: 'I\'m down for...',
+    examples: [
+      { en: 'I\'m down for a road trip this weekend.', zh: '我想这周末去自驾游。' },
+      { en: 'If you\'re ordering pizza, I\'m down for that.', zh: '如果你要点披萨，我没意见。' },
+      { en: 'I\'m down for whatever you decide.', zh: '你决定什么我都行。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1092',
+    structure: 'I hate to say it, but...',
+    examples: [
+      { en: 'I hate to say it, but you were right.', zh: '我不想这么说，但你是对的。' },
+      { en: 'I hate to say it, but we need more time.', zh: '我不想这么说，但我们还需要更多时间。' },
+      { en: 'I hate to say it, but this isn\'t working.', zh: '我不想这么说，但这办法行不通。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1093',
+    structure: 'You may as well...',
+    examples: [
+      { en: 'You may as well sit down.', zh: '你不如先坐下吧。' },
+      { en: 'We\'re already here, so we may as well go in.', zh: '反正都到这儿了，不如进去吧。' },
+      { en: 'If you\'ve finished, you may as well send it now.', zh: '既然你做完了，不如现在就发出去。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1094',
+    structure: 'There\'s nothing wrong with...',
+    examples: [
+      { en: 'There\'s nothing wrong with asking for help.', zh: '寻求帮助并没有什么不对。' },
+      { en: 'There\'s nothing wrong with changing your mind.', zh: '改变主意也没什么问题。' },
+      { en: 'There\'s nothing wrong with taking a break.', zh: '休息一下并没有错。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1095',
+    structure: 'I\'m a little worried that...',
+    examples: [
+      { en: 'I\'m a little worried that we\'re running late.', zh: '我有点担心我们要迟到了。' },
+      { en: 'I\'m a little worried that she misunderstood me.', zh: '我有点担心她误会我了。' },
+      { en: 'He\'s a little worried that the plan might fail.', zh: '他有点担心这个计划会失败。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1096',
+    structure: 'I\'ll keep that in mind.',
+    examples: [
+      { en: 'Thanks for the tip. I\'ll keep that in mind.', zh: '谢谢提醒，我会记住的。' },
+      { en: 'I\'ll keep that in mind next time.', zh: '下次我会注意这点。' },
+      { en: 'We\'ll keep that in mind when we make the decision.', zh: '我们做决定时会把这点考虑进去。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1097',
+    structure: 'It\'s kind of...',
+    examples: [
+      { en: 'It\'s kind of hard to explain.', zh: '这有点难解释。' },
+      { en: 'It\'s kind of funny when you think about it.', zh: '你想想其实还有点好笑。' },
+      { en: 'This place is kind of noisy.', zh: '这个地方有点吵。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1098',
+    structure: 'I\'m not buying it.',
+    examples: [
+      { en: 'Nice excuse, but I\'m not buying it.', zh: '借口不错，但我不信。' },
+      { en: 'He says he forgot again, and I\'m not buying it.', zh: '他说他又忘了，我可不信。' },
+      { en: 'That story sounds made up. I\'m not buying it.', zh: '那故事听着像编的，我不信。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1099',
+    structure: 'You do have a point.',
+    examples: [
+      { en: 'You do have a point there.', zh: '你这点说得确实有道理。' },
+      { en: 'I still disagree, but you do have a point.', zh: '我还是不同意，但你说得有一定道理。' },
+      { en: 'When you put it that way, you do have a point.', zh: '你这么一说，确实有道理。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1100',
+    structure: 'That rings a bell.',
+    examples: [
+      { en: 'His name rings a bell, but I can\'t place him.', zh: '他的名字听着耳熟，但我想不起是谁。' },
+      { en: 'That address rings a bell.', zh: '那个地址听起来有点耳熟。' },
+      { en: 'What you just said really rings a bell.', zh: '你刚才说的话让我觉得很熟悉。' }
+    ]
   }
 ]
