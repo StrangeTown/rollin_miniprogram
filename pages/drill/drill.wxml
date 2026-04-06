@@ -3,11 +3,12 @@
 
 <view class="page">
   <!-- Progress Bar (instead of simple counter) -->
-  <view wx:if="{{!finished}}" class="progress-container">
+  <view wx:if="{{!finished}}" class="progress-wrapper">
+    <view class="counter-text">{{current}} / {{totalCount}}</view>
     <view class="progress-bar-bg">
       <view class="progress-bar-fill" style="width: {{(current / totalCount) * 100}}%"></view>
     </view>
-    <view class="counter-text">{{current}} / {{totalCount}}</view>
+    <view class="settings-dot-entry" bindtap="openSettingsSheet">☰</view>
   </view>
 
   <!-- Main card area -->
@@ -56,9 +57,6 @@
     <view class="back-link" bindtap="goBack">返回首页</view>
   </view>
 
-  <view class="settings-entry-wrap">
-    <view class="settings-entry" bindtap="openSettingsSheet">设置</view>
-  </view>
 </view>
 
 <view wx:if="{{showSettingsSheet}}" class="settings-sheet-mask" bindtap="closeSettingsSheet" catchtouchmove="noop">

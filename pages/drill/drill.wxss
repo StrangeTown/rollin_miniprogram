@@ -55,7 +55,7 @@ page {
 }
 
 /* Progress Container */
-.progress-container {
+.progress-wrapper {
   width: 100%;
   margin-top: 32rpx;
   display: flex;
@@ -63,29 +63,46 @@ page {
   justify-content: space-between;
 }
 
+.counter-text {
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #9CA3AF;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin-right: 24rpx;
+  flex-shrink: 0;
+}
+
+.settings-dot-entry {
+  font-size: 40rpx;
+  font-weight: 400;
+  color: #9CA3AF;
+  padding: 10rpx 0 10rpx 20rpx;
+  margin-right: -4rpx;
+  transition: all 0.2s ease;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.settings-dot-entry:active {
+  color: #6B7280;
+  transform: scale(0.95);
+}
+
 .progress-bar-bg {
   flex: 1;
-  height: 8rpx;
+  height: 10rpx;
   background: rgba(17, 24, 39, 0.05);
-  border-radius: 4rpx;
+  border-radius: 5rpx;
   overflow: hidden;
-  margin-right: 24rpx;
 }
 
 .progress-bar-fill {
   height: 100%;
   background: #111827;
-  border-radius: 4rpx;
+  border-radius: 5rpx;
   transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.counter-text {
-  font-size: 24rpx;
-  font-weight: 500;
-  color: #9CA3AF;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
 }
 
 /* Card area */
@@ -328,39 +345,6 @@ page {
 
 .back-link:active {
   color: #6B7280;
-}
-
-.settings-entry-wrap {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 50;
-  padding: 0 0 calc(env(safe-area-inset-bottom) + 16rpx);
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.settings-entry {
-  pointer-events: auto;
-  min-height: 88rpx;
-  padding: 24rpx 40rpx;
-  font-size: 28rpx;
-  color: #9CA3AF;
-  line-height: 1.5;
-  text-decoration: underline;
-  text-underline-offset: 6rpx;
-  text-decoration-thickness: 2rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s ease;
-}
-
-.settings-entry:active {
-  color: #6B7280;
-  transform: scale(0.95);
 }
 
 .settings-sheet-mask {
