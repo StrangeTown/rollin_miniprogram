@@ -7,6 +7,7 @@ const {
 
 const AUTO_LOOP_KEY = 'drill_auto_loop'
 const CUSTOM_EXAMPLES_KEY = 'custom_examples'
+const CUSTOM_EXAMPLE_PICK_PROB = 0.7
 
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -68,9 +69,23 @@ Page({
   showItem() {
     const structureItem = this._items[this._idx]
     if (!structureItem) return
-    const custom = this._customExamples[structureItem.id] || []
-    const allExamples = structureItem.examples.concat(custom)
-    const example = allExamples[Math.floor(Math.random() * allExamples.length)]
+
+    const systemExamples = Array.isArray(structureItem.examples) ? structureItem.examples : []
+    const customExamples = Array.isArray(this._customExamples[structureItem.id])
+      ? this._customExamples[structureItem.id]
+      : []
+
+    let sourceExamples = systemExamples
+    if (customExamples.length === 0) {
+      sourceExamples = systemExamples
+    } else if (systemExamples.length === 0) {
+      sourceExamples = customExamples
+    } else {
+      sourceExamples = Math.random() < CUSTOM_EXAMPLE_PICK_PROB ? customExamples : systemExamples
+    }
+
+    const example = sourceExamples[Math.floor(Math.random() * sourceExamples.length)] || { en: '', zh: '' }
+
     this._currentStructureId = structureItem.id
     this.setData({
       structure: structureItem.structure,
