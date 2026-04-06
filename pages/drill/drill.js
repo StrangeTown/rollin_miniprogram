@@ -28,9 +28,11 @@ Page({
 
   _items: [],
   _idx: 0,
+  _shouldRecordPractice: true,
 
   onLoad(options) {
     const mode = options.mode || 'random'
+    this._shouldRecordPractice = mode !== 'review'
     if (mode === 'review') {
       const dateKey = options.date || getDateKey()
       const practiceIds = getPracticeIdsByDate(dateKey)
@@ -65,7 +67,9 @@ Page({
   revealAnswer() {
     wx.vibrateShort({ type: 'light' })
     this.setData({ showAnswer: true })
-    recordPractice(this._items[this._idx].id)
+    if (this._shouldRecordPractice) {
+      recordPractice(this._items[this._idx].id)
+    }
   },
 
   nextQuestion() {
