@@ -2,4 +2,30 @@
 </navigation-bar>
 
 <view class="page">
+  <view class="setting-item" bindtap="openSheet">
+    <view class="setting-label">数据管理</view>
+    <view class="setting-arrow"></view>
+  </view>
+</view>
+
+<view wx:if="{{showSheet}}" class="sheet-mask" bindtap="closeSheet" catchtouchmove="noop">
+  <view class="sheet" catchtap="noop" catchtouchmove="noop">
+    <view class="sheet-header">
+      <view class="sheet-title">数据管理</view>
+      <view class="sheet-close" bindtap="closeSheet">关闭</view>
+    </view>
+    <view class="sheet-body">
+      <view class="data-section">
+        <view class="data-title">练习记录</view>
+        <view class="data-desc">记录你每天练习了哪些口语结构，用于在首页展示练习历史。数据保存在本地。</view>
+        <view wx:if="{{hasHistory}}" class="clear-btn" bindtap="clearHistory">清空练习记录</view>
+      </view>
+
+      <view class="data-section">
+        <view class="data-title">自定义例句</view>
+        <view class="data-desc">你为各个口语结构添加的自定义例句，会在练习时随机出现。数据保存在本地。</view>
+        <view wx:if="{{hasCustomExamples}}" class="clear-btn" bindtap="clearCustomExamples">清空自定义例句</view>
+      </view>
+    </view>
+  </view>
 </view>

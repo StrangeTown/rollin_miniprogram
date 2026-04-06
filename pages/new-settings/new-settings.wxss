@@ -5,6 +5,150 @@ page {
 .page {
   min-height: 100vh;
   background-color: #FAFAFA;
-  padding: 0 48rpx;
+  padding: 24rpx 40rpx;
   box-sizing: border-box;
+}
+
+/* Setting Item */
+.setting-item {
+  width: 100%;
+  min-height: 120rpx;
+  border-radius: 32rpx;
+  background: #FFFFFF;
+  padding: 0 40rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.setting-item:active {
+  transform: scale(0.98);
+}
+
+.setting-label {
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #111827;
+}
+
+.setting-arrow {
+  width: 18rpx;
+  height: 18rpx;
+  border-top: 4rpx solid #D1D5DB;
+  border-right: 4rpx solid #D1D5DB;
+  transform: rotate(45deg);
+}
+
+/* Sheet */
+.sheet-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(17, 24, 39, 0.4);
+  display: flex;
+  align-items: flex-end;
+  animation: fadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.sheet {
+  width: 100%;
+  height: 78vh;
+  background: #FAFAFA;
+  border-radius: 48rpx 48rpx 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  animation: sheetUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  box-shadow: 0 -8rpx 32rpx rgba(0, 0, 0, 0.04);
+}
+
+@keyframes sheetUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.sheet-header {
+  height: 96rpx;
+  padding: 0 48rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.sheet-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #111827;
+}
+
+.sheet-close {
+  position: absolute;
+  right: 32rpx;
+  min-height: 88rpx;
+  padding: 0 16rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #6B7280;
+  display: flex;
+  align-items: center;
+  transition: color 0.2s;
+}
+
+.sheet-close:active {
+  color: #111827;
+}
+
+.sheet-body {
+  flex: 1;
+  padding: 24rpx 40rpx calc(env(safe-area-inset-bottom) + 40rpx);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+/* Data Sections */
+.data-section {
+  width: 100%;
+  border-radius: 32rpx;
+  background: #FFFFFF;
+  padding: 40rpx;
+  box-sizing: border-box;
+  box-shadow: 0 8rpx 24rpx rgba(0, 0, 0, 0.02);
+  margin-bottom: 24rpx;
+}
+
+.data-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #111827;
+}
+
+.data-desc {
+  margin-top: 16rpx;
+  font-size: 26rpx;
+  color: #9CA3AF;
+  line-height: 1.6;
+}
+
+.clear-btn {
+  margin-top: 28rpx;
+  font-size: 26rpx;
+  color: #D1D5DB;
+  transition: color 0.2s;
+}
+
+.clear-btn:active {
+  color: #EF4444;
 }
