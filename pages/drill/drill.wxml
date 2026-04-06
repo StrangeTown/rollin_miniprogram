@@ -41,8 +41,8 @@
         <text>查看例句</text>
       </view>
       <view wx:if="{{showAnswer}}" class="next-btn" bindtap="nextQuestion">
-        <text>{{current < totalCount ? '下一句' : '完成练习'}}</text>
-        <text class="btn-icon" wx:if="{{current < totalCount}}">→</text>
+        <text>{{(current < totalCount || autoLoopPractice) ? '下一句' : '完成练习'}}</text>
+        <text class="btn-icon" wx:if="{{current < totalCount || autoLoopPractice}}">→</text>
       </view>
     </view>
   </view>
@@ -54,5 +54,29 @@
     <view class="finished-desc">第 {{round}} 轮 · 已完成 {{totalCount}} 句造句练习</view>
     <view class="again-btn" bindtap="replayRound">再练一遍</view>
     <view class="back-link" bindtap="goBack">返回首页</view>
+  </view>
+
+  <view class="settings-entry-wrap">
+    <view class="settings-entry" bindtap="openSettingsSheet">设置</view>
+  </view>
+</view>
+
+<view wx:if="{{showSettingsSheet}}" class="settings-sheet-mask" bindtap="closeSettingsSheet" catchtouchmove="noop">
+  <view class="settings-sheet" catchtap="noop" catchtouchmove="noop">
+    <view class="sheet-grabber"></view>
+    <view class="sheet-header">
+      <view class="sheet-title">设置</view>
+      <view class="sheet-close" bindtap="closeSettingsSheet">关闭</view>
+    </view>
+
+    <view class="sheet-body">
+      <view class="sheet-setting-item">
+        <view class="sheet-setting-left">
+          <view class="sheet-setting-title">循环练习</view>
+          <view class="sheet-setting-desc">最后一题点击下一句后自动洗牌并开始下一轮</view>
+        </view>
+        <switch checked="{{autoLoopPractice}}" color="#111827" bindchange="onAutoLoopChange" />
+      </view>
+    </view>
   </view>
 </view>

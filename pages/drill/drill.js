@@ -5,6 +5,8 @@ const {
   recordPractice
 } = require('../../utils/drill-history.js')
 
+const AUTO_LOOP_KEY = 'drill_auto_loop'
+
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -23,7 +25,9 @@ Page({
     current: 0,
     totalCount: 0,
     finished: false,
-    round: 1
+    round: 1,
+    autoLoopPractice: false,
+    showSettingsSheet: false
   },
 
   _items: [],
@@ -31,6 +35,8 @@ Page({
   _shouldRecordPractice: true,
 
   onLoad(options) {
+    this.loadAutoLoopPracticeSetting()
+
     const mode = options.mode || 'random'
     this._shouldRecordPractice = mode !== 'review'
     if (mode === 'review') {
@@ -75,7 +81,27 @@ Page({
   nextQuestion() {
     wx.vibrateShort({ type: 'medium' })
     const next = this._idx + 1
+
     if (next >= this._items.length) {
+      if (this.data.autoLoopPractice) {
+        this.setData({ cardAnim: 'card-leave' })
+        setTimeout(() => {
+          this._items = shuffle(this._items.slice())
+          this._idx = 0
+          this.showItem()
+          this.setData({
+            cardAnim: 'card-enter',
+            current: 1,
+            round: this.data.round + 1,
+            finished: false
+          })
+          setTimeout(() => {
+            this.setData({ cardAnim: '' })
+          }, 350)
+        }, 300)
+        return
+      }
+
       this.setData({ finished: true })
       return
     }
@@ -106,5 +132,35 @@ Page({
       cardAnim: ''
     })
     this.showItem()
+  },
+
+  noop() {},
+
+  openSettingsSheet() {
+    wx.vibrateShort({ type: 'light' })
+    this.setData({ showSettingsSheet: true })
+  },
+
+  closeSettingsSheet() {
+    this.setData({ showSettingsSheet: false })
+  },
+
+  onAutoLoopChange(e) {
+    const enabled = !!(e && e.detail && e.detail.value)
+    this.setData({ autoLoopPractice: enabled })
+    try {
+      wx.setStorageSync(AUTO_LOOP_KEY, enabled)
+    } catch (err) {
+      console.warn('Failed to persist auto-loop practice setting:', err)
+    }
+  },
+
+  loadAutoLoopPracticeSetting() {
+    try {
+      this.setData({ autoLoopPractice: !!wx.getStorageSync(AUTO_LOOP_KEY) })
+    } catch (err) {
+      console.warn('Failed to load auto-loop practice setting:', err)
+      this.setData({ autoLoopPractice: false })
+    }
   }
 })
