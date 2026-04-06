@@ -898,5 +898,185 @@ module.exports = [
       { en: 'That address rings a bell.', zh: '那个地址听起来有点耳熟。' },
       { en: 'What you just said really rings a bell.', zh: '你刚才说的话让我觉得很熟悉。' }
     ]
+  },
+  {
+    id: 'a1b2c3d4-1101',
+    structure: 'Could you do me a favor...?',
+    examples: [
+      { en: 'Could you do me a favor and close the door?', zh: '你能帮我个忙把门关上吗？' },
+      { en: 'Could you do me a favor and send this file?', zh: '你能帮我把这个文件发出去吗？' },
+      { en: 'Could you do me a favor if you\'re free later?', zh: '如果你晚点有空，能帮我个忙吗？' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1102',
+    structure: 'I can\'t be bothered to...',
+    examples: [
+      { en: 'I can\'t be bothered to argue about this.', zh: '我懒得为这事争了。' },
+      { en: 'She can\'t be bothered to cook tonight.', zh: '她今晚懒得做饭。' },
+      { en: 'Honestly, I can\'t be bothered to explain it again.', zh: '说真的，我懒得再解释一遍了。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1103',
+    structure: 'That explains it.',
+    examples: [
+      { en: 'Oh, that explains it.', zh: '哦，那就说得通了。' },
+      { en: 'So you were sick. That explains it.', zh: '原来你生病了，难怪。' },
+      { en: 'That explains why the room was empty.', zh: '这就解释了为什么房间是空的。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1104',
+    structure: 'You don\'t have to...',
+    examples: [
+      { en: 'You don\'t have to apologize.', zh: '你不用道歉。' },
+      { en: 'You don\'t have to come if you\'re busy.', zh: '如果你忙的话，不用特地来。' },
+      { en: 'You don\'t have to decide right now.', zh: '你不用现在就决定。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1105',
+    structure: 'There\'s no rush.',
+    examples: [
+      { en: 'Take your time. There\'s no rush.', zh: '慢慢来，不着急。' },
+      { en: 'There\'s no rush to reply.', zh: '不用急着回复。' },
+      { en: 'We can talk about it later. There\'s no rush.', zh: '我们可以晚点再聊，不急。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1106',
+    structure: 'I was under the impression that...',
+    examples: [
+      { en: 'I was under the impression that the meeting was canceled.', zh: '我原以为会议取消了。' },
+      { en: 'We were under the impression that you already knew.', zh: '我们原以为你已经知道了。' },
+      { en: 'She was under the impression that it was free.', zh: '她原以为这个是免费的。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1107',
+    structure: 'You might be right.',
+    examples: [
+      { en: 'You might be right about that.', zh: '这件事你可能是对的。' },
+      { en: 'Actually, you might be right.', zh: '其实你可能说得对。' },
+      { en: 'He might be right, so let\'s check first.', zh: '他说不定是对的，我们先确认一下吧。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1108',
+    structure: 'I\'m okay with...',
+    examples: [
+      { en: 'I\'m okay with either plan.', zh: '两个方案我都可以接受。' },
+      { en: 'I\'m okay with waiting a little longer.', zh: '再等一会儿我也可以。' },
+      { en: 'She\'s okay with us changing the date.', zh: '她同意我们改日期。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1109',
+    structure: 'It\'s not worth it.',
+    examples: [
+      { en: 'It\'s not worth it for such a small discount.', zh: '就这么点折扣，不值得。' },
+      { en: 'Don\'t stress over it. It\'s not worth it.', zh: '别为这事太焦虑，不值得。' },
+      { en: 'Arguing with him is not worth it.', zh: '跟他争论不值得。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1110',
+    structure: 'Come to think of it...',
+    examples: [
+      { en: 'Come to think of it, I haven\'t seen her all day.', zh: '这么一想，我一整天都没见到她。' },
+      { en: 'Come to think of it, that was a bad idea.', zh: '现在想想，那确实是个馊主意。' },
+      { en: 'Come to think of it, we never got an answer.', zh: '这么一想，我们一直没收到答复。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1111',
+    structure: 'I\'m still working on it.',
+    examples: [
+      { en: 'I\'m still working on it, so give me a bit more time.', zh: '我还在弄，再给我一点时间。' },
+      { en: 'Sorry, the report isn\'t ready yet. I\'m still working on it.', zh: '抱歉，报告还没好，我还在做。' },
+      { en: 'We\'re still working on it behind the scenes.', zh: '我们还在后台处理这件事。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1112',
+    structure: 'That sounds about right.',
+    examples: [
+      { en: 'Ten minutes? That sounds about right.', zh: '十分钟？听起来差不多。' },
+      { en: 'That estimate sounds about right to me.', zh: '那个估计我觉得差不多。' },
+      { en: 'Yeah, that sounds about right.', zh: '嗯，听起来大概就是这样。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1113',
+    structure: 'I have a feeling...',
+    examples: [
+      { en: 'I have a feeling it\'s going to rain.', zh: '我感觉要下雨了。' },
+      { en: 'I have a feeling she already knows.', zh: '我感觉她已经知道了。' },
+      { en: 'He has a feeling things will work out.', zh: '他觉得事情会顺利解决。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1114',
+    structure: 'It\'s up in the air.',
+    examples: [
+      { en: 'Our weekend plan is still up in the air.', zh: '我们周末的计划还没定。' },
+      { en: 'Whether they\'ll approve it is up in the air.', zh: '他们会不会批准还不好说。' },
+      { en: 'Everything is kind of up in the air right now.', zh: '现在一切都还悬而未决。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1115',
+    structure: 'I\'d appreciate it if...',
+    examples: [
+      { en: 'I\'d appreciate it if you could be on time.', zh: '如果你能准时到，我会很感激。' },
+      { en: 'I\'d appreciate it if you kept this between us.', zh: '如果你能替我保密，我会很感激。' },
+      { en: 'We\'d appreciate it if you replied by tomorrow.', zh: '如果你能在明天前回复，我们会很感谢。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1116',
+    structure: 'Don\'t get me wrong...',
+    examples: [
+      { en: 'Don\'t get me wrong, I like the idea.', zh: '别误会，我是喜欢这个想法的。' },
+      { en: 'Don\'t get me wrong, but this needs work.', zh: '别误会，不过这个还得改。' },
+      { en: 'I\'m happy for him. Don\'t get me wrong.', zh: '我为他高兴，别误会。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1117',
+    structure: 'That can\'t be right.',
+    examples: [
+      { en: 'That can\'t be right. Check the numbers again.', zh: '这不对吧，再核一下数字。' },
+      { en: 'Five hundred dollars? That can\'t be right.', zh: '五百美元？这不可能对吧。' },
+      { en: 'Something feels off. That can\'t be right.', zh: '总觉得哪里不对，这肯定不对。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1118',
+    structure: 'Let\'s call it a day.',
+    examples: [
+      { en: 'We\'ve done enough. Let\'s call it a day.', zh: '今天做得差不多了，收工吧。' },
+      { en: 'It\'s getting late, so let\'s call it a day.', zh: '时间不早了，今天就到这儿吧。' },
+      { en: 'After one more round, let\'s call it a day.', zh: '再来一轮之后，我们今天就结束吧。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1119',
+    structure: 'I\'ll take care of it.',
+    examples: [
+      { en: 'Don\'t worry, I\'ll take care of it.', zh: '别担心，我来处理。' },
+      { en: 'I\'ll take care of the booking.', zh: '预订的事我来处理。' },
+      { en: 'You handle the guests, and I\'ll take care of the rest.', zh: '你招呼客人，剩下的我来。' }
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1120',
+    structure: 'It\'s no big deal.',
+    examples: [
+      { en: 'Thanks for helping. It\'s no big deal.', zh: '谢谢你帮忙。没什么大不了的。' },
+      { en: 'Don\'t worry about the mistake. It\'s no big deal.', zh: '别担心这个错误，没什么大不了。' },
+      { en: 'Missing one class is no big deal.', zh: '缺一节课没什么大不了的。' }
+    ]
   }
 ]
