@@ -14,16 +14,20 @@
   <!-- Main card area -->
   <view wx:if="{{!finished}}" class="card-area {{cardAnim}}">
     <!-- Structure (the pattern) in a decorative banner -->
-    <view class="structure-banner">
+    <view class="structure-banner {{!showStructure ? 'structure-banner-hidden' : ''}}" bindtap="revealStructure">
       <view class="structure-quote">“</view>
-      <view class="structure-label">{{structure}}</view>
+      <view class="structure-label {{!showStructure ? 'structure-label-obscured' : ''}}">{{structure}}</view>
+      <view wx:if="{{!showStructure}}" class="structure-reveal-mask">
+        <view class="structure-reveal-text">点击查看</view>
+      </view>
     </view>
 
     <!-- Content Card -->
     <view class="card">
       <view class="card-hint">
         <text class="hint-icon">💡</text>
-        <text>试着用上面的结构造句：</text>
+        <text wx:if="{{blurStructureInReview}}">试着翻译这句话：</text>
+        <text wx:else>试着用上面的结构翻译这句话：</text>
       </view>
       
       <view class="content-section">
@@ -80,6 +84,14 @@
           <view class="sheet-setting-desc">最后一题点击下一句后自动洗牌并开始下一轮</view>
         </view>
         <switch checked="{{autoLoopPractice}}" color="#111827" bindchange="onAutoLoopChange" />
+      </view>
+
+      <view wx:if="{{isReviewMode}}" class="sheet-setting-item">
+        <view class="sheet-setting-left">
+          <view class="sheet-setting-title">默认隐藏英语结构</view>
+          <view class="sheet-setting-desc">回顾模式下先自行回忆，点击顶部结构区域后再显示</view>
+        </view>
+        <switch checked="{{blurStructureInReview}}" color="#111827" bindchange="onReviewBlurChange" />
       </view>
     </view>
   </view>

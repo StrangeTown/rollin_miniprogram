@@ -127,6 +127,10 @@ page {
   box-sizing: border-box;
 }
 
+.structure-banner-hidden {
+  overflow: visible;
+}
+
 .structure-quote {
   position: absolute;
   top: -20rpx;
@@ -147,6 +151,38 @@ page {
   white-space: normal;
   word-break: normal;
   overflow-wrap: normal;
+}
+
+.structure-label-obscured {
+  filter: blur(20rpx);
+  opacity: 0.14;
+}
+
+.structure-reveal-mask {
+  position: absolute;
+  top: -12rpx;
+  right: -8rpx;
+  bottom: -12rpx;
+  left: -8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.46) 0%, rgba(250, 250, 250, 0.28) 34%, rgba(250, 250, 250, 0.12) 58%, rgba(250, 250, 250, 0) 82%);
+  z-index: 2;
+}
+
+.structure-reveal-text {
+  min-height: 40rpx;
+  padding: 0 16rpx;
+  border-radius: 999rpx;
+  background: rgba(255, 255, 255, 0.38);
+  color: rgba(107, 114, 128, 0.72);
+  font-size: 20rpx;
+  font-weight: 500;
+  letter-spacing: 0;
+  display: flex;
+  align-items: center;
+  border: 2rpx solid rgba(255, 255, 255, 0.45);
 }
 
 /* Card */

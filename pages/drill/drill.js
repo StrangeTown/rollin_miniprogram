@@ -7,6 +7,7 @@ const {
 
 const AUTO_LOOP_KEY = 'drill_auto_loop'
 const CUSTOM_EXAMPLES_KEY = 'custom_examples'
+const REVIEW_BLUR_STRUCTURE_KEY = 'drill_review_blur_structure'
 const CUSTOM_EXAMPLE_PICK_PROB = 0.7
 
 function shuffle(arr) {
@@ -19,9 +20,11 @@ function shuffle(arr) {
 
 Page({
   data: {
+    isReviewMode: false,
     structure: '',
     zh: '',
     en: '',
+    showStructure: true,
     showAnswer: false,
     cardAnim: '',
     current: 0,
@@ -29,6 +32,7 @@ Page({
     finished: false,
     round: 1,
     autoLoopPractice: false,
+    blurStructureInReview: false,
     showSettingsSheet: false
   },
 
@@ -39,11 +43,14 @@ Page({
 
   onLoad(options) {
     this.loadAutoLoopPracticeSetting()
+    this.loadReviewBlurStructureSetting()
     this.loadCustomExamples()
 
     const mode = options.mode || 'random'
-    this._shouldRecordPractice = mode !== 'review'
-    if (mode === 'review') {
+    const isReviewMode = mode === 'review'
+    this._shouldRecordPractice = !isReviewMode
+    this.setData({ isReviewMode })
+    if (isReviewMode) {
       const dateKey = options.date || getDateKey()
       const practiceIds = getPracticeIdsByDate(dateKey)
       const practiceItems = structures.filter(s => practiceIds.includes(s.id))
@@ -87,12 +94,22 @@ Page({
     const example = sourceExamples[Math.floor(Math.random() * sourceExamples.length)] || { en: '', zh: '' }
 
     this._currentStructureId = structureItem.id
+    const shouldHideStructure = this.data.isReviewMode && this.data.blurStructureInReview
     this.setData({
       structure: structureItem.structure,
       zh: example.zh,
       en: example.en,
+      showStructure: !shouldHideStructure,
       showAnswer: false
     })
+  },
+
+  revealStructure() {
+    if (!this.data.isReviewMode || !this.data.blurStructureInReview || this.data.showStructure) {
+      return
+    }
+    wx.vibrateShort({ type: 'light' })
+    this.setData({ showStructure: true })
   },
 
   revealAnswer() {
@@ -194,6 +211,35 @@ Page({
     } catch (err) {
       console.warn('Failed to load auto-loop practice setting:', err)
       this.setData({ autoLoopPractice: false })
+    }
+  },
+
+  onReviewBlurChange(e) {
+    const enabled = !!(e && e.detail && e.detail.value)
+    const nextData = {
+      blurStructureInReview: enabled
+    }
+
+    if (!enabled) {
+      nextData.showStructure = true
+    } else if (this.data.isReviewMode) {
+      nextData.showStructure = false
+    }
+
+    this.setData(nextData)
+    try {
+      wx.setStorageSync(REVIEW_BLUR_STRUCTURE_KEY, enabled)
+    } catch (err) {
+      console.warn('Failed to persist review structure blur setting:', err)
+    }
+  },
+
+  loadReviewBlurStructureSetting() {
+    try {
+      this.setData({ blurStructureInReview: !!wx.getStorageSync(REVIEW_BLUR_STRUCTURE_KEY) })
+    } catch (err) {
+      console.warn('Failed to load review structure blur setting:', err)
+      this.setData({ blurStructureInReview: false })
     }
   },
 
