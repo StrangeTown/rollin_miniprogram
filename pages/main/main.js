@@ -4,6 +4,34 @@ const {
   getPracticeIdsByDate
 } = require('../../utils/drill-history.js')
 
+const RELEASE_NOTES_SEEN_KEY = 'release_notes_seen_signature'
+
+let releaseNotes = {
+  version: '2.0.0',
+  title: '新功能',
+  summary: '小程序已经从“查表达”切换为“练结构”，现在围绕地道英语口语结构来做练习和回顾。',
+  highlights: []
+}
+
+try {
+  releaseNotes = require('../../data/release-notes.js')
+} catch (err) {
+  console.warn('Failed to load release notes config:', err)
+}
+
+function getReleaseNotesSignature(notes) {
+  if (!notes) {
+    return ''
+  }
+
+  return JSON.stringify({
+    version: notes.version || '',
+    title: notes.title || '',
+    summary: notes.summary || '',
+    highlights: Array.isArray(notes.highlights) ? notes.highlights : []
+  })
+}
+
 const HISTORY_DAY_OPTIONS = [
   { label: '今天', offset: 0 },
   { label: '昨天', offset: -1 },
@@ -13,14 +41,48 @@ const HISTORY_DAY_OPTIONS = [
 Page({
   data: {
     showHistory: false,
+    showReleaseNotes: false,
     historySummaries: [],
     selectedHistoryDate: '',
     selectedHistoryLabel: '',
-    selectedHistoryItems: []
+    selectedHistoryItems: [],
+    releaseNotes: releaseNotes
   },
 
   onShow() {
     this._loadRecentHistory()
+    this._checkReleaseNotes()
+  },
+
+  _checkReleaseNotes() {
+    const signature = getReleaseNotesSignature(this.data.releaseNotes)
+    if (!signature) {
+      return
+    }
+
+    try {
+      const seenSignature = wx.getStorageSync(RELEASE_NOTES_SEEN_KEY) || ''
+      if (seenSignature !== signature) {
+        this.setData({ showReleaseNotes: true })
+      }
+    } catch (err) {
+      console.warn('Failed to read release notes status:', err)
+      this.setData({ showReleaseNotes: true })
+    }
+  },
+
+  closeReleaseNotes() {
+    const signature = getReleaseNotesSignature(this.data.releaseNotes)
+
+    try {
+      if (signature) {
+        wx.setStorageSync(RELEASE_NOTES_SEEN_KEY, signature)
+      }
+    } catch (err) {
+      console.warn('Failed to persist release notes status:', err)
+    }
+
+    this.setData({ showReleaseNotes: false })
   },
 
   _loadRecentHistory() {
