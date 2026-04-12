@@ -40,15 +40,15 @@
       </view>
     </view>
 
-    <!-- Action buttons -->
-    <view class="btn-area">
-      <view wx:if="{{!showAnswer}}" class="reveal-btn" bindtap="revealAnswer">
-        <text>查看例句</text>
-      </view>
-      <view wx:if="{{showAnswer}}" class="next-btn" bindtap="nextQuestion">
-        <text>{{(current < totalCount || autoLoopPractice) ? '下一句' : '完成练习'}}</text>
-        <text class="btn-icon" wx:if="{{current < totalCount || autoLoopPractice}}">→</text>
-      </view>
+  </view>
+
+  <view wx:if="{{!finished}}" class="btn-area">
+    <view wx:if="{{!showAnswer}}" class="reveal-btn" bindtap="revealAnswer">
+      <text>查看例句</text>
+    </view>
+    <view wx:if="{{showAnswer}}" class="next-btn" bindtap="nextQuestion">
+      <text>{{(current < totalCount || autoLoopPractice) ? '下一句' : '完成练习'}}</text>
+      <text class="btn-icon" wx:if="{{current < totalCount || autoLoopPractice}}">→</text>
     </view>
   </view>
 
