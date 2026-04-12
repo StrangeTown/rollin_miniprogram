@@ -20,6 +20,7 @@ function shuffle(arr) {
 
 Page({
   data: {
+    navTitle: '练习',
     isReviewMode: false,
     structure: '',
     zh: '',
@@ -48,8 +49,12 @@ Page({
 
     const mode = options.mode || 'random'
     const isReviewMode = mode === 'review'
+    const entryLabel = options.entryLabel ? decodeURIComponent(options.entryLabel) : ''
     this._shouldRecordPractice = !isReviewMode
-    this.setData({ isReviewMode })
+    this.setData({
+      isReviewMode,
+      navTitle: isReviewMode && entryLabel ? `练习 · ${entryLabel}` : '练习'
+    })
     if (isReviewMode) {
       const dateKey = options.date || getDateKey()
       const practiceIds = getPracticeIdsByDate(dateKey)

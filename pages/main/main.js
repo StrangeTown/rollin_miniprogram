@@ -88,8 +88,9 @@ Page({
     }
 
     this.setData({ showHistory: false })
+    const reviewLabel = encodeURIComponent(this.data.selectedHistoryLabel || '')
     wx.navigateTo({
-      url: `/pages/drill/drill?mode=review&date=${this.data.selectedHistoryDate}`
+      url: `/pages/drill/drill?mode=review&date=${this.data.selectedHistoryDate}&entryLabel=${reviewLabel}`
     })
   }
 })

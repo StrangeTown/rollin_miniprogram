@@ -1,4 +1,4 @@
-<navigation-bar title="练习" back="{{true}}" color="black" background="#FAFAFA">
+<navigation-bar title="{{navTitle}}" back="{{true}}" color="black" background="#FAFAFA">
 </navigation-bar>
 
 <view class="page">
