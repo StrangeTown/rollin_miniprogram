@@ -22,6 +22,10 @@
     </view>
   </view>
 
+  <view class="writing-tip">
+    尽量贴近你熟悉的真实场景，也可以好笑一点、夸张一点、出人意料一点。越有画面和情绪，越容易记住。
+  </view>
+
   <view class="btn-area">
     <view class="save-btn {{canSave ? 'active' : ''}}" bindtap="onSave">保存</view>
     <view wx:if="{{customList.length > 0}}" class="list-entry" bindtap="openListSheet">已添加例句 ({{customList.length}})</view>

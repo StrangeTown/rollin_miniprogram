@@ -106,6 +106,14 @@ page {
   margin: 48rpx 0;
 }
 
+.writing-tip {
+  margin-top: 32rpx;
+  padding: 0 8rpx;
+  font-size: 24rpx;
+  line-height: 1.9;
+  color: rgba(107, 114, 128, 0.56);
+}
+
 .btn-area {
   margin-top: 80rpx;
   width: 100%;
