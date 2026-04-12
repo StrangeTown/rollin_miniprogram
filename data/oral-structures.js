@@ -751,7 +751,7 @@ module.exports = [
     structure: 'That should be fine.',
     examples: [
       { en: 'Meeting at seven? That should be fine.', zh: '七点见？那应该没问题。' },
-      { en: 'A small change like that should be fine.', zh: '那样的小改动应该可以。' },
+      { en: 'Can I bring a friend? That should be fine.', zh: '我可以带个朋友吗？那应该没问题。' },
       { en: 'If we leave now, that should be fine.', zh: '如果我们现在走，应该来得及。' }
     ]
   },
