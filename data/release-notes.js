@@ -1,6 +1,6 @@
 module.exports = {
   version: '2.0.0',
-  title: '口语翻翻 2.0',
+  title: '新功能',
   summary: '小程序已经从“查表达”切换为“练结构”，现在围绕地道英语口语结构来做练习和回顾。',
   highlights: [
     {
