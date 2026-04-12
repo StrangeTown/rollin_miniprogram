@@ -3,7 +3,7 @@
 
 <view class="page">
   <view class="setting-item" bindtap="openSheet">
-    <view class="setting-label">数据管理</view>
+    <view class="setting-label">用户数据</view>
     <view class="setting-arrow"></view>
   </view>
 
@@ -15,7 +15,7 @@
 <view wx:if="{{showSheet}}" class="sheet-mask" bindtap="closeSheet" catchtouchmove="noop">
   <view class="sheet" catchtap="noop" catchtouchmove="noop">
     <view class="sheet-header">
-      <view class="sheet-title">数据管理</view>
+      <view class="sheet-title">用户数据</view>
       <view class="sheet-close" bindtap="closeSheet">关闭</view>
     </view>
     <view class="sheet-body">
