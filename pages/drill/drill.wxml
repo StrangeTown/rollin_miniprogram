@@ -26,7 +26,7 @@
     <view class="card">
       <view class="card-hint">
         <text class="hint-icon">💡</text>
-        <text wx:if="{{blurStructureInReview}}">试着翻译这句话：</text>
+        <text wx:if="{{isReviewMode && blurStructureInReview}}">试着翻译这句话：</text>
         <text wx:else>试着用上面的结构翻译这句话：</text>
       </view>
       
