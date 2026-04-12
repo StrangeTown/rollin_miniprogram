@@ -40,6 +40,13 @@
       </view>
     </view>
 
+    <view wx:if="{{showAnswer && isReviewMode && recallPreviousInReview && previousPromptZh}}" class="review-recap">
+      <text class="review-recap-line">
+        <text class="review-recap-title">上一句：</text>
+        <text class="review-recap-zh">{{previousPromptZh}}</text>
+      </text>
+    </view>
+
   </view>
 
   <view wx:if="{{!finished}}" class="btn-area">
@@ -92,6 +99,14 @@
           <view class="sheet-setting-desc">回顾模式下先自行回忆，点击顶部结构区域后再显示</view>
         </view>
         <switch checked="{{blurStructureInReview}}" color="#111827" bindchange="onReviewBlurChange" />
+      </view>
+
+      <view wx:if="{{isReviewMode}}" class="sheet-setting-item">
+        <view class="sheet-setting-left">
+          <view class="sheet-setting-title">回顾上一句</view>
+          <view class="sheet-setting-desc">查看当前例句时，顺手回顾上一句</view>
+        </view>
+        <switch checked="{{recallPreviousInReview}}" color="#111827" bindchange="onReviewRecallChange" />
       </view>
     </view>
   </view>

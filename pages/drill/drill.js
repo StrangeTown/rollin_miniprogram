@@ -8,6 +8,7 @@ const {
 const AUTO_LOOP_KEY = 'drill_auto_loop'
 const CUSTOM_EXAMPLES_KEY = 'custom_examples'
 const REVIEW_BLUR_STRUCTURE_KEY = 'drill_review_blur_structure'
+const REVIEW_RECALL_PREVIOUS_KEY = 'drill_review_recall_previous'
 const CUSTOM_EXAMPLE_PICK_PROB = 0.7
 
 function shuffle(arr) {
@@ -25,6 +26,7 @@ Page({
     structure: '',
     zh: '',
     en: '',
+    previousPromptZh: '',
     showStructure: true,
     showAnswer: false,
     cardAnim: '',
@@ -34,6 +36,7 @@ Page({
     round: 1,
     autoLoopPractice: false,
     blurStructureInReview: false,
+    recallPreviousInReview: false,
     showSettingsSheet: false
   },
 
@@ -41,10 +44,13 @@ Page({
   _idx: 0,
   _shouldRecordPractice: true,
   _customExamples: {},
+  _shownExamples: [],
+  _lastPromptZh: '',
 
   onLoad(options) {
     this.loadAutoLoopPracticeSetting()
     this.loadReviewBlurStructureSetting()
+    this.loadReviewRecallSetting()
     this.loadCustomExamples()
 
     const mode = options.mode || 'random'
@@ -70,6 +76,8 @@ Page({
       this._items = shuffle(structures.slice()).slice(0, count)
     }
     this._idx = 0
+    this._shownExamples = []
+    this._lastPromptZh = ''
     this.setData({ totalCount: this._items.length, current: 1 })
     this.showItem()
   },
@@ -87,16 +95,21 @@ Page({
       ? this._customExamples[structureItem.id]
       : []
 
-    let sourceExamples = systemExamples
-    if (customExamples.length === 0) {
-      sourceExamples = systemExamples
-    } else if (systemExamples.length === 0) {
-      sourceExamples = customExamples
-    } else {
-      sourceExamples = Math.random() < CUSTOM_EXAMPLE_PICK_PROB ? customExamples : systemExamples
-    }
+    let example = this._shownExamples[this._idx]
 
-    const example = sourceExamples[Math.floor(Math.random() * sourceExamples.length)] || { en: '', zh: '' }
+    if (!example) {
+      let sourceExamples = systemExamples
+      if (customExamples.length === 0) {
+        sourceExamples = systemExamples
+      } else if (systemExamples.length === 0) {
+        sourceExamples = customExamples
+      } else {
+        sourceExamples = Math.random() < CUSTOM_EXAMPLE_PICK_PROB ? customExamples : systemExamples
+      }
+
+      example = sourceExamples[Math.floor(Math.random() * sourceExamples.length)] || { en: '', zh: '' }
+      this._shownExamples[this._idx] = example
+    }
 
     this._currentStructureId = structureItem.id
     const shouldHideStructure = this.data.isReviewMode && this.data.blurStructureInReview
@@ -104,6 +117,7 @@ Page({
       structure: structureItem.structure,
       zh: example.zh,
       en: example.en,
+      previousPromptZh: this.data.isReviewMode ? this._lastPromptZh : '',
       showStructure: !shouldHideStructure,
       showAnswer: false
     })
@@ -127,6 +141,8 @@ Page({
 
   nextQuestion() {
     wx.vibrateShort({ type: 'medium' })
+    const currentExample = this._shownExamples[this._idx]
+    this._lastPromptZh = currentExample && currentExample.zh ? currentExample.zh : ''
     const next = this._idx + 1
 
     if (next >= this._items.length) {
@@ -135,6 +151,7 @@ Page({
         setTimeout(() => {
           this._items = shuffle(this._items.slice())
           this._idx = 0
+          this._shownExamples = []
           this.showItem()
           this.setData({
             cardAnim: 'card-enter',
@@ -172,6 +189,7 @@ Page({
     wx.vibrateShort({ type: 'medium' })
     this._items = shuffle(this._items.slice())
     this._idx = 0
+    this._shownExamples = []
     this.setData({
       finished: false,
       current: 1,
@@ -239,12 +257,34 @@ Page({
     }
   },
 
+  onReviewRecallChange(e) {
+    const enabled = !!(e && e.detail && e.detail.value)
+    this.setData({
+      recallPreviousInReview: enabled,
+      previousPromptZh: this.data.isReviewMode ? this._lastPromptZh : ''
+    })
+    try {
+      wx.setStorageSync(REVIEW_RECALL_PREVIOUS_KEY, enabled)
+    } catch (err) {
+      console.warn('Failed to persist review recall setting:', err)
+    }
+  },
+
   loadReviewBlurStructureSetting() {
     try {
       this.setData({ blurStructureInReview: !!wx.getStorageSync(REVIEW_BLUR_STRUCTURE_KEY) })
     } catch (err) {
       console.warn('Failed to load review structure blur setting:', err)
       this.setData({ blurStructureInReview: false })
+    }
+  },
+
+  loadReviewRecallSetting() {
+    try {
+      this.setData({ recallPreviousInReview: !!wx.getStorageSync(REVIEW_RECALL_PREVIOUS_KEY) })
+    } catch (err) {
+      console.warn('Failed to load review recall setting:', err)
+      this.setData({ recallPreviousInReview: false })
     }
   },
 

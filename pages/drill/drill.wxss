@@ -251,6 +251,30 @@ page {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
+.review-recap {
+  width: 100%;
+  margin-top: 72rpx;
+  padding: 0 4rpx;
+  box-sizing: border-box;
+}
+
+.review-recap-line {
+  line-height: 1.8;
+}
+
+.review-recap-title {
+  font-size: 18rpx;
+  font-weight: 500;
+  color: rgba(156, 163, 175, 0.46);
+  letter-spacing: 2rpx;
+}
+
+.review-recap-zh {
+  font-size: 25rpx;
+  line-height: 1.8;
+  color: rgba(75, 85, 99, 0.68);
+}
+
 /* Buttons */
 .btn-area {
   position: fixed;
