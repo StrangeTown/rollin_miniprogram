@@ -44,6 +44,11 @@ Page({
     this.setData({ showSheet: true })
   },
 
+  goToSystemLibrary() {
+    wx.vibrateShort({ type: 'light' })
+    wx.navigateTo({ url: '/pages/system-library/system-library' })
+  },
+
   closeSheet() {
     this.setData({ showSheet: false })
   },

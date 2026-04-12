@@ -7,7 +7,12 @@
     <view class="setting-arrow"></view>
   </view>
 
-  <button class="setting-item" open-type="contact" plain="true">
+  <view class="setting-item setting-item-spaced" bindtap="goToSystemLibrary">
+    <view class="setting-label">系统句库</view>
+    <view class="setting-arrow"></view>
+  </view>
+
+  <button class="setting-item setting-item-spaced" open-type="contact" plain="true">
     <view class="setting-label">联系客服</view>
   </button>
 </view>
