@@ -15,6 +15,18 @@
   <button class="setting-item setting-item-spaced" open-type="contact" plain="true">
     <view class="setting-label">联系客服</view>
   </button>
+
+  <view class="app-meta" bindtap="openReleaseNotes">
+    <image class="app-meta-icon" src="../../assets/images/app_icon_grey.svg" mode="aspectFill"></image>
+    <view class="app-meta-text">{{appName}} {{appVersion}}</view>
+  </view>
+
+  <release-notes-modal
+    show="{{showReleaseNotes}}"
+    releaseNotes="{{releaseNotes}}"
+    cancelText="关闭"
+    bind:close="closeReleaseNotes">
+  </release-notes-modal>
 </view>
 
 <view wx:if="{{showSheet}}" class="sheet-mask" bindtap="closeSheet" catchtouchmove="noop">

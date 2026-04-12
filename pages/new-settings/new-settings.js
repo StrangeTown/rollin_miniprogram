@@ -1,11 +1,16 @@
 const HISTORY_KEY = 'drill_history'
 const CUSTOM_EXAMPLES_KEY = 'custom_examples'
+const releaseNotes = require('../../data/release-notes.js')
 
 Page({
   data: {
     showSheet: false,
+    showReleaseNotes: false,
     hasHistory: false,
-    hasCustomExamples: false
+    hasCustomExamples: false,
+    appName: '口语翻翻',
+    appVersion: releaseNotes.version || '',
+    releaseNotes: releaseNotes
   },
 
   onShow() {
@@ -47,6 +52,15 @@ Page({
   goToSystemLibrary() {
     wx.vibrateShort({ type: 'light' })
     wx.navigateTo({ url: '/pages/system-library/system-library' })
+  },
+
+  openReleaseNotes() {
+    wx.vibrateShort({ type: 'light' })
+    this.setData({ showReleaseNotes: true })
+  },
+
+  closeReleaseNotes() {
+    this.setData({ showReleaseNotes: false })
   },
 
   closeSheet() {

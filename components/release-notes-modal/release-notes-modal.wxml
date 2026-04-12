@@ -1,0 +1,22 @@
+<bottom-modal
+  show="{{show}}"
+  title=""
+  showCancel="{{true}}"
+  cancelText="{{cancelText}}"
+  bind:close="onClose">
+  <view class="release-sheet" wx:if="{{releaseNotes}}">
+    <view class="release-version">{{releaseNotes.version}}</view>
+    <view class="release-title">{{releaseNotes.title}}</view>
+    <view class="release-summary">{{releaseNotes.summary}}</view>
+
+    <view class="release-list">
+      <view wx:for="{{releaseNotes.highlights}}" wx:key="title" class="release-item {{index > 0 ? 'release-item-spaced' : ''}}">
+        <view class="release-item-index">0{{index + 1}}</view>
+        <view class="release-item-main">
+          <view class="release-item-title">{{item.title}}</view>
+          <view class="release-item-desc">{{item.desc}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</bottom-modal>

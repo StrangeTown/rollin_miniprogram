@@ -1,0 +1,75 @@
+.release-sheet {
+  padding: 8rpx 4rpx 0;
+}
+
+.release-version {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44rpx;
+  padding: 0 16rpx;
+  border-radius: 999rpx;
+  background: #111827;
+  color: #FFFFFF;
+  font-size: 22rpx;
+  font-weight: 700;
+  letter-spacing: 1rpx;
+}
+
+.release-title {
+  margin-top: 24rpx;
+  font-size: 42rpx;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.release-summary {
+  margin-top: 16rpx;
+  font-size: 28rpx;
+  line-height: 1.7;
+  color: #6B7280;
+}
+
+.release-list {
+  margin-top: 36rpx;
+}
+
+.release-item {
+  display: flex;
+  align-items: flex-start;
+}
+
+.release-item-spaced {
+  margin-top: 28rpx;
+  padding-top: 28rpx;
+  border-top: 2rpx solid #F3F4F6;
+}
+
+.release-item-index {
+  width: 52rpx;
+  flex-shrink: 0;
+  font-size: 22rpx;
+  font-weight: 700;
+  color: #9CA3AF;
+  line-height: 1.8;
+}
+
+.release-item-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.release-item-title {
+  font-size: 30rpx;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.5;
+}
+
+.release-item-desc {
+  margin-top: 8rpx;
+  font-size: 26rpx;
+  line-height: 1.7;
+  color: #6B7280;
+}

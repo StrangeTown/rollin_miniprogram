@@ -3,6 +3,7 @@
   "navigationBarBackgroundColor": "#FAFAFA",
   "usingComponents": {
     "navigation-bar": "/components/navigation-bar/navigation-bar",
-    "bottom-modal": "/components/bottom-modal/bottom-modal"
+    "bottom-modal": "/components/bottom-modal/bottom-modal",
+    "release-notes-modal": "/components/release-notes-modal/release-notes-modal"
   }
 }
