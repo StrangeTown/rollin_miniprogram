@@ -10,6 +10,7 @@ Page({
     hasCustomExamples: false,
     appName: '口语翻翻',
     appVersion: releaseNotes.version || '',
+    filingNumber: '京ICP备2025139511号-1X',
     releaseNotes: releaseNotes
   },
 

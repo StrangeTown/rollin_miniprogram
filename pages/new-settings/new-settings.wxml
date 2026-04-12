@@ -13,12 +13,16 @@
   </view>
 
   <button class="setting-item setting-item-spaced" open-type="contact" plain="true">
-    <view class="setting-label">联系客服</view>
+    <view class="setting-label">反馈及建议</view>
   </button>
 
-  <view class="app-meta" bindtap="openReleaseNotes">
-    <image class="app-meta-icon" src="../../assets/images/app_icon_grey.svg" mode="aspectFill"></image>
-    <view class="app-meta-text">{{appName}} {{appVersion}}</view>
+  <view class="app-footer">
+    <view class="app-meta" bindtap="openReleaseNotes">
+      <image class="app-meta-icon" src="../../assets/images/app_icon_grey.svg" mode="aspectFill"></image>
+      <view class="app-meta-text">{{appName}}</view>
+    </view>
+
+    <view class="app-filing">{{filingNumber}}</view>
   </view>
 
   <release-notes-modal

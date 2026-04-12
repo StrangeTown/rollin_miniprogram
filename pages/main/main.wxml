@@ -45,7 +45,7 @@
       </view>
       <view class="footer-divider"></view>
       <view class="footer-action-item footer-share-item">
-        <button class="footer-share-btn" open-type="share" hover-class="footer-entry-press" hover-start-time="0" hover-stay-time="80">分享给朋友</button>
+        <button class="footer-share-btn" open-type="share" hover-class="footer-entry-press" hover-start-time="0" hover-stay-time="80">推荐给朋友</button>
       </view>
     </view>
   </view>
