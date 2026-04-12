@@ -43,10 +43,10 @@
   </view>
 
   <view wx:if="{{!finished}}" class="btn-area">
-    <view wx:if="{{!showAnswer}}" class="reveal-btn" bindtap="revealAnswer">
+    <view wx:if="{{!showAnswer}}" class="reveal-btn" bindtap="revealAnswer" hover-class="reveal-btn-press" hover-start-time="0" hover-stay-time="80">
       <text>查看例句</text>
     </view>
-    <view wx:if="{{showAnswer}}" class="next-btn" bindtap="nextQuestion">
+    <view wx:if="{{showAnswer}}" class="next-btn" bindtap="nextQuestion" hover-class="next-btn-press" hover-start-time="0" hover-stay-time="80">
       <text>{{(current < totalCount || autoLoopPractice) ? '下一句' : '完成练习'}}</text>
       <text class="btn-icon" wx:if="{{current < totalCount || autoLoopPractice}}">→</text>
     </view>
