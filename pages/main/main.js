@@ -1,4 +1,5 @@
 const structures = require('../../data/oral-structures-all.js')
+const share = require('../../utils/share.js')
 const {
   getDateKeyByOffset,
   getPracticeIdsByDate
@@ -37,6 +38,8 @@ const HISTORY_DAY_OPTIONS = [
   { label: '昨天', offset: -1 },
   { label: '前天', offset: -2 }
 ]
+
+const MAIN_SHARE_TITLE = '造句练口语'
 
 Page({
   data: {
@@ -110,6 +113,27 @@ Page({
 
   goToSettings() {
     wx.navigateTo({ url: '/pages/new-settings/new-settings' })
+  },
+
+  onShareAppMessage() {
+    return {
+      title: MAIN_SHARE_TITLE,
+      path: share.getSharePath('pages/main/main'),
+      imageUrl: share.getShareImagePath()
+    }
+  },
+
+  onShareTimeline() {
+    const query = share.getShareQuery()
+    const result = {
+      title: MAIN_SHARE_TITLE
+    }
+
+    if (query) {
+      result.query = query
+    }
+
+    return result
   },
 
   goToPractice(e) {

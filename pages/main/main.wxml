@@ -38,7 +38,17 @@
     </view>
   </view>
 
-  <view class="settings-entry" bindtap="goToSettings">设置</view>
+  <view class="footer-actions">
+    <view class="footer-actions-inner">
+      <view class="footer-action-item">
+        <view class="footer-entry" bindtap="goToSettings">设置</view>
+      </view>
+      <view class="footer-divider"></view>
+      <view class="footer-action-item footer-share-item">
+        <button class="footer-share-btn" open-type="share" hover-class="footer-entry-press" hover-start-time="0" hover-stay-time="80">分享给朋友</button>
+      </view>
+    </view>
+  </view>
 
   <bottom-modal
     show="{{showHistory}}"
