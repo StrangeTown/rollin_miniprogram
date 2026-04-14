@@ -1438,5 +1438,185 @@ module.exports = [
       { en: 'I should\'ve known he\'d be late.', zh: '我早该知道他会迟到。' },
       { en: 'Ugh, I should\'ve known better.', zh: '唉，我当时就该有点脑子的。' },
     ]
+  },
+  {
+    id: 'a1b2c3d4-1161',
+    structure: 'It crossed my mind that...',
+    examples: [
+      { en: 'It crossed my mind that maybe I was wrong.', zh: '我突然想到也许是我错了。' },
+      { en: 'It never crossed my mind that she\'d leave.', zh: '我从没想过她会走。' },
+      { en: 'It crossed my mind, but I didn\'t say anything.', zh: '我有想到，但没说什么。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1162',
+    structure: 'I\'m running low on...',
+    examples: [
+      { en: 'I\'m running low on battery.', zh: '我手机快没电了。' },
+      { en: 'We\'re running low on time.', zh: '我们时间不多了。' },
+      { en: 'I\'m running low on patience, honestly.', zh: '说真的，我快没耐心了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1163',
+    structure: 'Before I knew it,...',
+    examples: [
+      { en: 'Before I knew it, three hours had passed.', zh: '不知不觉三个小时就过去了。' },
+      { en: 'Before I knew it, I was already crying.', zh: '不知不觉我已经哭了。' },
+      { en: 'Before I knew it, the semester was over.', zh: '不知不觉一学期就结束了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1164',
+    structure: 'You\'d think...',
+    examples: [
+      { en: 'You\'d think he\'d know better by now.', zh: '你会觉得他到现在该懂了。' },
+      { en: 'You\'d think it\'d be easier than this.', zh: '你会觉得这应该更简单才对。' },
+      { en: 'You\'d think they\'d at least apologize.', zh: '你会觉得他们至少该道个歉。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1165',
+    structure: 'I take it...',
+    examples: [
+      { en: 'I take it you\'re not coming tonight?', zh: '我猜你今晚不来了？' },
+      { en: 'I take it things didn\'t go well.', zh: '我猜事情不太顺利。' },
+      { en: 'I take it you already heard the news.', zh: '我猜你已经听说了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1166',
+    structure: 'As far as I know,...',
+    examples: [
+      { en: 'As far as I know, the meeting is still on.', zh: '据我所知，会议还是照常开。' },
+      { en: 'As far as I know, she hasn\'t decided yet.', zh: '据我所知，她还没决定。' },
+      { en: 'As far as I know, that\'s the only option.', zh: '据我所知，那是唯一的选择。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1167',
+    structure: 'I can\'t figure out...',
+    examples: [
+      { en: 'I can\'t figure out how to use this app.', zh: '我搞不明白怎么用这个App。' },
+      { en: 'I can\'t figure out why he\'s so upset.', zh: '我想不通他为什么那么生气。' },
+      { en: 'I still can\'t figure out what went wrong.', zh: '我到现在都没搞懂哪里出了问题。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1168',
+    structure: 'By the time...,...',
+    examples: [
+      { en: 'By the time I got there, everyone had left.', zh: '等我到的时候，大家都走了。' },
+      { en: 'By the time you read this, I\'ll be gone.', zh: '等你看到这条的时候，我已经走了。' },
+      { en: 'By the time we figured it out, it was too late.', zh: '等我们弄明白的时候，已经太迟了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1169',
+    structure: 'I was this close to...',
+    examples: [
+      { en: 'I was this close to quitting my job.', zh: '我差一点就辞职了。' },
+      { en: 'I was this close to saying something I\'d regret.', zh: '我差一点就说出会后悔的话了。' },
+      { en: 'I was this close to winning, honestly.', zh: '说真的，我差一点就赢了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1170',
+    structure: 'On second thought,...',
+    examples: [
+      { en: 'On second thought, let\'s just stay home.', zh: '想了想，我们还是待在家吧。' },
+      { en: 'On second thought, maybe you\'re right.', zh: '再想想，也许你是对的。' },
+      { en: 'On second thought, I\'ll have the salad instead.', zh: '想了想，我还是吃沙拉吧。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1171',
+    structure: 'Long story short,...',
+    examples: [
+      { en: 'Long story short, we broke up.', zh: '长话短说，我们分手了。' },
+      { en: 'Long story short, I got the job.', zh: '长话短说，我拿到那个offer了。' },
+      { en: 'Long story short, it was a total mess.', zh: '长话短说，一团糟。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1172',
+    structure: 'I\'ll make sure to...',
+    examples: [
+      { en: 'I\'ll make sure to let you know.', zh: '我一定会告诉你的。' },
+      { en: 'I\'ll make sure to lock the door this time.', zh: '这次我一定记得锁门。' },
+      { en: 'I\'ll make sure to be there on time.', zh: '我一定会准时到的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1173',
+    structure: 'There\'s no telling...',
+    examples: [
+      { en: 'There\'s no telling how long this will take.', zh: '谁也说不好这要多久。' },
+      { en: 'There\'s no telling what he\'ll do next.', zh: '谁知道他下一步会做什么。' },
+      { en: 'There\'s no telling if it will work out.', zh: '能不能成谁也说不准。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1174',
+    structure: 'I talked ... into...',
+    examples: [
+      { en: 'I talked him into giving it another try.', zh: '我说服他再试一次。' },
+      { en: 'She talked me into going to the party.', zh: '她说服我去参加聚会了。' },
+      { en: 'Don\'t let them talk you into anything.', zh: '别让他们忽悠你答应什么。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1175',
+    structure: 'That\'s the thing about...',
+    examples: [
+      { en: 'That\'s the thing about him—he never gives up.', zh: '他就是这样——永远不放弃。' },
+      { en: 'That\'s the thing about living alone.', zh: '一个人住就是这样。' },
+      { en: 'That\'s the thing about trust—it takes time.', zh: '信任就是这样——需要时间。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1176',
+    structure: 'I didn\'t mean to...',
+    examples: [
+      { en: 'I didn\'t mean to hurt your feelings.', zh: '我不是故意伤害你的。' },
+      { en: 'I didn\'t mean to make it awkward.', zh: '我不是故意搞得这么尴尬的。' },
+      { en: 'Sorry, I didn\'t mean to wake you up.', zh: '抱歉，我不是故意吵醒你的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1177',
+    structure: 'It slipped my mind.',
+    examples: [
+      { en: 'Sorry, it completely slipped my mind.', zh: '抱歉，我完全忘了。' },
+      { en: 'It slipped my mind that we had plans.', zh: '我忘了我们有约了。' },
+      { en: 'It must have slipped my mind—my bad.', zh: '我肯定是忘了——我的错。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1178',
+    structure: 'I\'ve been putting off...',
+    examples: [
+      { en: 'I\'ve been putting off going to the dentist.', zh: '我一直拖着没去看牙。' },
+      { en: 'I\'ve been putting off this conversation for weeks.', zh: '这个话题我拖了好几周了。' },
+      { en: 'Stop putting it off and just do it.', zh: '别拖了，赶紧做吧。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1179',
+    structure: 'You\'re not going to believe...',
+    examples: [
+      { en: 'You\'re not going to believe what just happened.', zh: '你绝对不会信刚才发生了什么。' },
+      { en: 'You\'re not going to believe this, but I won.', zh: '你肯定不信，但我赢了。' },
+      { en: 'You\'re not going to believe who I ran into.', zh: '你绝对猜不到我碰见谁了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1180',
+    structure: 'I\'m stuck on...',
+    examples: [
+      { en: 'I\'m stuck on this math problem.', zh: '我被这道数学题卡住了。' },
+      { en: 'I\'m stuck on what to say next.', zh: '我不知道接下来该说什么了。' },
+      { en: 'I\'ve been stuck on this issue all day.', zh: '我被这个问题卡了一整天。' },
+    ]
   }
 ]
