@@ -55,6 +55,13 @@ Page({
     wx.navigateTo({ url: '/pages/system-library/system-library' })
   },
 
+  openOfficialAccount() {
+    wx.vibrateShort({ type: 'light' })
+    wx.openOfficialAccountProfile({
+      username: 'gh_7a9ddb638472'
+    })
+  },
+
   openReleaseNotes() {
     wx.vibrateShort({ type: 'light' })
     this.setData({ showReleaseNotes: true })
