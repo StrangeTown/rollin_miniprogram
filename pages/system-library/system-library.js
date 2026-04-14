@@ -46,7 +46,16 @@ Page({
       ? e.currentTarget.dataset.key
       : ''
 
-    if (!nextTab || nextTab === this.data.currentTab) {
+    if (!nextTab) {
+      return
+    }
+
+    if (nextTab === this.data.currentTab) {
+      if (nextTab === 'wechat') {
+        wx.openOfficialAccountProfile({
+          username: 'gh_7a9ddb638472'
+        })
+      }
       return
     }
 
