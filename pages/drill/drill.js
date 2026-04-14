@@ -1,6 +1,7 @@
 const structures = require('../../data/oral-structures-all.js')
 const {
   getDateKey,
+  getDateKeyByOffset,
   getPracticeIdsByDate,
   recordPractice
 } = require('../../utils/drill-history.js')
@@ -62,8 +63,24 @@ Page({
       navTitle: isReviewMode && entryLabel ? `练习 · ${entryLabel}` : '练习'
     })
     if (isReviewMode) {
-      const dateKey = options.date || getDateKey()
-      const practiceIds = getPracticeIdsByDate(dateKey)
+      let practiceIds
+      if (options.recentDays) {
+        const days = parseInt(options.recentDays) || 3
+        const idSet = {}
+        practiceIds = []
+        for (let i = 0; i < days; i++) {
+          const dateKey = getDateKeyByOffset(-i)
+          getPracticeIdsByDate(dateKey).forEach(function (id) {
+            if (!idSet[id]) {
+              idSet[id] = true
+              practiceIds.push(id)
+            }
+          })
+        }
+      } else {
+        const dateKey = options.date || getDateKey()
+        practiceIds = getPracticeIdsByDate(dateKey)
+      }
       const practiceItems = structures.filter(s => practiceIds.includes(s.id))
       if (practiceItems.length === 0) {
         wx.showToast({ title: '这一天还没有练习记录', icon: 'none' })

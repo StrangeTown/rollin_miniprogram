@@ -23,7 +23,7 @@
   </view>
 
   <view class="history-section" wx:if="{{historySummaries.length > 0}}">
-    <view class="section-title">练习记录</view>
+    <view class="section-title" bindtap="showAllRecentHistory">练习记录</view>
     <view class="history-summary-list">
       <view
         class="history-summary-item"

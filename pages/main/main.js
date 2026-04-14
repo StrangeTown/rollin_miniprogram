@@ -49,7 +49,8 @@ Page({
     selectedHistoryDate: '',
     selectedHistoryLabel: '',
     selectedHistoryItems: [],
-    releaseNotes: releaseNotes
+    releaseNotes: releaseNotes,
+    _isRecentDaysMode: false
   },
 
   onShow() {
@@ -160,7 +161,36 @@ Page({
       showHistory: true,
       selectedHistoryDate: summary.dateKey,
       selectedHistoryLabel: summary.label,
-      selectedHistoryItems: summary.items
+      selectedHistoryItems: summary.items,
+      _isRecentDaysMode: false
+    })
+  },
+
+  showAllRecentHistory() {
+    const seenIds = {}
+    const combined = []
+    this.data.historySummaries.forEach(function (day) {
+      day.items.forEach(function (item) {
+        if (!seenIds[item.id]) {
+          seenIds[item.id] = true
+          combined.push(item)
+        }
+      })
+    })
+
+    if (combined.length === 0) {
+      wx.showToast({ title: '近三天还没有练习记录', icon: 'none' })
+      return
+    }
+
+    wx.vibrateShort({ type: 'light' })
+
+    this.setData({
+      showHistory: true,
+      selectedHistoryDate: '',
+      selectedHistoryLabel: '近三天',
+      selectedHistoryItems: combined,
+      _isRecentDaysMode: true
     })
   },
 
@@ -169,14 +199,21 @@ Page({
   },
 
   drillSelectedItems() {
-    if (!this.data.selectedHistoryDate) {
+    if (!this.data._isRecentDaysMode && !this.data.selectedHistoryDate) {
       return
     }
 
     this.setData({ showHistory: false })
     const reviewLabel = encodeURIComponent(this.data.selectedHistoryLabel || '')
-    wx.navigateTo({
-      url: `/pages/drill/drill?mode=review&date=${this.data.selectedHistoryDate}&entryLabel=${reviewLabel}`
-    })
+
+    if (this.data._isRecentDaysMode) {
+      wx.navigateTo({
+        url: `/pages/drill/drill?mode=review&recentDays=3&entryLabel=${reviewLabel}`
+      })
+    } else {
+      wx.navigateTo({
+        url: `/pages/drill/drill?mode=review&date=${this.data.selectedHistoryDate}&entryLabel=${reviewLabel}`
+      })
+    }
   }
 })
