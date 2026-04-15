@@ -108,6 +108,47 @@
         </view>
         <switch checked="{{recallPreviousInReview}}" color="#111827" bindchange="onReviewRecallChange" />
       </view>
+
+      <view wx:if="{{isReviewMode}}" class="sheet-setting-item action-item"  bindtap="startAutoPlay">
+        <view class="sheet-setting-left">
+          <view class="sheet-setting-title">自动播放</view>
+          <view class="sheet-setting-desc">自动轮播中文例句，在有限时间里快速回顾对应的英文</view>
+        </view>
+        <view class="sheet-action-icon"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{showAutoPlay}}" class="autoplay-mask" catchtouchmove="noop">
+  <view class="autoplay-content">
+    <view class="autoplay-zh {{autoPlayZhVisible ? '' : 'autoplay-zh-hidden'}}">{{autoPlayZh}}</view>
+  </view>
+
+  <view class="autoplay-ring-wrap" bindtap="openSpeedSheet">
+    <canvas type="2d" id="autoplayRing" class="autoplay-ring-canvas"></canvas>
+  </view>
+
+  <view class="autoplay-close" bindtap="stopAutoPlay">关闭</view>
+
+  <view wx:if="{{showSpeedSheet}}" class="speed-sheet-mask" bindtap="closeSpeedSheet" catchtouchmove="noop">
+    <view class="speed-sheet" catchtap="noop">
+      <view class="speed-sheet-title">切换速度</view>
+      <view class="speed-options">
+        <view class="speed-option {{autoPlaySpeed === 3000 ? 'speed-option-active' : ''}}" data-speed="3000" bindtap="pickSpeed">3s</view>
+        <view class="speed-option {{autoPlaySpeed === 5000 ? 'speed-option-active' : ''}}" data-speed="5000" bindtap="pickSpeed">5s</view>
+        <view class="speed-option {{autoPlaySpeed === 8000 ? 'speed-option-active' : ''}}" data-speed="8000" bindtap="pickSpeed">8s</view>
+      </view>
+
+      <view class="speed-sheet-divider"></view>
+
+      <view class="flash-option" bindtap="toggleFlash">
+        <view class="flash-option-left">
+          <view class="flash-option-title">闪现模式</view>
+          <view class="flash-option-desc">汉语只显示 1 秒后消失，训练瞬间记忆</view>
+        </view>
+        <switch checked="{{autoPlayFlash}}" color="#6366F1" />
+      </view>
     </view>
   </view>
 </view>

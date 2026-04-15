@@ -11,6 +11,7 @@ const CUSTOM_EXAMPLES_KEY = 'custom_examples'
 const REVIEW_BLUR_STRUCTURE_KEY = 'drill_review_blur_structure'
 const REVIEW_RECALL_PREVIOUS_KEY = 'drill_review_recall_previous'
 const CUSTOM_EXAMPLE_PICK_PROB = 0.7
+const AUTOPLAY_DURATION = 5000
 
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -38,7 +39,13 @@ Page({
     autoLoopPractice: false,
     blurStructureInReview: false,
     recallPreviousInReview: false,
-    showSettingsSheet: false
+    showSettingsSheet: false,
+    showAutoPlay: false,
+    autoPlayZh: '',
+    autoPlaySpeed: 5000,
+    showSpeedSheet: false,
+    autoPlayFlash: false,
+    autoPlayZhVisible: true
   },
 
   _items: [],
@@ -47,6 +54,8 @@ Page({
   _customExamples: {},
   _shownExamples: [],
   _lastPromptZh: '',
+  _autoPlayTimer: null,
+  _autoPlayLastId: '',
 
   onLoad(options) {
     this.loadAutoLoopPracticeSetting()
@@ -312,5 +321,161 @@ Page({
       console.warn('Failed to load custom examples:', err)
       this._customExamples = {}
     }
+  },
+
+  startAutoPlay() {
+    this.setData({ showSettingsSheet: false })
+    setTimeout(() => {
+      this._autoPlayLastId = ''
+      this.setData({ showAutoPlay: true, autoPlayZh: '' })
+      setTimeout(() => { this._autoPlayNext() }, 100)
+    }, 200)
+  },
+
+  stopAutoPlay() {
+    this._autoPlayRunning = false
+    if (this._autoPlayTimer) {
+      clearTimeout(this._autoPlayTimer)
+      this._autoPlayTimer = null
+    }
+    if (this._autoPlayFlashTimer) {
+      clearTimeout(this._autoPlayFlashTimer)
+      this._autoPlayFlashTimer = null
+    }
+    this.setData({ showAutoPlay: false, autoPlayZh: '', autoPlayZhVisible: true })
+  },
+
+  _autoPlayNext() {
+    if (!this.data.showAutoPlay) return
+
+    var candidates = this._items
+    if (candidates.length > 1) {
+      var lastId = this._autoPlayLastId
+      candidates = candidates.filter(function (item) { return item.id !== lastId })
+    }
+
+    var picked = candidates[Math.floor(Math.random() * candidates.length)]
+    if (!picked) return
+
+    this._autoPlayLastId = picked.id
+    var examples = Array.isArray(picked.examples) ? picked.examples : []
+    var example = examples[Math.floor(Math.random() * examples.length)] || { zh: '' }
+
+    this.setData({ autoPlayZh: example.zh, autoPlayZhVisible: true })
+    this._startRingAnimation()
+
+    var self = this
+    if (this.data.autoPlayFlash) {
+      if (this._autoPlayFlashTimer) clearTimeout(this._autoPlayFlashTimer)
+      this._autoPlayFlashTimer = setTimeout(function () {
+        self._autoPlayFlashTimer = null
+        self.setData({ autoPlayZhVisible: false })
+      }, 800)
+    }
+
+    if (this._autoPlayTimer) {
+      clearTimeout(this._autoPlayTimer)
+    }
+    this._autoPlayTimer = setTimeout(function () {
+      self._autoPlayTimer = null
+      self._autoPlayNext()
+    }, self.data.autoPlaySpeed)
+  },
+
+  _startRingAnimation() {
+    var self = this
+    this._autoPlayRunning = true
+    var query = this.createSelectorQuery()
+    query.select('#autoplayRing').fields({ node: true, size: true }).exec(function (res) {
+      if (!res || !res[0] || !res[0].node) return
+      var canvas = res[0].node
+      var ctx = canvas.getContext('2d')
+      var info = wx.getWindowInfo()
+      var dpr = info.pixelRatio || 2
+      var w = res[0].width
+      var h = res[0].height
+      canvas.width = w * dpr
+      canvas.height = h * dpr
+      ctx.scale(dpr, dpr)
+
+      var cx = w / 2
+      var cy = h / 2
+      var r = (Math.min(w, h) - 6) / 2
+      var startTime = Date.now()
+      var duration = self.data.autoPlaySpeed
+
+      var draw = function () {
+        if (!self._autoPlayRunning || !self.data.showAutoPlay) return
+        var elapsed = Date.now() - startTime
+        var progress = Math.min(elapsed / duration, 1)
+
+        ctx.clearRect(0, 0, w, h)
+
+        ctx.beginPath()
+        ctx.arc(cx, cy, r, 0, Math.PI * 2)
+        ctx.strokeStyle = 'rgba(255,255,255,0.12)'
+        ctx.lineWidth = 3
+        ctx.lineCap = 'round'
+        ctx.stroke()
+
+        if (progress > 0) {
+          ctx.beginPath()
+          ctx.arc(cx, cy, r, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * progress)
+          ctx.strokeStyle = 'rgba(255,255,255,0.85)'
+          ctx.lineWidth = 3
+          ctx.lineCap = 'round'
+          ctx.stroke()
+        }
+
+        if (progress < 1) {
+          canvas.requestAnimationFrame(draw)
+        }
+      }
+
+      canvas.requestAnimationFrame(draw)
+    })
+  },
+
+  onUnload() {
+    this._autoPlayRunning = false
+    if (this._autoPlayTimer) {
+      clearTimeout(this._autoPlayTimer)
+      this._autoPlayTimer = null
+    }
+    if (this._autoPlayFlashTimer) {
+      clearTimeout(this._autoPlayFlashTimer)
+      this._autoPlayFlashTimer = null
+    }
+  },
+
+  openSpeedSheet() {
+    wx.vibrateShort({ type: 'light' })
+    this.setData({ showSpeedSheet: true })
+  },
+
+  closeSpeedSheet() {
+    this.setData({ showSpeedSheet: false })
+  },
+
+  pickSpeed(e) {
+    var speed = parseInt(e.currentTarget.dataset.speed)
+    if (!speed) return
+    wx.vibrateShort({ type: 'light' })
+    this.setData({ autoPlaySpeed: speed, showSpeedSheet: false })
+    // Restart current sentence with new speed
+    this._autoPlayRunning = false
+    if (this._autoPlayTimer) {
+      clearTimeout(this._autoPlayTimer)
+      this._autoPlayTimer = null
+    }
+    var self = this
+    setTimeout(function () {
+      self._autoPlayNext()
+    }, 50)
+  },
+
+  toggleFlash() {
+    wx.vibrateShort({ type: 'light' })
+    this.setData({ autoPlayFlash: !this.data.autoPlayFlash })
   }
 })

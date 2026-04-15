@@ -539,3 +539,166 @@ page {
   border-radius: 2rpx;
   margin-right: 8rpx;
 }
+
+/* Autoplay modal */
+.autoplay-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #0A0C12;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.autoplay-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 64rpx;
+  margin-top: 120rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.autoplay-zh {
+  font-size: 44rpx;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.7;
+  text-align: center;
+  letter-spacing: 1rpx;
+  word-break: break-word;
+  transition: opacity 0.4s ease;
+}
+
+.autoplay-zh-hidden {
+  opacity: 0;
+}
+
+.autoplay-ring-wrap {
+  margin-bottom: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.autoplay-ring-canvas {
+  width: 88rpx;
+  height: 88rpx;
+}
+
+.autoplay-close {
+  padding: 24rpx 64rpx;
+  margin-bottom: calc(env(safe-area-inset-bottom) + 60rpx);
+  font-size: 30rpx;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 2rpx;
+  transition: color 0.2s;
+}
+
+.autoplay-close:active {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Speed sheet */
+.speed-sheet-mask {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2100;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.speed-sheet {
+  width: 100%;
+  background: #374151;
+  border-radius: 48rpx 48rpx 0 0;
+  padding: 48rpx 48rpx calc(env(safe-area-inset-bottom) + 48rpx);
+  box-sizing: border-box;
+  animation: sheetUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.speed-sheet-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.speed-options {
+  display: flex;
+  justify-content: center;
+  gap: 32rpx;
+}
+
+.speed-option {
+  width: 160rpx;
+  height: 96rpx;
+  border-radius: 24rpx;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 32rpx;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.speed-option-active {
+  background: rgba(255, 255, 255, 0.9);
+  color: #111827;
+}
+
+.speed-option:active {
+  transform: scale(0.95);
+}
+
+.speed-sheet-divider {
+  height: 2rpx;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 40rpx 0;
+}
+
+.flash-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flash-option-left {
+  flex: 1;
+  margin-right: 32rpx;
+}
+
+.flash-option-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.flash-option switch .wx-switch-input {
+  background: rgba(255, 255, 255, 0.35) !important;
+}
+
+.flash-option-desc {
+  margin-top: 8rpx;
+  font-size: 24rpx;
+  color: rgba(255, 255, 255, 0.4);
+  line-height: 1.4;
+}
