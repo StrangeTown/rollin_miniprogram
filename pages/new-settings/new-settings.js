@@ -55,11 +55,9 @@ Page({
     wx.navigateTo({ url: '/pages/system-library/system-library' })
   },
 
-  openOfficialAccount() {
+  goToProductRecommend() {
     wx.vibrateShort({ type: 'light' })
-    wx.openOfficialAccountProfile({
-      username: 'gh_7a9ddb638472'
-    })
+    wx.navigateTo({ url: '/pages/product-recommend/product-recommend' })
   },
 
   openReleaseNotes() {

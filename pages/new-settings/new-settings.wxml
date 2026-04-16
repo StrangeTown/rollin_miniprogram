@@ -16,8 +16,8 @@
     <view class="setting-label">反馈及建议</view>
   </button>
 
-  <view class="setting-item setting-item-spaced" bindtap="openOfficialAccount">
-    <view class="setting-label">公众号</view>
+  <view class="setting-item setting-item-spaced" bindtap="goToProductRecommend">
+    <view class="setting-label">更多产品</view>
     <view class="setting-arrow"></view>
   </view>
 

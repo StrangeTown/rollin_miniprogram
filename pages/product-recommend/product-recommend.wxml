@@ -1,0 +1,22 @@
+<navigation-bar title="更多产品" back="{{true}}" color="black" background="#FAFAFA">
+</navigation-bar>
+
+<view class="page">
+  <view class="section-title">公众号</view>
+  <view class="product-card" bindtap="openOfficialAccount" hover-class="product-card-press" hover-start-time="0" hover-stay-time="80">
+    <view class="product-info">
+      <view class="product-name">每日一篇英语阅读</view>
+      <view class="product-desc">每天一篇英语短文，轻松提升阅读能力</view>
+    </view>
+    <view class="product-arrow"></view>
+  </view>
+
+  <view class="section-title section-title-spaced">小程序</view>
+  <view class="product-card" bindtap="openMiniProgram" hover-class="product-card-press" hover-start-time="0" hover-stay-time="80">
+    <view class="product-info">
+      <view class="product-name">小朌时光</view>
+      <view class="product-desc">简洁纯粹的倒数日工具，重要日子一目了然</view>
+    </view>
+    <view class="product-arrow"></view>
+  </view>
+</view>
