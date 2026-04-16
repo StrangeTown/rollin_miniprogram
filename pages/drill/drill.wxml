@@ -14,7 +14,7 @@
   <!-- Main card area -->
   <view wx:if="{{!finished}}" class="card-area {{cardAnim}}">
     <!-- Structure (the pattern) in a decorative banner -->
-    <view class="structure-banner {{!showStructure ? 'structure-banner-hidden' : ''}}" bindtap="revealStructure">
+    <view wx:if="{{!isScenarioMode && !hideStructureBanner}}" class="structure-banner {{!showStructure ? 'structure-banner-hidden' : ''}}" bindtap="revealStructure">
       <view class="structure-quote">“</view>
       <view class="structure-label {{!showStructure ? 'structure-label-obscured' : ''}}">{{structure}}</view>
       <view wx:if="{{!showStructure}}" class="structure-reveal-mask">
@@ -26,8 +26,7 @@
     <view class="card">
       <view class="card-hint">
         <text class="hint-icon">💡</text>
-        <text wx:if="{{isReviewMode && blurStructureInReview}}">试着翻译这句话：</text>
-        <text wx:else>试着用上面的语块翻译这句话：</text>
+        <text>试着翻译这句话：</text>
       </view>
       
       <view class="content-section">
@@ -77,7 +76,7 @@
     </view>
 
     <view class="sheet-body">
-      <view class="sheet-setting-item action-item" bindtap="openAddDialog">
+      <view wx:if="{{!isScenarioMode && !hideStructureBanner}}" class="sheet-setting-item action-item" bindtap="openAddDialog">
         <view class="sheet-setting-left">
           <view class="sheet-setting-title">添加例句</view>
           <view class="sheet-setting-desc">结合你的生活场景，写一个例句</view>

@@ -1,0 +1,8 @@
+{
+  "backgroundColor": "#FAFAFA",
+  "navigationBarBackgroundColor": "#FAFAFA",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "bottom-modal": "/components/bottom-modal/bottom-modal"
+  }
+}

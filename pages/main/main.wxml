@@ -22,6 +22,14 @@
     </view>
   </view>
 
+  <view class="scenario-entry" bindtap="goToScenarios" hover-class="scenario-entry-press" hover-start-time="0" hover-stay-time="80">
+    <view class="scenario-entry-content">
+      <view class="scenario-entry-title">场景练习</view>
+      <view class="scenario-entry-desc">餐厅、机场、看医生… 实战场景口语</view>
+    </view>
+    <view class="scenario-entry-arrow">›</view>
+  </view>
+
   <view class="history-section" wx:if="{{historySummaries.length > 0}}">
     <view class="section-title" bindtap="showAllRecentHistory">练习记录</view>
     <view class="history-summary-list">
@@ -59,8 +67,14 @@
     <view class="history-modal">
       <scroll-view scroll-y style="height: 50vh"  class="history-list">
         <view class="history-item" wx:for="{{selectedHistoryItems}}" wx:key="id">
-          <view class="history-structure">{{item.structure}}</view>
-          <view class="history-example">{{item.examples[0].zh}}</view>
+          <block wx:if="{{item._scenario}}">
+            <view class="history-structure">{{item.examples[0].zh}}</view>
+            <view class="history-example">{{item.examples[0].en}}</view>
+          </block>
+          <block wx:else>
+            <view class="history-structure">{{item.structure}}</view>
+            <view class="history-example">{{item.examples[0].zh}}</view>
+          </block>
         </view>
       </scroll-view>
       <view class="history-action">

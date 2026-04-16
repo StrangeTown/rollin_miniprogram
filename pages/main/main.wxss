@@ -200,6 +200,46 @@ page {
   border-radius: 2rpx;
 }
 
+/* Scenario entry */
+.scenario-entry {
+  margin-top: 40rpx;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: 32rpx;
+  padding: 40rpx 40rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8rpx 24rpx -4rpx rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.scenario-entry-press {
+  transform: scale(0.97);
+}
+
+.scenario-entry-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8rpx;
+}
+
+.scenario-entry-desc {
+  font-size: 26rpx;
+  color: #9CA3AF;
+  line-height: 1.4;
+}
+
+.scenario-entry-arrow {
+  font-size: 40rpx;
+  color: #D1D5DB;
+  font-weight: 300;
+  flex-shrink: 0;
+  margin-left: 20rpx;
+}
+
 /* History section */
 .history-section {
   margin-top: 100rpx;

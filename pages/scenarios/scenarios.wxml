@@ -1,0 +1,39 @@
+<navigation-bar title="场景练习" back="{{true}}" color="black" background="#FAFAFA">
+</navigation-bar>
+
+<view class="page">
+  <view class="scenario-grid">
+    <view
+      class="scenario-card"
+      wx:for="{{scenarios}}"
+      wx:key="id"
+      data-id="{{item.id}}"
+      bindtap="onScenarioTap"
+      hover-class="scenario-card-press"
+      hover-start-time="0"
+      hover-stay-time="80">
+      <view class="scenario-icon">{{item.icon}}</view>
+      <view class="scenario-name">{{item.name}}</view>
+      <view class="scenario-desc">{{item.desc}}</view>
+    </view>
+  </view>
+</view>
+
+<bottom-modal
+  show="{{showSheet}}"
+  title="{{currentScenario.name}}"
+  showCancel="{{true}}"
+  cancelText="关闭"
+  bind:close="closeSheet">
+  <view class="sheet-content">
+    <scroll-view scroll-y style="height: 50vh" class="sentence-list">
+      <view class="sentence-item" wx:for="{{currentSentences}}" wx:key="id">
+        <view class="sentence-zh">{{item.zh}}</view>
+        <view class="sentence-en">{{item.en}}</view>
+      </view>
+    </scroll-view>
+    <view class="sheet-action">
+      <view class="drill-btn" bindtap="drillScenario">练习这个场景</view>
+    </view>
+  </view>
+</bottom-modal>

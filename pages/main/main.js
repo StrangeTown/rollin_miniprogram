@@ -1,4 +1,5 @@
 const structures = require('../../data/oral-structures-all.js')
+const { getAllPracticeItems } = require('../../utils/all-items.js')
 const share = require('../../utils/share.js')
 const {
   getDateKeyByOffset,
@@ -90,10 +91,11 @@ Page({
   },
 
   _loadRecentHistory() {
+    const allItems = getAllPracticeItems()
     const historySummaries = HISTORY_DAY_OPTIONS.map(day => {
       const dateKey = getDateKeyByOffset(day.offset)
       const ids = getPracticeIdsByDate(dateKey)
-      const items = structures.filter(s => ids.includes(s.id))
+      const items = allItems.filter(s => ids.includes(s.id))
       return {
         label: day.label,
         dateKey: dateKey,
@@ -114,6 +116,10 @@ Page({
 
   goToSettings() {
     wx.navigateTo({ url: '/pages/new-settings/new-settings' })
+  },
+
+  goToScenarios() {
+    wx.navigateTo({ url: '/pages/scenarios/scenarios' })
   },
 
   onShareAppMessage() {

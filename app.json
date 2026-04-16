@@ -5,7 +5,8 @@
     "pages/add-example/add-example",
     "pages/new-settings/new-settings",
     "pages/system-library/system-library",
-    "pages/product-recommend/product-recommend"
+    "pages/product-recommend/product-recommend",
+    "pages/scenarios/scenarios"
   ],
   "window": {
     "navigationBarTextStyle": "black",

@@ -1,4 +1,5 @@
 const structures = require('../../data/oral-structures-all.js')
+const { getAllPracticeItems } = require('../../utils/all-items.js')
 const {
   getDateKey,
   getDateKeyByOffset,
@@ -25,6 +26,7 @@ Page({
   data: {
     navTitle: '练习',
     isReviewMode: false,
+    isScenarioMode: false,
     structure: '',
     zh: '',
     en: '',
@@ -65,11 +67,13 @@ Page({
 
     const mode = options.mode || 'random'
     const isReviewMode = mode === 'review'
+    const isScenarioMode = mode === 'scenario'
     const entryLabel = options.entryLabel ? decodeURIComponent(options.entryLabel) : ''
     this._shouldRecordPractice = !isReviewMode
     this.setData({
       isReviewMode,
-      navTitle: isReviewMode && entryLabel ? `练习 · ${entryLabel}` : '练习'
+      isScenarioMode,
+      navTitle: entryLabel ? `练习 · ${entryLabel}` : '练习'
     })
     if (isReviewMode) {
       let practiceIds
@@ -90,13 +94,25 @@ Page({
         const dateKey = options.date || getDateKey()
         practiceIds = getPracticeIdsByDate(dateKey)
       }
-      const practiceItems = structures.filter(s => practiceIds.includes(s.id))
+      const allItems = getAllPracticeItems()
+      const practiceItems = allItems.filter(s => practiceIds.includes(s.id))
       if (practiceItems.length === 0) {
         wx.showToast({ title: '这一天还没有练习记录', icon: 'none' })
         wx.navigateBack()
         return
       }
       this._items = shuffle(practiceItems.slice())
+    } else if (isScenarioMode && options.scenarioId) {
+      try {
+        const scenarioData = require('../../data/scenarios/' + options.scenarioId + '.js')
+        this._items = shuffle((scenarioData.sentences || []).map(function (s) {
+          return { id: s.id, structure: '', examples: [{ en: s.en, zh: s.zh }] }
+        }))
+      } catch (err) {
+        wx.showToast({ title: '场景数据加载失败', icon: 'none' })
+        wx.navigateBack()
+        return
+      }
     } else {
       const count = parseInt(options.count) || 3
       this._items = shuffle(structures.slice()).slice(0, count)
@@ -138,13 +154,15 @@ Page({
     }
 
     this._currentStructureId = structureItem.id
-    const shouldHideStructure = this.data.isReviewMode && this.data.blurStructureInReview
+    const isScenarioItem = !!structureItem._scenario
+    const shouldHideStructure = !isScenarioItem && this.data.isReviewMode && this.data.blurStructureInReview
     this.setData({
       structure: structureItem.structure,
       zh: example.zh,
       en: example.en,
       previousPromptZh: this.data.isReviewMode ? this._lastPromptZh : '',
       showStructure: !shouldHideStructure,
+      hideStructureBanner: isScenarioItem,
       showAnswer: false
     })
   },
