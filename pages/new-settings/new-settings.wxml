@@ -8,7 +8,7 @@
   </view>
 
   <view class="setting-item setting-item-spaced" bindtap="goToSystemLibrary">
-    <view class="setting-label">系统句库</view>
+    <view class="setting-label">系统语块库</view>
     <view class="setting-arrow"></view>
   </view>
 
@@ -47,13 +47,13 @@
     <view class="sheet-body">
       <view class="data-section">
         <view class="data-title">练习记录</view>
-        <view class="data-desc">记录你每天练习了哪些口语结构，用于在首页展示练习历史。数据保存在本地。</view>
+        <view class="data-desc">记录你每天练习了哪些语块，用于在首页展示练习历史。数据保存在本地。</view>
         <view wx:if="{{hasHistory}}" class="clear-btn" bindtap="clearHistory">清空练习记录</view>
       </view>
 
       <view class="data-section">
         <view class="data-title">自定义例句</view>
-        <view class="data-desc">你为各个口语结构添加的自定义例句，会在练习时随机出现。数据保存在本地。</view>
+        <view class="data-desc">你为各个语块添加的自定义例句，会在练习时随机出现。数据保存在本地。</view>
         <view wx:if="{{hasCustomExamples}}" class="clear-btn" bindtap="clearCustomExamples">清空自定义例句</view>
       </view>
     </view>

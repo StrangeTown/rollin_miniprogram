@@ -7,7 +7,7 @@ const TAB_ITEMS = [
   {
     key: 'built-in',
     label: '默认',
-    description: '小程序默认句库'
+    description: '小程序默认语块库'
   },
   {
     key: 'wechat',

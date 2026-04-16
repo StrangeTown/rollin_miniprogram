@@ -1,4 +1,4 @@
-<navigation-bar title="系统句库" back="{{true}}" color="black" background="#FAFAFA">
+<navigation-bar title="系统语块库" back="{{true}}" color="black" background="#FAFAFA">
 </navigation-bar>
 
 <scroll-view class="page-scroll" scroll-y="true" show-scrollbar="{{false}}">
