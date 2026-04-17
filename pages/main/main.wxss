@@ -68,6 +68,7 @@ page {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 40rpx;
 }
 
 .card-title {
@@ -84,13 +85,10 @@ page {
   margin-right: 20rpx;
 }
 
-.card-action {
-  width: 112rpx;
-  height: 112rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.card-emoji {
+  font-size: 56rpx;
+  line-height: 1;
+  flex-shrink: 0;
 }
 
 .footer-actions {
@@ -209,22 +207,9 @@ page {
 /* Scenario card */
 .scenario-card {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.scenario-card .scenario-icon {
-  font-size: 48rpx;
-  margin-bottom: 16rpx;
-  line-height: 1;
-}
-
-.scenario-card .card-title {
-  font-size: 40rpx;
-}
-
-.scenario-card .card-desc {
-  margin-right: 0;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40rpx;
 }
 
 /* History section */
