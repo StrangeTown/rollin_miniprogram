@@ -7,28 +7,29 @@
     <view class="app-subtitle">通过造句，掌握地道英语语块</view>
   </view>
 
-  <view class="card-list">
-    <view class="practice-card" data-count="3" bindtap="goToPractice" hover-class="practice-card-press" hover-start-time="0" hover-stay-time="80">
-      <view class="card-content">
-        <view class="card-title">开始练习</view>
-        <view class="card-desc">花 1 分钟，练 3 句常用表达</view>
+  <scroll-view scroll-x enhanced enable-flex show-scrollbar="{{false}}" class="entry-scroll">
+    <view class="entry-track">
+      <view class="entry-card practice-card" data-count="3" bindtap="goToPractice" hover-class="entry-card-press" hover-start-time="0" hover-stay-time="80">
+        <view class="card-content">
+          <view class="card-title">开始练习</view>
+          <view class="card-desc">花 1 分钟，练 3 句常用表达</view>
+        </view>
+        <view class="card-action">
+          <view class="play-btn-halo"></view>
+          <view class="play-btn">
+            <view class="play-icon"></view>
+          </view>
+        </view>
       </view>
-      <view class="card-action">
-        <view class="play-btn-halo"></view>
-        <view class="play-btn">
-          <view class="play-icon"></view>
+      <view class="entry-card scenario-card" bindtap="goToScenarios" hover-class="entry-card-press" hover-start-time="0" hover-stay-time="80">
+        <view class="card-content">
+          <view class="scenario-icon">🗺️</view>
+          <view class="card-title">场景练习</view>
+          <view class="card-desc">餐厅、机场、看医生… 实战场景口语</view>
         </view>
       </view>
     </view>
-  </view>
-
-  <view class="scenario-entry" bindtap="goToScenarios" hover-class="scenario-entry-press" hover-start-time="0" hover-stay-time="80">
-    <view class="scenario-entry-content">
-      <view class="scenario-entry-title">场景练习</view>
-      <view class="scenario-entry-desc">餐厅、机场、看医生… 实战场景口语</view>
-    </view>
-    <view class="scenario-entry-arrow">›</view>
-  </view>
+  </scroll-view>
 
   <view class="history-section" wx:if="{{historySummaries.length > 0}}">
     <view class="section-title" bindtap="showAllRecentHistory">练习记录</view>

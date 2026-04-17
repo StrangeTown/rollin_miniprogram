@@ -31,37 +31,43 @@ page {
   font-weight: 400;
 }
 
-.card-list {
+.entry-scroll {
   margin-top: 100rpx;
-  width: 100%;
+  width: calc(100% + 96rpx);
+  margin-left: -48rpx;
+  margin-right: -48rpx;
+  height: 280rpx;
+  scroll-snap-type: x mandatory;
+}
+
+.entry-track {
+  display: flex;
+  gap: 20rpx;
+  padding-left: 48rpx;
+  padding-right: 48rpx;
+}
+
+.entry-card {
+  flex-shrink: 0;
+  width: 550rpx;
+  border-radius: 48rpx;
+  padding: 48rpx 40rpx;
+  background: #FFFFFF;
+  box-shadow: 0 20rpx 40rpx -12rpx rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.entry-card-press {
+  transform: scale(0.97);
+  box-shadow: 0 10rpx 20rpx -8rpx rgba(0, 0, 0, 0.03);
 }
 
 .practice-card {
-  width: 100%;
-  border-radius: 48rpx;
-  padding: 56rpx 48rpx;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #FFFFFF;
-  box-shadow: 0 40rpx 80rpx -12rpx rgba(0, 0, 0, 0.06), 0 20rpx 40rpx -12rpx rgba(0, 0, 0, 0.03);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-sizing: border-box;
-  position: relative;
-}
-
-.practice-card:active {
-  transform: scale(0.97);
-  box-shadow: 0 20rpx 40rpx -12rpx rgba(0, 0, 0, 0.04), 0 10rpx 20rpx -12rpx rgba(0, 0, 0, 0.02);
-}
-
-.practice-card-press {
-  transform: scale(0.97);
-  box-shadow: 0 20rpx 40rpx -12rpx rgba(0, 0, 0, 0.04), 0 10rpx 20rpx -12rpx rgba(0, 0, 0, 0.02);
-}
-
-.practice-card-press .play-btn {
-  transform: scale(0.95);
 }
 
 .card-title {
@@ -200,44 +206,25 @@ page {
   border-radius: 2rpx;
 }
 
-/* Scenario entry */
-.scenario-entry {
-  margin-top: 40rpx;
-  width: 100%;
-  background: #FFFFFF;
-  border-radius: 32rpx;
-  padding: 40rpx 40rpx;
-  box-sizing: border-box;
+/* Scenario card */
+.scenario-card {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 8rpx 24rpx -4rpx rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-direction: column;
+  justify-content: center;
 }
 
-.scenario-entry-press {
-  transform: scale(0.97);
+.scenario-card .scenario-icon {
+  font-size: 48rpx;
+  margin-bottom: 16rpx;
+  line-height: 1;
 }
 
-.scenario-entry-title {
-  font-size: 32rpx;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 8rpx;
-}
-
-.scenario-entry-desc {
-  font-size: 26rpx;
-  color: #9CA3AF;
-  line-height: 1.4;
-}
-
-.scenario-entry-arrow {
+.scenario-card .card-title {
   font-size: 40rpx;
-  color: #D1D5DB;
-  font-weight: 300;
-  flex-shrink: 0;
-  margin-left: 20rpx;
+}
+
+.scenario-card .card-desc {
+  margin-right: 0;
 }
 
 /* History section */
