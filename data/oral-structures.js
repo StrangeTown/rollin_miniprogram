@@ -1618,5 +1618,185 @@ module.exports = [
       { en: 'I\'m stuck on what to say next.', zh: '我不知道接下来该说什么了。' },
       { en: 'I\'ve been stuck on this issue all day.', zh: '我被这个问题卡了一整天。' },
     ]
+  },
+  {
+    id: 'a1b2c3d4-1181',
+    structure: 'I can\'t wait to...',
+    examples: [
+      { en: 'I can\'t wait to see you this weekend.', zh: '我迫不及待想周末见到你。' },
+      { en: 'I can\'t wait to try that new restaurant.', zh: '我等不及要去试那家新餐厅了。' },
+      { en: 'I can\'t wait to get home and relax.', zh: '我好想赶紧回家躺着。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1182',
+    structure: 'You\'re telling me...',
+    examples: [
+      { en: 'You\'re telling me you finished the whole thing?', zh: '你说你全部做完了？' },
+      { en: 'You\'re telling me! I\'ve been dealing with this all week.', zh: '可不是嘛！我整整忙了一周。' },
+      { en: 'You\'re telling me this is the only option?', zh: '你是说就只有这一个选择？' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1183',
+    structure: 'I\'m not gonna lie,...',
+    examples: [
+      { en: 'I\'m not gonna lie, that was pretty scary.', zh: '不骗你，刚才真的挺吓人的。' },
+      { en: 'I\'m not gonna lie, I was a little disappointed.', zh: '说实话，我有点失望。' },
+      { en: 'I\'m not gonna lie, this cake is amazing.', zh: '不得不说，这蛋糕也太好吃了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1184',
+    structure: 'It\'s not that..., it\'s just...',
+    examples: [
+      { en: 'It\'s not that I don\'t like it, it\'s just not my style.', zh: '不是我不喜欢，只是不是我的风格。' },
+      { en: 'It\'s not that I\'m busy, it\'s just bad timing.', zh: '不是我忙，只是时间不凑巧。' },
+      { en: 'It\'s not that I don\'t care, it\'s just hard to show it.', zh: '不是我不在乎，只是不太会表达。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1185',
+    structure: 'I\'m over it.',
+    examples: [
+      { en: 'We had a fight, but I\'m over it now.', zh: '我们吵过一架，但我已经放下了。' },
+      { en: 'I was upset at first, but I\'m over it.', zh: '一开始挺生气的，不过已经过去了。' },
+      { en: 'That trend? I\'m so over it.', zh: '那个潮流？我早就不感兴趣了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1186',
+    structure: 'What\'s the deal with...?',
+    examples: [
+      { en: 'What\'s the deal with the new schedule?', zh: '新的排班是怎么回事？' },
+      { en: 'What\'s the deal with him being so quiet today?', zh: '他今天怎么这么安静？' },
+      { en: 'What\'s the deal with this traffic?', zh: '这路怎么堵成这样？' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1187',
+    structure: 'There\'s no denying...',
+    examples: [
+      { en: 'There\'s no denying she\'s talented.', zh: '不得不承认她很有天赋。' },
+      { en: 'There\'s no denying that the food here is great.', zh: '这里的饭确实好吃，没话说。' },
+      { en: 'There\'s no denying it was a tough year.', zh: '不可否认，这一年确实不容易。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1188',
+    structure: 'I wouldn\'t go that far.',
+    examples: [
+      { en: 'He\'s good, but I wouldn\'t go that far as to call him a genius.', zh: '他是不错，但说天才就有点过了。' },
+      { en: 'It\'s okay, but I wouldn\'t go that far.', zh: '还行吧，但也没那么夸张。' },
+      { en: 'I like her, but I wouldn\'t go that far as to say we\'re best friends.', zh: '我挺喜欢她的，但说闺蜜就有点过了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1189',
+    structure: 'I can see why...',
+    examples: [
+      { en: 'I can see why you\'re frustrated.', zh: '我能理解你为什么烦。' },
+      { en: 'I can see why everyone loves this place.', zh: '难怪大家都喜欢这个地方。' },
+      { en: 'I can see why she got the promotion.', zh: '她升职我一点也不意外。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1190',
+    structure: 'Chances are...',
+    examples: [
+      { en: 'Chances are he already knows.', zh: '他八成已经知道了。' },
+      { en: 'Chances are it\'ll rain later.', zh: '一会儿很可能要下雨。' },
+      { en: 'Chances are she\'s not going to show up.', zh: '她大概率不会来了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1191',
+    structure: 'I\'m counting on...',
+    examples: [
+      { en: 'I\'m counting on you to be there.', zh: '我就指望你到场了。' },
+      { en: 'I\'m counting on this plan working out.', zh: '我就靠这个计划了。' },
+      { en: 'We\'re all counting on good weather tomorrow.', zh: '我们都盼着明天是个好天。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1192',
+    structure: 'I\'m torn between...',
+    examples: [
+      { en: 'I\'m torn between the two job offers.', zh: '两份工作我都想去，好纠结。' },
+      { en: 'I\'m torn between staying in and going out.', zh: '我在纠结是待家里还是出去。' },
+      { en: 'I\'m torn between the red one and the blue one.', zh: '红的和蓝的我选不好。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1193',
+    structure: 'I could\'ve sworn...',
+    examples: [
+      { en: 'I could\'ve sworn I locked the door.', zh: '我发誓我锁门了啊。' },
+      { en: 'I could\'ve sworn you said Tuesday.', zh: '我印象中你说的是周二啊。' },
+      { en: 'I could\'ve sworn I left my keys right here.', zh: '我明明把钥匙放这儿了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1194',
+    structure: 'What\'s stopping you from...?',
+    examples: [
+      { en: 'What\'s stopping you from applying?', zh: '什么阻止你去申请了？' },
+      { en: 'What\'s stopping you from just saying no?', zh: '你直接拒绝不就行了？' },
+      { en: 'What\'s stopping you from starting your own business?', zh: '你怎么不自己创业呢？' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1195',
+    structure: 'I\'ll let you know.',
+    examples: [
+      { en: 'I haven\'t decided yet — I\'ll let you know.', zh: '我还没想好，到时候告诉你。' },
+      { en: 'Let me check my schedule and I\'ll let you know.', zh: '我看看时间安排再告诉你。' },
+      { en: 'I\'ll let you know as soon as I hear back.', zh: '一有消息我就告诉你。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1196',
+    structure: 'It\'s getting harder to...',
+    examples: [
+      { en: 'It\'s getting harder to find a parking spot around here.', zh: '这附近越来越难找停车位了。' },
+      { en: 'It\'s getting harder to keep up with everything.', zh: '什么都要跟上，越来越累了。' },
+      { en: 'It\'s getting harder to stay motivated.', zh: '越来越难保持动力了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1197',
+    structure: 'Not that it matters, but...',
+    examples: [
+      { en: 'Not that it matters, but I was actually here first.', zh: '虽然不重要，但其实我先到的。' },
+      { en: 'Not that it matters, but I did warn you.', zh: '不是要说什么，但我确实提醒过你。' },
+      { en: 'Not that it matters, but he never apologised.', zh: '倒不是计较，但他一直没道歉。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1198',
+    structure: 'I can\'t get over...',
+    examples: [
+      { en: 'I can\'t get over how beautiful this view is.', zh: '这风景也太美了，看不够。' },
+      { en: 'I still can\'t get over what she said.', zh: '她说的话我到现在还没缓过来。' },
+      { en: 'I can\'t get over how cheap this was.', zh: '这也太便宜了吧，不敢相信。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1199',
+    structure: 'I\'m leaning towards...',
+    examples: [
+      { en: 'I\'m leaning towards the cheaper option.', zh: '我偏向选便宜那个。' },
+      { en: 'I\'m leaning towards saying no.', zh: '我倾向于拒绝。' },
+      { en: 'I\'m leaning towards taking the day off.', zh: '我在考虑请一天假。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1200',
+    structure: 'I\'ll figure it out.',
+    examples: [
+      { en: 'Don\'t worry about me — I\'ll figure it out.', zh: '别担心我，我会想办法的。' },
+      { en: 'It looks complicated, but I\'ll figure it out.', zh: '看着挺复杂的，但我能搞定。' },
+      { en: 'Give me a minute — I\'ll figure it out.', zh: '等我一下，我想想办法。' },
+    ]
   }
 ]
