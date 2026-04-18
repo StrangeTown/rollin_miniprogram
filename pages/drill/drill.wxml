@@ -25,7 +25,7 @@
     <!-- Content Card -->
     <view class="card">
       <view class="card-hint">
-        <text class="hint-icon">💡</text>
+        <text class="hint-icon">{{isScenarioMode || isScenarioItem ? '🗺️' : '🧩'}}</text>
         <text>试着翻译这句话：</text>
       </view>
       

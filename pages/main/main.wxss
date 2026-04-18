@@ -86,7 +86,7 @@ page {
 }
 
 .card-emoji {
-  font-size: 56rpx;
+  font-size: 44rpx;
   line-height: 1;
   flex-shrink: 0;
 }
@@ -303,16 +303,16 @@ page {
   border-bottom: none;
 }
 
-.history-structure {
+.history-en {
   font-size: 34rpx;
   font-weight: 600;
   color: #111827;
 }
 
-.history-example {
+.history-zh {
   margin-top: 12rpx;
   font-size: 28rpx;
-  color: #6B7280;
+  color: #9CA3AF;
 }
 
 .history-action {

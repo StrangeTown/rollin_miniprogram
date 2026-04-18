@@ -163,6 +163,7 @@ Page({
       previousPromptZh: this.data.isReviewMode ? this._lastPromptZh : '',
       showStructure: !shouldHideStructure,
       hideStructureBanner: isScenarioItem,
+      isScenarioItem: isScenarioItem,
       showAnswer: false
     })
   },
