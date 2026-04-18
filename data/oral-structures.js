@@ -1798,5 +1798,185 @@ module.exports = [
       { en: 'It looks complicated, but I\'ll figure it out.', zh: '看着挺复杂的，但我能搞定。' },
       { en: 'Give me a minute — I\'ll figure it out.', zh: '等我一下，我想想办法。' },
     ]
+  },
+  {
+    id: 'a1b2c3d4-1201',
+    structure: 'I\'m not cut out for...',
+    examples: [
+      { en: 'I\'m not cut out for office work.', zh: '我不适合坐办公室。' },
+      { en: 'Maybe I\'m just not cut out for cooking.', zh: '也许我就不是做饭的料。' },
+      { en: 'I realized I\'m not cut out for sales.', zh: '我发现我真不适合干销售。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1202',
+    structure: 'It goes without saying...',
+    examples: [
+      { en: 'It goes without saying that health comes first.', zh: '不用说，健康肯定排第一。' },
+      { en: 'It goes without saying — you\'re always welcome here.', zh: '这还用说嘛，随时欢迎你。' },
+      { en: 'It goes without saying that she\'s the best on the team.', zh: '她是队里最强的，这没什么好说的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1203',
+    structure: 'I\'ll get back to you on...',
+    examples: [
+      { en: 'I\'ll get back to you on the details.', zh: '细节我之后回复你。' },
+      { en: 'Let me think about it — I\'ll get back to you on that.', zh: '让我想想，回头告诉你。' },
+      { en: 'I\'ll get back to you on the price once I check.', zh: '我查一下价格再回你。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1204',
+    structure: 'For what it\'s worth,...',
+    examples: [
+      { en: 'For what it\'s worth, I think you made the right call.', zh: '不知道有没有用，但我觉得你的决定没错。' },
+      { en: 'For what it\'s worth, I did try to warn them.', zh: '说了也不一定有用，但我确实提醒过他们。' },
+      { en: 'For what it\'s worth, she seemed really sincere.', zh: '我的感觉不一定对，但她看起来挺真诚的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1205',
+    structure: 'I\'ve got my hands full.',
+    examples: [
+      { en: 'Sorry, I\'ve got my hands full this week.', zh: '抱歉，这周我忙不过来。' },
+      { en: 'I\'d love to help, but I\'ve got my hands full right now.', zh: '我很想帮忙，但现在实在腾不出手。' },
+      { en: 'With three kids, I\'ve always got my hands full.', zh: '带三个孩子，我天天忙得团团转。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1206',
+    structure: 'It\'s a long shot, but...',
+    examples: [
+      { en: 'It\'s a long shot, but maybe we can still get tickets.', zh: '希望不大，但也许还能买到票。' },
+      { en: 'It\'s a long shot, but I\'ll give it a try.', zh: '够呛能成，但我试试看。' },
+      { en: 'It\'s a long shot, but what if they say yes?', zh: '可能性不大，但万一他们同意了呢？' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1207',
+    structure: 'I can live with that.',
+    examples: [
+      { en: 'It\'s not perfect, but I can live with that.', zh: '不算完美，但我能接受。' },
+      { en: 'If that\'s the only option, I can live with that.', zh: '如果只有这个选择，那我能接受。' },
+      { en: 'A thirty-minute delay? I can live with that.', zh: '晚三十分钟？那还行。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1208',
+    structure: 'I\'ve been through...',
+    examples: [
+      { en: 'I\'ve been through worse.', zh: '更难的我都经历过。' },
+      { en: 'I\'ve been through a lot this year.', zh: '今年我经历了太多了。' },
+      { en: 'Trust me, I\'ve been through the same thing.', zh: '相信我，我也经历过同样的事。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1209',
+    structure: 'I\'m curious about...',
+    examples: [
+      { en: 'I\'m curious about how they make this.', zh: '我好奇这东西怎么做的。' },
+      { en: 'I\'m curious about what she said after I left.', zh: '我想知道我走后她说了什么。' },
+      { en: 'I\'m just curious about your background.', zh: '我就是好奇你的背景。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1210',
+    structure: 'I\'m getting the hang of...',
+    examples: [
+      { en: 'I\'m finally getting the hang of this software.', zh: '我终于摸清这个软件怎么用了。' },
+      { en: 'I\'m getting the hang of cooking for myself.', zh: '我慢慢学会自己做饭了。' },
+      { en: 'Don\'t worry, you\'ll get the hang of it soon.', zh: '别担心，你很快就能上手。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1211',
+    structure: 'I have a thing for...',
+    examples: [
+      { en: 'I have a thing for vintage furniture.', zh: '我对老家具特别着迷。' },
+      { en: 'She has a thing for spicy food.', zh: '她特别爱吃辣。' },
+      { en: 'I\'ve always had a thing for rainy days.', zh: '我一直很喜欢下雨天。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1212',
+    structure: 'I\'ll take your word for it.',
+    examples: [
+      { en: 'I haven\'t tried it, but I\'ll take your word for it.', zh: '我没试过，但我信你说的。' },
+      { en: 'Sounds weird, but I\'ll take your word for it.', zh: '听着挺奇怪的，但我就信你了。' },
+      { en: 'You know more about this than I do — I\'ll take your word for it.', zh: '你比我懂，你说啥就是啥。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1213',
+    structure: 'That\'s out of the question.',
+    examples: [
+      { en: 'Lending him money again? That\'s out of the question.', zh: '再借钱给他？那绝对不行。' },
+      { en: 'Staying up all night? That\'s out of the question for me.', zh: '通宵？我可熬不了。' },
+      { en: 'Moving overseas is out of the question right now.', zh: '现在搬去国外完全不现实。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1214',
+    structure: 'I didn\'t see that coming.',
+    examples: [
+      { en: 'Wow, I didn\'t see that coming at all.', zh: '哇，我完全没想到。' },
+      { en: 'He quit? I didn\'t see that coming.', zh: '他辞职了？我一点也没料到。' },
+      { en: 'I didn\'t see that coming — she was so calm before.', zh: '完全没想到，她之前还那么淡定。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1215',
+    structure: 'It dawned on me that...',
+    examples: [
+      { en: 'It suddenly dawned on me that I had the wrong day.', zh: '我突然意识到日子搞错了。' },
+      { en: 'It dawned on me that nobody was coming.', zh: '我忽然反应过来，没人会来了。' },
+      { en: 'It dawned on me that I\'d left my wallet at home.', zh: '我突然想起来钱包忘在家里了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1216',
+    structure: 'Believe it or not,...',
+    examples: [
+      { en: 'Believe it or not, I\'ve never been on a plane.', zh: '你信不信，我从没坐过飞机。' },
+      { en: 'Believe it or not, he showed up on time.', zh: '说出来你可能不信，他居然准时到了。' },
+      { en: 'Believe it or not, this was the cheapest option.', zh: '信不信由你，这已经是最便宜的了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1217',
+    structure: 'I lost track of...',
+    examples: [
+      { en: 'I lost track of time playing games.', zh: '打游戏打到忘了时间。' },
+      { en: 'I lost track of how many times I\'ve watched this movie.', zh: '这部电影我看了多少遍我自己都数不清了。' },
+      { en: 'Sorry, I lost track of what you were saying.', zh: '不好意思，我刚才走神了没跟上。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1218',
+    structure: 'There\'s always the option of...',
+    examples: [
+      { en: 'There\'s always the option of ordering in.', zh: '实在不行就叫外卖呗。' },
+      { en: 'If this doesn\'t work, there\'s always the option of trying again.', zh: '要是不行的话，还可以再试一次。' },
+      { en: 'There\'s always the option of just saying no.', zh: '你也可以直接拒绝嘛。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1219',
+    structure: 'I\'m all about...',
+    examples: [
+      { en: 'I\'m all about trying new things.', zh: '我就喜欢尝试新东西。' },
+      { en: 'She\'s all about efficiency.', zh: '她做事特别讲究效率。' },
+      { en: 'I\'m all about comfort when I travel.', zh: '出行的话我就图一个舒服。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1220',
+    structure: 'I\'ll make it up to you.',
+    examples: [
+      { en: 'I\'m sorry I missed your birthday — I\'ll make it up to you.', zh: '对不起错过了你的生日，我一定补上。' },
+      { en: 'I know I owe you one. I\'ll make it up to you.', zh: '我知道欠你一个人情，我会补上的。' },
+      { en: 'Let me make it up to you with dinner.', zh: '我请你吃饭，算是补偿你。' },
+    ]
   }
 ]
