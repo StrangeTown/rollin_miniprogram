@@ -5,7 +5,8 @@ Page({
     scenarios: [],
     showSheet: false,
     currentScenario: null,
-    currentSentences: []
+    currentSentences: [],
+    refreshing: false
   },
 
   onLoad() {
@@ -21,10 +22,13 @@ Page({
 
     try {
       const scenarioData = require('../../data/scenarios/' + id + '.js')
+      const all = scenarioData.sentences || []
+      const shuffled = all.slice().sort(() => Math.random() - 0.5)
+      const preview = shuffled.slice(0, 3)
       this.setData({
         showSheet: true,
         currentScenario: scenarioData,
-        currentSentences: scenarioData.sentences || []
+        currentSentences: preview
       })
     } catch (err) {
       wx.showToast({ title: '场景数据加载失败', icon: 'none' })
@@ -35,14 +39,31 @@ Page({
     this.setData({ showSheet: false })
   },
 
+  refreshSentences() {
+    if (this.data.refreshing) return
+    const scenario = this.data.currentScenario
+    if (!scenario) return
+
+    wx.vibrateShort({ type: 'light' })
+    this.setData({ refreshing: true })
+
+    setTimeout(() => {
+      const all = scenario.sentences || []
+      const shuffled = all.slice().sort(() => Math.random() - 0.5)
+      const preview = shuffled.slice(0, 3)
+      this.setData({ currentSentences: preview, refreshing: false })
+    }, 500)
+  },
+
   drillScenario() {
     const scenario = this.data.currentScenario
     if (!scenario) return
 
+    const sentenceIds = this.data.currentSentences.map(s => s.id).join(',')
     this.setData({ showSheet: false })
     const label = encodeURIComponent(scenario.name)
     wx.navigateTo({
-      url: '/pages/drill/drill?mode=scenario&scenarioId=' + scenario.id + '&entryLabel=' + label
+      url: '/pages/drill/drill?mode=scenario&scenarioId=' + scenario.id + '&sentenceIds=' + sentenceIds + '&entryLabel=' + label
     })
   }
 })

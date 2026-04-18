@@ -68,7 +68,7 @@ page {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40rpx;
+  gap: 48rpx;
 }
 
 .card-title {
@@ -209,7 +209,7 @@ page {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 40rpx;
+  gap: 48rpx;
 }
 
 /* History section */

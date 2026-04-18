@@ -21,19 +21,31 @@
 
 <bottom-modal
   show="{{showSheet}}"
-  title="{{currentScenario.name}}"
+  title="来自「{{currentScenario.name}}」的3句口语"
   showCancel="{{true}}"
   cancelText="关闭"
   bind:close="closeSheet">
   <view class="sheet-content">
-    <scroll-view scroll-y style="height: 50vh" class="sentence-list">
-      <view class="sentence-item" wx:for="{{currentSentences}}" wx:key="id">
-        <view class="sentence-zh">{{item.zh}}</view>
-        <view class="sentence-en">{{item.en}}</view>
+    <view class="sentence-list-wrap">
+      <view wx:if="{{refreshing}}" class="loading-overlay">
+        <view class="loading-spinner">
+          <view class="loading-spinner-inner"></view>
+        </view>
       </view>
-    </scroll-view>
+      <scroll-view scroll-y style="height: 50vh" class="sentence-list" wx:if="{{!refreshing}}">
+        <view class="sentence-items">
+          <view class="sentence-item" wx:for="{{currentSentences}}" wx:key="id">
+            <view class="sentence-zh">{{item.zh}}</view>
+            <view class="sentence-en">{{item.en}}</view>
+          </view>
+        </view>
+        <view class="refresh-action" bindtap="refreshSentences">
+          <text class="refresh-text">换一批</text>
+        </view>
+      </scroll-view>
+    </view>
     <view class="sheet-action">
-      <view class="drill-btn" bindtap="drillScenario">练习这个场景</view>
+      <view class="drill-btn" bindtap="drillScenario">练习</view>
     </view>
   </view>
 </bottom-modal>

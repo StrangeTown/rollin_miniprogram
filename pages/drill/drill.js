@@ -105,7 +105,12 @@ Page({
     } else if (isScenarioMode && options.scenarioId) {
       try {
         const scenarioData = require('../../data/scenarios/' + options.scenarioId + '.js')
-        this._items = shuffle((scenarioData.sentences || []).map(function (s) {
+        let sentences = scenarioData.sentences || []
+        if (options.sentenceIds) {
+          const ids = options.sentenceIds.split(',')
+          sentences = sentences.filter(s => ids.includes(s.id))
+        }
+        this._items = shuffle(sentences.map(function (s) {
           return { id: s.id, structure: '', examples: [{ en: s.en, zh: s.zh }] }
         }))
       } catch (err) {

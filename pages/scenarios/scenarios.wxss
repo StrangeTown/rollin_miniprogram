@@ -66,7 +66,6 @@ page {
 .sentence-item:last-child {
   border-bottom: none;
 }
-
 .sentence-zh {
   font-size: 30rpx;
   font-weight: 500;
@@ -78,6 +77,51 @@ page {
   font-size: 26rpx;
   color: #6B7280;
   line-height: 1.5;
+}
+
+.sentence-list-wrap {
+  position: relative;
+}
+
+.loading-overlay {
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: conic-gradient(#E5E7EB, #9CA3AF);
+  animation: spin 0.8s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner-inner {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.refresh-action {
+  display: flex;
+  justify-content: center;
+  padding: 28rpx 0 8rpx;
+}
+
+.refresh-text {
+  font-size: 26rpx;
+  color: #9CA3AF;
 }
 
 .sheet-action {
