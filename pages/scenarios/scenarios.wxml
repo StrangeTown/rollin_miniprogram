@@ -1,7 +1,7 @@
 <navigation-bar title="场景练习" back="{{true}}" color="black" background="#FAFAFA">
 </navigation-bar>
 
-<view class="page">
+<scroll-view scroll-y enhanced show-scrollbar="{{false}}" class="page">
   <view class="scenario-grid">
     <view
       class="scenario-card"
@@ -17,7 +17,7 @@
       <view class="scenario-desc">{{item.desc}}</view>
     </view>
   </view>
-</view>
+</scroll-view>
 
 <bottom-modal
   show="{{showSheet}}"

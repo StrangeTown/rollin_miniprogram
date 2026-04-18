@@ -1,9 +1,12 @@
 page {
   background-color: #FAFAFA;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .page {
-  min-height: 100vh;
+  flex: 1;
   background-color: #FAFAFA;
   padding: 24rpx 48rpx;
   box-sizing: border-box;
@@ -13,6 +16,7 @@ page {
   display: flex;
   flex-wrap: wrap;
   gap: 24rpx;
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
 }
 
 .scenario-card {
