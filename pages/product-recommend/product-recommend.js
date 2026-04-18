@@ -14,5 +14,13 @@ Page({
       appId: 'wx21b1c15603cfaee8',
       path: 'pages/home/home'
     })
+  },
+
+  openAccountBook() {
+    wx.vibrateShort({ type: 'light' })
+    wx.navigateToMiniProgram({
+      appId: 'wx2949745f913e18ac',
+      path: 'pages/launch/launch'
+    })
   }
 })

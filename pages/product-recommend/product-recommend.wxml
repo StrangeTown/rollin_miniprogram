@@ -19,4 +19,11 @@
     </view>
     <view class="product-arrow"></view>
   </view>
+  <view class="product-card" bindtap="openAccountBook" hover-class="product-card-press" hover-start-time="0" hover-stay-time="80">
+    <view class="product-info">
+      <view class="product-name">简易记账</view>
+      <view class="product-desc">轻量好用的记账工具，收支一眼清晰</view>
+    </view>
+    <view class="product-arrow"></view>
+  </view>
 </view>
