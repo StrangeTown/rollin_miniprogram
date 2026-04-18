@@ -74,7 +74,7 @@ Page({
 
   updateActiveTab(tabKey) {
     const activeItems = this._datasets[tabKey] || []
-    this._activeItemsAll = activeItems
+    this._activeItemsAll = [...activeItems].reverse()
 
     this.setData({ currentTab: tabKey })
     this.updateVisibleItems(PAGE_SIZE)
