@@ -707,7 +707,7 @@ module.exports = [
     examples: [
       { en: 'Thanks, I\'m all set.', zh: '谢谢，我这边都准备好了。' },
       { en: 'You can go. I\'m all set here.', zh: '你可以走了，我这边都弄好了。' },
-      { en: 'We\'re all set for tomorrow.', zh: '我们明天都准备好了。' }
+      { en: 'We\'re all set for tomorrow.', zh: '明天的事都安排好了。' }
     ]
   },
   {
