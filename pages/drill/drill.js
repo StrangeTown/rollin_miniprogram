@@ -44,6 +44,7 @@ Page({
     showSettingsSheet: false,
     showAutoPlay: false,
     autoPlayZh: '',
+    autoPlayEn: '',
     autoPlaySpeed: 5000,
     showSpeedSheet: false,
     autoPlayFlash: false,
@@ -351,7 +352,7 @@ Page({
     this.setData({ showSettingsSheet: false })
     setTimeout(() => {
       this._autoPlayLastId = ''
-      this.setData({ showAutoPlay: true, autoPlayZh: '' })
+      this.setData({ showAutoPlay: true, autoPlayZh: '', autoPlayEn: '' })
       setTimeout(() => { this._autoPlayNext() }, 100)
     }, 200)
   },
@@ -366,7 +367,7 @@ Page({
       clearTimeout(this._autoPlayFlashTimer)
       this._autoPlayFlashTimer = null
     }
-    this.setData({ showAutoPlay: false, autoPlayZh: '', autoPlayZhVisible: true })
+    this.setData({ showAutoPlay: false, autoPlayZh: '', autoPlayEn: '', autoPlayZhVisible: true })
   },
 
   _autoPlayNext() {
@@ -383,9 +384,9 @@ Page({
 
     this._autoPlayLastId = picked.id
     var examples = Array.isArray(picked.examples) ? picked.examples : []
-    var example = examples[Math.floor(Math.random() * examples.length)] || { zh: '' }
+  var example = examples[Math.floor(Math.random() * examples.length)] || { zh: '', en: '' }
 
-    this.setData({ autoPlayZh: example.zh, autoPlayZhVisible: true })
+  this.setData({ autoPlayZh: example.zh, autoPlayEn: example.en, autoPlayZhVisible: true })
     this._startRingAnimation()
 
     var self = this

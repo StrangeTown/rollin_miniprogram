@@ -121,7 +121,10 @@
 
 <view wx:if="{{showAutoPlay}}" class="autoplay-mask" catchtouchmove="noop">
   <view class="autoplay-content">
-    <view class="autoplay-zh {{autoPlayZhVisible ? '' : 'autoplay-zh-hidden'}}">{{autoPlayZh}}</view>
+    <view class="autoplay-text-group {{autoPlayZhVisible ? '' : 'autoplay-text-group-hidden'}}">
+      <view class="autoplay-zh">{{autoPlayZh}}</view>
+      <view class="autoplay-en">{{autoPlayEn}}</view>
+    </view>
   </view>
 
   <view class="autoplay-ring-wrap" bindtap="openSpeedSheet">
