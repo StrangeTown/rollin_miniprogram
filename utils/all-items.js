@@ -1,9 +1,10 @@
 /**
- * Build a unified item array that includes both oral-structures and scenario sentences.
- * Scenario sentences are converted to the same shape: { id, structure, examples }.
+ * Build a unified item array that includes both oral-structures and full-sentence groups
+ * (scenarios + other sentence-groups). Sentences are converted to the same shape:
+ * { id, structure, examples }.
  */
 const structures = require('../data/oral-structures-all.js')
-const scenarioIndex = require('../data/scenarios/index.js')
+const sentenceLibrary = require('../data/sentence-library/index.js')
 
 let _allItems = null
 
@@ -12,21 +13,27 @@ function getAllPracticeItems() {
 
   const items = structures.slice()
 
-  scenarioIndex.forEach(function (entry) {
-    try {
-      const scenarioData = require('../data/scenarios/' + entry.id + '.js')
-      var sentences = scenarioData.sentences || []
-      sentences.forEach(function (s) {
-        items.push({
-          id: s.id,
-          structure: s.zh,
-          examples: [{ en: s.en, zh: s.zh }],
-          _scenario: entry.name
+  sentenceLibrary.forEach(function (group) {
+    var source = group.source
+    var groupItems = group.items || []
+    groupItems.forEach(function (entry) {
+      try {
+        var data = source === 'others'
+          ? require('../data/sentence-library/others/' + entry.id + '.js')
+          : require('../data/sentence-library/scenarios/' + entry.id + '.js')
+        var sentences = data.sentences || []
+        sentences.forEach(function (s) {
+          items.push({
+            id: s.id,
+            structure: s.zh,
+            examples: [{ en: s.en, zh: s.zh }],
+            _scenario: entry.name
+          })
         })
-      })
-    } catch (e) {
-      // skip broken scenario files
-    }
+      } catch (e) {
+        // skip broken files
+      }
+    })
   })
 
   _allItems = items

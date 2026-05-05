@@ -119,7 +119,7 @@ Page({
   },
 
   goToScenarios() {
-    wx.navigateTo({ url: '/pages/scenarios/scenarios' })
+    wx.navigateTo({ url: '/pages/recite-sentences/recite-sentences' })
   },
 
   onShareAppMessage() {

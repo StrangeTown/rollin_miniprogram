@@ -18,58 +18,11 @@ page {
 }
 
 .tab-bar {
-  margin-top: 8rpx;
-  width: 100%;
-  padding: 10rpx;
-  border-radius: 32rpx;
-  background: rgba(255, 255, 255, 0.88);
-  box-shadow: 0 14rpx 28rpx rgba(0, 0, 0, 0.03);
-  display: flex;
-  box-sizing: border-box;
-}
-
-.tab-item {
-  flex: 1;
-  min-height: 116rpx;
-  border-radius: 24rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10rpx 18rpx;
-  box-sizing: border-box;
-  transition: background 0.2s ease, transform 0.2s ease;
-}
-
-.tab-item:active {
-  transform: scale(0.98);
-}
-
-.tab-item-active {
-  background: #111827;
-}
-
-.tab-label {
-  font-size: 28rpx;
-  font-weight: 600;
-  color: #6B7280;
-}
-
-.tab-desc {
-  margin-top: 6rpx;
-  font-size: 22rpx;
-  color: #9CA3AF;
-  line-height: 1.4;
-  text-align: center;
-}
-
-.tab-item-active .tab-label,
-.tab-item-active .tab-desc {
-  color: #FFFFFF;
+  display: none;
 }
 
 .structure-list {
-  margin-top: 28rpx;
+  margin-top: 0;
 }
 
 .structure-card {

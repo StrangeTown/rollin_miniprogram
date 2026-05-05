@@ -12,11 +12,26 @@ page {
   box-sizing: border-box;
 }
 
+.group-section {
+  padding-bottom: 24rpx;
+}
+
+.group-section:last-child {
+  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
+}
+
+.group-title {
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #6B7280;
+  letter-spacing: 1rpx;
+  padding: 8rpx 4rpx 20rpx;
+}
+
 .scenario-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 24rpx;
-  padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
 }
 
 .scenario-card {

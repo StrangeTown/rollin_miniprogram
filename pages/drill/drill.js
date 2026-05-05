@@ -105,7 +105,8 @@ Page({
       this._items = shuffle(practiceItems.slice())
     } else if (isScenarioMode && options.scenarioId) {
       try {
-        const scenarioData = require('../../data/scenarios/' + options.scenarioId + '.js')
+        const source = options.scenarioSource === 'others' ? 'others' : 'scenarios'
+        const scenarioData = require('../../data/sentence-library/' + source + '/' + options.scenarioId + '.js')
         let sentences = scenarioData.sentences || []
         if (options.sentenceIds) {
           const ids = options.sentenceIds.split(',')

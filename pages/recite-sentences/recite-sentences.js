@@ -1,37 +1,46 @@
-const scenarioIndex = require('../../data/scenarios/index.js')
+const sentenceLibrary = require('../../data/sentence-library/index.js')
+
+function loadSentenceFile(source, id) {
+  if (source === 'others') {
+    return require('../../data/sentence-library/others/' + id + '.js')
+  }
+  return require('../../data/sentence-library/scenarios/' + id + '.js')
+}
 
 Page({
   data: {
-    scenarios: [],
+    groups: [],
     showSheet: false,
     currentScenario: null,
+    currentSource: '',
     currentSentences: [],
     refreshing: false
   },
 
   onLoad() {
-    this.setData({ scenarios: scenarioIndex })
+    this.setData({ groups: sentenceLibrary })
   },
 
   onScenarioTap(e) {
     const id = e.currentTarget.dataset.id
-    const info = this.data.scenarios.find(s => s.id === id)
-    if (!info) return
+    const source = e.currentTarget.dataset.source
+    if (!id || !source) return
 
     wx.vibrateShort({ type: 'light' })
 
     try {
-      const scenarioData = require('../../data/scenarios/' + id + '.js')
+      const scenarioData = loadSentenceFile(source, id)
       const all = scenarioData.sentences || []
       const shuffled = all.slice().sort(() => Math.random() - 0.5)
       const preview = shuffled.slice(0, 3)
       this.setData({
         showSheet: true,
         currentScenario: scenarioData,
+        currentSource: source,
         currentSentences: preview
       })
     } catch (err) {
-      wx.showToast({ title: '场景数据加载失败', icon: 'none' })
+      wx.showToast({ title: '内容加载失败', icon: 'none' })
     }
   },
 
@@ -62,8 +71,9 @@ Page({
     const sentenceIds = this.data.currentSentences.map(s => s.id).join(',')
     this.setData({ showSheet: false })
     const label = encodeURIComponent(scenario.name)
+    const source = this.data.currentSource || 'scenarios'
     wx.navigateTo({
-      url: '/pages/drill/drill?mode=scenario&scenarioId=' + scenario.id + '&sentenceIds=' + sentenceIds + '&entryLabel=' + label
+      url: '/pages/drill/drill?mode=scenario&scenarioId=' + scenario.id + '&scenarioSource=' + source + '&sentenceIds=' + sentenceIds + '&entryLabel=' + label
     })
   }
 })

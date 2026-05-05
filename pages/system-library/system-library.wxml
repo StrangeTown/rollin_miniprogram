@@ -3,20 +3,6 @@
 
 <scroll-view class="page-scroll" scroll-y="true" show-scrollbar="{{false}}">
   <view class="page">
-    <view class="tab-bar">
-      <view
-        wx:for="{{tabs}}"
-        wx:key="key"
-        wx:for-item="tabItem"
-        class="tab-item {{currentTab === tabItem.key ? 'tab-item-active' : ''}}"
-        data-key="{{tabItem.key}}"
-        bindtap="switchTab"
-      >
-        <view class="tab-label">{{tabItem.label}}</view>
-        <view class="tab-desc">{{tabItem.description}}</view>
-      </view>
-    </view>
-
     <view wx:if="{{visibleItems.length > 0}}" class="structure-list">
       <view
         wx:for="{{visibleItems}}"

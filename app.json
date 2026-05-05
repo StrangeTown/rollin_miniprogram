@@ -6,7 +6,7 @@
     "pages/new-settings/new-settings",
     "pages/system-library/system-library",
     "pages/product-recommend/product-recommend",
-    "pages/scenarios/scenarios"
+    "pages/recite-sentences/recite-sentences"
   ],
   "window": {
     "navigationBarTextStyle": "black",
