@@ -14,6 +14,14 @@ const REVIEW_RECALL_PREVIOUS_KEY = 'drill_review_recall_previous'
 const CUSTOM_EXAMPLE_PICK_PROB = 0.7
 const AUTOPLAY_DURATION = 5000
 
+function getPreviewWords(text, count) {
+  const words = String(text || '').trim().split(/\s+/).filter(Boolean)
+  if (words.length <= count) {
+    return words.join(' ')
+  }
+  return words.slice(0, count).join(' ') + '...'
+}
+
 function shuffle(arr) {
   for (let i = arr.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1))
@@ -30,7 +38,9 @@ Page({
     structure: '',
     zh: '',
     en: '',
-    previousPromptZh: '',
+    previousPromptPreview: '',
+    previousPromptEn: '',
+    previousPromptExpanded: false,
     showStructure: true,
     showAnswer: false,
     cardAnim: '',
@@ -56,7 +66,7 @@ Page({
   _shouldRecordPractice: true,
   _customExamples: {},
   _shownExamples: [],
-  _lastPromptZh: '',
+  _lastPromptEn: '',
   _autoPlayTimer: null,
   _autoPlayLastId: '',
 
@@ -126,7 +136,7 @@ Page({
     }
     this._idx = 0
     this._shownExamples = []
-    this._lastPromptZh = ''
+    this._lastPromptEn = ''
     this.setData({ totalCount: this._items.length, current: 1 })
     this.showItem()
   },
@@ -163,11 +173,14 @@ Page({
     this._currentStructureId = structureItem.id
     const isScenarioItem = !!structureItem._scenario
     const shouldHideStructure = !isScenarioItem && this.data.isReviewMode && this.data.blurStructureInReview
+    const previousPromptEn = this.data.isReviewMode ? this._lastPromptEn : ''
     this.setData({
       structure: structureItem.structure,
       zh: example.zh,
       en: example.en,
-      previousPromptZh: this.data.isReviewMode ? this._lastPromptZh : '',
+      previousPromptPreview: getPreviewWords(previousPromptEn, 3),
+      previousPromptEn: previousPromptEn,
+      previousPromptExpanded: false,
       showStructure: !shouldHideStructure,
       hideStructureBanner: isScenarioItem,
       isScenarioItem: isScenarioItem,
@@ -194,7 +207,7 @@ Page({
   nextQuestion() {
     wx.vibrateShort({ type: 'medium' })
     const currentExample = this._shownExamples[this._idx]
-    this._lastPromptZh = currentExample && currentExample.zh ? currentExample.zh : ''
+    this._lastPromptEn = currentExample && currentExample.en ? currentExample.en : ''
     const next = this._idx + 1
 
     if (next >= this._items.length) {
@@ -242,6 +255,7 @@ Page({
     this._items = shuffle(this._items.slice())
     this._idx = 0
     this._shownExamples = []
+    this._lastPromptEn = ''
     this.setData({
       finished: false,
       current: 1,
@@ -311,9 +325,12 @@ Page({
 
   onReviewRecallChange(e) {
     const enabled = !!(e && e.detail && e.detail.value)
+    const previousPromptEn = this.data.isReviewMode ? this._lastPromptEn : ''
     this.setData({
       recallPreviousInReview: enabled,
-      previousPromptZh: this.data.isReviewMode ? this._lastPromptZh : ''
+      previousPromptPreview: getPreviewWords(previousPromptEn, 3),
+      previousPromptEn: previousPromptEn,
+      previousPromptExpanded: false
     })
     try {
       wx.setStorageSync(REVIEW_RECALL_PREVIOUS_KEY, enabled)
@@ -347,6 +364,15 @@ Page({
       console.warn('Failed to load custom examples:', err)
       this._customExamples = {}
     }
+  },
+
+  expandPreviousPrompt() {
+    if (!this.data.previousPromptEn || this.data.previousPromptExpanded) {
+      return
+    }
+
+    wx.vibrateShort({ type: 'light' })
+    this.setData({ previousPromptExpanded: true })
   },
 
   startAutoPlay() {

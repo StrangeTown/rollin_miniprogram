@@ -269,7 +269,7 @@ page {
   letter-spacing: 2rpx;
 }
 
-.review-recap-zh {
+.review-recap-text {
   font-size: 25rpx;
   line-height: 1.8;
   color: rgba(75, 85, 99, 0.68);

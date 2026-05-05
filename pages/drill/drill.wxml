@@ -39,10 +39,10 @@
       </view>
     </view>
 
-    <view wx:if="{{showAnswer && isReviewMode && recallPreviousInReview && previousPromptZh}}" class="review-recap">
+    <view wx:if="{{showAnswer && isReviewMode && recallPreviousInReview && previousPromptEn}}" class="review-recap" bindtap="expandPreviousPrompt">
       <text class="review-recap-line">
         <text class="review-recap-title">上一句：</text>
-        <text class="review-recap-zh">{{previousPromptZh}}</text>
+        <text class="review-recap-text">{{previousPromptExpanded ? previousPromptEn : previousPromptPreview}}</text>
       </text>
     </view>
 
