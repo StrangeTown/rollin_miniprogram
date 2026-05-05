@@ -24,7 +24,15 @@ module.exports = [
       { id: 'kindergarten', name: '幼儿园', icon: '🎒', desc: '接送孩子、和老师沟通' },
       { id: 'working-late', name: '加班', icon: '💼', desc: '工作任务、沟通进度、下班' },
       { id: 'working-out', name: '运动健身', icon: '🏋️', desc: '健身房、运动搭子、训练对话' },
-      { id: 'train-travel', name: '坐火车', icon: '🚆', desc: '买票、进站、找座位' }
+      { id: 'train-travel', name: '坐火车', icon: '🚆', desc: '买票、进站、找座位' },
+      { id: 'spring-outing', name: '春游', icon: '🌸', desc: '集合、拍照、踏青和返程' },
+      { id: 'picnic', name: '野餐', icon: '🧺', desc: '铺垫子、分食物、收拾东西' },
+      { id: 'movie', name: '看电影', icon: '🎬', desc: '选片、买票、观影和聊剧情' },
+      { id: 'weekend-plans', name: '周末安排', icon: '📅', desc: '约时间、改计划、放松休息' },
+      { id: 'wedding', name: '婚礼', icon: '💍', desc: '赴宴、祝福、新人和合影' },
+      { id: 'university', name: '大学', icon: '🎓', desc: '上课、社团、作业和校园生活' },
+      { id: 'job-hunting', name: '找工作', icon: '🔎', desc: '投简历、面试、薪资和入职' },
+      { id: 'ikea', name: '宜家', icon: '🛋️', desc: '逛展厅、看家具、取货和组装' }
     ]
   },
   {
