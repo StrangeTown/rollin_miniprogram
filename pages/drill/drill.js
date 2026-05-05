@@ -1,4 +1,4 @@
-const structures = require('../../data/oral-structures-all.js')
+const structures = require('../../data/oral-structures.js')
 const { getAllPracticeItems } = require('../../utils/all-items.js')
 const {
   getDateKey,

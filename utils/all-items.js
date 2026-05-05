@@ -3,7 +3,7 @@
  * (scenarios + other sentence-groups). Sentences are converted to the same shape:
  * { id, structure, examples }.
  */
-const structures = require('../data/oral-structures-all.js')
+const structures = require('../data/oral-structures.js')
 const sentenceLibrary = require('../data/sentence-library/index.js')
 
 let _allItems = null

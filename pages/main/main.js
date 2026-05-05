@@ -1,4 +1,3 @@
-const structures = require('../../data/oral-structures-all.js')
 const { getAllPracticeItems } = require('../../utils/all-items.js')
 const share = require('../../utils/share.js')
 const {
