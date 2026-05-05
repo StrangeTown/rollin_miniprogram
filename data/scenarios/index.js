@@ -14,5 +14,6 @@ module.exports = [
   { id: 'kindergarten', name: '幼儿园', icon: '🎒', desc: '接送孩子、和老师沟通' },
   { id: 'working-late', name: '加班', icon: '💼', desc: '工作任务、沟通进度、下班' },
   { id: 'working-out', name: '运动健身', icon: '🏋️', desc: '健身房、运动搭子、训练对话' },
-  { id: 'train-travel', name: '坐火车', icon: '🚆', desc: '买票、进站、找座位' }
+  { id: 'train-travel', name: '坐火车', icon: '🚆', desc: '买票、进站、找座位' },
+  { id: 'casual-short-sentences', name: '随口短句', icon: '🗣️', desc: '日常里顺口就会说的短句' }
 ]
