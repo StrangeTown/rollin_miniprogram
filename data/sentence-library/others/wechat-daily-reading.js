@@ -16,7 +16,13 @@ module.exports = {
     { id: 'scn-wechat-010', en: "Is it serious?", zh: '严重吗？' },
     { id: 'scn-wechat-011', en: 'Why, is that weird for you?', zh: '怎么，这对你来说很奇怪吗？' },
     { id: 'scn-wechat-012', en: 'It used to be.', zh: '以前是的' },
-    { id: 'scn-wechat-013', en: "Look, honey. You don't have to do this, okay?", zh: '听着，亲爱的，你不用这样做' }, 
-    { id: 'scn-wechat-014', en: "There is no pressure on you, okay?", zh: '别觉得有压力，好吗？' }
+    { id: 'scn-wechat-013', en: "Look, honey. You don't have to do this, okay?", zh: '听着，亲爱的，你不用这样做' },
+    { id: 'scn-wechat-014', en: "There is no pressure on you, okay?", zh: '别觉得有压力，好吗？' },
+    { id: 'scn-wechat-015', en: 'I miss hanging out with you.', zh: '我想念和你一起玩的时光。' },
+    { id: 'scn-wechat-016', en: 'I need to talk to you.', zh: '我需要跟你谈谈。' },
+    { id: 'scn-wechat-017', en: 'So to sum it up, yeah.', zh: '所以总的说来，是的。' },
+    { id: 'scn-wechat-018', en: 'Do you wanna come?', zh: '你想来吗？' },
+    { id: 'scn-wechat-019', en: 'Are you close with her?', zh: '你跟她关系好吗？' },
+    { id: 'scn-wechat-020', en: 'And nagging works!', zh: '看来唠叨还真有用！' }
   ]
 }
