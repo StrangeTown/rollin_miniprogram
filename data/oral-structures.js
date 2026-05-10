@@ -1978,5 +1978,185 @@ module.exports = [
       { en: 'I know I owe you one. I\'ll make it up to you.', zh: '我知道欠你一个人情，我会补上的。' },
       { en: 'Let me make it up to you with dinner.', zh: '我请你吃饭，算是补偿你。' },
     ]
+  },
+  {
+    id: 'a1b2c3d4-1221',
+    structure: 'I didn\'t get a chance to...',
+    examples: [
+      { en: 'I didn\'t get a chance to call you back.', zh: '我没来得及给你回电话。' },
+      { en: 'We didn\'t get a chance to talk yesterday.', zh: '我们昨天没机会聊。' },
+      { en: 'She didn\'t get a chance to explain herself.', zh: '她没机会解释清楚。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1222',
+    structure: 'I can\'t make it to...',
+    examples: [
+      { en: 'I can\'t make it to dinner tonight.', zh: '我今晚去不了饭局。' },
+      { en: 'I can\'t make it to the meeting on time.', zh: '我没法准时赶到会议。' },
+      { en: 'Sorry, I can\'t make it to your party.', zh: '不好意思，我去不了你的派对了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1223',
+    structure: 'Let\'s not get ahead of ourselves.',
+    examples: [
+      { en: 'The interview went well, but let\'s not get ahead of ourselves.', zh: '面试挺顺利，但我们先别想太远。' },
+      { en: 'We still need approval, so let\'s not get ahead of ourselves.', zh: '还得等批准，所以先别高兴太早。' },
+      { en: 'Let\'s not get ahead of ourselves — it\'s only the first day.', zh: '先别想太远，这才第一天。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1224',
+    structure: 'I\'m not following.',
+    examples: [
+      { en: 'Sorry, I\'m not following.', zh: '不好意思，我没太听懂。' },
+      { en: 'I\'m not following your logic here.', zh: '你这里的逻辑我没跟上。' },
+      { en: 'Could you say that again? I\'m not following.', zh: '你能再说一遍吗？我没太明白。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1225',
+    structure: 'It\'s not up to me.',
+    examples: [
+      { en: 'I\'d love to help, but it\'s not up to me.', zh: '我很想帮忙，但这事我说了不算。' },
+      { en: 'The final decision is not up to me.', zh: '最终决定不归我做。' },
+      { en: 'It\'s not up to me whether we can stay longer.', zh: '我们能不能多待一会儿不是我说了算。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1226',
+    structure: 'I have no choice but to...',
+    examples: [
+      { en: 'I have no choice but to tell the truth.', zh: '我别无选择，只能说实话。' },
+      { en: 'We had no choice but to cancel the trip.', zh: '我们没办法，只能取消旅行。' },
+      { en: 'She has no choice but to start over.', zh: '她只能重新开始。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1227',
+    structure: 'Don\'t take this the wrong way, but...',
+    examples: [
+      { en: 'Don\'t take this the wrong way, but you look exhausted.', zh: '你别误会，我只是觉得你看起来累坏了。' },
+      { en: 'Don\'t take this the wrong way, but I think you need help.', zh: '你别往坏处想，但我觉得你需要帮忙。' },
+      { en: 'Don\'t take this the wrong way, but that idea might not work.', zh: '你别介意，但那个想法可能行不通。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1228',
+    structure: 'I\'m doing my best to...',
+    examples: [
+      { en: 'I\'m doing my best to stay calm.', zh: '我在尽量保持冷静。' },
+      { en: 'We\'re doing our best to fix the problem.', zh: '我们正在尽力解决这个问题。' },
+      { en: 'She\'s doing her best to keep everyone happy.', zh: '她在尽量让大家都满意。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1229',
+    structure: 'It could\'ve been worse.',
+    examples: [
+      { en: 'The car is scratched, but it could\'ve been worse.', zh: '车被刮了，但情况本来可能更糟。' },
+      { en: 'We missed the train, but it could\'ve been worse.', zh: '我们错过了火车，但也还不算最糟。' },
+      { en: 'At least nobody got hurt. It could\'ve been worse.', zh: '至少没人受伤，已经算不错了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1230',
+    structure: 'I\'m not sure what to make of...',
+    examples: [
+      { en: 'I\'m not sure what to make of his message.', zh: '我不知道该怎么理解他这条消息。' },
+      { en: 'I\'m not sure what to make of this situation.', zh: '这个情况我有点看不懂。' },
+      { en: 'She\'s not sure what to make of the offer.', zh: '她不知道该怎么看这个 offer。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1231',
+    structure: 'That was a close one.',
+    examples: [
+      { en: 'We almost missed the flight. That was a close one.', zh: '我们差点误机，真是好险。' },
+      { en: 'That car came out of nowhere — that was a close one.', zh: '那辆车突然冒出来，真是太险了。' },
+      { en: 'You caught it just in time. That was a close one.', zh: '你刚好接住了，真是好险。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1232',
+    structure: 'I\'m not ready to...',
+    examples: [
+      { en: 'I\'m not ready to talk about it yet.', zh: '我现在还不想谈这件事。' },
+      { en: 'She\'s not ready to move on.', zh: '她还没准备好往前走。' },
+      { en: 'I\'m not ready to make a decision today.', zh: '我今天还没准备好做决定。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1233',
+    structure: 'It\'s none of my business, but...',
+    examples: [
+      { en: 'It\'s none of my business, but are you okay?', zh: '这也许不该我问，但你还好吗？' },
+      { en: 'It\'s none of my business, but I think he was rude.', zh: '这不关我的事，但我觉得他刚才挺没礼貌的。' },
+      { en: 'It\'s none of my business, but you seem stressed.', zh: '这可能不该我管，但你看起来压力很大。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1234',
+    structure: 'Let\'s take it one step at a time.',
+    examples: [
+      { en: 'This is a lot, so let\'s take it one step at a time.', zh: '事情有点多，我们一步一步来吧。' },
+      { en: 'Don\'t panic. Let\'s take it one step at a time.', zh: '别慌，我们一步一步处理。' },
+      { en: 'We don\'t need to solve everything today. Let\'s take it one step at a time.', zh: '我们不用今天解决所有问题，一步一步来。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1235',
+    structure: 'I can\'t afford to...',
+    examples: [
+      { en: 'I can\'t afford to miss another day of work.', zh: '我不能再少上一天班了。' },
+      { en: 'We can\'t afford to make the same mistake again.', zh: '我们不能再犯同样的错了。' },
+      { en: 'I can\'t afford to spend that much right now.', zh: '我现在花不起那么多钱。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1236',
+    structure: 'I\'m having trouble...',
+    examples: [
+      { en: 'I\'m having trouble sleeping lately.', zh: '我最近睡眠不太好。' },
+      { en: 'He\'s having trouble opening the file.', zh: '他打不开那个文件。' },
+      { en: 'I\'m having trouble understanding what you mean.', zh: '我有点理解不了你的意思。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1237',
+    structure: 'There\'s got to be...',
+    examples: [
+      { en: 'There\'s got to be a better way to do this.', zh: '一定有更好的办法做这件事。' },
+      { en: 'There\'s got to be someone who can help.', zh: '肯定有人能帮上忙。' },
+      { en: 'There\'s got to be a reason she left early.', zh: '她早走肯定是有原因的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1238',
+    structure: 'I didn\'t sign up for...',
+    examples: [
+      { en: 'I didn\'t sign up for all this drama.', zh: '我可不是来掺和这些破事的。' },
+      { en: 'We didn\'t sign up for a three-hour wait.', zh: '我们可没想到要等三个小时。' },
+      { en: 'I didn\'t sign up for working every weekend.', zh: '我可没答应每个周末都上班。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1239',
+    structure: 'It all comes down to...',
+    examples: [
+      { en: 'It all comes down to timing.', zh: '归根结底就是时机问题。' },
+      { en: 'In the end, it all comes down to trust.', zh: '说到底，还是信任的问题。' },
+      { en: 'It all comes down to how much you\'re willing to spend.', zh: '最终还是看你愿意花多少钱。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1240',
+    structure: 'I\'m not taking any chances.',
+    examples: [
+      { en: 'The roads are icy, so I\'m not taking any chances.', zh: '路上有冰，所以我不敢冒险。' },
+      { en: 'I brought an extra charger because I\'m not taking any chances.', zh: '我多带了一个充电器，保险一点。' },
+      { en: 'She\'s wearing a mask because she\'s not taking any chances.', zh: '她戴着口罩，因为她不想冒任何风险。' },
+    ]
   }
 ]
