@@ -360,63 +360,6 @@ page {
   }
 }
 
-/* Finished state */
-.finished-area {
-  margin-top: 240rpx;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.finished-emoji {
-  font-size: 100rpx;
-}
-
-.finished-title {
-  margin-top: 40rpx;
-  font-size: 48rpx;
-  font-weight: 800;
-  color: #111827;
-}
-
-.finished-desc {
-  margin-top: 24rpx;
-  font-size: 30rpx;
-  color: #6B7280;
-}
-
-.again-btn {
-  margin-top: 80rpx;
-  width: 440rpx;
-  height: 104rpx;
-  background: #111827;
-  color: #FFFFFF;
-  font-size: 32rpx;
-  font-weight: 600;
-  border-radius: 52rpx;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 16rpx 32rpx rgba(17, 24, 39, 0.15);
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.again-btn:active {
-  transform: scale(0.97);
-}
-
-.back-link {
-  margin-top: 40rpx;
-  font-size: 28rpx;
-  color: #9CA3AF;
-  padding: 16rpx 32rpx;
-  font-weight: 500;
-}
-
-.back-link:active {
-  color: #6B7280;
-}
-
 .settings-sheet-mask {
   position: fixed;
   top: 0;

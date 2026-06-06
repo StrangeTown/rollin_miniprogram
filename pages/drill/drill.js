@@ -7,7 +7,6 @@ const {
   recordPractice
 } = require('../../utils/drill-history.js')
 
-const AUTO_LOOP_KEY = 'drill_auto_loop'
 const CUSTOM_EXAMPLES_KEY = 'custom_examples'
 const REVIEW_BLUR_STRUCTURE_KEY = 'drill_review_blur_structure'
 const REVIEW_RECALL_PREVIOUS_KEY = 'drill_review_recall_previous'
@@ -46,9 +45,6 @@ Page({
     cardAnim: '',
     current: 0,
     totalCount: 0,
-    finished: false,
-    round: 1,
-    autoLoopPractice: false,
     blurStructureInReview: false,
     recallPreviousInReview: false,
     showSettingsSheet: false,
@@ -71,7 +67,12 @@ Page({
   _autoPlayLastId: '',
 
   onLoad(options) {
-    this.loadAutoLoopPracticeSetting()
+    // 循环练习已成为默认行为，清理历史设置项残留的存储
+    try {
+      wx.removeStorageSync('drill_auto_loop')
+    } catch (err) {
+      // ignore
+    }
     this.loadReviewBlurStructureSetting()
     this.loadReviewRecallSetting()
     this.loadCustomExamples()
@@ -210,28 +211,19 @@ Page({
     this._lastPromptEn = currentExample && currentExample.en ? currentExample.en : ''
     const next = this._idx + 1
 
+    // 最后一题后自动洗牌并开始下一轮（循环练习为默认行为）
     if (next >= this._items.length) {
-      if (this.data.autoLoopPractice) {
-        this.setData({ cardAnim: 'card-leave' })
+      this.setData({ cardAnim: 'card-leave' })
+      setTimeout(() => {
+        this._items = shuffle(this._items.slice())
+        this._idx = 0
+        this._shownExamples = []
+        this.showItem()
+        this.setData({ cardAnim: 'card-enter', current: 1 })
         setTimeout(() => {
-          this._items = shuffle(this._items.slice())
-          this._idx = 0
-          this._shownExamples = []
-          this.showItem()
-          this.setData({
-            cardAnim: 'card-enter',
-            current: 1,
-            round: this.data.round + 1,
-            finished: false
-          })
-          setTimeout(() => {
-            this.setData({ cardAnim: '' })
-          }, 350)
-        }, 300)
-        return
-      }
-
-      this.setData({ finished: true })
+          this.setData({ cardAnim: '' })
+        }, 350)
+      }, 300)
       return
     }
     this.setData({ cardAnim: 'card-leave' })
@@ -243,26 +235,6 @@ Page({
         this.setData({ cardAnim: '' })
       }, 350)
     }, 300)
-  },
-
-  goBack() {
-    wx.vibrateShort({ type: 'light' })
-    wx.navigateBack()
-  },
-
-  replayRound() {
-    wx.vibrateShort({ type: 'medium' })
-    this._items = shuffle(this._items.slice())
-    this._idx = 0
-    this._shownExamples = []
-    this._lastPromptEn = ''
-    this.setData({
-      finished: false,
-      current: 1,
-      round: this.data.round + 1,
-      cardAnim: ''
-    })
-    this.showItem()
   },
 
   noop() {},
@@ -282,25 +254,6 @@ Page({
     wx.navigateTo({
       url: `/pages/add-example/add-example?structureId=${id}&structure=${encodeURIComponent(this.data.structure)}`
     })
-  },
-
-  onAutoLoopChange(e) {
-    const enabled = !!(e && e.detail && e.detail.value)
-    this.setData({ autoLoopPractice: enabled })
-    try {
-      wx.setStorageSync(AUTO_LOOP_KEY, enabled)
-    } catch (err) {
-      console.warn('Failed to persist auto-loop practice setting:', err)
-    }
-  },
-
-  loadAutoLoopPracticeSetting() {
-    try {
-      this.setData({ autoLoopPractice: !!wx.getStorageSync(AUTO_LOOP_KEY) })
-    } catch (err) {
-      console.warn('Failed to load auto-loop practice setting:', err)
-      this.setData({ autoLoopPractice: false })
-    }
   },
 
   onReviewBlurChange(e) {

@@ -3,16 +3,16 @@
 
 <view class="page">
   <!-- Progress Bar (instead of simple counter) -->
-  <view wx:if="{{!finished}}" class="progress-wrapper">
+  <view class="progress-wrapper">
     <view class="counter-text">{{current}} / {{totalCount}}</view>
     <view class="progress-bar-bg">
       <view class="progress-bar-fill" style="width: {{(current / totalCount) * 100}}%"></view>
     </view>
-    <view class="settings-dot-entry" bindtap="openSettingsSheet">☰</view>
+    <view wx:if="{{!isScenarioMode}}" class="settings-dot-entry" bindtap="openSettingsSheet">☰</view>
   </view>
 
   <!-- Main card area -->
-  <view wx:if="{{!finished}}" class="card-area {{cardAnim}}">
+  <view class="card-area {{cardAnim}}">
     <!-- Structure (the pattern) in a decorative banner -->
     <view wx:if="{{!isScenarioMode && !hideStructureBanner}}" class="structure-banner {{!showStructure ? 'structure-banner-hidden' : ''}}" bindtap="revealStructure">
       <view class="structure-quote">“</view>
@@ -48,23 +48,14 @@
 
   </view>
 
-  <view wx:if="{{!finished}}" class="btn-area">
+  <view class="btn-area">
     <view wx:if="{{!showAnswer}}" class="reveal-btn" bindtap="revealAnswer" hover-class="reveal-btn-press" hover-start-time="0" hover-stay-time="80">
       <text>查看英文</text>
     </view>
     <view wx:if="{{showAnswer}}" class="next-btn" bindtap="nextQuestion" hover-class="next-btn-press" hover-start-time="0" hover-stay-time="80">
-      <text>{{(current < totalCount || autoLoopPractice) ? '下一句' : '完成练习'}}</text>
-      <text class="btn-icon" wx:if="{{current < totalCount || autoLoopPractice}}">→</text>
+      <text>下一句</text>
+      <text class="btn-icon">→</text>
     </view>
-  </view>
-
-  <!-- Finished state -->
-  <view wx:if="{{finished}}" class="finished-area">
-    <view class="finished-emoji">🎉</view>
-    <view class="finished-title">练习完成！</view>
-    <view class="finished-desc">第 {{round}} 轮 · 已完成 {{totalCount}} 句造句练习</view>
-    <view class="again-btn" bindtap="replayRound">再练一遍</view>
-    <view class="back-link" bindtap="goBack">返回首页</view>
   </view>
 
 </view>
@@ -84,15 +75,7 @@
         <view class="sheet-action-icon"></view>
       </view>
 
-      <view class="sheet-setting-item mt-24">
-        <view class="sheet-setting-left">
-          <view class="sheet-setting-title">循环练习</view>
-          <view class="sheet-setting-desc">最后一题点击下一句后自动洗牌并开始下一轮</view>
-        </view>
-        <switch checked="{{autoLoopPractice}}" color="#111827" bindchange="onAutoLoopChange" />
-      </view>
-
-      <view wx:if="{{isReviewMode}}" class="sheet-setting-item">
+      <view wx:if="{{isReviewMode}}" class="sheet-setting-item mt-24">
         <view class="sheet-setting-left">
           <view class="sheet-setting-title">默认隐藏英语语块</view>
           <view class="sheet-setting-desc">回顾模式下先自行回忆，点击顶部语块区域后再显示</view>
