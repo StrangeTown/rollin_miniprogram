@@ -23,6 +23,20 @@ module.exports = {
     { id: 'scn-wechat-017', en: 'So to sum it up, yeah.', zh: '所以总的说来，是的。' },
     { id: 'scn-wechat-018', en: 'Do you wanna come?', zh: '你想来吗？' },
     { id: 'scn-wechat-019', en: 'Are you close with her?', zh: '你跟她关系好吗？' },
-    { id: 'scn-wechat-020', en: 'And nagging works!', zh: '看来唠叨还真有用！' }
+    { id: 'scn-wechat-020', en: 'And nagging works!', zh: '看来唠叨还真有用！' },
+    { id: 'scn-wechat-021', en: 'do you have a problem with me?', zh: '你对我有意见吗？' },
+    { id: 'scn-wechat-022', en: 'Guys, this stuff is so way in the past.', zh: '伙计们，这些事早就过去了。' },
+    { id: 'scn-wechat-023', en: "It wasn't just me.", zh: '又不只是我一个人。' },
+    { id: 'scn-wechat-024', en: "Don't feel bad for me. I won every time!", zh: '别替我难过，我每次都赢！' },
+    { id: 'scn-wechat-025', en: "Joey's told me so much about you.", zh: 'Joey跟我说了很多关于你的事。' },
+    { id: 'scn-wechat-026', en: "They're very practical.", zh: '都挺实用的。' },
+    { id: 'scn-wechat-027', en: 'Could I get a copy of that?', zh: '那个能给我一份吗？' },
+    { id: 'scn-wechat-028', en: 'Do you need a break?', zh: '你要不要休息一下？' },
+    { id: 'scn-wechat-029', en: 'You seem a little distracted.', zh: '你好像有点心不在焉。' },
+    { id: 'scn-wechat-030', en: "Yes, I made it! I'm on time!", zh: '太好了，我赶上了！我没迟到！' },
+    { id: 'scn-wechat-031', en: 'Did you feel a litle weird?', zh: '你有没有觉得有点怪怪的？' },
+    { id: 'scn-wechat-032', en: "You won't be able to keep doing this.", zh: '你不可能一直这样下去。' },
+    { id: 'scn-wechat-033', en: 'These are for you', zh: '这些是给你的。' },
+    { id: 'scn-wechat-034', en: "Everything's normal", zh: '一切都正常。' }
   ]
 }
