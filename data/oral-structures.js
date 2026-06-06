@@ -2158,5 +2158,185 @@ module.exports = [
       { en: 'I brought an extra charger because I\'m not taking any chances.', zh: '我多带了一个充电器，保险一点。' },
       { en: 'She\'s wearing a mask because she\'s not taking any chances.', zh: '她戴着口罩，因为她不想冒任何风险。' },
     ]
+  },
+  {
+    id: 'a1b2c3d4-1241',
+    structure: 'I\'ve never been one to...',
+    examples: [
+      { en: 'I\'ve never been one to give up easily.', zh: '我这个人从来不轻易放弃。' },
+      { en: 'I\'ve never been one to ask for help.', zh: '我这个人不太会开口求人。' },
+      { en: 'I\'ve never been one to make a big deal out of things.', zh: '我这个人不太会把事情搞大。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1242',
+    structure: 'One thing I\'ve noticed is...',
+    examples: [
+      { en: 'One thing I\'ve noticed is that she\'s really patient.', zh: '我发现她真的特别有耐心。' },
+      { en: 'One thing I\'ve noticed is the coffee here tastes different.', zh: '我发现这里的咖啡味道不太一样。' },
+      { en: 'One thing I\'ve noticed is he never checks his phone during meetings.', zh: '我发现他开会从来不看手机。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1243',
+    structure: 'Have you ever...?',
+    examples: [
+      { en: 'Have you ever tried durian before?', zh: '你有没有吃过榴莲？' },
+      { en: 'Have you ever felt like everyone else knows what they\'re doing except you?', zh: '你有没有感觉就你一个人不知道该干什么？' },
+      { en: 'Have you ever just walked out of a movie halfway through?', zh: '你有没有看电影看到一半直接走人的经历？' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1244',
+    structure: 'You\'d be surprised how...',
+    examples: [
+      { en: 'You\'d be surprised how quickly kids pick things up.', zh: '小孩学东西有多快，你会惊讶的。' },
+      { en: 'You\'d be surprised how cheap the food is here.', zh: '这里的东西有多便宜，来了你才知道。' },
+      { en: 'You\'d be surprised how many people feel the same way.', zh: '有多少人跟你想法一样，你根本没想到。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1245',
+    structure: 'The more..., the more...',
+    examples: [
+      { en: 'The more I think about it, the more confused I get.', zh: '越想越乱。' },
+      { en: 'The more you practice, the better you get.', zh: '练得越多，进步越大。' },
+      { en: 'The more time I spend here, the more I like it.', zh: '在这里待的时间越长，我越喜欢这个地方。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1246',
+    structure: 'Every time I...,...',
+    examples: [
+      { en: 'Every time I try to sleep early, something comes up.', zh: '每次我想早点睡，就有事情出来。' },
+      { en: 'Every time I go there, I run into someone I know.', zh: '我每次去那里都会遇到认识的人。' },
+      { en: 'Every time I see him, he looks a bit different.', zh: '每次见到他，感觉他又变了点。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1247',
+    structure: 'It\'s too good to be true.',
+    examples: [
+      { en: 'The price is so low—it\'s too good to be true.', zh: '这价格也太低了，感觉不太对。' },
+      { en: 'An offer like that? It\'s too good to be true.', zh: '这种好事？感觉背后有什么猫腻。' },
+      { en: 'I got accepted, but honestly it feels too good to be true.', zh: '我被录取了，但老实说感觉不像真的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1248',
+    structure: 'Look on the bright side,...',
+    examples: [
+      { en: 'Look on the bright side, at least no one got hurt.', zh: '往好处想，至少没人受伤。' },
+      { en: 'Look on the bright side, you learned something from this.', zh: '往好处想，你从这件事里学到了东西。' },
+      { en: 'Look on the bright side, now you have more free time.', zh: '往好处想，现在你空闲时间更多了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1249',
+    structure: 'I\'ve made up my mind.',
+    examples: [
+      { en: 'I\'ve made up my mind. I\'m not going.', zh: '我已经决定了，不去了。' },
+      { en: 'Don\'t try to change it. I\'ve made up my mind.', zh: '别劝了，我主意已定。' },
+      { en: 'I\'ve made up my mind to quit and start over.', zh: '我已经下定决心辞职重新开始了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1250',
+    structure: 'At this point,...',
+    examples: [
+      { en: 'At this point, I don\'t even care anymore.', zh: '都走到这一步了，我也无所谓了。' },
+      { en: 'At this point, we might as well finish it.', zh: '都到这一步了，不如做完算了。' },
+      { en: 'At this point, I just want to go home.', zh: '到现在这会儿，我只想回家。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1251',
+    structure: 'As much as I\'d like to,...',
+    examples: [
+      { en: 'As much as I\'d like to help, I\'m too busy right now.', zh: '我很想帮你，但现在真的太忙了。' },
+      { en: 'As much as I\'d like to stay, I really have to go.', zh: '我很想留下来，但真的得走了。' },
+      { en: 'As much as I\'d like to agree with you, I just can\'t.', zh: '我很想认同你，但实在做不到。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1252',
+    structure: 'Speaking of which,...',
+    examples: [
+      { en: 'Speaking of which, have you heard from him lately?', zh: '说到这个，你最近有他的消息吗？' },
+      { en: 'Speaking of which, I forgot to buy eggs.', zh: '说到这个，我忘买鸡蛋了。' },
+      { en: 'Speaking of which, that reminds me of something.', zh: '说到这个，我想起一件事来。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1253',
+    structure: 'I\'ll make an exception.',
+    examples: [
+      { en: 'Just this once, I\'ll make an exception.', zh: '就这一次，我破个例。' },
+      { en: 'Normally I don\'t, but I\'ll make an exception for you.', zh: '我一般不这样，但为你破个例。' },
+      { en: 'Okay, I\'ll make an exception this time.', zh: '好吧，这次就破例一回。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1254',
+    structure: 'Give it some time.',
+    examples: [
+      { en: 'It\'s hard now, but give it some time.', zh: '现在很难熬，但慢慢就好了。' },
+      { en: 'Give it some time. You\'ll get used to it.', zh: '等一等，你会慢慢习惯的。' },
+      { en: 'Don\'t rush it. Just give it some time.', zh: '别急，让它慢慢来。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1255',
+    structure: 'It\'s not the end of the world.',
+    examples: [
+      { en: 'You failed one test. It\'s not the end of the world.', zh: '不过是挂了一科，又不是世界末日。' },
+      { en: 'It\'s not the end of the world if we\'re a little late.', zh: '迟到一会儿又不是什么大不了的事。' },
+      { en: 'Calm down. It\'s not the end of the world.', zh: '冷静一下，没那么严重。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1256',
+    structure: 'How was I supposed to know...?',
+    examples: [
+      { en: 'How was I supposed to know the meeting got moved?', zh: '会议改时间了，我怎么可能知道？' },
+      { en: 'How was I supposed to know she was upset?', zh: '她不高兴这种事我怎么知道啊？' },
+      { en: 'How was I supposed to know it would cost that much?', zh: '要花这么多钱我哪能想到。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1257',
+    structure: 'I\'m not proud of it, but...',
+    examples: [
+      { en: 'I\'m not proud of it, but I lied.', zh: '我也不太好意思说，但我撒谎了。' },
+      { en: 'I\'m not proud of it, but I gave up halfway.', zh: '说出来不好听，但我半途而废了。' },
+      { en: 'I\'m not proud of it, but I lost my temper.', zh: '不是什么值得说的事，我当时发火了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1258',
+    structure: 'You can imagine how...',
+    examples: [
+      { en: 'You can imagine how awkward it was.', zh: '你可以想象当时有多尴尬。' },
+      { en: 'You can imagine how I felt when I heard that.', zh: '听到这个我当时的感受你可以想象。' },
+      { en: 'You can imagine how tired she must be.', zh: '她有多累你可以想象。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1259',
+    structure: 'I went out of my way to...',
+    examples: [
+      { en: 'I went out of my way to get this for you.', zh: '我特意去给你弄来的。' },
+      { en: 'I went out of my way to help him, and this is what I get.', zh: '我专门跑一趟帮他，结果就这？' },
+      { en: 'I went out of my way to avoid her.', zh: '我专门绕路躲她。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1260',
+    structure: 'There\'s something about...',
+    examples: [
+      { en: 'There\'s something about this place that feels familiar.', zh: '这个地方有种莫名的熟悉感。' },
+      { en: 'There\'s something about him I just don\'t trust.', zh: '他这个人不知道哪里让我不太放心。' },
+      { en: 'There\'s something about rainy days that makes me want to stay home.', zh: '一到下雨天就特别想待在家里。' },
+    ]
   }
 ]
