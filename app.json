@@ -2,7 +2,6 @@
   "pages": [
     "pages/main/main",
     "pages/drill/drill",
-    "pages/add-example/add-example",
     "pages/new-settings/new-settings",
     "pages/system-library/system-library",
     "pages/product-recommend/product-recommend",

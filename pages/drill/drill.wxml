@@ -8,7 +8,7 @@
     <view class="progress-bar-bg">
       <view class="progress-bar-fill" style="width: {{(current / totalCount) * 100}}%"></view>
     </view>
-    <view wx:if="{{!isScenarioMode}}" class="settings-dot-entry" bindtap="openSettingsSheet">☰</view>
+    <view wx:if="{{isReviewMode}}" class="settings-dot-entry" bindtap="openSettingsSheet">☰</view>
   </view>
 
   <!-- Main card area -->
@@ -67,15 +67,7 @@
     </view>
 
     <view class="sheet-body">
-      <view wx:if="{{!isScenarioMode && !hideStructureBanner}}" class="sheet-setting-item action-item" bindtap="openAddDialog">
-        <view class="sheet-setting-left">
-          <view class="sheet-setting-title">添加例句</view>
-          <view class="sheet-setting-desc">结合你的生活场景，写一个例句</view>
-        </view>
-        <view class="sheet-action-icon"></view>
-      </view>
-
-      <view wx:if="{{isReviewMode}}" class="sheet-setting-item mt-24">
+      <view wx:if="{{isReviewMode}}" class="sheet-setting-item">
         <view class="sheet-setting-left">
           <view class="sheet-setting-title">默认隐藏英语语块</view>
           <view class="sheet-setting-desc">回顾模式下先自行回忆，点击顶部语块区域后再显示</view>

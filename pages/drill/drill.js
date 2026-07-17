@@ -7,10 +7,8 @@ const {
   recordPractice
 } = require('../../utils/drill-history.js')
 
-const CUSTOM_EXAMPLES_KEY = 'custom_examples'
 const REVIEW_BLUR_STRUCTURE_KEY = 'drill_review_blur_structure'
 const REVIEW_RECALL_PREVIOUS_KEY = 'drill_review_recall_previous'
-const CUSTOM_EXAMPLE_PICK_PROB = 0.7
 const AUTOPLAY_DURATION = 5000
 
 function getPreviewWords(text, count) {
@@ -60,7 +58,6 @@ Page({
   _items: [],
   _idx: 0,
   _shouldRecordPractice: true,
-  _customExamples: {},
   _shownExamples: [],
   _lastPromptEn: '',
   _autoPlayTimer: null,
@@ -75,7 +72,6 @@ Page({
     }
     this.loadReviewBlurStructureSetting()
     this.loadReviewRecallSetting()
-    this.loadCustomExamples()
 
     const mode = options.mode || 'random'
     const isReviewMode = mode === 'review'
@@ -141,36 +137,19 @@ Page({
     this.showItem()
   },
 
-  onShow() {
-    this.loadCustomExamples()
-  },
-
   showItem() {
     const structureItem = this._items[this._idx]
     if (!structureItem) return
 
     const systemExamples = Array.isArray(structureItem.examples) ? structureItem.examples : []
-    const customExamples = Array.isArray(this._customExamples[structureItem.id])
-      ? this._customExamples[structureItem.id]
-      : []
 
     let example = this._shownExamples[this._idx]
 
     if (!example) {
-      let sourceExamples = systemExamples
-      if (customExamples.length === 0) {
-        sourceExamples = systemExamples
-      } else if (systemExamples.length === 0) {
-        sourceExamples = customExamples
-      } else {
-        sourceExamples = Math.random() < CUSTOM_EXAMPLE_PICK_PROB ? customExamples : systemExamples
-      }
-
-      example = sourceExamples[Math.floor(Math.random() * sourceExamples.length)] || { en: '', zh: '' }
+      example = systemExamples[Math.floor(Math.random() * systemExamples.length)] || { en: '', zh: '' }
       this._shownExamples[this._idx] = example
     }
 
-    this._currentStructureId = structureItem.id
     const isScenarioItem = !!structureItem._scenario
     const shouldHideStructure = !isScenarioItem && this.data.isReviewMode && this.data.blurStructureInReview
     const previousPromptEn = this.data.isReviewMode ? this._lastPromptEn : ''
@@ -247,14 +226,6 @@ Page({
     this.setData({ showSettingsSheet: false })
   },
 
-  openAddDialog() {
-    this.setData({ showSettingsSheet: false })
-    const id = this._currentStructureId || ''
-    wx.navigateTo({
-      url: `/pages/add-example/add-example?structureId=${id}&structure=${encodeURIComponent(this.data.structure)}`
-    })
-  },
-
   onReviewBlurChange(e) {
     const enabled = !!(e && e.detail && e.detail.value)
     const nextData = {
@@ -306,15 +277,6 @@ Page({
     } catch (err) {
       console.warn('Failed to load review recall setting:', err)
       this.setData({ recallPreviousInReview: false })
-    }
-  },
-
-  loadCustomExamples() {
-    try {
-      this._customExamples = wx.getStorageSync(CUSTOM_EXAMPLES_KEY) || {}
-    } catch (err) {
-      console.warn('Failed to load custom examples:', err)
-      this._customExamples = {}
     }
   },
 
