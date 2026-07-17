@@ -74,10 +74,4 @@
     </view>
   </bottom-modal>
 
-  <release-notes-modal
-    show="{{showReleaseNotes}}"
-    releaseNotes="{{releaseNotes}}"
-    cancelText="我知道了"
-    bind:close="closeReleaseNotes">
-  </release-notes-modal>
 </view>

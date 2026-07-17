@@ -1,17 +1,13 @@
 const HISTORY_KEY = 'drill_history'
 const CUSTOM_EXAMPLES_KEY = 'custom_examples'
-const releaseNotes = require('../../data/release-notes.js')
 
 Page({
   data: {
     showSheet: false,
-    showReleaseNotes: false,
     hasHistory: false,
     hasCustomExamples: false,
     appName: '口语翻翻',
-    appVersion: releaseNotes.version || '',
-    filingNumber: '京ICP备2025139511号-1X',
-    releaseNotes: releaseNotes
+    filingNumber: '京ICP备2025139511号-1X'
   },
 
   onShow() {
@@ -58,15 +54,6 @@ Page({
   goToProductRecommend() {
     wx.vibrateShort({ type: 'light' })
     wx.navigateTo({ url: '/pages/product-recommend/product-recommend' })
-  },
-
-  openReleaseNotes() {
-    wx.vibrateShort({ type: 'light' })
-    this.setData({ showReleaseNotes: true })
-  },
-
-  closeReleaseNotes() {
-    this.setData({ showReleaseNotes: false })
   },
 
   closeSheet() {
