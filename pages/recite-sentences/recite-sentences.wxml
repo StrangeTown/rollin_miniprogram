@@ -12,7 +12,6 @@
           wx:key="id"
           wx:for-item="item"
           data-id="{{item.id}}"
-          data-source="{{group.source}}"
           bindtap="onScenarioTap"
           hover-class="scenario-card-press"
           hover-start-time="0"

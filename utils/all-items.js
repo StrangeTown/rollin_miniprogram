@@ -1,6 +1,6 @@
 /**
- * Build a unified item array that includes both oral-structures and full-sentence groups
- * (scenarios + other sentence-groups). Sentences are converted to the same shape:
+ * Build a unified item array that includes both oral-structures and full-sentence groups.
+ * Sentences are converted to the same shape:
  * { id, structure, examples }.
  */
 const structures = require('../data/oral-structures.js')
@@ -14,13 +14,10 @@ function getAllPracticeItems() {
   const items = structures.slice()
 
   sentenceLibrary.forEach(function (group) {
-    var source = group.source
     var groupItems = group.items || []
     groupItems.forEach(function (entry) {
       try {
-        var data = source === 'others'
-          ? require('../data/sentence-library/others/' + entry.id + '.js')
-          : require('../data/sentence-library/scenarios/' + entry.id + '.js')
+        var data = require('../data/sentence-library/others/' + entry.id + '.js')
         var sentences = data.sentences || []
         sentences.forEach(function (s) {
           items.push({
