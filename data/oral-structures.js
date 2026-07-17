@@ -2518,5 +2518,185 @@ module.exports = [
       { en: 'I didn\'t catch the last part.', zh: '最后那句我没听清。' },
       { en: 'It\'s noisy in here. I didn\'t catch what she said.', zh: '这里太吵了，我没听清她说什么。' },
     ]
+  },
+  {
+    id: 'a1b2c3d4-1281',
+    structure: 'That\'s a first.',
+    examples: [
+      { en: 'You said no to dessert? That\'s a first.', zh: '你居然拒绝甜点？这还是头一回。' },
+      { en: 'I\'ve never seen him show up early. That\'s a first.', zh: '我从没见过他早到，这还是第一次。' },
+      { en: 'Her phone died before noon? That\'s a first.', zh: '她手机居然中午前就没电了？这可少见。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1282',
+    structure: 'I had a moment there.',
+    examples: [
+      { en: 'Sorry, I had a moment there and forgot what I was saying.', zh: '不好意思，我刚刚卡了一下，忘了自己说到哪了。' },
+      { en: 'I thought I lost my wallet for a second. I had a moment there.', zh: '我刚刚还以为钱包丢了，吓我一跳。' },
+      { en: 'When I saw that email, I really had a moment there.', zh: '我看到那封邮件的时候，真是一下子慌住了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1283',
+    structure: 'I can\'t shake the feeling that...',
+    examples: [
+      { en: 'I can\'t shake the feeling that we missed something.', zh: '我总觉得我们漏了点什么。' },
+      { en: 'I can\'t shake the feeling that she\'s hiding something from me.', zh: '我总觉得她有事瞒着我。' },
+      { en: 'I can\'t shake the feeling that this won\'t end well.', zh: '我总觉得这事最后不会太好。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1284',
+    structure: 'That\'s news to me.',
+    examples: [
+      { en: 'You\'re moving next month? That\'s news to me.', zh: '你下个月要搬家？我还是第一次听说。' },
+      { en: 'Nobody told me about the schedule change. That\'s news to me.', zh: '没人跟我说时间改了，我还是刚知道。' },
+      { en: 'He quit already? Well, that\'s news to me.', zh: '他已经辞职了？这我还真不知道。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1285',
+    structure: 'I could tell right away.',
+    examples: [
+      { en: 'I could tell right away that something was wrong.', zh: '我一下就看出来不对劲了。' },
+      { en: 'The second she walked in, I could tell right away she was upset.', zh: '她一进门我就看出来她心情不好。' },
+      { en: 'I could tell right away this wasn\'t going to be easy.', zh: '我当时就知道这事不会轻松。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1286',
+    structure: 'I\'m not one to...',
+    examples: [
+      { en: 'I\'m not one to complain, but this is too much.', zh: '我平时不爱抱怨，但这次真的有点过了。' },
+      { en: 'I\'m not one to ask for help, but I really need it this time.', zh: '我平时不太会开口求人，但这次我真的需要帮忙。' },
+      { en: 'I\'m not one to give up easily.', zh: '我不是那种轻易放弃的人。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1287',
+    structure: 'There\'s only so much... can do.',
+    examples: [
+      { en: 'There\'s only so much I can do from here.', zh: '我在这边能做的也就这么多。' },
+      { en: 'There\'s only so much we can do if he won\'t listen.', zh: '如果他就是不听，我们能做的也有限。' },
+      { en: 'There\'s only so much they can do without more time.', zh: '没有更多时间的话，他们能做的也就那样。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1288',
+    structure: 'It was bound to happen.',
+    examples: [
+      { en: 'With that many people involved, it was bound to happen.', zh: '牵扯这么多人，出这种事迟早的。' },
+      { en: 'We\'ve been putting it off for weeks. It was bound to happen.', zh: '我们都拖了好几个星期了，出问题是迟早的。' },
+      { en: 'Sooner or later, a mistake like this was bound to happen.', zh: '像这种错误，早晚都会发生。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1289',
+    structure: 'One way or another,...',
+    examples: [
+      { en: 'One way or another, we\'ll get it done tonight.', zh: '不管怎样，我们今晚都会把它搞定。' },
+      { en: 'One way or another, she always gets what she wants.', zh: '不管用什么办法，她最后总能得到自己想要的。' },
+      { en: 'One way or another, I need to figure this out today.', zh: '无论如何，我今天得把这事弄明白。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1290',
+    structure: 'It\'s unlike me to...',
+    examples: [
+      { en: 'It\'s unlike me to be this late.', zh: '我平时不是这么晚的人。' },
+      { en: 'It\'s unlike me to forget something that important.', zh: '这么重要的事我平时不会忘。' },
+      { en: 'It\'s unlike me to cancel at the last minute.', zh: '临时取消这种事不像是我会做的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1291',
+    structure: 'It took me a second to...',
+    examples: [
+      { en: 'It took me a second to realize what he meant.', zh: '我愣了一下才明白他是什么意思。' },
+      { en: 'It took me a second to recognize her with short hair.', zh: '她剪了短发，我一下没认出来。' },
+      { en: 'It took me a second to calm down after that.', zh: '那之后我缓了一会儿才平静下来。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1292',
+    structure: 'I wasn\'t born yesterday.',
+    examples: [
+      { en: 'Come on, I wasn\'t born yesterday.', zh: '得了吧，我又不是三岁小孩。' },
+      { en: 'You really expect me to believe that? I wasn\'t born yesterday.', zh: '你真觉得我会信？我可没那么好骗。' },
+      { en: 'Nice try, but I wasn\'t born yesterday.', zh: '想得挺美，但我没那么容易上当。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1293',
+    structure: 'That\'s another story.',
+    examples: [
+      { en: 'Getting there is easy. Finding parking is another story.', zh: '到那儿不难，难的是找停车位。' },
+      { en: 'I can lend you the money. Paying me back is another story.', zh: '钱我可以借你，但你还不还得上就是另一回事了。' },
+      { en: 'He says he\'s sorry, but whether he means it is another story.', zh: '他说他很抱歉，但他是不是真心的就是另一回事了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1294',
+    structure: 'That\'s a tough one.',
+    examples: [
+      { en: 'That\'s a tough one. I need a minute to think.', zh: '这个问题有点难，我得想一下。' },
+      { en: 'Honestly, that\'s a tough one to answer.', zh: '说真的，这个还真不太好回答。' },
+      { en: 'Which city do I like better? That\'s a tough one.', zh: '你问我更喜欢哪座城市？这还真难选。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1295',
+    structure: 'It\'s starting to sink in.',
+    examples: [
+      { en: 'The news didn\'t hit me at first, but it\'s starting to sink in.', zh: '刚开始我还没什么感觉，现在才慢慢反应过来。' },
+      { en: 'We\'re actually moving next week. It\'s starting to sink in.', zh: '我们下周真的要搬了，我现在才有实感。' },
+      { en: 'Now that everyone\'s gone home, it\'s starting to sink in.', zh: '大家都回去了，我这才慢慢意识到这事是真的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1296',
+    structure: 'I have every intention of...',
+    examples: [
+      { en: 'I have every intention of finishing this tonight.', zh: '我本来就是打算今晚把这个做完的。' },
+      { en: 'I have every intention of calling her back.', zh: '我本来就打算给她回电话。' },
+      { en: 'I have every intention of paying you back by Friday.', zh: '我本来就是打算周五前把钱还给你。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1297',
+    structure: 'It came as a shock.',
+    examples: [
+      { en: 'The news came as a shock to all of us.', zh: '这个消息让我们所有人都很震惊。' },
+      { en: 'It came as a shock when he said he was leaving.', zh: '他说他要走的时候，我真的很震惊。' },
+      { en: 'Her reaction came as a shock, honestly.', zh: '说实话，她那个反应真让我挺意外的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1298',
+    structure: 'That\'ll teach me to...',
+    examples: [
+      { en: 'That\'ll teach me to wait until the last minute.', zh: '这下算是给我长记性了，以后不能再拖到最后一刻。' },
+      { en: 'That\'ll teach me to leave my phone on the bus.', zh: '这回算是给我个教训，以后不能把手机落在公交车上了。' },
+      { en: 'That\'ll teach me to trust him so easily.', zh: '这回算是让我记住了，不能这么轻易相信他。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1299',
+    structure: 'It makes a world of difference.',
+    examples: [
+      { en: 'A little rest makes a world of difference.', zh: '稍微休息一下，感觉就会差很多。' },
+      { en: 'Having someone to talk to makes a world of difference.', zh: '有人能聊一聊，真的会好很多。' },
+      { en: 'Changing the lighting makes a world of difference in this room.', zh: '这个房间灯光一换，效果就完全不一样了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1300',
+    structure: 'Let\'s put it behind us.',
+    examples: [
+      { en: 'We both said things we regret. Let\'s put it behind us.', zh: '我们都说了后悔的话，这事就翻篇吧。' },
+      { en: 'It was a bad day. Let\'s just put it behind us.', zh: '那天过得不怎么样，过去就过去吧。' },
+      { en: 'There\'s no point bringing it up again. Let\'s put it behind us.', zh: '再提也没意义了，这事就别再纠结了。' },
+    ]
   }
 ]
