@@ -2338,5 +2338,185 @@ module.exports = [
       { en: 'There\'s something about him I just don\'t trust.', zh: '他这个人不知道哪里让我不太放心。' },
       { en: 'There\'s something about rainy days that makes me want to stay home.', zh: '一到下雨天就特别想待在家里。' },
     ]
+  },
+  {
+    id: 'a1b2c3d4-1261',
+    structure: 'That doesn\'t sit right with me.',
+    examples: [
+      { en: 'That whole story doesn\'t sit right with me.', zh: '这整件事听着就让我觉得不对劲。' },
+      { en: 'Something about his attitude just doesn\'t sit right with me.', zh: '他说话那个态度总让我觉得不太舒服。' },
+      { en: 'It may be legal, but it doesn\'t sit right with me.', zh: '这也许不违法，但我心里还是觉得不太对。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1262',
+    structure: 'I wouldn\'t read too much into it.',
+    examples: [
+      { en: 'He was probably just tired. I wouldn\'t read too much into it.', zh: '他可能只是累了，别想太多。' },
+      { en: 'She didn\'t text back right away, but I wouldn\'t read too much into it.', zh: '她没马上回消息，但别过度解读。' },
+      { en: 'It was just a comment. I wouldn\'t read too much into it.', zh: '也就是随口一说，别太当回事。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1263',
+    structure: 'I\'d be lying if I said...',
+    examples: [
+      { en: 'I\'d be lying if I said I wasn\'t nervous.', zh: '要说我不紧张，那就是撒谎了。' },
+      { en: 'I\'d be lying if I said this didn\'t bother me.', zh: '要说这事没让我介意，那不是真的。' },
+      { en: 'I\'d be lying if I said I had it all figured out.', zh: '要说我已经全想明白了，那我是在骗人。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1264',
+    structure: 'We\'re on the same page.',
+    examples: [
+      { en: 'Good, we\'re on the same page now.', zh: '好，那我们现在想法一致了。' },
+      { en: 'Before we move on, I want to make sure we\'re on the same page.', zh: '在继续之前，我想先确认我们理解一致。' },
+      { en: 'It sounds like we\'re finally on the same page.', zh: '听起来我们总算说到一块儿去了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1265',
+    structure: 'That\'s easier said than done.',
+    examples: [
+      { en: 'I know I should relax, but that\'s easier said than done.', zh: '我知道我该放松点，可说起来容易做起来难。' },
+      { en: 'Finding a new job sounds great, but that\'s easier said than done.', zh: '找新工作听着不错，但做起来没那么容易。' },
+      { en: 'You say I should just ignore it, but that\'s easier said than done.', zh: '你说我别理就行，可真做起来哪有那么容易。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1266',
+    structure: 'I don\'t know what came over me.',
+    examples: [
+      { en: 'I don\'t know what came over me. I just started crying.', zh: '我也不知道自己怎么了，突然就哭了。' },
+      { en: 'Sorry I snapped at you. I don\'t know what came over me.', zh: '抱歉我刚才冲你发火了，我也不知道怎么回事。' },
+      { en: 'I bought three cakes, and I don\'t know what came over me.', zh: '我一下子买了三个蛋糕，我也不知道自己当时怎么想的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1267',
+    structure: 'It\'s not my place to...',
+    examples: [
+      { en: 'It\'s not my place to tell her what to do.', zh: '我没资格告诉她该怎么做。' },
+      { en: 'It\'s not my place to judge him.', zh: '这事轮不到我评判他。' },
+      { en: 'It\'s not my place to get involved in their argument.', zh: '他们吵架，我不适合插手。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1268',
+    structure: 'I\'ll believe it when I see it.',
+    examples: [
+      { en: 'He says he\'ll be here by eight. I\'ll believe it when I see it.', zh: '他说八点前到，我见到人再信。' },
+      { en: 'They promised things would change, but I\'ll believe it when I see it.', zh: '他们承诺会改变，等真变了我再信。' },
+      { en: 'A pay raise? I\'ll believe it when I see it.', zh: '涨工资？等真发下来我再信。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1269',
+    structure: 'I couldn\'t be happier.',
+    examples: [
+      { en: 'Everything worked out. I couldn\'t be happier.', zh: '一切都顺利了，我再满意不过了。' },
+      { en: 'You got the job? I couldn\'t be happier for you.', zh: '你拿到工作了？我真替你高兴。' },
+      { en: 'We finally moved into our new place, and I couldn\'t be happier.', zh: '我们终于搬进新家了，我开心得不得了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1270',
+    structure: 'That\'s not like you.',
+    examples: [
+      { en: 'You forgot her birthday? That\'s not like you.', zh: '你居然忘了她生日？这可不像你。' },
+      { en: 'Why are you being so quiet? That\'s not like you.', zh: '你今天怎么这么安静？这不像你啊。' },
+      { en: 'Giving up this early? That\'s not like you.', zh: '这么早就放弃？这不是你的风格啊。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1271',
+    structure: 'I can\'t put my finger on it.',
+    examples: [
+      { en: 'Something feels off, but I can\'t put my finger on it.', zh: '总觉得哪里不对，但我说不上来。' },
+      { en: 'I know her from somewhere. I just can\'t put my finger on it.', zh: '我好像在哪见过她，就是一下想不起来。' },
+      { en: 'There\'s a smell in here, but I can\'t put my finger on it.', zh: '这屋里有股味道，但我说不出是什么味。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1272',
+    structure: 'Let\'s not make a big deal out of it.',
+    examples: [
+      { en: 'I was only a few minutes late. Let\'s not make a big deal out of it.', zh: '我就迟到了几分钟，别把这事搞太大。' },
+      { en: 'It was an honest mistake. Let\'s not make a big deal out of it.', zh: '这只是个无心之失，别小题大做了。' },
+      { en: 'Thanks for the gift, but let\'s not make a big deal out of it.', zh: '谢谢你的礼物，不过真不用搞得这么隆重。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1273',
+    structure: 'I need a minute.',
+    examples: [
+      { en: 'I just got your message. I need a minute.', zh: '我刚看到你的消息，你先让我缓一下。' },
+      { en: 'This is a lot to take in. I need a minute.', zh: '这信息量有点大，我得先消化一下。' },
+      { en: 'Can we talk later? I need a minute.', zh: '我们晚点再聊行吗？我现在需要缓一缓。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1274',
+    structure: 'I wasn\'t expecting that.',
+    examples: [
+      { en: 'Wow, I wasn\'t expecting that at all.', zh: '哇，我完全没想到会这样。' },
+      { en: 'Thanks for the help. I really wasn\'t expecting that.', zh: '谢谢你帮忙，我真没想到你会这样做。' },
+      { en: 'She said yes, and honestly, I wasn\'t expecting that.', zh: '她答应了，说实话我没想到。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1275',
+    structure: 'That\'s all there is to it.',
+    examples: [
+      { en: 'We just followed the instructions. That\'s all there is to it.', zh: '我们就是照说明做的，仅此而已。' },
+      { en: 'I said what I meant. That\'s all there is to it.', zh: '我就是照实说了，仅此而已。' },
+      { en: 'He forgot. That\'s all there is to it.', zh: '他就是忘了，没有别的。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1276',
+    structure: 'It caught me off guard.',
+    examples: [
+      { en: 'Her question caught me off guard.', zh: '她那个问题一下把我问住了。' },
+      { en: 'I\'m not upset, but it did catch me off guard.', zh: '我倒不是生气，只是有点猝不及防。' },
+      { en: 'The sudden change of plans caught us off guard.', zh: '计划突然变了，我们都有点措手不及。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1277',
+    structure: 'If you ask me,...',
+    examples: [
+      { en: 'If you ask me, we should leave now.', zh: '要我说，我们现在就该走了。' },
+      { en: 'If you ask me, he\'s overthinking it.', zh: '要我说，他就是想太多了。' },
+      { en: 'If you ask me, this place is way too noisy.', zh: '要我说，这地方也太吵了。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1278',
+    structure: 'That\'s not necessarily true.',
+    examples: [
+      { en: 'Just because he\'s quiet doesn\'t mean he\'s rude. That\'s not necessarily true.', zh: '他话少不代表他没礼貌，这可不一定。' },
+      { en: 'People say money solves everything, but that\'s not necessarily true.', zh: '有人说有钱就能解决一切，但也不见得。' },
+      { en: 'She thinks I\'m mad at her, but that\'s not necessarily true.', zh: '她觉得我在生她的气，但也不一定是这样。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1279',
+    structure: 'I know where you\'re coming from.',
+    examples: [
+      { en: 'I know where you\'re coming from, but I still disagree.', zh: '我懂你的意思，但我还是不同意。' },
+      { en: 'I know where you\'re coming from. I\'d probably feel the same way.', zh: '我明白你的感受，我可能也会这么想。' },
+      { en: 'I know where you\'re coming from, but give him a chance.', zh: '我理解你的想法，但还是给他一次机会吧。' },
+    ]
+  },
+  {
+    id: 'a1b2c3d4-1280',
+    structure: 'I didn\'t catch that.',
+    examples: [
+      { en: 'Sorry, I didn\'t catch that. Can you say it again?', zh: '不好意思，我没听清，你能再说一遍吗？' },
+      { en: 'I didn\'t catch the last part.', zh: '最后那句我没听清。' },
+      { en: 'It\'s noisy in here. I didn\'t catch what she said.', zh: '这里太吵了，我没听清她说什么。' },
+    ]
   }
 ]
