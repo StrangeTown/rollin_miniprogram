@@ -4,7 +4,7 @@
 <scroll-view scroll-y enhanced show-scrollbar="{{false}}" class="page">
   <block wx:for="{{groups}}" wx:key="key" wx:for-item="group">
     <view class="group-section">
-      <view class="group-title">{{group.label}}</view>
+      <view wx:if="{{groups.length > 1}}" class="group-title">{{group.label}}</view>
       <view class="scenario-grid">
         <view
           class="scenario-card"
