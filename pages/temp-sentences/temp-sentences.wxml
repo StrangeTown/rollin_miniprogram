@@ -7,7 +7,7 @@
       class="sentence-input"
       value="{{inputValue}}"
       focus="{{focusInput}}"
-      placeholder="记一句临时想背的口语"
+      placeholder="输入内容后点完成保存"
       placeholder-class="sentence-input-placeholder"
       confirm-type="done"
       bindinput="onInput"
