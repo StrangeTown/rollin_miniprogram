@@ -23,6 +23,10 @@
       </view>
     </view>
   </block>
+
+  <view class="temp-entry-wrap">
+    <view class="temp-entry" bindtap="goToTempSentences">记一点临时想背的口语句子</view>
+  </view>
 </scroll-view>
 
 <bottom-modal

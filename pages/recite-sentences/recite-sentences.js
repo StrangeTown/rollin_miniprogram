@@ -58,6 +58,11 @@ Page({
     }, 500)
   },
 
+  goToTempSentences() {
+    wx.vibrateShort({ type: 'light' })
+    wx.navigateTo({ url: '/pages/temp-sentences/temp-sentences' })
+  },
+
   drillScenario() {
     const scenario = this.data.currentScenario
     if (!scenario) return

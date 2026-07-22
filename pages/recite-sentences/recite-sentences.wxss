@@ -20,6 +20,19 @@ page {
   padding-bottom: calc(24rpx + env(safe-area-inset-bottom));
 }
 
+.temp-entry-wrap {
+  padding: 12rpx 8rpx calc(24rpx + env(safe-area-inset-bottom));
+}
+
+.temp-entry {
+  display: inline-block;
+  font-size: 24rpx;
+  color: #9CA3AF;
+  line-height: 1.6;
+  text-decoration: underline;
+  text-decoration-color: rgba(156, 163, 175, 0.42);
+}
+
 .group-title {
   font-size: 26rpx;
   font-weight: 500;
